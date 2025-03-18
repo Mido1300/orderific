@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+      * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0px;
+        height: 100%;
+      }
+
+      button:focus-visible {
+        outline: 2px solid #4a90e2 !important;
+        outline: -webkit-focus-ring-color auto 5px !important;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      :root {
+        --bigtypo-desktop-font-family: "DM Sans", Helvetica;
+        --bigtypo-desktop-font-weight: 700;
+        --bigtypo-desktop-font-size: 64px;
+        --bigtypo-desktop-letter-spacing: -1.92px;
+        --bigtypo-desktop-line-height: 56px;
+        --bigtypo-desktop-font-style: normal;
+        --body-normal-font-family: "DM Sans", Helvetica;
+        --body-normal-font-weight: 400;
+        --body-normal-font-size: 16px;
+        --body-normal-letter-spacing: -0.16px;
+        --body-normal-line-height: 20px;
+        --body-normal-font-style: normal;
+        --caption-bold-font-family: "DM Sans", Helvetica;
+        --caption-bold-font-weight: 700;
+        --caption-bold-font-size: 13px;
+        --caption-bold-letter-spacing: 0px;
+        --caption-bold-line-height: 16px;
+        --caption-bold-font-style: normal;
+        --body-link-bold-font-family: "DM Sans", Helvetica;
+        --body-link-bold-font-weight: 500;
+        --body-link-bold-font-size: 16px;
+        --body-link-bold-letter-spacing: -0.16px;
+        --body-link-bold-line-height: 20px;
+        --body-link-bold-font-style: normal;
+        --button-large-font-family: "DM Sans", Helvetica;
+        --button-large-font-weight: 700;
+        --button-large-font-size: 16px;
+        --button-large-letter-spacing: -0.16px;
+        --button-large-line-height: 24px;
+        --button-large-font-style: normal;
+        --spacing-0: 0px;
+        --spacing-spacing-0: 0px;
+        --spacing-spacing-1: 4px;
+        --spacing-spacing-8: 40px;
+        --spacing-spacing-6: 24px;
+        --spacing-spacing-2: 8px;
+        --spacing-spacing-2-duplicate: 8px;
+        --spacing-spacing-4: 16px;
+        --colors-text-white-100: rgba(255, 255, 255, 1);
+        --colors-text-black-100: rgba(0, 0, 0, 1);
+        --colors-text-black-60: rgba(0, 0, 0, 0.6);
+        --colors-background-brand-orange-100: rgba(255, 86, 52, 1);
+        --colors-background-black-10: rgba(0, 0, 0, 0.1);
+        --colors-background-white-60: rgba(255, 255, 255, 0.6);
+        --colors-border-black-10: rgba(0, 0, 0, 0.1);
+        --colors-text-black-40: rgba(0, 0, 0, 0.4);
+        --colors-background-black-5: rgba(0, 0, 0, 0.05);
+        --radius-round-6: 32px;
+      }
+
+      [data-colors-mode="dark-mode"] {
+        --colors-text-white-100: rgba(34, 34, 34, 1);
+        --colors-text-black-100: rgba(238, 238, 238, 1);
+        --colors-text-black-60: rgba(238, 238, 238, 0.6);
+        --colors-background-black-10: rgba(221, 221, 221, 0.1);
+        --colors-background-white-60: rgba(17, 17, 17, 0.6);
+        --colors-border-black-10: rgba(221, 221, 221, 0.1);
+      }
+
+      [data-colors-mode="light-mode"] {
+        --colors-text-white-100: rgba(255, 255, 255, 1);
+        --colors-text-black-100: rgba(0, 0, 0, 1);
+        --colors-text-black-60: rgba(0, 0, 0, 0.6);
+        --colors-background-black-10: rgba(0, 0, 0, 0.1);
+        --colors-background-white-60: rgba(255, 255, 255, 0.6);
+        --colors-border-black-10: rgba(0, 0, 0, 0.1);
+      }
+
+      .component {
+        position: relative;
+        width: 1194px;
+        height: 834px;
+      }
+
+      .component .frame {
+        display: flex;
+        width: 496px;
+        height: 834px;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .component .introduction {
+        display: flex;
+        flex-direction: column;
+        width: 480px;
+        height: 802px;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: var(--spacing-spacing-8);
+        position: relative;
+        border-radius: var(--radius-round-6);
+        overflow: hidden;
+        background-image: url(./img/introduction.png);
+        background-size: cover;
+        background-position: 50% 50%;
+      }
+
+      .component .BG {
+        position: absolute;
+        width: 480px;
+        height: 976px;
+        top: 0;
+        left: 0;
+        background-color: var(--colors-background-brand-orange-100);
+        opacity: 0.5;
+      }
+
+      .component .img {
+        position: absolute;
+        width: 480px;
+        height: 286px;
+        top: 516px;
+        left: 0;
+      }
+
+      .component .logo {
+        position: relative;
+        width: 168px;
+        height: 58.86px;
+        margin-top: -460px;
+      }
+
+      .component .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+        margin-top: -460px;
+      }
+
+      .component .big-title {
+        position: relative;
+        align-self: stretch;
+        margin-top: -1.00px;
+        font-family: var(--bigtypo-desktop-font-family);
+        font-weight: var(--bigtypo-desktop-font-weight);
+        color: var(--colors-text-white-100);
+        font-size: var(--bigtypo-desktop-font-size);
+        letter-spacing: var(--bigtypo-desktop-letter-spacing);
+        line-height: var(--bigtypo-desktop-line-height);
+        font-style: var(--bigtypo-desktop-font-style);
+      }
+
+      .component .description {
+        position: relative;
+        align-self: stretch;
+        font-family: var(--body-normal-font-family);
+        font-weight: var(--body-normal-font-weight);
+        color: var(--colors-text-white-100);
+        font-size: var(--body-normal-font-size);
+        letter-spacing: var(--body-normal-letter-spacing);
+        line-height: var(--body-normal-line-height);
+        font-style: var(--body-normal-font-style);
+      }
+
+      .component .sign-up-form-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 698px;
+        height: 834px;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 10px;
+        padding: 267px 169px;
+        position: absolute;
+        top: 0;
+        left: 496px;
+      }
+
+      .component .sign-up-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-spacing-4);
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+        margin-top: -44.00px;
+        margin-bottom: -44.00px;
+      }
+
+      .component .heading-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 305px;
+        align-items: flex-start;
+        gap: var(--spacing-spacing-6);
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .component .heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .component .headline {
+        position: relative;
+        align-self: stretch;
+        margin-top: -1.00px;
+        font-family: "DM Sans-Bold", Helvetica;
+        font-weight: 700;
+        color: var(--colors-text-black-100);
+        font-size: 32px;
+        text-align: center;
+        letter-spacing: -0.96px;
+        line-height: 40px;
+      }
+
+      .component .text-wrapper {
+        position: relative;
+        width: fit-content;
+        margin-left: -0.50px;
+        margin-right: -0.50px;
+        font-family: var(--body-normal-font-family);
+        font-weight: var(--body-normal-font-weight);
+        color: var(--colors-text-black-60);
+        font-size: var(--body-normal-font-size);
+        text-align: center;
+        letter-spacing: var(--body-normal-letter-spacing);
+        line-height: var(--body-normal-line-height);
+        white-space: nowrap;
+        font-style: var(--body-normal-font-style);
+      }
+
+      .component .div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-spacing-4);
+        padding: 0px 0px var(--spacing-spacing-4) 0px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .component .standard-input {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-spacing-2-duplicate);
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .component .input-label {
+        gap: 8px;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: flex-start;
+        padding: 0px 16px;
+        position: relative;
+      }
+
+      .component .label {
+        position: relative;
+        flex: 1;
+        margin-top: -1.00px;
+        font-family: var(--caption-bold-font-family);
+        font-weight: var(--caption-bold-font-weight);
+        color: var(--colors-text-black-60);
+        font-size: var(--caption-bold-font-size);
+        letter-spacing: var(--caption-bold-letter-spacing);
+        line-height: var(--caption-bold-line-height);
+        font-style: var(--caption-bold-font-style);
+      }
+
+      .component .inputs-text-field {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-spacing-1);
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+        margin-bottom: -1.00px;
+        margin-left: -1.00px;
+        margin-right: -1.00px;
+        background-color: var(--colors-background-white-60);
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid;
+        border-color: var(--colors-border-black-10);
+      }
+
+      .component .input-content {
+        flex-direction: column;
+        height: 48px;
+        justify-content: center;
+        flex: 1;
+        flex-grow: 1;
+        display: flex;
+        align-items: flex-start;
+        padding: 0px 16px;
+        position: relative;
+        gap: var(--spacing-0);
+      }
+
+      .component .value {
+        position: relative;
+        align-self: stretch;
+        font-family: var(--body-normal-font-family);
+        font-weight: var(--body-normal-font-weight);
+        color: var(--colors-text-black-60);
+        font-size: var(--body-normal-font-size);
+        letter-spacing: var(--body-normal-letter-spacing);
+        line-height: var(--body-normal-line-height);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        font-style: var(--body-normal-font-style);
+      }
+
+      .component .input-content-2 {
+        display: flex;
+        height: 48px;
+        align-items: center;
+        gap: var(--spacing-spacing-1);
+        padding: 0px 16px;
+        position: relative;
+        flex: 1;
+        flex-grow: 1;
+      }
+
+      .component .value-2 {
+        position: relative;
+        flex: 1;
+        font-family: var(--body-normal-font-family);
+        font-weight: var(--body-normal-font-weight);
+        color: var(--colors-text-black-60);
+        font-size: var(--body-normal-font-size);
+        letter-spacing: var(--body-normal-letter-spacing);
+        line-height: var(--body-normal-line-height);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        font-style: var(--body-normal-font-style);
+      }
+
+      .component .icon {
+        position: relative;
+        width: 24px;
+        height: 24px;
+      }
+
+      .component .frame-2 {
+        display: inline-flex;
+        align-items: center;
+        gap: 33px;
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .component .checkbox-item {
+        width: 208px;
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-spacing-2);
+        position: relative;
+      }
+
+      .component .checkbox-symbol {
+        width: 28px;
+        height: 28px;
+        justify-content: center;
+        background-color: var(--colors-background-black-10);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+      }
+
+      .component .element-check {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin-top: -1059.00px;
+        margin-left: -1926.00px;
+      }
+
+      .component .text {
+        position: relative;
+        flex: 1;
+        font-family: var(--body-normal-font-family);
+        font-weight: var(--body-normal-font-weight);
+        color: var(--colors-text-black-100);
+        font-size: var(--body-normal-font-size);
+        letter-spacing: var(--body-normal-letter-spacing);
+        line-height: var(--body-normal-line-height);
+        font-style: var(--body-normal-font-style);
+      }
+
+      .component .simple-BTN {
+        display: inline-flex;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .component .simple-button {
+        position: relative;
+        width: fit-content;
+        font-family: var(--body-link-bold-font-family);
+        font-weight: var(--body-link-bold-font-weight);
+        color: var(--colors-text-black-100);
+        font-size: var(--body-link-bold-font-size);
+        letter-spacing: var(--body-link-bold-letter-spacing);
+        line-height: var(--body-link-bold-line-height);
+        text-decoration: underline;
+        white-space: nowrap;
+        font-style: var(--body-link-bold-font-style);
+      }
+
+      .component .medium-button {
+        display: flex;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 0px 32px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        background-color: var(--colors-background-black-5);
+        border-radius: 32px;
+      }
+
+      .component .text-button {
+        position: relative;
+        width: fit-content;
+        font-family: var(--button-large-font-family);
+        font-weight: var(--button-large-font-weight);
+        color: var(--colors-text-black-40);
+        font-size: var(--button-large-font-size);
+        letter-spacing: var(--button-large-letter-spacing);
+        line-height: var(--button-large-line-height);
+        white-space: nowrap;
+        font-style: var(--button-large-font-style);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="component">
+      <div class="frame">
+        <div class="introduction">
+          <div class="BG"></div>
+          <img class="img" src="img/BG.svg" />
+          <img class="logo" src="img/type-4.svg" />
+          <div class="content">
+            <div class="big-title">Service Panel</div>
+            <p class="description">
+              Streamline your restaurant operations with BMS. Manage reservations, orders, inventory, and staff
+              effortlessly, and focus on delivering exceptional dining experiences.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="sign-up-form-wrapper">
+        <div class="sign-up-form">
+          <div class="heading-wrapper">
+            <div class="heading">
+              <div class="headline">Welcome Back</div>
+              <p class="text-wrapper">Manage, streamline, and thrive effortlessly.</p>
+            </div>
+          </div>
+          <div class="div">
+            <div class="standard-input">
+              <div class="input-label"><div class="label">Email</div></div>
+              <div class="inputs-text-field">
+                <div class="input-content"><div class="value">Enter email address</div></div>
+              </div>
+            </div>
+            <div class="standard-input">
+              <div class="input-label"><div class="label">Password</div></div>
+              <div class="inputs-text-field">
+                <div class="input-content-2">
+                  <div class="value-2">Password</div>
+                  <img class="icon" src="img/icon.svg" />
+                </div>
+              </div>
+            </div>
+            <div class="frame-2">
+              <div class="checkbox-item">
+                <div class="checkbox-symbol"><img class="element-check" src="img/check.png" /></div>
+                <div class="text">Remember me</div>
+              </div>
+              <div class="simple-BTN"><div class="simple-button">Login with Code</div></div>
+            </div>
+            <div class="medium-button"><div class="text-button">Sign In</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
