@@ -55,11 +55,17 @@
         -webkit-font-smoothing: antialiased;
         box-sizing: border-box;
       }
+
       html,
       body {
         margin: 0px;
         height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0; /* Optional: adds a light gray background */
       }
+
       /* a blue color as a generic focus style */
       button:focus-visible {
         outline: 2px solid #4a90e2 !important;
@@ -69,9 +75,17 @@
         text-decoration: none;
       }
 
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
       .component {
         width: 1194px;
         height: 834px;
+        position: relative;
       }
 
       .component .overlap-group {
@@ -536,88 +550,90 @@
     </style>
   </head>
   <body>
-    <div class="component">
-      <div class="overlap-group">
-        <div class="background-of-body">
-          <div class="colorful"></div>
-          <div class="gray"></div>
-        </div>
-        <div class="navigation">
-          <div class="logo"><img class="img" src="https://play-lh.googleusercontent.com/W8zKiCjmgUm2V9hcAGOChJxy8mh9tbjnfuoG0ix_Ebfqn3Aku0NywEwC-QrPEbm3xmw" /></div>
-          <div class="other-links">
-            <div class="frame"><div class="text-wrapper">S</div></div>
-            <div class="div">
-              <img class="img-2" src="notification.svg" />
-              <div class="rectangle"></div>
-            </div>
+    <div class="container">
+      <div class="component">
+        <div class="overlap-group">
+          <div class="background-of-body">
+            <div class="colorful"></div>
+            <div class="gray"></div>
           </div>
-          <div class="main-menu">
-            <div class="div-2"><img class="img-2" src="file1.svg" /></div>
-            <div class="div-2"><img class="img-2" src="file2.svg" /></div>
-            <div class="div-2"><img class="img-2" src="file3.svg" /></div>
-            <div class="customer-display"><img class="img-2" src="file4.svg" /></div>
-            <div class="div-2"><img class="img-2" src="file5.svg" /></div>
-            <div class="div-2"><img class="img-2" src="file6.svg" /></div>
-          </div>
-        </div>
-        <div class="frame-2">
-          <header class="header">
-            <div class="text-wrapper-2">Order Status</div>
-            <div class="frame-3">
-              <div class="iconic-buttons-large">
-                <img class="img-2" src="file8.svg" />
-                <div class="text-button">FullScreen</div>
+          <div class="navigation">
+            <div class="logo"><img class="img" src="https://play-lh.googleusercontent.com/W8zKiCjmgUm2V9hcAGOChJxy8mh9tbjnfuoG0ix_Ebfqn3Aku0NywEwC-QrPEbm3xmw" /></div>
+            <div class="other-links">
+              <div class="frame"><div class="text-wrapper">S</div></div>
+              <div class="div">
+                <img class="img-2" src="notification.svg" />
+                <div class="rectangle"></div>
               </div>
             </div>
-          </header>
-          <div class="frame-4">
-            <div class="profile-widget">
-              <div class="frame-5">
-                <img class="image" src="data:image/png;base64,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" />                
-                <div class="mcdonald-s-wrapper"><div class="mcdonald-s">McDonald's</div></div>
-              </div>
-              <div class="text-wrapper-2">15:03</div>
+            <div class="main-menu">
+              <div class="div-2"><img class="img-2" src="file1.svg" /></div>
+              <div class="div-2"><img class="img-2" src="file2.svg" /></div>
+              <div class="div-2"><img class="img-2" src="file3.svg" /></div>
+              <div class="customer-display"><img class="img-2" src="file4.svg" /></div>
+              <div class="div-2"><img class="img-2" src="file5.svg" /></div>
+              <div class="div-2"><img class="img-2" src="file6.svg" /></div>
             </div>
-            <div class="frame-6">
-              <div class="frame-7">
-                <div class="text-wrapper-3">Preparing</div>
-                <div class="frame-8">
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+          </div>
+          <div class="frame-2">
+            <header class="header">
+              <div class="text-wrapper-2">Order Status</div>
+              <div class="frame-3">
+                <div class="iconic-buttons-large">
+                  <img class="img-2" src="file8.svg" />
+                  <div class="text-button">FullScreen</div>
                 </div>
               </div>
-              <div class="frame-9">
-                <div class="text-wrapper-3">Ready</div>
-                <div class="frame-8">
-                  <div class="div-wrapper"><div class="text-wrapper-5">3885</div></div>
-                  <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                  <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                  <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                  <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                  <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                  <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                  <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                  <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                  <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                  <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                  <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                  <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
+            </header>
+            <div class="frame-4">
+              <div class="profile-widget">
+                <div class="frame-5">
+                  <img class="image" src="data:image/png;base64,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" />                
+                  <div class="mcdonald-s-wrapper"><div class="mcdonald-s">McDonald's</div></div>
+                </div>
+                <div class="text-wrapper-2">15:03</div>
+              </div>
+              <div class="frame-6">
+                <div class="frame-7">
+                  <div class="text-wrapper-3">Preparing</div>
+                  <div class="frame-8">
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+                  </div>
+                </div>
+                <div class="frame-9">
+                  <div class="text-wrapper-3">Ready</div>
+                  <div class="frame-8">
+                    <div class="div-wrapper"><div class="text-wrapper-5">3885</div></div>
+                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
+                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
+                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
+                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
+                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
+                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
+                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
+                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
+                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
+                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
+                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
+                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
+                  </div>
                 </div>
               </div>
             </div>
