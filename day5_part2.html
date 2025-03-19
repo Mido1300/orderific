@@ -107,32 +107,33 @@
         overflow: hidden;
       }
 
-      .component .frame {
+      .frame {
         display: flex;
-        width: 496px;
         height: 834px;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
         gap: 10px;
+        position: relative;
+        width: 100%;
+        min-width: 496px;
       }
 
-      .component .introduction {
+      .frame .introduction {
         display: flex;
         flex-direction: column;
         width: 480px;
         height: 802px;
         align-items: flex-start;
-        justify-content: space-between;
         padding: var(--spacing-spacing-8);
         position: relative;
         border-radius: var(--radius-round-6) 0 0 var(--radius-round-6);
         overflow: hidden;
-        background-image: url(./img/Introduction@3x.png);
+        background-image: url(Introduction@3x.png);
         background-size: cover;
         background-position: 50% 50%;
       }
 
-      .component .BG {
+      .frame .BG {
         position: absolute;
         width: 480px;
         height: 976px;
@@ -140,52 +141,62 @@
         left: 0;
         background-color: var(--colors-background-brand-orange-100);
         opacity: 0.5;
+        z-index: 1;
       }
 
-      .component .logo {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        width: 120px; /* Adjust based on your logo size */
-        height: auto;
-      }
-
-      .component .img {
+      .frame .div {
         position: absolute;
         width: 480px;
-        height: 286px;
+        height: 460px;
         top: 516px;
         left: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 1) 50%,
+          rgba(0, 0, 0, 1) 100%
+        );
+        opacity: 0.5;
+        z-index: 1;
       }
 
-      .component .content {
+      .frame .logo {
+        width: 200px;
+        height: 70px;
+        position: absolute;
+        left: 0;
+        top: 40px;
+        margin-left: -50px;
+        z-index: 2;
+      }
+
+      .frame .content {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 24px;
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-        flex: 0 0 auto;
-        margin-top: -460px;
+        align-items: flex-start;
+        gap: 8px;
+        position: absolute;
+        bottom: 40px;
+        left: var(--spacing-spacing-8);
+        right: 0;
+        padding: 0;
+        z-index: 2;
       }
 
-      .component .big-title {
+      .frame .big-title {
         position: relative;
-        align-self: stretch;
-        margin-top: -1.00px;
-        font-family: var(--bigtypo-desktop-font-family);
-        font-weight: var(--bigtypo-desktop-font-weight);
+        font-family: "DM Sans-Bold", Helvetica;
+        font-weight: 700;
         color: var(--colors-text-white-100);
-        font-size: var(--bigtypo-desktop-font-size);
-        letter-spacing: var(--bigtypo-desktop-letter-spacing);
-        line-height: var(--bigtypo-desktop-line-height);
-        font-style: var(--bigtypo-desktop-font-style);
+        font-size: 64px;
+        letter-spacing: -1.92px;
+        line-height: 56px;
+        white-space: nowrap;
+        text-align: left;
       }
 
-      .component .description {
+      .frame .description {
         position: relative;
-        align-self: stretch;
         font-family: var(--body-normal-font-family);
         font-weight: var(--body-normal-font-weight);
         color: var(--colors-text-white-100);
@@ -193,6 +204,8 @@
         letter-spacing: var(--body-normal-letter-spacing);
         line-height: var(--body-normal-line-height);
         font-style: var(--body-normal-font-style);
+        text-align: left;
+        white-space: pre-wrap;
       }
 
       .component .sign-up-form-wrapper {
@@ -502,16 +515,17 @@
   </head>
   <body>
     <div class="component">
-      <img class="logo" src="img/orderific-white-logo.png" alt="Orderific Logo" />
       <div class="frame">
         <div class="introduction">
           <div class="BG"></div>
-          <img class="img" src="img/BG.svg" />
+          <div class="div"></div>
+          <img class="logo" src="Type4.png" alt="Orderific Logo" />
           <div class="content">
             <div class="big-title">Service Panel</div>
             <p class="description">
-              Streamline your restaurant operations with BMS. Manage reservations, orders, inventory, and staff
-              effortlessly, and focus on delivering exceptional dining experiences.
+Streamline your restaurant operations with BMS.
+Manage reservations, orders, inventory, and staff
+effortlessly, and focus on delivering exceptional dining experiences.
             </p>
           </div>
         </div>
