@@ -114,21 +114,22 @@
         gap: 10px;
       }
 
-       .frame .introduction {
+      .component .introduction {
         display: flex;
         flex-direction: column;
         width: 480px;
         height: 802px;
         align-items: flex-start;
+        justify-content: space-between;
         padding: var(--spacing-spacing-8);
         position: relative;
         border-radius: var(--radius-round-6);
         overflow: hidden;
-        background-image: url(Introduction@3x.png);
+        background-image: url(./img/introduction.png);
         background-size: cover;
         background-position: 50% 50%;
       }
-      
+
       .component .BG {
         position: absolute;
         width: 480px;
@@ -494,23 +495,21 @@
       }
     </style>
   </head>
- <body>
-    <div class="frame">
-      <div class="introduction">
-        <div class="BG"></div>
-        <div class="div"></div>
-        <img class="logo" src="Type4.png" alt="Orderific Logo" style="width: 180px; height: auto; position: absolute; top: 20px; left: 60px;" />        
-        <div class="content">
-          <div class="big-title">Service Panel</div>
-          <p class="description">
-Streamline your restaurant operations with BMS.
-Manage reservations, orders, inventory, and staff
-effortlessly, and focus on delivering exceptional dining experiences.
-          </p>
+  <body>
+    <div class="component">
+      <div class="frame">
+        <div class="introduction">
+          <div class="BG"></div>
+          <img class="img" src="img/BG.svg" />
+          <img class="logo" src="img/type-4.svg" />
+          <div class="content">
+            <div class="big-title">Service Panel</div>
+            <p class="description">
+              Streamline your restaurant operations with BMS. Manage reservations, orders, inventory, and staff
+              effortlessly, and focus on delivering exceptional dining experiences.
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
-</html>
       </div>
       <div class="sign-up-form-wrapper">
         <div class="sign-up-form">
@@ -532,7 +531,7 @@ effortlessly, and focus on delivering exceptional dining experiences.
               <div class="inputs-text-field">
                 <div class="input-content-2">
                   <div class="value-2">Password</div>
-                  <img class="icon" src="n.svg" />
+                  <img class="icon" src="img/icon.svg" />
                 </div>
               </div>
             </div>
