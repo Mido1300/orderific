@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
       
@@ -12,17 +13,19 @@
       
       html,
       body {
-        margin: 0px;
-        height: 100%;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: #f5f5f5;
+        font-size: 16px; /* Base font size for rem units */
       }
       
       button:focus-visible {
-        outline: 2px solid #4a90e2 !important;
-        outline: -webkit-focus-ring-color auto 5px !important;
+        outline: 2px solid #4a90e2;
+        outline-offset: 2px;
       }
       
       a {
@@ -30,22 +33,24 @@
       }
 
       .box {
-        width: 834px;
-        height: 1194px;
+        width: 100%;
+        max-width: 834px;
+        min-height: 100vh;
+        padding: 1rem;
       }
 
       .box .group {
         position: relative;
-        width: 834px;
-        height: 1194px;
+        width: 100%;
+        height: 100%;
       }
 
       .box .sign-in {
         display: flex;
         flex-direction: column;
-        width: 834px;
-        height: 1194px;
-        align-items: flex-start;
+        width: 100%;
+        min-height: 100vh;
+        align-items: center;
         position: relative;
         background: linear-gradient(
           58deg,
@@ -57,41 +62,33 @@
       .box .frame {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-        position: relative;
-        align-self: stretch;
+        align-items: center;
+        gap: 0.375rem;
         width: 100%;
-        flex: 0 0 auto;
+        padding: 1rem 0;
       }
 
       .box .logo {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 8px;
-        padding: 24px 0px 0px;
-        position: relative;
-        align-self: stretch;
+        gap: 0.5rem;
+        padding: 1.5rem 0 0;
         width: 100%;
-        flex: 0 0 auto;
       }
 
       .box .img {
-        position: relative;
-        width: 56px;
-        height: 56px;
+        width: clamp(2rem, 6vw, 3.5rem);
+        height: clamp(2rem, 6vw, 3.5rem);
       }
 
       .box .brand {
-        position: relative;
-        width: fit-content;
-        font-family: "DM Sans-Bold", Helvetica;
+        font-family: "DM Sans-Bold", Helvetica, sans-serif;
         font-weight: 700;
         color: #ff5634;
-        font-size: 24px;
-        letter-spacing: -0.48px;
-        line-height: 32px;
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+        letter-spacing: -0.03rem;
+        line-height: 1.2;
         white-space: nowrap;
       }
 
@@ -99,335 +96,293 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
-        padding: 10px;
-        position: relative;
-        align-self: stretch;
+        gap: 0.625rem;
+        padding: 0.625rem;
         width: 100%;
-        flex: 0 0 auto;
       }
 
       .box .headline {
-        width: fit-content;
-        white-space: nowrap;
-        position: relative;
-        margin-top: -1px;
-        font-family: "DM Sans-Bold", Helvetica;
+        font-family: "DM Sans-Bold", Helvetica, sans-serif;
         font-weight: 700;
         color: #000000;
-        font-size: 32px;
+        font-size: clamp(1.5rem, 4vw, 2rem);
         text-align: center;
-        letter-spacing: -0.96px;
-        line-height: 40px;
+        letter-spacing: -0.06rem;
+        line-height: 1.25;
+        white-space: nowrap;
       }
 
       .box .frame-wrapper {
         display: flex;
         flex-direction: column;
-        height: 1048px;
+        flex: 1;
         align-items: center;
         justify-content: center;
-        gap: 10px;
-        padding: 366px 237px;
-        position: relative;
-        align-self: stretch;
+        gap: 0.625rem;
+        padding: 2rem 1rem;
         width: 100%;
       }
 
       .box .sign-up-form-wrapper {
         display: flex;
         flex-direction: column;
-        width: 360px;
+        width: 100%;
+        max-width: 360px;
         align-items: center;
-        gap: 16px;
-        position: relative;
-        flex: 0 0 auto;
-        margin-top: -44px;
-        margin-bottom: -44px;
+        gap: 1rem;
+        padding: 1rem;
       }
 
       .box .sign-up-form {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 24px;
-        position: relative;
-        align-self: stretch;
+        gap: 1.5rem;
         width: 100%;
-        flex: 0 0 auto;
       }
 
       .box .heading-wrapper {
-        display: inline-flex;
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 24px;
-        position: relative;
-        flex: 0 0 auto;
+        align-items: center;
+        gap: 1.5rem;
       }
 
       .box .heading {
         display: flex;
         flex-direction: column;
-        width: 360px;
+        width: 100%;
         align-items: center;
-        gap: 16px;
-        position: relative;
-        flex: 0 0 auto;
+        gap: 1rem;
       }
 
       .box .div-wrapper {
         display: flex;
         flex-direction: column;
-        width: 219px;
+        width: 100%;
+        max-width: 219px;
         align-items: center;
-        position: relative;
-        flex: 0 0 auto;
       }
 
       .box .text-wrapper {
-        align-self: stretch;
-        position: relative;
-        margin-top: -1px;
-        font-family: "DM Sans-Bold", Helvetica;
+        font-family: "DM Sans-Bold", Helvetica, sans-serif;
         font-weight: 700;
         color: #000000;
-        font-size: 32px;
+        font-size: clamp(1.5rem, 4vw, 2rem);
         text-align: center;
-        letter-spacing: -0.96px;
-        line-height: 40px;
+        letter-spacing: -0.06rem;
+        line-height: 1.25;
       }
 
       .box .description {
-        position: relative;
-        width: fit-content;
-        font-family: "DM Sans-Regular", Helvetica;
+        font-family: "DM Sans-Regular", Helvetica, sans-serif;
         font-weight: 400;
         color: #00000099;
-        font-size: 16px;
+        font-size: clamp(0.875rem, 2.5vw, 1rem);
         text-align: center;
-        letter-spacing: -0.16px;
-        line-height: 20px;
-        white-space: nowrap;
+        letter-spacing: -0.01rem;
+        line-height: 1.25;
       }
 
       .box .div {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-        padding: 0px 0px 16px;
-        position: relative;
-        align-self: stretch;
+        align-items: center;
+        gap: 1rem;
+        padding: 0 0 1rem;
         width: 100%;
-        flex: 0 0 auto;
       }
 
       .box .standard-input {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
-        position: relative;
-        align-self: stretch;
+        gap: 0.5rem;
         width: 100%;
-        flex: 0 0 auto;
       }
 
       .box .input-label {
-        gap: 8px;
-        align-self: stretch;
-        width: 100%;
-        flex: 0 0 auto;
         display: flex;
         align-items: flex-start;
-        padding: 0px 16px;
-        position: relative;
+        gap: 0.5rem;
+        padding: 0 1rem;
+        width: 100%;
       }
 
       .box .label {
-        position: relative;
-        flex: 1;
-        margin-top: -1px;
-        font-family: "DM Sans-Bold", Helvetica;
+        font-family: "DM Sans-Bold", Helvetica, sans-serif;
         font-weight: 700;
         color: #00000099;
-        font-size: 13px;
-        letter-spacing: 0;
-        line-height: 16px;
+        font-size: clamp(0.75rem, 2vw, 0.8125rem);
+        line-height: 1.2;
+        flex: 1;
       }
 
       .box .inputs-text-field {
         display: flex;
         align-items: center;
-        gap: 4px;
-        position: relative;
-        align-self: stretch;
+        gap: 0.25rem;
         width: 100%;
-        flex: 0 0 auto;
-        margin-bottom: -1px;
-        margin-left: -1px;
-        margin-right: -1px;
         background-color: #ffffff99;
-        border-radius: 24px;
+        border-radius: 1.5rem;
+        border: 1px solid #0000001a;
         overflow: hidden;
-        border: 1px solid;
-        border-color: #0000001a;
       }
 
       .box .input-content {
+        display: flex;
         flex-direction: column;
-        height: 48px;
+        height: 3rem;
         justify-content: center;
         flex: 1;
-        flex-grow: 1;
-        display: flex;
-        align-items: flex-start;
-        padding: 0px 16px;
-        position: relative;
+        padding: 0 1rem;
       }
 
       .box .value {
-        align-self: stretch;
-        position: relative;
-        font-family: "DM Sans-Regular", Helvetica;
+        font-family: "DM Sans-Regular", Helvetica, sans-serif;
         font-weight: 400;
         color: #000000;
-        font-size: 16px;
-        letter-spacing: -0.16px;
-        line-height: 20px;
+        font-size: clamp(0.875rem, 2.5vw, 1rem);
+        letter-spacing: -0.01rem;
+        line-height: 1.25;
         overflow: hidden;
         text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
       }
 
       .box .input-content-2 {
         display: flex;
-        height: 48px;
+        height: 3rem;
         align-items: center;
-        gap: 4px;
-        padding: 0px 16px;
-        position: relative;
+        gap: 0.25rem;
+        padding: 0 1rem;
         flex: 1;
-        flex-grow: 1;
       }
 
       .box .value-2 {
-        flex: 1;
-        position: relative;
-        font-family: "DM Sans-Regular", Helvetica;
+        font-family: "DM Sans-Regular", Helvetica, sans-serif;
         font-weight: 400;
         color: #000000;
-        font-size: 16px;
-        letter-spacing: -0.16px;
-        line-height: 20px;
+        font-size: clamp(0.875rem, 2.5vw, 1rem);
+        letter-spacing: -0.01rem;
+        line-height: 1.25;
         overflow: hidden;
         text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
+        flex: 1;
       }
 
       .box .icon {
-        position: relative;
-        width: 24px;
-        height: 24px;
+        width: clamp(1rem, 3vw, 1.5rem);
+        height: clamp(1rem, 3vw, 1.5rem);
       }
 
       .box .frame-2 {
-        display: inline-flex;
+        display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        gap: 33px;
-        position: relative;
-        flex: 0 0 auto;
+        gap: 1rem;
+        justify-content: space-between;
+        width: 100%;
       }
 
       .box .checkbox-item {
-        width: 208px;
         display: flex;
         align-items: center;
-        gap: 8px;
-        position: relative;
+        gap: 0.5rem;
+        width: auto;
+        flex: 1;
+        min-width: 150px;
       }
 
       .box .checkbox-symbol {
-        width: 28px;
-        height: 28px;
-        justify-content: center;
+        width: 1.75rem;
+        height: 1.75rem;
         background-color: #0000001a;
-        border-radius: 8px;
+        border-radius: 0.5rem;
         display: flex;
         align-items: center;
-        gap: 8px;
-        position: relative;
+        justify-content: center;
       }
 
       .box .element-check {
-        position: relative;
-        width: 20px;
-        height: 20px;
+        width: 1.25rem;
+        height: 1.25rem;
       }
 
       .box .text {
-        flex: 1;
-        font-family: "DM Sans-Regular", Helvetica;
+        font-family: "DM Sans-Regular", Helvetica, sans-serif;
         font-weight: 400;
         color: #000000;
-        line-height: 20px;
-        position: relative;
-        font-size: 16px;
-        letter-spacing: -0.16px;
+        font-size: clamp(0.875rem, 2.5vw, 1rem);
+        letter-spacing: -0.01rem;
+        line-height: 1.25;
+        flex: 1;
       }
 
       .box .simple-BTN {
-        display: inline-flex;
-        height: 48px;
+        display: flex;
+        height: 3rem;
         align-items: center;
         justify-content: center;
-        gap: 8px;
-        position: relative;
-        flex: 0 0 auto;
+        gap: 0.5rem;
       }
 
       .box .simple-button {
-        position: relative;
-        width: fit-content;
-        font-family: "DM Sans-Medium", Helvetica;
+        font-family: "DM Sans-Medium", Helvetica, sans-serif;
         font-weight: 500;
         color: #000000;
-        font-size: 16px;
-        letter-spacing: -0.16px;
-        line-height: 20px;
+        font-size: clamp(0.875rem, 2.5vw, 1rem);
+        letter-spacing: -0.01rem;
+        line-height: 1.25;
         text-decoration: underline;
         white-space: nowrap;
       }
 
       .box .standard-buttons {
         display: flex;
-        height: 48px;
+        height: 3rem;
         align-items: center;
         justify-content: center;
-        gap: 8px;
-        padding: 0px 32px;
-        position: relative;
-        align-self: stretch;
+        gap: 0.5rem;
+        padding: 0 2rem;
         width: 100%;
         background-color: #000000;
-        border-radius: 32px;
+        border-radius: 2rem;
+        border: none;
+        cursor: pointer;
       }
 
       .box .text-button {
-        width: fit-content;
-        font-family: "DM Sans-Bold", Helvetica;
+        font-family: "DM Sans-Bold", Helvetica, sans-serif;
         font-weight: 700;
         color: #ffffff;
-        line-height: 24px;
+        font-size: clamp(0.875rem, 2.5vw, 1rem);
+        letter-spacing: -0.01rem;
+        line-height: 1.5;
         white-space: nowrap;
-        position: relative;
-        font-size: 16px;
-        letter-spacing: -0.16px;
+      }
+
+      /* Media Queries for larger screens */
+      @media screen and (min-width: 768px) {
+        .box {
+          padding: 2rem;
+        }
+
+        .box .frame-wrapper {
+          padding: 4rem 2rem;
+        }
+
+        .box .sign-up-form-wrapper {
+          max-width: 360px;
+        }
+
+        .box .frame-2 {
+          flex-wrap: nowrap;
+          justify-content: space-between;
+        }
+
+        .box .checkbox-item {
+          min-width: 208px;
+        }
       }
     </style>
   </head>
@@ -437,44 +392,60 @@
         <div class="sign-in">
           <div class="frame">
             <div class="logo">
-              <img class="img" src="Group.png" />
+              <img class="img" src="Group.png" alt="Orderific logo" />
               <div class="brand">Orderific</div>
             </div>
-            <div class="headline-wrapper"><div class="headline">Service Panel</div></div>
+            <div class="headline-wrapper">
+              <div class="headline">Service Panel</div>
+            </div>
           </div>
           <div class="frame-wrapper">
             <div class="sign-up-form-wrapper">
               <div class="sign-up-form">
                 <div class="heading-wrapper">
                   <div class="heading">
-                    <div class="div-wrapper"><div class="text-wrapper">Welcome Back</div></div>
+                    <div class="div-wrapper">
+                      <div class="text-wrapper">Welcome Back</div>
+                    </div>
                     <p class="description">Manage, streamline, and thrive effortlessly.</p>
                   </div>
                 </div>
                 <div class="div">
                   <div class="standard-input">
-                    <div class="input-label"><div class="label">Email</div></div>
+                    <div class="input-label">
+                      <div class="label">Email</div>
+                    </div>
                     <div class="inputs-text-field">
-                      <div class="input-content"><div class="value">samsmith@gmail.com</div></div>
+                      <div class="input-content">
+                        <div class="value">samsmith@gmail.com</div>
+                      </div>
                     </div>
                   </div>
                   <div class="standard-input">
-                    <div class="input-label"><div class="label">Password</div></div>
+                    <div class="input-label">
+                      <div class="label">Password</div>
+                    </div>
                     <div class="inputs-text-field">
                       <div class="input-content-2">
                         <div class="value-2">••••••••</div>
-                        <img class="icon" src="n.svg" />
+                        <img class="icon" src="n.svg" alt="Show password" />
                       </div>
                     </div>
                   </div>
                   <div class="frame-2">
                     <div class="checkbox-item">
-                      <div class="checkbox-symbol"><img class="element-check" src="Checkbox Symbol.png" /></div>
+                      <div class="checkbox-symbol">
+                        <img class="element-check" src="Checkbox Symbol.png" alt="Checkbox" />
+                      </div>
                       <div class="text">Remember me</div>
                     </div>
-                    <div class="simple-BTN"><div class="simple-button">Login with Code</div></div>
+                    <div class="simple-BTN">
+                      <div class="simple-button">Login with Code</div>
+                    </div>
                   </div>
-                  <div class="standard-buttons"><div class="text-button">Sign In</div></div>
+                  <button class="standard-buttons">
+                    <div class="text-button">Sign In</div>
+                  </button>
                 </div>
               </div>
             </div>
