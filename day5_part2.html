@@ -103,6 +103,8 @@
         width: 1194px;
         height: 834px;
         display: flex;
+        border-radius: var(--radius-round-6);
+        overflow: hidden;
       }
 
       .component .frame {
@@ -123,9 +125,9 @@
         justify-content: space-between;
         padding: var(--spacing-spacing-8);
         position: relative;
-        border-radius: var(--radius-round-6);
+        border-radius: var(--radius-round-6) 0 0 var(--radius-round-6);
         overflow: hidden;
-        background-image: url(./img/introduction.png);
+        background-image: url(./img/Introduction@3x.png);
         background-size: cover;
         background-position: 50% 50%;
       }
@@ -140,19 +142,20 @@
         opacity: 0.5;
       }
 
+      .component .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 120px; /* Adjust based on your logo size */
+        height: auto;
+      }
+
       .component .img {
         position: absolute;
         width: 480px;
         height: 286px;
         top: 516px;
         left: 0;
-      }
-
-      .component .logo {
-        position: relative;
-        width: 168px;
-        height: 58.86px;
-        margin-top: -460px;
       }
 
       .component .content {
@@ -201,6 +204,8 @@
         justify-content: center;
         gap: 10px;
         padding: 267px 169px;
+        background-color: var(--colors-background-white-60);
+        border-radius: 0 var(--radius-round-6) var(--radius-round-6) 0;
       }
 
       .component .sign-up-form {
@@ -497,11 +502,11 @@
   </head>
   <body>
     <div class="component">
+      <img class="logo" src="img/orderific-white-logo.png" alt="Orderific Logo" />
       <div class="frame">
         <div class="introduction">
           <div class="BG"></div>
           <img class="img" src="img/BG.svg" />
-          <img class="logo" src="img/type-4.svg" />
           <div class="content">
             <div class="big-title">Service Panel</div>
             <p class="description">
