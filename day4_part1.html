@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+      * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0px;
+        height: 100%;
+      }
+      /* a blue color as a generic focus style */
+      button:focus-visible {
+        outline: 2px solid #4a90e2 !important;
+        outline: -webkit-focus-ring-color auto 5px !important;
+      }
+      a {
+        text-decoration: none;
+      }
+      :root {
+        --title-2-font-family: "DM Sans", Helvetica;
+        --title-2-font-weight: 700;
+        --title-2-font-size: 24px;
+        --title-2-letter-spacing: -0.48px;
+        --title-2-line-height: 32px;
+        --title-2-font-style: normal;
+        --title-1-font-family: "DM Sans", Helvetica;
+        --title-1-font-weight: 700;
+        --title-1-font-size: 32px;
+        --title-1-letter-spacing: -0.96px;
+        --title-1-line-height: 40px;
+        --title-1-font-style: normal;
+        --spacing-1: 4px;
+        --spacing-spacing-6: 24px;
+        --spacing-spacing-2: 8px;
+        --spacing-spacing-4: 16px;
+        --colors-text-black-100: rgba(0, 0, 0, 1);
+        --colors-text-white-100: rgba(255, 255, 255, 1);
+        --colors-background-body-white-100: rgba(255, 255, 255, 1);
+        --colors-background-black-10: rgba(0, 0, 0, 0.1);
+        --colors-background-status-accepted: rgba(17, 151, 23, 1);
+        --colors-background-black-5: rgba(0, 0, 0, 0.05);
+        --colors-background-white-100: rgba(255, 255, 255, 1);
+        --radius-round-3: 16px;
+      }
+      .component {
+        width: 1194px;
+        height: 834px;
+      }
+
+      .component .overlap-group {
+        position: relative;
+        height: 834px;
+      }
+
+      .component .background-of-body {
+        display: flex;
+        width: 1194px;
+        height: 834px;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--colors-background-body-white-100);
+        overflow: hidden;
+      }
+
+      .component .colorful {
+        position: relative;
+        width: 1105px;
+        height: 1879.94px;
+        margin-top: -522.97px;
+        margin-bottom: -522.97px;
+        background-color: #ff56341f;
+        border-radius: 552.5px/939.97px;
+        transform: rotate(-42.41deg);
+        filter: blur(194px);
+      }
+
+      .component .gray {
+        position: relative;
+        width: 1009.68px;
+        height: 1310.33px;
+        margin-top: -238.17px;
+        margin-bottom: -238.17px;
+        background-color: #00000014;
+        border-radius: 504.84px/655.17px;
+        transform: rotate(-37.86deg);
+        filter: blur(138px);
+      }
+
+      .component .profile-widget {
+        display: flex;
+        width: 1162px;
+        height: 92px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        background-color: var(--colors-background-black-5);
+        border-radius: 16px;
+      }
+
+      .component .frame {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .component .image {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+      }
+
+      .component .mcdonald-s-wrapper {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-1);
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .component .mcdonald-s {
+        position: relative;
+        width: fit-content;
+        margin-top: -1px;
+        font-family: "DM Sans-Medium", Helvetica;
+        font-weight: 500;
+        color: var(--colors-text-black-100);
+        font-size: 20px;
+        letter-spacing: -0.2px;
+        line-height: 24px;
+        white-space: nowrap;
+      }
+
+      .component .text-wrapper {
+        position: relative;
+        width: fit-content;
+        font-family: "DM Sans-Bold", Helvetica;
+        font-weight: 700;
+        color: var(--colors-text-black-100);
+        font-size: 32px;
+        letter-spacing: -0.96px;
+        line-height: 40px;
+        white-space: nowrap;
+      }
+
+      .component .div {
+        display: flex;
+        width: 1194px;
+        height: 694px;
+        align-items: flex-start;
+        gap: var(--spacing-spacing-4);
+        padding: 0px var(--spacing-spacing-4) 0px var(--spacing-spacing-4);
+        position: absolute;
+        top: 124px;
+        left: 0;
+      }
+
+      .component .frame-2 {
+        display: flex;
+        flex-direction: column;
+        height: 694px;
+        align-items: center;
+        gap: var(--spacing-spacing-6);
+        padding: var(--spacing-spacing-6);
+        position: relative;
+        flex: 1;
+        flex-grow: 1;
+        background-color: var(--colors-background-white-100);
+        border-radius: 24px;
+        overflow: hidden;
+      }
+
+      .component .text-wrapper-2 {
+        position: relative;
+        width: fit-content;
+        margin-top: -1px;
+        font-family: "DM Sans-Bold", Helvetica;
+        font-weight: 700;
+        color: var(--colors-text-black-100);
+        font-size: 32px;
+        letter-spacing: -0.96px;
+        line-height: 40px;
+        white-space: nowrap;
+      }
+
+      .component .frame-3 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+        gap: var(--spacing-spacing-2);
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .component .order-num {
+        display: flex;
+        width: 106px;
+        height: 64px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 8px var(--spacing-spacing-6) 8px var(--spacing-spacing-6);
+        position: relative;
+        background-color: var(--colors-background-black-10);
+        border-radius: var(--radius-round-3);
+      }
+
+      .component .text-wrapper-3 {
+        position: relative;
+        width: fit-content;
+        margin-left: -0.5px;
+        margin-right: -0.5px;
+        font-family: var(--title-2-font-family);
+        font-weight: var(--title-2-font-weight);
+        color: var(--colors-text-black-100);
+        font-size: var(--title-2-font-size);
+        letter-spacing: var(--title-2-letter-spacing);
+        line-height: var(--title-2-line-height);
+        white-space: nowrap;
+        font-style: var(--title-2-font-style);
+      }
+
+      .component .text-wrapper-4 {
+        position: relative;
+        width: fit-content;
+        margin-left: -0.5px;
+        margin-right: -0.5px;
+        font-family: "DM Sans-Bold", Helvetica;
+        font-weight: 700;
+        color: var(--colors-text-black-100);
+        font-size: 24px;
+        letter-spacing: -0.48px;
+        line-height: 32px;
+        white-space: nowrap;
+      }
+
+      .component .frame-4 {
+        display: flex;
+        flex-direction: column;
+        width: 383px;
+        height: 694px;
+        align-items: center;
+        gap: var(--spacing-spacing-6);
+        padding: var(--spacing-spacing-6);
+        position: relative;
+        background-color: var(--colors-background-white-100);
+        border-radius: 24px;
+        overflow: hidden;
+      }
+
+      .component .text-wrapper-5 {
+        position: relative;
+        width: fit-content;
+        margin-top: -1px;
+        font-family: var(--title-1-font-family);
+        font-weight: var(--title-1-font-weight);
+        color: var(--colors-text-black-100);
+        font-size: var(--title-1-font-size);
+        letter-spacing: var(--title-1-letter-spacing);
+        line-height: var(--title-1-line-height);
+        white-space: nowrap;
+        font-style: var(--title-1-font-style);
+      }
+
+      .component .frame-5 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 8px 8px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .component .div-wrapper {
+        width: 335px;
+        height: 128px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 8px var(--spacing-spacing-6) 8px var(--spacing-spacing-6);
+        position: relative;
+        background-color: var(--colors-background-status-accepted);
+        border-radius: var(--radius-round-3);
+      }
+
+      .component .text-wrapper-6 {
+        font-size: 32px;
+        letter-spacing: -0.96px;
+        line-height: 40px;
+        position: relative;
+        width: fit-content;
+        font-family: "DM Sans-Bold", Helvetica;
+        font-weight: 700;
+        color: var(--colors-text-white-100);
+        white-space: nowrap;
+      }
+
+      .component .order-num-2 {
+        width: 106px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 8px var(--spacing-spacing-6) 8px var(--spacing-spacing-6);
+        position: relative;
+        background-color: var(--colors-background-status-accepted);
+        border-radius: var(--radius-round-3);
+      }
+
+      .component .text-wrapper-7 {
+        margin-left: -0.5px;
+        margin-right: -0.5px;
+        font-size: var(--title-2-font-size);
+        letter-spacing: var(--title-2-letter-spacing);
+        line-height: var(--title-2-line-height);
+        position: relative;
+        width: fit-content;
+        font-family: var(--title-2-font-family);
+        font-weight: var(--title-2-font-weight);
+        color: var(--colors-text-white-100);
+        white-space: nowrap;
+        font-style: var(--title-2-font-style);
+      }
+
+      .component .text-wrapper-8 {
+        margin-left: -0.5px;
+        margin-right: -0.5px;
+        font-size: 24px;
+        letter-spacing: -0.48px;
+        line-height: 32px;
+        position: relative;
+        width: fit-content;
+        font-family: "DM Sans-Bold", Helvetica;
+        font-weight: 700;
+        color: var(--colors-text-white-100);
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="component">
+      <div class="overlap-group">
+        <div class="background-of-body">
+          <div class="colorful"></div>
+          <div class="gray"></div>
+        </div>
+        <div class="profile-widget">
+          <div class="frame">
+            <img class="image" src="data:image/png;base64,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" />
+            <div class="mcdonald-s-wrapper"><div class="mcdonald-s">McDonald's</div></div>
+          </div>
+          <div class="text-wrapper">15:03</div>
+        </div>
+        <div class="div">
+          <div class="frame-2">
+            <div class="text-wrapper-2">Preparing</div>
+            <div class="frame-3">
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-4">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+              <div class="order-num"><div class="text-wrapper-3">3885</div></div>
+            </div>
+          </div>
+          <div class="frame-4">
+            <div class="text-wrapper-5">Ready</div>
+            <div class="frame-5">
+              <div class="div-wrapper"><div class="text-wrapper-6">3885</div></div>
+              <div class="order-num-2"><div class="text-wrapper-7">3885</div></div>
+              <div class="order-num-2"><div class="text-wrapper-8">3885</div></div>
+              <div class="order-num-2"><div class="text-wrapper-7">3885</div></div>
+              <div class="order-num-2"><div class="text-wrapper-7">3885</div></div>
+              <div class="order-num-2"><div class="text-wrapper-7">3885</div></div>
+              <div class="order-num-2"><div class="text-wrapper-7">3885</div></div>
+              <div class="order-num-2"><div class="text-wrapper-7">3885</div></div>
+              <div class="order-num-2"><div class="text-wrapper-7">3885</div></div>
+              <div class="order-num-2"><div class="text-wrapper-7">3885</div></div>
+              <div class="order-num-2"><div class="text-wrapper-7">3885</div></div>
+              <div class="order-num-2"><div class="text-wrapper-7">3885</div></div>
+              <div class="order-num-2"><div class="text-wrapper-7">3885</div></div>
+              <div class="order-num-2"><div class="text-wrapper-7">3885</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
