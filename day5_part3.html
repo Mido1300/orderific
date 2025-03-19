@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+      
+      * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+      }
+      
+      html,
+      body {
+        margin: 0px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f5f5f5; /* Optional: adds a light gray background */
+      }
+      
+      button:focus-visible {
+        outline: 2px solid #4a90e2 !important;
+        outline: -webkit-focus-ring-color auto 5px !important;
+      }
+      
+      a {
+        text-decoration: none;
+      }
+
+      .box {
+        width: 834px;
+        height: 1194px;
+      }
+
+      .box .group {
+        position: relative; /* Changed from fixed to relative for centering */
+        width: 834px;
+        height: 1194px;
+      }
+
+      .box .sign-in {
+        display: flex;
+        flex-direction: column;
+        width: 834px;
+        height: 1194px;
+        align-items: flex-start;
+        position: relative;
+        background: linear-gradient(
+          58deg,
+          rgba(253, 232, 228, 1) 38%,
+          rgba(236, 236, 236, 1) 87%
+        );
+      }
+
+      .box .frame {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .box .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 24px 0px 0px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .box .img {
+        position: relative;
+        width: 56px;
+        height: 56px;
+      }
+
+      .box .brand {
+        position: relative;
+        width: fit-content;
+        font-family: "DM Sans-Bold", Helvetica;
+        font-weight: 700;
+        color: #ff5634;
+        font-size: 24px;
+        letter-spacing: -0.48px;
+        line-height: 32px;
+        white-space: nowrap;
+      }
+
+      .box .headline-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .box .headline {
+        width: fit-content;
+        white-space: nowrap;
+        position: relative;
+        margin-top: -1.00px;
+        font-family: "DM Sans-Bold", Helvetica;
+        font-weight: 700;
+        color: #000000;
+        font-size: 32px;
+        text-align: center;
+        letter-spacing: -0.96px;
+        line-height: 40px;
+      }
+
+      .box .frame-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 1048px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 366px 237px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+      }
+
+      .box .sign-up-form-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 360px;
+        align-items: center;
+        gap: 16px;
+        position: relative;
+        flex: 0 0 auto;
+        margin-top: -44.00px;
+        margin-bottom: -44.00px;
+      }
+
+      .box .sign-up-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .box .heading-wrapper {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .box .heading {
+        display: flex;
+        flex-direction: column;
+        width: 360px;
+        align-items: center;
+        gap: 16px;
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .box .div-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 219px;
+        align-items: center;
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .box .text-wrapper {
+        align-self: stretch;
+        position: relative;
+        margin-top: -1.00px;
+        font-family: "DM Sans-Bold", Helvetica;
+        font-weight: 700;
+        color: #000000;
+        font-size: 32px;
+        text-align: center;
+        letter-spacing: -0.96px;
+        line-height: 40px;
+      }
+
+      .box .description {
+        position: relative;
+        width: fit-content;
+        font-family: "DM Sans-Regular", Helvetica;
+        font-weight: 400;
+        color: #00000099;
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: -0.16px;
+        line-height: 20px;
+        white-space: nowrap;
+      }
+
+      .box .div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 0px 0px 16px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .box .standard-input {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .box .input-label {
+        gap: 8px;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: flex-start;
+        padding: 0px 16px;
+        position: relative;
+      }
+
+      .box .label {
+        position: relative;
+        flex: 1;
+        margin-top: -1.00px;
+        font-family: "DM Sans-Bold", Helvetica;
+        font-weight: 700;
+        color: #00000099;
+        font-size: 13px;
+        letter-spacing: 0;
+        line-height: 16px;
+      }
+
+      .box .inputs-text-field {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+        margin-bottom: -1.00px;
+        margin-left: -1.00px;
+        margin-right: -1.00px;
+        background-color: #ffffff99;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid;
+        border-color: #0000001a;
+      }
+
+      .box .input-content {
+        flex-direction: column;
+        height: 48px;
+        justify-content: center;
+        flex: 1;
+        flex-grow: 1;
+        display: flex;
+        align-items: flex-start;
+        padding: 0px 16px;
+        position: relative;
+      }
+
+      .box .value {
+        align-self: stretch;
+        position: relative;
+        font-family: "DM Sans-Regular", Helvetica;
+        font-weight: 400;
+        color: #000000;
+        font-size: 16px;
+        letter-spacing: -0.16px;
+        line-height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+
+      .box .input-content-2 {
+        display: flex;
+        height: 48px;
+        align-items: center;
+        gap: 4px;
+        padding: 0px 16px;
+        position: relative;
+        flex: 1;
+        flex-grow: 1;
+      }
+
+      .box .value-2 {
+        flex: 1;
+        position: relative;
+        font-family: "DM Sans-Regular", Helvetica;
+        font-weight: 400;
+        color: #000000;
+        font-size: 16px;
+        letter-spacing: -0.16px;
+        line-height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+
+      .box .icon {
+        position: relative;
+        width: 24px;
+        height: 24px;
+      }
+
+      .box .frame-2 {
+        display: inline-flex;
+        align-items: center;
+        gap: 33px;
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .box .checkbox-item {
+        width: 208px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+      }
+
+      .box .checkbox-symbol {
+        width: 28px;
+        height: 28px;
+        justify-content: center;
+        background-color: #0000001a;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+      }
+
+      .box .element-check {
+        position: relative;
+        width: 20px;
+        height: 20px;
+      }
+
+      .box .text {
+        flex: 1;
+        font-family: "DM Sans-Regular", Helvetica;
+        font-weight: 400;
+        color: #000000;
+        line-height: 20px;
+        position: relative;
+        font-size: 16px;
+        letter-spacing: -0.16px;
+      }
+
+      .box .simple-BTN {
+        display: inline-flex;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .box .simple-button {
+        position: relative;
+        width: fit-content;
+        font-family: "DM Sans-Medium", Helvetica;
+        font-weight: 500;
+        color: #000000;
+        font-size: 16px;
+        letter-spacing: -0.16px;
+        line-height: 20px;
+        text-decoration: underline;
+        white-space: nowrap;
+      }
+
+      .box .standard-buttons {
+        display: flex;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 0px 32px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        background-color: #000000;
+        border-radius: 32px;
+      }
+
+      .box .text-button {
+        width: fit-content;
+        font-family: "DM Sans-Bold", Helvetica;
+        font-weight: 700;
+        color: #ffffff;
+        line-height: 24px;
+        white-space: nowrap;
+        position: relative;
+        font-size: 16px;
+        letter-spacing: -0.16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="group">
+        <div class="sign-in">
+          <div class="frame">
+            <div class="logo">
+              <img class="img" src="img/logo.svg" />
+              <div class="brand">Orderific</div>
+            </div>
+            <div class="headline-wrapper"><div class="headline">Service Panel</div></div>
+          </div>
+          <div class="frame-wrapper">
+            <div class="sign-up-form-wrapper">
+              <div class="sign-up-form">
+                <div class="heading-wrapper">
+                  <div class="heading">
+                    <div class="div-wrapper"><div class="text-wrapper">Welcome Back</div></div>
+                    <p class="description">Manage, streamline, and thrive effortlessly.</p>
+                  </div>
+                </div>
+                <div class="div">
+                  <div class="standard-input">
+                    <div class="input-label"><div class="label">Email</div></div>
+                    <div class="inputs-text-field">
+                      <div class="input-content"><div class="value">samsmith@gmail.com</div></div>
+                    </div>
+                  </div>
+                  <div class="standard-input">
+                    <div class="input-label"><div class="label">Password</div></div>
+                    <div class="inputs-text-field">
+                      <div class="input-content-2">
+                        <div class="value-2">••••••••</div>
+                        <img class="icon" src="img/icon.svg" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="frame-2">
+                    <div class="checkbox-item">
+                      <div class="checkbox-symbol"><img class="element-check" src="img/check.png" /></div>
+                      <div class="text">Remember me</div>
+                    </div>
+                    <div class="simple-BTN"><div class="simple-button">Login with Code</div></div>
+                  </div>
+                  <div class="standard-buttons"><div class="text-button">Sign In</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
