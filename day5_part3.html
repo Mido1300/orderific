@@ -35,7 +35,8 @@
       .box {
         width: 100%;
         max-width: 834px;
-        min-height: 100vh;
+        height: 100%;
+        max-height: 1194px;
         padding: 1rem;
       }
 
@@ -49,7 +50,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        min-height: 100vh;
+        height: 100%;
         align-items: center;
         position: relative;
         background: linear-gradient(
@@ -73,22 +74,22 @@
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        padding: 1.5rem 0 0;
+        padding: clamp(1rem, 2.5vw, 1.5rem) 0 0;
         width: 100%;
       }
 
       .box .img {
-        width: clamp(2rem, 6vw, 3.5rem);
-        height: clamp(2rem, 6vw, 3.5rem);
+        width: clamp(2rem, 6.7vw, 3.5rem);
+        height: clamp(2rem, 6.7vw, 3.5rem);
       }
 
       .box .brand {
         font-family: "DM Sans-Bold", Helvetica, sans-serif;
         font-weight: 700;
         color: #ff5634;
-        font-size: clamp(1.25rem, 3vw, 1.5rem);
+        font-size: clamp(1rem, 2.88vw, 1.5rem);
         letter-spacing: -0.03rem;
-        line-height: 1.2;
+        line-height: 1.33;
         white-space: nowrap;
       }
 
@@ -97,7 +98,7 @@
         align-items: center;
         justify-content: center;
         gap: 0.625rem;
-        padding: 0.625rem;
+        padding: clamp(0.5rem, 1.2vw, 0.625rem);
         width: 100%;
       }
 
@@ -105,11 +106,10 @@
         font-family: "DM Sans-Bold", Helvetica, sans-serif;
         font-weight: 700;
         color: #000000;
-        font-size: clamp(1.5rem, 4vw, 2rem);
+        font-size: clamp(1.25rem, 3.84vw, 2rem);
         text-align: center;
         letter-spacing: -0.06rem;
         line-height: 1.25;
-        white-space: nowrap;
       }
 
       .box .frame-wrapper {
@@ -119,8 +119,9 @@
         align-items: center;
         justify-content: center;
         gap: 0.625rem;
-        padding: 2rem 1rem;
+        padding: clamp(1rem, 43.88vw, 22.875rem) clamp(1rem, 28.42vw, 14.8125rem);
         width: 100%;
+        max-height: 1048px;
       }
 
       .box .sign-up-form-wrapper {
@@ -130,14 +131,14 @@
         max-width: 360px;
         align-items: center;
         gap: 1rem;
-        padding: 1rem;
+        margin: clamp(-1rem, -5.28vw, -2.75rem) 0;
       }
 
       .box .sign-up-form {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem;
+        gap: clamp(0.75rem, 2.88vw, 1.5rem);
         width: 100%;
       }
 
@@ -145,7 +146,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem;
+        gap: clamp(0.75rem, 2.88vw, 1.5rem);
       }
 
       .box .heading {
@@ -153,7 +154,7 @@
         flex-direction: column;
         width: 100%;
         align-items: center;
-        gap: 1rem;
+        gap: clamp(0.5rem, 1.92vw, 1rem);
       }
 
       .box .div-wrapper {
@@ -168,7 +169,7 @@
         font-family: "DM Sans-Bold", Helvetica, sans-serif;
         font-weight: 700;
         color: #000000;
-        font-size: clamp(1.5rem, 4vw, 2rem);
+        font-size: clamp(1.25rem, 3.84vw, 2rem);
         text-align: center;
         letter-spacing: -0.06rem;
         line-height: 1.25;
@@ -178,7 +179,7 @@
         font-family: "DM Sans-Regular", Helvetica, sans-serif;
         font-weight: 400;
         color: #00000099;
-        font-size: clamp(0.875rem, 2.5vw, 1rem);
+        font-size: clamp(0.75rem, 1.92vw, 1rem);
         text-align: center;
         letter-spacing: -0.01rem;
         line-height: 1.25;
@@ -188,8 +189,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
-        padding: 0 0 1rem;
+        gap: clamp(0.5rem, 1.92vw, 1rem);
+        padding: 0 0 clamp(0.5rem, 1.92vw, 1rem);
         width: 100%;
       }
 
@@ -197,15 +198,15 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.5rem;
+        gap: clamp(0.25rem, 0.96vw, 0.5rem);
         width: 100%;
       }
 
       .box .input-label {
         display: flex;
         align-items: flex-start;
-        gap: 0.5rem;
-        padding: 0 1rem;
+        gap: clamp(0.25rem, 0.96vw, 0.5rem);
+        padding: 0 clamp(0.5rem, 1.92vw, 1rem);
         width: 100%;
       }
 
@@ -213,18 +214,18 @@
         font-family: "DM Sans-Bold", Helvetica, sans-serif;
         font-weight: 700;
         color: #00000099;
-        font-size: clamp(0.75rem, 2vw, 0.8125rem);
-        line-height: 1.2;
+        font-size: clamp(0.6875rem, 1.56vw, 0.8125rem);
+        line-height: 1.23;
         flex: 1;
       }
 
       .box .inputs-text-field {
         display: flex;
         align-items: center;
-        gap: 0.25rem;
+        gap: clamp(0.125rem, 0.48vw, 0.25rem);
         width: 100%;
         background-color: #ffffff99;
-        border-radius: 1.5rem;
+        border-radius: clamp(0.75rem, 2.88vw, 1.5rem);
         border: 1px solid #0000001a;
         overflow: hidden;
       }
@@ -232,17 +233,17 @@
       .box .input-content {
         display: flex;
         flex-direction: column;
-        height: 3rem;
+        height: clamp(2rem, 5.76vw, 3rem);
         justify-content: center;
         flex: 1;
-        padding: 0 1rem;
+        padding: 0 clamp(0.5rem, 1.92vw, 1rem);
       }
 
       .box .value {
         font-family: "DM Sans-Regular", Helvetica, sans-serif;
         font-weight: 400;
         color: #000000;
-        font-size: clamp(0.875rem, 2.5vw, 1rem);
+        font-size: clamp(0.75rem, 1.92vw, 1rem);
         letter-spacing: -0.01rem;
         line-height: 1.25;
         overflow: hidden;
@@ -251,10 +252,10 @@
 
       .box .input-content-2 {
         display: flex;
-        height: 3rem;
+        height: clamp(2rem, 5.76vw, 3rem);
         align-items: center;
-        gap: 0.25rem;
-        padding: 0 1rem;
+        gap: clamp(0.125rem, 0.48vw, 0.25rem);
+        padding: 0 clamp(0.5rem, 1.92vw, 1rem);
         flex: 1;
       }
 
@@ -262,7 +263,7 @@
         font-family: "DM Sans-Regular", Helvetica, sans-serif;
         font-weight: 400;
         color: #000000;
-        font-size: clamp(0.875rem, 2.5vw, 1rem);
+        font-size: clamp(0.75rem, 1.92vw, 1rem);
         letter-spacing: -0.01rem;
         line-height: 1.25;
         overflow: hidden;
@@ -271,15 +272,15 @@
       }
 
       .box .icon {
-        width: clamp(1rem, 3vw, 1.5rem);
-        height: clamp(1rem, 3vw, 1.5rem);
+        width: clamp(0.75rem, 2.88vw, 1.5rem);
+        height: clamp(0.75rem, 2.88vw, 1.5rem);
       }
 
       .box .frame-2 {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 1rem;
+        gap: clamp(0.5rem, 3.96vw, 2.0625rem);
         justify-content: space-between;
         width: 100%;
       }
@@ -287,32 +288,32 @@
       .box .checkbox-item {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: clamp(0.25rem, 0.96vw, 0.5rem);
         width: auto;
         flex: 1;
-        min-width: 150px;
+        min-width: clamp(6rem, 24.94vw, 13rem);
       }
 
       .box .checkbox-symbol {
-        width: 1.75rem;
-        height: 1.75rem;
+        width: clamp(1rem, 3.36vw, 1.75rem);
+        height: clamp(1rem, 3.36vw, 1.75rem);
         background-color: #0000001a;
-        border-radius: 0.5rem;
+        border-radius: clamp(0.25rem, 0.96vw, 0.5rem);
         display: flex;
         align-items: center;
         justify-content: center;
       }
 
       .box .element-check {
-        width: 1.25rem;
-        height: 1.25rem;
+        width: clamp(0.75rem, 2.4vw, 1.25rem);
+        height: clamp(0.75rem, 2.4vw, 1.25rem);
       }
 
       .box .text {
         font-family: "DM Sans-Regular", Helvetica, sans-serif;
         font-weight: 400;
         color: #000000;
-        font-size: clamp(0.875rem, 2.5vw, 1rem);
+        font-size: clamp(0.75rem, 1.92vw, 1rem);
         letter-spacing: -0.01rem;
         line-height: 1.25;
         flex: 1;
@@ -320,17 +321,17 @@
 
       .box .simple-BTN {
         display: flex;
-        height: 3rem;
+        height: clamp(2rem, 5.76vw, 3rem);
         align-items: center;
         justify-content: center;
-        gap: 0.5rem;
+        gap: clamp(0.25rem, 0.96vw, 0.5rem);
       }
 
       .box .simple-button {
         font-family: "DM Sans-Medium", Helvetica, sans-serif;
         font-weight: 500;
         color: #000000;
-        font-size: clamp(0.875rem, 2.5vw, 1rem);
+        font-size: clamp(0.75rem, 1.92vw, 1rem);
         letter-spacing: -0.01rem;
         line-height: 1.25;
         text-decoration: underline;
@@ -339,14 +340,14 @@
 
       .box .standard-buttons {
         display: flex;
-        height: 3rem;
+        height: clamp(2rem, 5.76vw, 3rem);
         align-items: center;
         justify-content: center;
-        gap: 0.5rem;
-        padding: 0 2rem;
+        gap: clamp(0.25rem, 0.96vw, 0.5rem);
+        padding: 0 clamp(1rem, 3.84vw, 2rem);
         width: 100%;
         background-color: #000000;
-        border-radius: 2rem;
+        border-radius: clamp(1rem, 3.84vw, 2rem);
         border: none;
         cursor: pointer;
       }
@@ -355,33 +356,31 @@
         font-family: "DM Sans-Bold", Helvetica, sans-serif;
         font-weight: 700;
         color: #ffffff;
-        font-size: clamp(0.875rem, 2.5vw, 1rem);
+        font-size: clamp(0.75rem, 1.92vw, 1rem);
         letter-spacing: -0.01rem;
         line-height: 1.5;
         white-space: nowrap;
       }
 
       /* Media Queries for larger screens */
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 834px) {
         .box {
+          width: 834px;
+          height: 1194px;
           padding: 2rem;
         }
 
         .box .frame-wrapper {
-          padding: 4rem 2rem;
+          padding: 366px 237px;
         }
 
         .box .sign-up-form-wrapper {
           max-width: 360px;
+          margin: -44px 0;
         }
 
         .box .frame-2 {
           flex-wrap: nowrap;
-          justify-content: space-between;
-        }
-
-        .box .checkbox-item {
-          min-width: 208px;
         }
       }
     </style>
