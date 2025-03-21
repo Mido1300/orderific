@@ -12,11 +12,19 @@
             box-sizing: border-box;
         }
 
+        /* Body styles to center the container */
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0; /* Light gray background to show centering */
+        }
+
         /* Container styles */
         .container {
             width: 480px;
             height: 802px;
-            margin: 0 auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -28,7 +36,7 @@
             width: 100%;
             max-width: 480px;
             height: auto;
-            aspect-ratio: 0.6; /* Maintains the aspect ratio from original code */
+            aspect-ratio: 0.6;
             object-fit: contain;
             border-radius: 32px;
         }
@@ -45,7 +53,6 @@
 
     <script>
         // No JavaScript functionality needed for this static component
-        // Keeping the script tag for potential future enhancements
         document.addEventListener('DOMContentLoaded', () => {
             // Any initialization code could go here if needed
         });
