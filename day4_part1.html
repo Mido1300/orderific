@@ -12,7 +12,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #ffeae6; /* Background color as requested */
+            background-color: #f0f0f0; /* Background color matching the image */
         }
 
         .container {
@@ -83,11 +83,18 @@
             padding: 24px;
             background-color: white;
             border-radius: 24px;
+        }
+
+        .preparing-section {
             flex: 1;
         }
 
+        .ready-section {
+            width: 383px;
+        }
+
         @media (max-width: 768px) {
-            .order-section {
+            .ready-section {
                 width: 100%;
             }
         }
@@ -104,7 +111,6 @@
             display: grid;
             gap: 8px;
             justify-content: center;
-            width: 100%;
         }
 
         .preparing-section .orders-container {
@@ -112,7 +118,7 @@
         }
 
         .ready-section .orders-container {
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(3, 1fr);
         }
 
         @media (max-width: 768px) {
@@ -136,29 +142,23 @@
             font-family: Arial, sans-serif;
         }
 
-        .preparing-section .order-number {
-            background-color: #e5e7eb;
+        .order-number-small {
+            background-color: #e5e7eb; /* Light gray for Preparing */
             color: black;
-        }
-
-        .ready-section .order-number {
-            background-color: #16a34a; /* Green background for all layouts in Ready */
-            color: white; /* White text for numbers in Ready */
         }
 
         .order-number-large {
             width: 100%;
             height: 120px;
             font-size: 36px;
-            background-color: #16a34a;
+            background-color: #16a34a; /* Green for Ready */
             color: white;
-            grid-column: span 6; /* Span full width in Ready section */
+            grid-column: span 3;
         }
 
-        @media (max-width: 768px) {
-            .order-number-large {
-                grid-column: span 3;
-            }
+        .ready-section .order-number-small {
+            background-color: #16a34a; /* Green for Ready */
+            color: white;
         }
     </style>
 </head>
@@ -169,7 +169,7 @@
         class OrderDisplayBoard {
             constructor() {
                 this.preparingOrders = Array(18).fill("3885");
-                this.readyOrders = Array(18).fill("3885"); // Adjusted to match Preparing for full layout
+                this.readyOrders = Array(13).fill("3885");
                 this.init();
             }
 
@@ -195,7 +195,7 @@
 
             createOrderNumber(number, isReady = false, large = false) {
                 return `
-                    <div class="order-number ${large ? 'order-number-large' : ''}">
+                    <div class="order-number ${large ? 'order-number-large' : 'order-number-small'}">
                         ${number}
                     </div>
                 `;
