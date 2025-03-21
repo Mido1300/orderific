@@ -12,13 +12,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f0f0f0; /* Outer background */
+            background-color: #f0f0f0;
         }
 
         .container {
             width: 1194px;
             height: 834px;
-            background-color: #ffeae6; /* Entire layout background */
+            background-color: #ffeae6;
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -30,33 +30,33 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 24px;
+            padding: 12px 20px; /* Reduced padding */
             background-color: rgba(0, 0, 0, 0.05);
-            border-radius: 16px;
-            margin: 16px;
+            border-radius: 12px; /* Slightly smaller radius */
+            margin: 8px; /* Reduced margin */
         }
 
         .logo-container {
             display: flex;
-            gap: 12px;
+            gap: 10px; /* Reduced gap */
             align-items: center;
         }
 
         .logo {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+            width: 40px; /* Reduced size */
+            height: 40px;
+            border-radius: 10px;
         }
 
         .restaurant-name {
-            font-size: 24px;
+            font-size: 20px; /* Reduced font size */
             font-weight: 500;
             color: black;
             font-family: Arial, sans-serif;
         }
 
         .clock {
-            font-size: 36px;
+            font-size: 30px; /* Reduced font size */
             font-weight: bold;
             color: black;
             font-family: Arial, sans-serif;
@@ -64,8 +64,8 @@
 
         .content {
             display: flex;
-            gap: 16px;
-            padding: 16px;
+            gap: 12px; /* Reduced gap */
+            padding: 12px; /* Reduced padding */
             flex: 1;
         }
 
@@ -78,11 +78,11 @@
         .order-section {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px; /* Reduced gap */
             align-items: center;
-            padding: 24px;
+            padding: 16px; /* Reduced padding */
             background-color: white;
-            border-radius: 24px; /* Circular edges */
+            border-radius: 20px; /* Slightly smaller radius */
         }
 
         .preparing-section {
@@ -90,7 +90,7 @@
         }
 
         .ready-section {
-            width: 383px;
+            width: 320px; /* Reduced width */
         }
 
         @media (max-width: 768px) {
@@ -100,7 +100,7 @@
         }
 
         .section-title {
-            font-size: 36px;
+            font-size: 30px; /* Reduced font size */
             font-weight: bold;
             color: black;
             text-align: center;
@@ -109,7 +109,7 @@
 
         .orders-container {
             display: grid;
-            gap: 8px;
+            gap: 6px; /* Reduced gap */
             justify-content: center;
         }
 
@@ -129,12 +129,12 @@
         }
 
         .order-number {
-            padding: 8px 24px;
-            font-size: 24px;
+            padding: 6px 20px; /* Reduced padding */
+            font-size: 20px; /* Reduced font size */
             font-weight: bold;
-            border-radius: 16px;
-            width: 100px;
-            height: 60px;
+            border-radius: 12px; /* Slightly smaller radius */
+            width: 80px; /* Reduced width */
+            height: 48px; /* Reduced height */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -143,22 +143,22 @@
         }
 
         .order-number-small {
-            background-color: #e5e7eb; /* Light gray for Preparing */
+            background-color: #e5e7eb;
             color: black;
         }
 
         .order-number-large {
             width: 100%;
-            height: 120px;
-            font-size: 36px;
-            background-color: #16a34a; /* Green for Ready */
+            height: 100px; /* Reduced height */
+            font-size: 30px; /* Reduced font size */
+            background-color: #16a34a;
             color: white;
             grid-column: span 3;
         }
 
         .ready-section .order-number-small {
-            background-color: #16a34a; /* Green for all layouts in Ready */
-            color: white; /* White numbers in Ready */
+            background-color: #16a34a;
+            color: white;
         }
     </style>
 </head>
