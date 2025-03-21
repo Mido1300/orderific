@@ -1,169 +1,54 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction</title>
     <style>
-      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      :root {
-        --body-normal-font-family: "DM Sans", Helvetica;
-        --body-normal-font-weight: 400;
-        --body-normal-font-size: 16px;
-        --body-normal-letter-spacing: -0.16px;
-        --body-normal-line-height: 20px;
-        --body-normal-font-style: normal;
-        --colors-text-white-100: rgba(255, 255, 255, 1);
-        --colors-background-brand-orange-100: rgba(255, 86, 52, 1);
-        --spacing-spacing-8: 40px;
-        --radius-round-6: 32px;
-      }
+        /* Container styles */
+        .container {
+            width: 480px;
+            height: 802px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+        }
 
-      * {
-        -webkit-font-smoothing: antialiased;
-        box-sizing: border-box;
-      }
-
-      html,
-      body {
-        margin: 0px;
-        height: 100%;
-      }
-
-      /* a blue color as a generic focus style */
-      button:focus-visible {
-        outline: 2px solid #4a90e2 !important;
-        outline: -webkit-focus-ring-color auto 5px !important;
-      }
-
-      a {
-        text-decoration: none;
-      }
-
-      .frame {
-        display: flex;
-        height: 834px;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        position: relative;
-        width: 100%;
-        min-width: 496px;
-      }
-
-      .frame .introduction {
-        display: flex;
-        flex-direction: column;
-        width: 480px;
-        height: 802px;
-        align-items: flex-start;
-        padding: var(--spacing-spacing-8);
-        position: relative;
-        border-radius: var(--radius-round-6);
-        overflow: hidden;
-        background-image: url(Introduction@3x.png);
-        background-size: cover;
-        background-position: 50% 50%;
-      }
-
-      .frame .BG {
-        position: absolute;
-        width: 480px;
-        height: 976px;
-        top: 0;
-        left: 0;
-        background-color: var(--colors-background-brand-orange-100);
-        opacity: 0.5;
-        z-index: 1; /* Behind other elements */
-      }
-
-      .frame .div {
-        position: absolute;
-        width: 480px;
-        height: 460px;
-        top: 516px;
-        left: 0;
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0) 0%,
-          rgba(0, 0, 0, 1) 50%,
-          rgba(0, 0, 0, 1) 100%
-        );
-        opacity: 0.5;
-        z-index: 1; /* Behind other elements */
-      }
-
-      .frame .logo {
-        width: 200px;
-        height: 70px;
-        position: absolute;
-        left: 0; /* Start from the left edge */
-        top: 40px; /* Align with padding */
-        margin-left: -50px; /* Move two steps left (40px total) */
-        z-index: 2; /* Above background */
-      }
-
-      .frame .content {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* Align content to the left */
-        gap: 8px; /* Reduced gap for tighter line spacing */
-        position: absolute; /* Position at the bottom */
-        bottom: 40px; /* Align with padding */
-        left: var(--spacing-spacing-8); /* Left-aligned with padding */
-        right: 0;
-        padding: 0;
-        z-index: 2; /* Above background */
-      }
-
-      .frame .big-title {
-        position: relative;
-        font-family: "DM Sans-Bold", Helvetica;
-        font-weight: 700;
-        color: var(--colors-text-white-100);
-        font-size: 64px;
-        letter-spacing: -1.92px;
-        line-height: 56px;
-        white-space: nowrap;
-        text-align: left;
-      }
-
-      .frame .description {
-        position: relative;
-        font-family: var(--body-normal-font-family);
-        font-weight: var(--body-normal-font-weight);
-        color: var(--colors-text-white-100);
-        font-size: var(--body-normal-font-size);
-        letter-spacing: var(--body-normal-letter-spacing);
-        line-height: var(--body-normal-line-height);
-        font-style: var(--body-normal-font-style);
-        text-align: left; /* Align description to the left */
-        white-space: pre-wrap; /* Preserve line breaks and wrapping */
-      }
-
-      [data-colors-mode="dark-mode"] {
-        --colors-text-white-100: rgba(34, 34, 34, 1);
-      }
-
-      [data-colors-mode="light-mode"] {
-        --colors-text-white-100: rgba(255, 255, 255, 1);
-      }
+        /* Image styles */
+        .introduction-image {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            aspect-ratio: 0.6; /* Maintains the aspect ratio from original code */
+            object-fit: contain;
+            border-radius: 32px;
+        }
     </style>
-  </head>
-  <body>
-    <div class="frame">
-      <div class="introduction">
-        <div class="BG"></div>
-        <div class="div"></div>
-        <img class="logo" src="Type4.png" alt="Orderific Logo" style="width: 180px; height: auto; position: absolute; top: 20px; left: 60px;" />        
-        <div class="content">
-          <div class="big-title">Service Panel</div>
-          <p class="description">
-Streamline your restaurant operations with BMS.
-Manage reservations, orders, inventory, and staff
-effortlessly, and focus on delivering exceptional dining experiences.
-          </p>
-        </div>
-      </div>
+</head>
+<body>
+    <div class="container">
+        <img 
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/543ba31f5d37fe4935e5f82f5412866cb668d184?placeholderIfAbsent=true&apiKey=ecaaee82aa814d438197e676842c80d8" 
+            alt="Introduction image" 
+            class="introduction-image"
+        >
     </div>
-  </body>
+
+    <script>
+        // No JavaScript functionality needed for this static component
+        // Keeping the script tag for potential future enhancements
+        document.addEventListener('DOMContentLoaded', () => {
+            // Any initialization code could go here if needed
+        });
+    </script>
+</body>
 </html>
