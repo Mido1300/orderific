@@ -1,0 +1,405 @@
+.box {
+  width: 834px;
+  height: 1194px;
+}
+
+.box .group {
+  position: fixed;
+  width: 834px;
+  height: 1194px;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+.box .sign-in {
+  display: flex;
+  flex-direction: column;
+  width: 834px;
+  height: 1194px;
+  align-items: flex-start;
+  position: relative;
+  background: linear-gradient(
+    58deg,
+    rgba(253, 232, 228, 1) 38%,
+    rgba(236, 236, 236, 1) 87%
+  );
+}
+
+.box .frame {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.box .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px 0px 0px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.box .img {
+  position: relative;
+  width: 56px;
+  height: 56px;
+}
+
+.box .brand {
+  position: relative;
+  width: fit-content;
+  font-family: "DM Sans-Bold", Helvetica;
+  font-weight: 700;
+  color: #ff5634;
+  font-size: 24px;
+  letter-spacing: -0.48px;
+  line-height: 32px;
+  white-space: nowrap;
+}
+
+.box .headline-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.box .headline {
+  width: fit-content;
+  white-space: nowrap;
+  position: relative;
+  margin-top: -1.00px;
+  font-family: "DM Sans-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: -0.96px;
+  line-height: 40px;
+}
+
+.box .frame-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 1048px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 366px 237px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+}
+
+.box .sign-up-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+  margin-top: -44.00px;
+  margin-bottom: -44.00px;
+}
+
+.box .sign-up-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.box .heading-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.box .heading {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.box .div-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 219px;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.box .text-wrapper {
+  align-self: stretch;
+  position: relative;
+  margin-top: -1.00px;
+  font-family: "DM Sans-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: -0.96px;
+  line-height: 40px;
+}
+
+.box .description {
+  position: relative;
+  width: fit-content;
+  font-family: "DM Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #00000099;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: -0.16px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.box .div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 0px 0px 16px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.box .standard-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.box .input-label {
+  gap: 8px;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
+  padding: 0px 16px;
+  position: relative;
+}
+
+.box .label {
+  position: relative;
+  flex: 1;
+  margin-top: -1.00px;
+  font-family: "DM Sans-Bold", Helvetica;
+  font-weight: 700;
+  color: #00000099;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+
+.box .inputs-text-field {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  margin-bottom: -1.00px;
+  margin-left: -1.00px;
+  margin-right: -1.00px;
+  background-color: #ffffff99;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #0000001a;
+}
+
+.box .input-content {
+  flex-direction: column;
+  height: 48px;
+  justify-content: center;
+  flex: 1;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  padding: 0px 16px;
+  position: relative;
+}
+
+.box .value {
+  align-self: stretch;
+  position: relative;
+  font-family: "DM Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: -0.16px;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.box .input-content-2 {
+  display: flex;
+  height: 48px;
+  align-items: center;
+  gap: 4px;
+  padding: 0px 16px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.box .value-2 {
+  flex: 1;
+  position: relative;
+  font-family: "DM Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: -0.16px;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.box .icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.box .frame-2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 33px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.box .checkbox-item {
+  width: 208px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.box .checkbox-symbol {
+  width: 28px;
+  height: 28px;
+  justify-content: center;
+  background-color: #0000001a;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.box .element-check {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-top: -750.00px;
+  margin-left: -233.00px;
+}
+
+.box .text {
+  flex: 1;
+  font-family: "DM Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  line-height: 20px;
+  position: relative;
+  font-size: 16px;
+  letter-spacing: -0.16px;
+}
+
+.box .simple-BTN {
+  display: inline-flex;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.box .simple-button {
+  position: relative;
+  width: fit-content;
+  font-family: "DM Sans-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: -0.16px;
+  line-height: 20px;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.box .standard-buttons {
+  display: flex;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0px 32px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  background-color: #000000;
+  border-radius: 32px;
+}
+
+.box .text-button {
+  width: fit-content;
+  font-family: "DM Sans-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 24px;
+  white-space: nowrap;
+  position: relative;
+  font-size: 16px;
+  letter-spacing: -0.16px;
+}
