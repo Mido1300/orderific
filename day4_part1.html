@@ -12,7 +12,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f0f0f0;
+            background-color: #ffeae6; /* Background color as requested */
         }
 
         .container {
@@ -83,18 +83,11 @@
             padding: 24px;
             background-color: white;
             border-radius: 24px;
-        }
-
-        .preparing-section {
             flex: 1;
         }
 
-        .ready-section {
-            width: 383px;
-        }
-
         @media (max-width: 768px) {
-            .ready-section {
+            .order-section {
                 width: 100%;
             }
         }
@@ -111,6 +104,7 @@
             display: grid;
             gap: 8px;
             justify-content: center;
+            width: 100%;
         }
 
         .preparing-section .orders-container {
@@ -118,7 +112,7 @@
         }
 
         .ready-section .orders-container {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(6, 1fr);
         }
 
         @media (max-width: 768px) {
@@ -142,9 +136,14 @@
             font-family: Arial, sans-serif;
         }
 
-        .order-number-small {
+        .preparing-section .order-number {
             background-color: #e5e7eb;
             color: black;
+        }
+
+        .ready-section .order-number {
+            background-color: #16a34a; /* Green background for all layouts in Ready */
+            color: white; /* White text for numbers in Ready */
         }
 
         .order-number-large {
@@ -153,7 +152,13 @@
             font-size: 36px;
             background-color: #16a34a;
             color: white;
-            grid-column: span 3;
+            grid-column: span 6; /* Span full width in Ready section */
+        }
+
+        @media (max-width: 768px) {
+            .order-number-large {
+                grid-column: span 3;
+            }
         }
     </style>
 </head>
@@ -164,7 +169,7 @@
         class OrderDisplayBoard {
             constructor() {
                 this.preparingOrders = Array(18).fill("3885");
-                this.readyOrders = Array(13).fill("3885");
+                this.readyOrders = Array(18).fill("3885"); // Adjusted to match Preparing for full layout
                 this.init();
             }
 
@@ -190,7 +195,7 @@
 
             createOrderNumber(number, isReady = false, large = false) {
                 return `
-                    <div class="order-number ${large ? 'order-number-large' : 'order-number-small'}">
+                    <div class="order-number ${large ? 'order-number-large' : ''}">
                         ${number}
                     </div>
                 `;
