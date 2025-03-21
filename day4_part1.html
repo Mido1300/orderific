@@ -22,40 +22,44 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            border-radius: 24px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px;
-            background-color: rgba(0, 0, 0, 0.1);
+            padding: 16px 24px;
+            background-color: rgba(0, 0, 0, 0.05);
             border-radius: 16px;
             margin: 16px;
         }
 
         .logo-container {
             display: flex;
-            gap: 16px;
+            gap: 12px;
             align-items: center;
         }
 
         .logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 16px;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
         }
 
         .restaurant-name {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 500;
             color: black;
+            font-family: Arial, sans-serif;
         }
 
         .clock {
-            font-size: 30px;
+            font-size: 36px;
             font-weight: bold;
             color: black;
+            font-family: Arial, sans-serif;
         }
 
         .content {
@@ -74,7 +78,7 @@
         .order-section {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 16px;
             align-items: center;
             padding: 24px;
             background-color: white;
@@ -96,17 +100,32 @@
         }
 
         .section-title {
-            font-size: 30px;
+            font-size: 36px;
             font-weight: bold;
             color: black;
             text-align: center;
+            font-family: Arial, sans-serif;
         }
 
         .orders-container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
             gap: 8px;
             justify-content: center;
+        }
+
+        .preparing-section .orders-container {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        .ready-section .orders-container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 768px) {
+            .preparing-section .orders-container,
+            .ready-section .orders-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         .order-number {
@@ -114,25 +133,27 @@
             font-size: 24px;
             font-weight: bold;
             border-radius: 16px;
-            width: 106px;
-            height: 64px;
+            width: 100px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
         .order-number-small {
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: #e5e7eb;
             color: black;
         }
 
         .order-number-large {
             width: 100%;
-            height: 128px;
-            font-size: 30px;
-            background-color: #15803d;
+            height: 120px;
+            font-size: 36px;
+            background-color: #16a34a;
             color: white;
+            grid-column: span 3;
         }
     </style>
 </head>
