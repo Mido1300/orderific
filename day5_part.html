@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hashtag Card Layout - Rectangular Shadow with Circular Ends</title>
+    <title>Hashtag Card Layout - Updated Shadow</title>
     <style>
         /* Reset default margins and paddings */
         * {
@@ -24,25 +24,11 @@
 
         /* Card container styling */
         .card {
-            position: relative; /* For positioning the pseudo-element */
             background: linear-gradient(to bottom, #f5e5e2 0%, #f9e9e6 50%, #fdf1ee 100%); /* Gradient based on #f9e9e6 */
             border-radius: 15px; /* Rounded corners */
             padding: 25px; /* Padding */
             width: 300px; /* Width */
-            /* Removed the box-shadow */
-        }
-
-        /* Pseudo-element for the left-side shadow with circular ends */
-        .card::before {
-            content: '';
-            position: absolute;
-            left: -5px; /* Position it slightly outside the card on the left */
-            top: 10px; /* Start a bit below the top to avoid overlapping the rounded corner */
-            bottom: 10px; /* End a bit above the bottom */
-            width: 5px; /* Width of the rectangular bar */
-            background: #f5e5e2; /* Match the gradient's starting color for consistency */
-            border-radius: 5px; /* Circular ends on top and bottom */
-            box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2); /* Shadow on the left side of the bar */
+            box-shadow: -8px 0 15px rgba(0, 0, 0, 0.2); /* Darker and larger shadow on the left */
         }
 
         /* Hashtag styling */
