@@ -4,70 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orderific Service Panel</title>
+    <!-- Using Google Fonts for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background: linear-gradient(to bottom, #ffffff, #ffe6e6);
+            background: linear-gradient(180deg, #FFE6E2 0%, #FFFFFF 100%);
             min-height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-        }
-
-        .container {
-            text-align: center;
             padding: 20px;
-            max-width: 400px;
-            width: 100%;
         }
 
         header {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            justify-content: flex-start;
             margin-bottom: 40px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 10px;
         }
 
-        .logo-img {
-            width: 30px;
-            height: 30px;
+        .logo img {
+            width: 40px; /* Adjust based on your logo size */
             margin-right: 10px;
         }
 
-        .logo-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff6200; /* Orange color for Orderific */
-        }
-
-        header h2 {
-            font-size: 16px;
-            font-weight: bold;
+        .logo span {
+            font-size: 18px;
+            font-weight: 500;
             color: #333;
-            text-transform: uppercase;
         }
 
-        main h1 {
-            font-size: 28px;
-            font-weight: bold;
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h1 {
+            font-size: 24px;
+            font-weight: 600;
             color: #333;
             margin-bottom: 10px;
         }
 
-        main p {
+        .login-container p {
             font-size: 14px;
             color: #666;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         form {
@@ -84,22 +87,23 @@
             width: 100%;
             padding: 12px;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 14px;
             background-color: #f9f9f9;
         }
 
-        .password-group {
-            position: relative;
+        input[readonly] {
+            background-color: #f0f0f0;
+            color: #666;
         }
 
-        .eye-icon {
+        .toggle-password {
             position: absolute;
             right: 10px;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 16px;
             cursor: pointer;
+            font-size: 18px;
         }
 
         .options {
@@ -107,70 +111,81 @@
             justify-content: space-between;
             align-items: center;
             font-size: 14px;
-            margin-top: 10px;
+            color: #666;
         }
 
         .options label {
             display: flex;
             align-items: center;
-            color: #666;
+            gap: 5px;
         }
 
-        .options input[type="checkbox"] {
-            margin-right: 5px;
-        }
-
-        .login-code {
-            color: #007bff;
+        .options a {
+            color: #007BFF;
             text-decoration: none;
         }
 
+        .options a:hover {
+            text-decoration: underline;
+        }
+
         button {
-            background-color: #333;
+            background-color: #000;
             color: #fff;
             padding: 12px;
             border: none;
-            border-radius: 25px;
+            border-radius: 8px;
             font-size: 16px;
-            font-weight: bold;
+            font-weight: 500;
             cursor: pointer;
-            margin-top: 20px;
+            transition: background-color 0.3s;
         }
 
         button:hover {
-            background-color: #555;
+            background-color: #333;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <img src="orderific-logo.png" alt="Orderific Logo" class="logo-img">
-                <span class="logo-text">Orderific</span>
-            </div>
-            <h2>SERVICE PANEL</h2>
-        </header>
-        <main>
+    <header>
+        <div class="logo">
+            <!-- Placeholder for the logo -->
+            <img src="orderific-logo.png" alt="Orderific Logo">
+            <span>Service Panel</span>
+        </div>
+    </header>
+    <main>
+        <div class="login-container">
             <h1>Welcome Back</h1>
-            <p>Manage, streamline, and thrive efficiently</p>
+            <p>Manage, streamline, and thrive efficiently.</p>
             <form>
                 <div class="input-group">
                     <input type="email" value="samith@gmail.com" readonly>
                 </div>
-                <div class="input-group password-group">
-                    <input type="password" value="password123" readonly>
-                    <span class="eye-icon">👁️</span>
+                <div class="input-group">
+                    <input type="password" value="password" id="password">
+                    <span class="toggle-password">👁️</span>
                 </div>
                 <div class="options">
                     <label>
                         <input type="checkbox"> Remember me
                     </label>
-                    <a href="#" class="login-code">Login with Code</a>
+                    <a href="#">Login with Code</a>
                 </div>
                 <button type="submit">Sign In</button>
             </form>
-        </main>
-    </div>
+        </div>
+    </main>
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const togglePassword = document.querySelector('.toggle-password');
+
+        togglePassword.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            togglePassword.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
+        });
+    </script>
 </body>
 </html>
