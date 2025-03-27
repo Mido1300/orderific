@@ -1,248 +1,233 @@
-<div class="w-[1194px] h-[834px] relative">
-  <div
-    class="flex justify-start items-center w-[1194px] h-[834px] absolute left-0 top-0 overflow-hidden bg-white"
-  >
-    <svg
-      width="1194"
-      height="834"
-      viewBox="0 0 1194 834"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      class="flex-grow-0 flex-shrink-0"
-      preserveAspectRatio="none"
-    >
-      <g filter="url(#filter0_f_30_21)">
-        <ellipse
-          cx="1041.88"
-          cy="417"
-          rx="552.5"
-          ry="939.971"
-          transform="rotate(-42.4095 1041.88 417)"
-          fill="#FF5634"
-          fill-opacity="0.12"
-        ></ellipse>
-      </g>
-      <defs>
-        <filter
-          id="filter0_f_30_21"
-          x="-100.067"
-          y="-758.879"
-          width="2283.88"
-          height="2351.76"
-          filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
-        >
-          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="BackgroundImageFix"
-            result="shape"
-          ></feBlend>
-          <feGaussianBlur stdDeviation="194" result="effect1_foregroundBlur_30_21"></feGaussianBlur>
-        </filter>
-      </defs>
-    </svg>
-    <div class="flex-grow-0 flex-shrink-0"></div>
-  </div>
-  <div
-    class="flex flex-col justify-start items-center w-[1194px] h-[92px] absolute left-0 top-4 gap-2.5"
-  >
-    <div
-      class="flex justify-between items-center flex-grow-0 flex-shrink-0 w-[1162px] h-[92px] relative p-4 rounded-2xl bg-black/5"
-    >
-      <div class="flex justify-start items-center flex-grow-0 flex-shrink-0 relative gap-4">
-        <img
-          src="image-2.png"
-          class="flex-grow-0 flex-shrink-0 w-[60px] h-[60px] rounded-2xl object-cover"
-        />
-        <div
-          class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 relative gap-1"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-xl font-medium text-left text-black">
-            McDonald's
-          </p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+      :root {
+        --headline-font-family: "DM Sans", Helvetica;
+        --headline-font-weight: 500;
+        --headline-font-size: 20px;
+        --headline-letter-spacing: -0.2px;
+        --headline-line-height: 24px;
+        --title-1-font-family: "DM Sans", Helvetica;
+        --title-1-font-weight: 700;
+        --title-1-font-size: 32px;
+        --title-1-letter-spacing: -0.96px;
+        --title-1-line-height: 40px;
+        --title-2-font-family: "DM Sans", Helvetica;
+        --title-2-font-weight: 700;
+        --title-2-font-size: 24px;
+        --title-2-letter-spacing: -0.48px;
+        --title-2-line-height: 32px;
+        --spacing-spacing-2: 8px;
+        --spacing-spacing-4: 16px;
+        --spacing-spacing-6: 24px;
+        --colors-text-black-100: rgba(0, 0, 0, 1);
+        --colors-text-white-100: rgba(255, 255, 255, 1);
+        --colors-background-black-5: rgba(0, 0, 0, 0.05);
+        --colors-background-white-100: rgba(255, 255, 255, 1);
+        --colors-background-status-accepted: rgba(17, 151, 23, 1);
+        --radius-round-3: 16px;
+        --radius-round-5: 24px;
+      }
+
+      * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .component {
+        width: 1194px;
+        height: 834px;
+        position: relative;
+        background-color: var(--colors-background-white-100);
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 16px;
+        background-color: var(--colors-background-black-5);
+      }
+
+      .mcdonald-s {
+        font-family: var(--headline-font-family);
+        font-weight: var(--headline-font-weight);
+        color: var(--colors-text-black-100);
+        font-size: var(--headline-font-size);
+        letter-spacing: var(--headline-letter-spacing);
+        line-height: var(--headline-line-height);
+        white-space: nowrap;
+      }
+
+      .time {
+        font-family: var(--title-1-font-family);
+        font-weight: var(--title-1-font-weight);
+        color: var(--colors-text-black-100);
+        font-size: var(--title-1-font-size);
+        letter-spacing: var(--title-1-letter-spacing);
+        line-height: var(--title-1-line-height);
+        white-space: nowrap;
+      }
+
+      .content {
+        display: flex;
+        height: 614px;
+        align-items: flex-start;
+        gap: var(--spacing-spacing-4);
+        padding: 0 var(--spacing-spacing-4);
+      }
+
+      .section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-spacing-6);
+        padding: var(--spacing-spacing-6);
+        flex: 1;
+        background-color: var(--colors-background-white-100);
+        border-radius: var(--radius-round-5);
+        overflow: hidden;
+      }
+
+      .section-ready {
+        width: 383px;
+      }
+
+      .title {
+        font-family: var(--title-1-font-family);
+        font-weight: var(--title-1-font-weight);
+        color: var(--colors-text-black-100);
+        font-size: var(--title-1-font-size);
+        letter-spacing: var(--title-1-letter-spacing);
+        line-height: var(--title-1-line-height);
+        white-space: nowrap;
+      }
+
+      .order-grid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+        gap: var(--spacing-spacing-2);
+        width: 100%;
+      }
+
+      .order-num {
+        display: flex;
+        width: 106px;
+        height: 64px;
+        align-items: center;
+        justify-content: center;
+        padding: 8px var(--spacing-spacing-6);
+        background-color: var(--colors-background-black-5);
+        border-radius: var(--radius-round-3);
+      }
+
+      .order-num-ready {
+        background-color: var(--colors-background-status-accepted);
+      }
+
+      .order-num-large {
+        width: 334px;
+        height: 128px;
+        background-color: var(--colors-background-status-accepted);
+      }
+
+      .order-text {
+        font-family: var(--title-2-font-family);
+        font-weight: var(--title-2-font-weight);
+        color: var(--colors-text-black-100);
+        font-size: var(--title-2-font-size);
+        letter-spacing: var(--title-2-letter-spacing);
+        line-height: var(--title-2-line-height);
+        white-space: nowrap;
+      }
+
+      .order-text-ready {
+        color: var(--colors-text-white-100);
+      }
+
+      .order-text-large {
+        font-family: var(--title-1-font-family);
+        font-weight: var(--title-1-font-weight);
+        font-size: var(--title-1-font-size);
+        letter-spacing: var(--title-1-letter-spacing);
+        line-height: var(--title-1-line-height);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="component">
+        <div class="header">
+          <div class="mcdonald-s">McDonald's</div>
+          <div class="time">15:03</div>
         </div>
-      </div>
-      <p class="flex-grow-0 flex-shrink-0 text-[32px] font-bold text-left text-black">15:03</p>
-    </div>
-  </div>
-  <div
-    class="flex justify-start items-start w-[1194px] h-[694px] absolute left-0 top-[124px] gap-4 px-4"
-  >
-    <div
-      class="flex flex-col justify-start items-center flex-grow h-[694px] relative overflow-hidden gap-6 p-6 rounded-3xl bg-white"
-    >
-      <p class="flex-grow-0 flex-shrink-0 text-[32px] font-bold text-left text-black">Preparing</p>
-      <div class="flex justify-center items-start self-stretch flex-grow-0 flex-shrink-0 gap-2">
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-black/10"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-black">3885</p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-col justify-start items-center flex-grow-0 flex-shrink-0 h-[694px] w-[383px] relative overflow-hidden gap-6 p-6 rounded-3xl bg-white"
-    >
-      <p class="flex-grow-0 flex-shrink-0 text-[32px] font-bold text-left text-black">Ready</p>
-      <div class="flex justify-start items-start self-stretch flex-grow-0 flex-shrink-0 gap-2">
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[335px] h-32 relative gap-2 px-6 py-2 rounded-2xl bg-[#119717]"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-[32px] font-bold text-left text-white">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-[#119717]"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-white">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-[#119717]"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-white">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-[#119717]"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-white">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-[#119717]"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-white">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-[#119717]"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-white">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-[#119717]"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-white">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-[#119717]"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-white">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-[#119717]"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-white">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-[#119717]"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-white">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-[#119717]"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-white">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-[#119717]"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-white">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-[#119717]"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-white">3885</p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-[106px] h-16 relative gap-2 px-6 py-2 rounded-2xl bg-[#119717]"
-        >
-          <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-white">3885</p>
+        <div class="content">
+          <div class="section">
+            <div class="title">Preparing</div>
+            <div class="order-grid">
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+              <div class="order-num"><div class="order-text">3885</div></div>
+            </div>
+          </div>
+          <div class="section section-ready">
+            <div class="title">Ready</div>
+            <div class="order-grid">
+              <div class="order-num order-num-large"><div class="order-text order-text-ready order-text-large">3885</div></div>
+              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
+              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
+              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
+              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
+              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
+              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
+              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
+              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
+              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
+              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
+              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
+              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </body>
+</html>
