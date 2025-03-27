@@ -13,7 +13,7 @@
             --background-color: #fff;
             --check-color: #ff5733; /* Orange for checkmarks */
             --border-radius: 15px;
-            --spacing: 1.5rem;
+            --spacing: 1rem; /* Reduced spacing for compactness */
         }
 
         * {
@@ -41,27 +41,27 @@
         .pricing-card {
             background-color: var(--background-color);
             border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 1.5rem; /* Reduced padding */
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
             position: relative;
-            overflow: visible; /* Allows image to extend outside */
+            overflow: visible;
         }
 
         .top-image {
             position: absolute;
-            top: 0rem; /* Adjusted to move down, 1/4 inside */
-            left:  -3.3rem; /* 3/4 outside on left */
-            width: 8rem; /* Increased size */
-            height: 8rem; /* Increased size */
-            border-radius: 50%; /* Circular shape */
-            background: url('https://orderific.com/ord-website/assets/img/pricing/logo/icon7.png') no-repeat center/cover; /* Larger image */
-            border: 2px solid var(--primary-color); /* Optional border for visibility */
-            transform: translateY(-50%); /* Center vertically with top offset */
+            top: 0rem;
+            left: -3.3rem;
+            width: 8rem;
+            height: 8rem;
+            border-radius: 50%;
+            background: url('https://orderific.com/ord-website/assets/img/pricing/logo/icon7.png') no-repeat center/cover;
+            border: 2px solid var(--primary-color);
+            transform: translateY(-50%);
         }
 
         .header-group {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem; /* Reduced margin */
         }
 
         .small-image {
@@ -75,49 +75,48 @@
         }
 
         .pricing-card h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem; /* Slightly smaller */
             color: var(--text-color);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.2rem;
             display: inline-block;
             vertical-align: middle;
         }
 
         .pricing-card .price {
-            font-size: 2.25rem;
+            font-size: 2.5rem; /* Adjusted to match screenshot */
             color: var(--text-color);
-            margin-bottom: 0.5rem;
-            font-weight: bold;
+            font-weight: 700; /* Bolder for $99 */
             display: inline-block;
             vertical-align: middle;
         }
 
         .pricing-card .price span {
-            font-size: 1rem;
+            font-size: 0.9rem; /* Smaller for /month */
             color: var(--light-text-color);
-            font-weight: normal;
+            font-weight: 400; /* Lighter for /month */
             margin-left: 0.25rem;
             display: inline-block;
             vertical-align: middle;
         }
 
         .pricing-card .description {
-            font-size: 0.875rem;
+            font-size: 0.85rem; /* Slightly smaller */
             color: var(--light-text-color);
-            margin-bottom: 1.5rem;
-            line-height: 1.5;
+            margin-bottom: 1rem; /* Reduced margin */
+            line-height: 1.4;
             text-align: center;
         }
 
         .pricing-card .btn {
             background-color: var(--primary-color);
             color: #fff;
-            padding: 0.75rem 2rem;
+            padding: 0.6rem 1.8rem; /* Slightly smaller button */
             border: none;
             border-radius: 25px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             cursor: pointer;
             display: block;
-            margin: 0 auto 2rem;
+            margin: 0 auto 1.5rem; /* Reduced margin */
             text-align: center;
             text-decoration: none;
             transition: background-color 0.3s, transform 0.2s;
@@ -129,26 +128,26 @@
         }
 
         .pricing-card h3 {
-            font-size: 1.125rem;
+            font-size: 1.1rem; /* Slightly smaller */
             color: var(--text-color);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem; /* Reduced margin */
             font-weight: bold;
             text-align: left;
         }
 
         .pricing-card ul {
             list-style: none;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem; /* Reduced margin */
             text-align: left;
         }
 
         .pricing-card ul li {
-            font-size: 0.875rem;
+            font-size: 0.85rem; /* Slightly smaller */
             color: var(--light-text-color);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.6rem; /* Reduced margin */
             position: relative;
             padding-left: 1.5rem;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         .pricing-card ul li::before {
@@ -156,7 +155,7 @@
             color: var(--check-color);
             position: absolute;
             left: 0;
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             font-weight: bold;
         }
 
@@ -166,15 +165,15 @@
         }
 
         .pricing-card .features-more {
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             color: var(--light-text-color);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem; /* Reduced margin */
         }
 
         .pricing-card .ideal-section {
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             color: var(--light-text-color);
-            line-height: 1.5;
+            line-height: 1.4;
             text-align: left;
         }
 
@@ -186,56 +185,56 @@
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .pricing-container {
-                padding: 1rem;
-                max-width: 350px; /* Slightly smaller for tablets */
+                padding: 0.8rem;
+                max-width: 350px;
             }
 
             .pricing-card {
-                padding: 1.5rem;
+                padding: 1.2rem;
             }
 
             .pricing-card h2 {
-                font-size: 1.25rem;
+                font-size: 1.2rem;
             }
 
             .pricing-card .price {
-                font-size: 1.75rem;
+                font-size: 2rem;
             }
 
             .pricing-card .price span {
-                font-size: 0.875rem;
+                font-size: 0.8rem;
             }
 
             .pricing-card .description {
-                font-size: 0.75rem;
-                margin-bottom: 1rem;
+                font-size: 0.7rem;
+                margin-bottom: 0.8rem;
             }
 
             .pricing-card .btn {
-                padding: 0.5rem 1.5rem;
-                font-size: 0.9rem;
+                padding: 0.4rem 1.2rem;
+                font-size: 0.85rem;
             }
 
             .pricing-card h3 {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
 
             .pricing-card ul li {
-                font-size: 0.75rem;
+                font-size: 0.7rem;
                 padding-left: 1.25rem;
             }
 
             .pricing-card ul li::before {
-                font-size: 0.75rem;
+                font-size: 0.7rem;
             }
 
             .pricing-card .features-more {
-                font-size: 0.75rem;
-                margin-bottom: 1.5rem;
+                font-size: 0.7rem;
+                margin-bottom: 1.2rem;
             }
 
             .pricing-card .ideal-section {
-                font-size: 0.75rem;
+                font-size: 0.7rem;
             }
 
             .top-image {
@@ -247,63 +246,63 @@
 
             .small-image {
                 width: 2rem;
-                height: -2rem;
+                height: 2rem;
                 margin-right: 0.25rem;
             }
         }
 
         @media (max-width: 480px) {
             .pricing-container {
-                padding: 0.5rem;
-                max-width: 300px; /* Smaller for mobile */
+                padding: 0.4rem;
+                max-width: 300px;
             }
 
             .pricing-card {
-                padding: 1rem;
+                padding: 0.8rem;
             }
 
             .pricing-card h2 {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .pricing-card .price {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
 
             .pricing-card .price span {
-                font-size: 0.75rem;
+                font-size: 0.7rem;
             }
 
             .pricing-card .description {
-                font-size: 0.65rem;
-                margin-bottom: 0.75rem;
+                font-size: 0.6rem;
+                margin-bottom: 0.6rem;
             }
 
             .pricing-card .btn {
-                padding: 0.5rem 1.25rem;
-                font-size: 0.85rem;
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
             }
 
             .pricing-card h3 {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
             }
 
             .pricing-card ul li {
-                font-size: 0.65rem;
+                font-size: 0.6rem;
                 padding-left: 1rem;
             }
 
             .pricing-card ul li::before {
-                font-size: 0.65rem;
+                font-size: 0.6rem;
             }
 
             .pricing-card .features-more {
-                font-size: 0.65rem;
-                margin-bottom: 1rem;
+                font-size: 0.6rem;
+                margin-bottom: 0.8rem;
             }
 
             .pricing-card .ideal-section {
-                font-size: 0.65rem;
+                font-size: 0.6rem;
             }
 
             .top-image {
@@ -328,16 +327,14 @@
 
         a {
             touch-action: manipulation;
-            -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+            -webkit-tap-highlight-color: transparent;
         }
 
-        /* Ensure smooth scrolling on iOS */
         html {
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
         }
 
-        /* Fix for older browsers */
         img, a {
             border: 0;
             outline: none;
