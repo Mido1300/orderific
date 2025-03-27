@@ -1,58 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Notification</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0; /* Light background */
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Similar to iOS font */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Box Model Exercises</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-        .notification-card {
-            background-color: #f8f8f8; /* Slightly lighter card background */
-            padding: 25px 30px; /* Adjusted padding */
-            border-radius: 15px; /* Slightly larger radius */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
-            width: 320px; /* Adjusted width */
-            display: flex; /* Use flexbox for layout */
-            flex-direction: column; /* Stack items vertically */
-            justify-content: space-between; /* Distribute space between items */
-        }
+    h2 {
+      margin-top: 30px;
+      color: #333;
+    }
 
-        .notification-card h2 {
-            font-size: 28px; /* Larger font size */
-            font-weight: bold; /* Make #2001 bold */
-            margin: 0; /* Remove default margins */
-            color: #222; /* Darker text */
-        }
+    /* Task 1: Box with different border widths and colors */
+    .task1-box {
+      width: 200px;
+      height: 100px;
+      border-top: 5px solid red;
+      border-right: 3px dashed blue;
+      border-bottom: 7px dotted green;
+      border-left: 2px solid purple;
+      text-align: center;
+      line-height: 100px;
+      margin-bottom: 20px;
+    }
 
-        .notification-card p {
-            font-size: 18px; /* Slightly larger font */
-            margin: 8px 0; /* Adjusted margins */
-            color: #666; /* Medium grey text */
-        }
+    /* Task 2: Add padding to a <div> and observe changes */
+    .task2-box {
+      width: 200px;
+      height: 100px;
+      border: 2px solid black;
+      padding: 20px;
+      text-align: center;
+      line-height: 100px;
+      margin-bottom: 20px;
+    }
 
-        .order-time {
-            margin-top: 20px; /* Add space above "Ordered 14 min ago" */
-        }
-    </style>
+    /* Task 3: Adjust margins to space elements properly */
+    .task3-box1, .task3-box2 {
+      width: 200px;
+      height: 100px;
+      border: 2px solid black;
+      text-align: center;
+      line-height: 100px;
+    }
+    .task3-box1 {
+      margin-bottom: 30px; /* Space below Box 1 */
+    }
+    .task3-box2 {
+      margin-top: 20px; /* Space above Box 2 */
+      margin-bottom: 20px;
+    }
+
+    /* Task 4: Use box-sizing: border-box to control width calculations */
+    .task4-box-default, .task4-box-border {
+      width: 200px;
+      height: 100px;
+      padding: 20px;
+      border: 5px solid black;
+      text-align: center;
+      line-height: 100px;
+      margin-bottom: 20px;
+    }
+    .task4-box-border {
+      box-sizing: border-box;
+    }
+
+    /* Task 5: Create a card-like component with padding, margin, and a border */
+    .task5-card {
+      width: 300px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 20px auto; /* Center the card with margin */
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+    .task5-card h3 {
+      margin: 0 0 10px 0;
+    }
+    .task5-card p {
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
-    <div class="notification-card">
-        <div>
-            <h2>#2001</h2>
-            <p>Ralph Edwards</p>
-        </div>
-        <div class="order-time">
-            <p>Ordered<br>14 min ago</p>
-        </div>
-    </div>
+  <h1>CSS Box Model Exercises - Day 3</h1>
+
+  <!-- Task 1 -->
+  <h2>Task 1: Box with Different Borders</h2>
+  <div class="task1-box">Box with Different Borders</div>
+
+  <!-- Task 2 -->
+  <h2>Task 2: Box with Padding</h2>
+  <div class="task2-box">Box with Padding</div>
+
+  <!-- Task 3 -->
+  <h2>Task 3: Boxes with Margin Spacing</h2>
+  <div class="task3-box1">Box 1</div>
+  <div class="task3-box2">Box 2</div>
+
+  <!-- Task 4 -->
+  <h2>Task 4: Box-Sizing Comparison</h2>
+  <div class="task4-box-default">Default Box (content-box)</div>
+  <div class="task4-box-border">Border-Box</div>
+
+  <!-- Task 5 -->
+  <h2>Task 5: Card Component</h2>
+  <div class="task5-card">
+    <h3>Card Title</h3>
+    <p>This is a simple card with padding, margin, and a border.</p>
+  </div>
 </body>
 </html>
