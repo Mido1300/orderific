@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WSP Figma Design - Updated</title>
+    <title>WSP Figma Design - Left Side Shadow</title>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -31,6 +31,7 @@
         }
 
         .button {
+            position: relative; /* For positioning the pseudo-element */
             width: 60px;
             height: 40px;
             background-color: #F5F5F5; /* Light gray background */
@@ -46,16 +47,28 @@
             cursor: pointer;
         }
 
-        /* Red shadow on the left */
-        .shadow-red {
-            box-shadow: -4px 0 8px rgba(255, 0, 0, 0.5), /* Red shadow on the left */
-                        0 2px 4px rgba(0, 0, 0, 0.1); /* Retain default shadow */
+        /* Red shadow on the left using ::before */
+        .shadow-red::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px; /* Thin strip on the left */
+            height: 100%;
+            background: transparent;
+            box-shadow: -4px 0 8px rgba(255, 0, 0, 0.5); /* Red shadow to the left */
         }
 
-        /* Green shadow on the left */
-        .shadow-green {
-            box-shadow: -4px 0 8px rgba(0, 204, 0, 0.5), /* Green shadow on the left */
-                        0 2px 4px rgba(0, 0, 0, 0.1); /* Retain default shadow */
+        /* Green shadow on the left using ::before */
+        .shadow-green::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px; /* Thin strip on the left */
+            height: 100%;
+            background: transparent;
+            box-shadow: -4px 0 8px rgba(0, 204, 0, 0.5); /* Green shadow to the left */
         }
     </style>
 </head>
