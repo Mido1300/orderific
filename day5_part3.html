@@ -143,12 +143,10 @@
             outline: none;
         }
 
-        .toggle-password {
-            font-size: 24px;
+        .input-wrapper svg {
+            width: 24px;
+            height: 24px;
             color: rgba(0, 0, 0, 0.4);
-            cursor: pointer;
-            border: none;
-            background: none;
         }
 
         .form-options {
@@ -261,7 +259,7 @@
                             <label>Password</label>
                             <div class="input-wrapper">
                                 <input type="password" value="••••••••" id="passwordInput">
-                                <button type="button" class="toggle-password">👁️</button>
+                                <img src="eye.svg" alt="password icon" width="24" height="24">
                             </div>
                         </div>
                         <div class="form-options">
@@ -283,15 +281,8 @@
             const form = document.getElementById('loginForm');
             const emailInput = document.getElementById('emailInput');
             const passwordInput = document.getElementById('passwordInput');
-            const togglePassword = document.querySelector('.toggle-password');
             const checkbox = document.querySelector('.checkbox');
-            let showPassword = false;
             let rememberMe = false;
-
-            togglePassword.addEventListener('click', () => {
-                showPassword = !showPassword;
-                passwordInput.type = showPassword ? 'text' : 'password';
-            });
 
             checkbox.addEventListener('click', () => {
                 rememberMe = !rememberMe;
