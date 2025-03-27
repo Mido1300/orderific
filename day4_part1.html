@@ -24,39 +24,41 @@
             overflow: hidden;
             border-radius: 24px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 20px; /* Reduced padding */
+            padding: 10px 20px;
             background-color: rgba(0, 0, 0, 0.05);
-            border-radius: 14px; /* Slightly smaller radius */
-            margin: 8px; /* Reduced margin */
+            border-radius: 14px;
+            margin-bottom: 20px;
         }
 
         .logo-container {
             display: flex;
-            gap: 10px; /* Reduced gap */
+            gap: 10px;
             align-items: center;
         }
 
         .logo {
-            width: 40px; /* Reduced size */
+            width: 40px;
             height: 40px;
             border-radius: 10px;
         }
 
         .restaurant-name {
-            font-size: 20px; /* Reduced font size */
+            font-size: 24px;
             font-weight: 500;
             color: black;
-            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif; /* Changed to regular Arial */
         }
 
         .clock {
-            font-size: 30px; /* Reduced font size */
+            font-size: 36px;
             font-weight: bold;
             color: black;
             font-family: Arial, sans-serif;
@@ -64,8 +66,7 @@
 
         .content {
             display: flex;
-            gap: 12px; /* Reduced gap */
-            padding: 12px; /* Reduced padding */
+            gap: 20px;
             flex: 1;
         }
 
@@ -78,19 +79,22 @@
         .order-section {
             display: flex;
             flex-direction: column;
-            gap: 12px; /* Reduced gap */
+            gap: 10px;
             align-items: center;
-            padding: 16px; /* Reduced padding */
+            padding: 15px;
             background-color: white;
-            border-radius: 20px; /* Slightly smaller radius */
+            border-radius: 20px;
+            flex: 1;
+            box-sizing: border-box;
         }
 
         .preparing-section {
-            flex: 1;
+            flex: 2;
         }
 
         .ready-section {
-            width: 320px; /* Reduced width */
+            width: 390px; /* Slightly reduced width */
+            flex-shrink: 0;
         }
 
         @media (max-width: 768px) {
@@ -100,7 +104,7 @@
         }
 
         .section-title {
-            font-size: 30px; /* Reduced font size */
+            font-size: 36px;
             font-weight: bold;
             color: black;
             text-align: center;
@@ -109,7 +113,7 @@
 
         .orders-container {
             display: grid;
-            gap: 6px; /* Reduced gap */
+            gap: 8px;
             justify-content: center;
         }
 
@@ -129,12 +133,12 @@
         }
 
         .order-number {
-            padding: 6px 20px; /* Reduced padding */
-            font-size: 20px; /* Reduced font size */
+            padding: 8px 20px;
+            font-size: 24px;
             font-weight: bold;
-            border-radius: 12px; /* Slightly smaller radius */
-            width: 80px; /* Reduced width */
-            height: 48px; /* Reduced height */
+            border-radius: 12px;
+            width: 105px; /* Slightly reduced width */
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -149,8 +153,8 @@
 
         .order-number-large {
             width: 100%;
-            height: 100px; /* Reduced height */
-            font-size: 30px; /* Reduced font size */
+            height: 120px;
+            font-size: 36px;
             background-color: #119717;
             color: white;
             grid-column: span 3;
@@ -226,9 +230,7 @@
                 app.innerHTML = `
                     <header class="header">
                         <div class="logo-container">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9f9314bf84704a7e717f329bfc8fbb8a4e909980" 
-                                 alt="McDonald's logo" 
-                                 class="logo">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9f9314bf84704a7e717f329bfc8fbb8a4e909980" alt="McDonald's logo" class="logo">
                             <h1 class="restaurant-name">McDonald's</h1>
                         </div>
                         <time class="clock"></time>
