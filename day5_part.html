@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Introduction & Login</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -14,97 +14,40 @@
         }
 
         body {
-            background: #FFFFFF;
+            background: #f0f0f0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            padding: 20px;
         }
 
         .container {
-            width: 834px;
-            height: 1194px;
-            background: linear-gradient(to bottom, #fde8e4 0%, #ebebeb 20%, #fde8e4 40%, #fde8e4 60%, #f7eae7 80%, #fde8e4 100%);
-            display: flex;
-            flex-direction: column;
-            border-radius: 0;
-        }
-
-        main {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-        }
-
-        header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 24px;
-        }
-
-        .logo-container {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-
-        .logo-icon {
-            width: 56px;
-            height: 56px;
-        }
-
-        h1 {
-            padding: 10px;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 40px;
+            width: 480px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
-            color: #000000;
         }
 
-        h2 {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-            line-height: 32px;
-            color: #FF5634;
-        }
-
-        section {
-            display: flex;
-            flex: 1;
-            justify-content: center;
-            align-items: center;
-            padding: 24px;
+        .introduction-image {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            border-radius: 16px;
         }
 
         .form-container {
-            width: 360px;
-        }
-
-        .form-header {
-            margin-bottom: 24px;
-            text-align: center;
+            margin-top: 20px;
+            text-align: left;
         }
 
         .form-header h2 {
-            margin-bottom: 16px;
-            font-size: 30px;
+            text-align: center;
+            font-size: 24px;
             font-weight: 700;
-            color: #000000;
-            line-height: 40px;
-            letter-spacing: -0.02em;
-        }
-
-        .form-header p {
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 20px;
-            color: rgba(0, 0, 0, 0.6);
+            margin-bottom: 10px;
         }
 
         .input-container {
@@ -113,198 +56,68 @@
 
         .input-container label {
             display: block;
-            padding: 0 16px;
-            margin-bottom: 8px;
-            font-size: 14px;
+            margin-bottom: 5px;
             font-weight: 700;
-            line-height: 16px;
             color: rgba(0, 0, 0, 0.6);
         }
 
         .input-wrapper {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 0 16px;
-            height: 48px;
-            border-radius: 24px;
+            padding: 10px;
+            border-radius: 8px;
             border: 1px solid rgba(0, 0, 0, 0.1);
             background: rgba(255, 255, 255, 0.6);
         }
 
         .input-wrapper input {
             width: 100%;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 20px;
-            color: #000000;
             border: none;
-            background: transparent;
             outline: none;
-        }
-
-        .toggle-password {
-            font-size: 24px;
-            color: rgba(0, 0, 0, 0.4);
-            cursor: pointer;
-            border: none;
-            background: none;
-        }
-
-        .form-options {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
-        }
-
-        .remember-me {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-
-        .checkbox {
-            width: 28px;
-            height: 28px;
-            border-radius: 8px;
-            background: rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-        }
-
-        .checkbox.active {
-            background: #000000;
-        }
-
-        .remember-me span {
             font-size: 16px;
-            font-weight: 500;
-            line-height: 20px;
-            color: #000000;
-        }
-
-        .login-code {
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 20px;
-            color: #000000;
-            text-decoration: underline;
-            background: none;
-            border: none;
-            cursor: pointer;
+            background: transparent;
         }
 
         .btn {
-            height: 48px;
-            font-size: 16px;
-            font-weight: 700;
-            line-height: 24px;
-            cursor: pointer;
-            border: none;
-            border-radius: 32px;
             width: 100%;
-            color: #ffffff;
-            background: #000000;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background: #000;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
         }
 
-        @media (max-width: 640px) {
-            .container {
-                width: 100%;
-                height: auto;
-                min-height: 834px;
-            }
-
-            .form-container {
-                width: 90%;
-                max-width: 360px;
-            }
-
-            .form-options {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 16px;
-            }
-
-            .login-code {
-                margin-left: 36px;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <main>
-            <header>
-                <div class="logo-container">
-                    <svg width="57" height="56" viewBox="0 0 57 56" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
-                        <path d="M35.1317 12.1762C34.6284 11.0977 34.5325 10.0432 34.9879 9.01265C35.2755 8.34159 35.7548 7.81434 36.4019 7.45484C37.6242 6.73586 39.2299 6.87966 40.3084 7.79037C41.5786 8.86885 41.8183 10.2349 41.0513 12.32C41.4588 12.4158 41.8422 12.4877 42.2496 12.5596C49.056 14.0695 54.2088 19.39 55.3831 26.2204C55.9823 29.6715 55.5269 33.0028 54.065 36.1903C53.8732 36.5977 53.6576 36.7894 53.1782 36.7655C51.0452 36.7415 48.9362 36.7415 46.8032 36.7415C46.6355 36.7415 46.4917 36.7415 46.2041 36.7415C48.7205 34.1052 49.823 31.0615 49.3436 27.5625C48.9602 24.7824 47.642 22.5056 45.4611 20.7321C41.2431 17.3049 35.3234 17.5446 31.2492 21.3552C27.5823 24.7584 26.2163 31.6607 31.1293 36.7415C30.9376 36.7415 30.7698 36.7655 30.6261 36.7655C22.3338 36.7655 14.0654 36.7655 5.77312 36.7655C4.21531 36.7655 3.01701 35.9746 2.58561 34.6325C1.93853 32.6193 3.4484 30.5822 5.62932 30.5822C10.3507 30.5822 15.048 30.5822 19.7694 30.5822C20.0809 30.5822 20.4165 30.5822 20.7041 30.4863C21.3991 30.2946 21.8544 29.5756 21.7586 28.8806C21.6627 28.1616 21.0875 27.6104 20.3446 27.5625C20.009 27.5385 19.6735 27.5625 19.338 27.5625C14.7604 27.5625 10.1829 27.5625 5.60535 27.5625C3.87979 27.5625 2.51372 26.3402 2.44182 24.7105C2.34595 22.961 3.5203 21.6189 5.26983 21.4271C5.58139 21.4032 5.89295 21.3792 6.20451 21.3792C11.6688 21.3792 17.1331 21.3792 22.5734 21.3792C23.7478 21.3792 24.4907 20.3966 24.1072 19.3421C23.8676 18.7189 23.3164 18.3355 22.5494 18.3355C21.0156 18.3355 19.4578 18.3355 17.924 18.3355C16.2943 18.3355 14.9761 17.233 14.7844 15.7232C14.5927 14.0455 15.5753 12.6555 17.229 12.272C17.4926 12.2001 17.7802 12.2001 18.0678 12.2001C23.5081 12.2001 28.9484 12.2001 34.3887 12.2001C34.6284 12.1762 34.8201 12.1762 35.1317 12.1762Z" fill="#FF5634"/>
-                        <path d="M51.7402 39.8098C51.3328 40.2652 51.0213 40.6247 50.6857 40.9602C47.3065 44.2915 43.2323 45.9691 38.463 45.9691C31.6806 45.9691 24.8981 45.9691 18.0917 45.9691C16.3662 45.9691 15.2158 45.1303 14.8323 43.6204C14.353 41.7511 15.7191 39.9057 17.6364 39.8098C17.8521 39.8098 18.0678 39.7858 18.2835 39.7858C29.1881 39.7858 40.0927 39.7858 50.9973 39.7858C51.213 39.8098 51.4047 39.8098 51.7402 39.8098Z" fill="#FF5634"/>
-                    </svg>
-                    <h2>Orderific</h2>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/543ba31f5d37fe4935e5f82f5412866cb668d184?placeholderIfAbsent=true&apiKey=ecaaee82aa814d438197e676842c80d8" alt="Introduction image" class="introduction-image">
+        
+        <div class="form-container">
+            <form id="loginForm">
+                <div class="form-header">
+                    <h2>Welcome Back</h2>
+                    <p>Manage, streamline, and thrive effortlessly.</p>
                 </div>
-                <h1>Service Panel</h1>
-            </header>
-            <section>
-                <div class="form-container">
-                    <form id="loginForm">
-                        <div class="form-header">
-                            <h2>Welcome Back</h2>
-                            <p>Manage, streamline, and thrive effortlessly.</p>
-                        </div>
-                        <div class="input-container">
-                            <label>Email</label>
-                            <div class="input-wrapper">
-                                <input type="email" value="samsmith@gmail.com" id="emailInput">
-                            </div>
-                        </div>
-                        <div class="input-container">
-                            <label>Password</label>
-                            <div class="input-wrapper">
-                                <input type="password" value="••••••••" id="passwordInput">
-                                <button type="button" class="toggle-password">👁️</button>
-                            </div>
-                        </div>
-                        <div class="form-options">
-                            <div class="remember-me">
-                                <div class="checkbox"></div>
-                                <span>Remember me</span>
-                            </div>
-                            <button type="button" class="login-code">Login with Code</button>
-                        </div>
-                        <button type="submit" class="btn">Sign In</button>
-                    </form>
+                <div class="input-container">
+                    <label>Email</label>
+                    <div class="input-wrapper">
+                        <input type="email" value="samsmith@gmail.com" id="emailInput">
+                    </div>
                 </div>
-            </section>
-        </main>
+                <div class="input-container">
+                    <label>Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" value="••••••••" id="passwordInput">
+                    </div>
+                </div>
+                <button type="submit" class="btn">Sign In</button>
+            </form>
+        </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('loginForm');
-            const emailInput = document.getElementById('emailInput');
-            const passwordInput = document.getElementById('passwordInput');
-            const togglePassword = document.querySelector('.toggle-password');
-            const checkbox = document.querySelector('.checkbox');
-            let showPassword = false;
-            let rememberMe = false;
-
-            togglePassword.addEventListener('click', () => {
-                showPassword = !showPassword;
-                passwordInput.type = showPassword ? 'text' : 'password';
-            });
-
-            checkbox.addEventListener('click', () => {
-                rememberMe = !rememberMe;
-                checkbox.classList.toggle('active');
-            });
-
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const email = emailInput.value;
-                const password = passwordInput.value;
-                console.log('Form submitted:', { email, password, rememberMe });
-            });
-        });
-    </script>
 </body>
 </html>
