@@ -20,7 +20,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #000000;
+            background: #ffffff; /* Changed to white */
         }
 
         /* Main container for split layout */
@@ -28,7 +28,7 @@
             width: 1194px; /* 496px (left) + 698px (right) */
             height: 834px; /* Fixed height for both sections */
             display: flex;
-            background: #fff;
+            background: #ffffff; /* Changed to white */
             border-radius: 32px;
             overflow: hidden;
         }
@@ -38,7 +38,7 @@
             width: 496px; /* Fixed width */
             height: 834px; /* Fixed height */
             position: relative;
-            background: linear-gradient(to bottom, #fde8e4 0%, #ebebeb 20%, #fde8e4 40%, #fde8e4 60%, #f7eae7 80%, #fde8e4 100%);
+            background: #ffffff; /* Changed to white */
         }
 
         .introduction-image {
@@ -55,7 +55,7 @@
             justify-content: center;
             align-items: center;
             padding: 267px 169px; /* Top 267px, Right 169px, Bottom 267px, Left 169px */
-            background: linear-gradient(to bottom, #fde8e4 0%, #ebebeb 20%, #fde8e4 40%, #fde8e4 60%, #f7eae7 80%, #fde8e4 100%); /* Applied gradient */
+            background: #ffffff; /* Changed to white */
         }
 
         .form-container {
@@ -132,9 +132,9 @@
         }
 
         .toggle-password img {
-            width: 24px; /* Match the previous font-size of the emoji */
+            width: 24px;
             height: 24px;
-            opacity: 0.4; /* Match the previous color opacity */
+            opacity: 0.4;
         }
 
         .form-options {
@@ -189,8 +189,8 @@
             border: none;
             border-radius: 32px;
             width: 100%;
-            color: #000000;
-            background: #f0f0f0;
+            color: #ffffff; /* Changed to white */
+            background: #000000; /* Changed to black */
         }
 
         @media (max-width: 640px) {
@@ -248,13 +248,13 @@
                     <div class="input-container">
                         <label>Email</label>
                         <div class="input-wrapper">
-                            <input type="email" placeholder="Enter email address" id="emailInput">
+                            <input type="email" value="samsmith@gmail.com" id="emailInput">
                         </div>
                     </div>
                     <div class="input-container">
                         <label>Password</label>
                         <div class="input-wrapper">
-                            <input type="password" placeholder="Password" id="passwordInput">
+                            <input type="password" value="********" id="passwordInput">
                             <button type="button" class="toggle-password">
                                 <img src="eye.svg" alt="Toggle password visibility">
                             </button>
