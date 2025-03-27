@@ -13,7 +13,7 @@
             --background-color: #fff;
             --check-color: #ff5733; /* Orange for checkmarks */
             --border-radius: 15px;
-            --spacing: 1rem; /* Reduced spacing for compactness */
+            --spacing: 1rem;
         }
 
         * {
@@ -33,7 +33,7 @@
         }
 
         .pricing-container {
-            max-width: 400px;
+            max-width: 480px; /* Increased width from 400px to 480px */
             width: 100%;
             position: relative;
         }
@@ -41,7 +41,7 @@
         .pricing-card {
             background-color: var(--background-color);
             border-radius: var(--border-radius);
-            padding: 1.5rem; /* Reduced padding */
+            padding: 1.5rem;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
             position: relative;
@@ -51,7 +51,7 @@
         .top-image {
             position: absolute;
             top: 0rem;
-            left: -3.3rem;
+            left: -3.3rem; /* Kept the same, as we're expanding to the right */
             width: 8rem;
             height: 8rem;
             border-radius: 50%;
@@ -61,7 +61,7 @@
         }
 
         .header-group {
-            margin-bottom: 0.3rem; /* Reduced margin */
+            margin-bottom: 0.3rem;
         }
 
         .small-image {
@@ -75,7 +75,7 @@
         }
 
         .pricing-card h2 {
-            font-size: 1.4rem; /* Slightly smaller */
+            font-size: 1.4rem;
             color: var(--text-color);
             margin-bottom: 0.2rem;
             display: inline-block;
@@ -83,26 +83,26 @@
         }
 
         .pricing-card .price {
-            font-size: 2.5rem; /* Adjusted to match screenshot */
+            font-size: 2.5rem;
             color: var(--text-color);
-            font-weight: 700; /* Bolder for $99 */
+            font-weight: 700;
             display: inline-block;
             vertical-align: middle;
         }
 
         .pricing-card .price span {
-            font-size: 0.9rem; /* Smaller for /month */
+            font-size: 0.9rem;
             color: var(--light-text-color);
-            font-weight: 400; /* Lighter for /month */
+            font-weight: 700; /* Made /month bold */
             margin-left: 0.25rem;
             display: inline-block;
             vertical-align: middle;
         }
 
         .pricing-card .description {
-            font-size: 0.85rem; /* Slightly smaller */
+            font-size: 0.85rem;
             color: var(--light-text-color);
-            margin-bottom: 1rem; /* Reduced margin */
+            margin-bottom: 1rem;
             line-height: 1.4;
             text-align: center;
         }
@@ -110,13 +110,13 @@
         .pricing-card .btn {
             background-color: var(--primary-color);
             color: #fff;
-            padding: 0.6rem 1.8rem; /* Slightly smaller button */
+            padding: 0.6rem 1.8rem;
             border: none;
             border-radius: 25px;
             font-size: 0.95rem;
             cursor: pointer;
             display: block;
-            margin: 0 auto 1.5rem; /* Reduced margin */
+            margin: 0 auto 1.5rem;
             text-align: center;
             text-decoration: none;
             transition: background-color 0.3s, transform 0.2s;
@@ -128,23 +128,23 @@
         }
 
         .pricing-card h3 {
-            font-size: 1.1rem; /* Slightly smaller */
+            font-size: 1.1rem;
             color: var(--text-color);
-            margin-bottom: 0.8rem; /* Reduced margin */
+            margin-bottom: 0.8rem;
             font-weight: bold;
             text-align: left;
         }
 
         .pricing-card ul {
             list-style: none;
-            margin-bottom: 1.5rem; /* Reduced margin */
+            margin-bottom: 1.5rem;
             text-align: left;
         }
 
         .pricing-card ul li {
-            font-size: 0.85rem; /* Slightly smaller */
+            font-size: 0.85rem;
             color: var(--light-text-color);
-            margin-bottom: 0.6rem; /* Reduced margin */
+            margin-bottom: 0.6rem;
             position: relative;
             padding-left: 1.5rem;
             line-height: 1.4;
@@ -167,7 +167,7 @@
         .pricing-card .features-more {
             font-size: 0.85rem;
             color: var(--light-text-color);
-            margin-bottom: 1.5rem; /* Reduced margin */
+            margin-bottom: 1.5rem;
         }
 
         .pricing-card .ideal-section {
@@ -186,7 +186,7 @@
         @media (max-width: 768px) {
             .pricing-container {
                 padding: 0.8rem;
-                max-width: 350px;
+                max-width: 420px; /* Adjusted for wider container */
             }
 
             .pricing-card {
@@ -254,7 +254,7 @@
         @media (max-width: 480px) {
             .pricing-container {
                 padding: 0.4rem;
-                max-width: 300px;
+                max-width: 360px; /* Adjusted for wider container */
             }
 
             .pricing-card {
