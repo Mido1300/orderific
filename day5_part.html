@@ -25,8 +25,8 @@
 
         /* Main container for split layout */
         .container {
-            width: 1194px; /* 496px (left) + 698px (right) */
-            height: 834px; /* Fixed height for both sections */
+            width: 1244px; /* 546px (left) + 698px (right) */
+            height: 918px; /* Updated to match new left section height */
             display: flex;
             background: #ffffff; /* Changed to white */
             border-radius: 32px;
@@ -35,10 +35,10 @@
 
         /* Left side (Image only) */
         .left-section {
-            width: 496px; /* Fixed width */
-            height: 834px; /* Fixed height */
+            width: 546px; /* Increased from 496px */
+            height: 918px; /* Increased from 834px */
             position: relative;
-            background: #ffffff; /* Changed to white */
+            background: linear-gradient(to bottom, #fde8e4 0%, #ebebeb 20%, #fde8e4 40%, #fde8e4 60%, #f7eae7 80%, #fde8e4 100%); /* Applied gradient */
         }
 
         .introduction-image {
@@ -50,12 +50,12 @@
         /* Right side (Login Form) */
         .right-section {
             width: 698px; /* Fixed width */
-            height: 834px; /* Fixed height */
+            height: 918px; /* Updated to match new container height */
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 267px 169px; /* Top 267px, Right 169px, Bottom 267px, Left 169px */
-            background: linear-gradient(to bottom, #fde8e4 0%, #ebebeb 20%, #fde8e4 40%, #fde8e4 60%, #f7eae7 80%, #fde8e4 100%); /* Applied extracted gradient */
+            background: linear-gradient(to bottom, #fde8e4 0%, #ebebeb 20%, #fde8e4 40%, #fde8e4 60%, #f7eae7 80%, #fde8e4 100%); /* Existing gradient */
         }
 
         .form-container {
