@@ -3,70 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hashtag Card Layout - Updated Shadow</title>
+    <title>Popup Example</title>
     <style>
-        /* Reset default margins and paddings */
+        /* Reset default styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
-        /* Body styling for centering the card */
+        /* Body styling to center the button */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0; /* Light gray background for contrast */
-            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
         }
 
-        /* Card container styling */
-        .card {
-            background: linear-gradient(to bottom, #f5e5e2 0%, #f9e9e6 50%, #fdf1ee 100%); /* Gradient based on #f9e9e6 */
-            border-radius: 15px; /* Rounded corners */
-            padding: 25px; /* Padding */
-            width: 300px; /* Width */
-            box-shadow: -8px 0 15px rgba(0, 0, 0, 0.2); /* Darker and larger shadow on the left */
+        /* Style for the "CLICK HERE" button */
+        .click-btn {
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.1s ease;
         }
 
-        /* Hashtag styling */
-        .hashtag {
-            font-size: 24px; /* Font size */
-            font-weight: bold; /* Bold */
-            color: #000;
-            margin-bottom: 8px; /* Spacing */
+        .click-btn:hover {
+            transform: scale(1.05);
         }
 
-        /* Name styling */
-        .name {
-            font-size: 18px; /* Font size */
+        .click-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Popup container */
+        .popup {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: left;
+        }
+
+        /* Popup header */
+        .popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .popup-header h2 {
+            font-size: 18px;
+            font-weight: bold;
             color: #333;
-            margin-bottom: 20px; /* Spacing between Ralph Edwards and Order */
         }
 
-        /* Label (Order) styling */
-        .label {
-            font-size: 18px; /* Font size */
-            color: #000;
-            margin-bottom: 8px; /* Spacing */
-            /* Not bold as per previous request */
+        .popup-header .close-btn {
+            font-size: 24px;
+            font-weight: bold;
+            color: #999;
+            cursor: pointer;
         }
 
-        /* Timestamp styling */
-        .timestamp {
-            font-size: 16px; /* Font size */
+        .popup-header .close-btn:hover {
+            color: #333;
+        }
+
+        /* Popup content */
+        .popup-content p {
+            font-size: 14px;
             color: #666;
+            margin-bottom: 10px;
+        }
+
+        .item-details {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .item-options {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Cancel button */
+        .cancel-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.1s ease;
+        }
+
+        .cancel-btn:hover {
+            transform: scale(1.02);
+        }
+
+        .cancel-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Show popup when active */
+        .popup.active {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="hashtag">#2001</div>
-        <div class="name">Ralph Edwards</div>
-        <div class="label">Order</div>
-        <div class="timestamp">14 min ago</div>
+    <!-- "CLICK HERE" Button -->
+    <button class="click-btn" onclick="showPopup()">CLICK HERE</button>
+
+    <!-- Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-header">
+            <h2>Cancel Item</h2>
+            <span class="close-btn" onclick="hidePopup()">×</span>
+        </div>
+        <div class="popup-content">
+            <p>Are you sure to cancel this item?</p>
+            <p class="item-details">Tasty Burger</p>
+            <p class="item-options">Size: Small, Cheese: A little bit, Salt: No</p>
+        </div>
+        <button class="cancel-btn" onclick="hidePopup()">CANCEL ITEM</button>
     </div>
+
+    <script>
+        // JavaScript to show and hide the popup
+        function showPopup() {
+            document.getElementById('popup').classList.add('active');
+        }
+
+        function hidePopup() {
+            document.getElementById('popup').classList.remove('active');
+        }
+    </script>
 </body>
 </html>
