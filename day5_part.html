@@ -3,184 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popup with Rectangular Frames</title>
+    <title>WSP Figma Design</title>
     <style>
-        /* Reset default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Body styling to center the button */
         body {
+            font-family: 'Roboto', sans-serif; /* Using Roboto as it looks similar */
+            background-color: #fff;
+            margin: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Space between buttons */
+            max-width: 700px; /* Approximate width to match the screenshot */
+        }
+
+        .button {
+            width: 60px;
+            height: 40px;
+            background-color: #F5F5F5; /* Light gray background */
+            border-radius: 8px; /* Rounded corners */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-
-        /* Style for the "CLICK HERE" button container */
-        .click-btn-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-            padding: 15px 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.1s ease;
-        }
-
-        .click-btn-container:hover {
-            transform: scale(1.05);
-        }
-
-        .click-btn-container:active {
-            transform: scale(0.95);
-        }
-
-        /* Style for the "CLICK HERE" button */
-        .click-btn {
-            background: none;
-            border: none;
-            font-size: 16px;
-            font-weight: bold;
-            color: #007bff;
-            cursor: pointer;
-        }
-
-        /* Popup container */
-        .popup {
-            display: none; /* Hidden by default */
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            width: 300px;
-            text-align: left;
-        }
-
-        /* Popup header */
-        .popup-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .popup-header h2 {
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .popup-header .close-btn {
-            font-size: 24px;
-            font-weight: bold;
-            color: #999;
-            cursor: pointer;
-        }
-
-        .popup-header .close-btn:hover {
-            color: #333;
-        }
-
-        /* Popup content */
-        .popup-content p {
             font-size: 14px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        /* Rectangular frame for item details */
-        .item-frame {
-            background-color: white;
-            padding: 10px 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
-        }
-
-        .item-details {
-            font-size: 16px;
             font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
-        }
-
-        .item-options {
-            font-size: 14px;
-            color: #666;
-        }
-
-        /* Cancel button */
-        .cancel-btn {
-            width: 100%;
-            padding: 12px;
-            background-color: #ff4d4d;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: bold;
+            color: #333; /* Dark text color */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            border: 2px solid transparent; /* Default border (transparent) */
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.1s ease;
         }
 
-        .cancel-btn:hover {
-            transform: scale(1.02);
+        /* Red border class */
+        .border-red {
+            border: 2px solid #FF0000;
         }
 
-        .cancel-btn:active {
-            transform: scale(0.98);
-        }
-
-        /* Show popup when active */
-        .popup.active {
-            display: block;
+        /* Green border class */
+        .border-green {
+            border: 2px solid #00CC00; /* Slightly darker green */
         }
     </style>
 </head>
 <body>
-    <!-- "CLICK HERE" Button in a rectangular frame -->
-    <div class="click-btn-container">
-        <button class="click-btn" onclick="showPopup()">CLICK HERE</button>
+    <div class="container">
+        <!-- Row 1 -->
+        <div class="button border-red">A1</div>
+        <div class="button border-red">A2</div>
+        <div class="button border-red">A3</div>
+        <div class="button">A4</div>
+        <div class="button border-green">A5</div>
+        <div class="button border-green">A6</div>
+        <div class="button border-green">B1</div>
+        <div class="button border-green">B2</div>
+        <div class="button border-green">B3</div>
+        <div class="button">B4</div>
+
+        <!-- Row 2 -->
+        <div class="button border-red">B5</div>
+        <div class="button border-red">B6</div>
+        <div class="button border-green">C1</div>
+        <div class="button border-green">C2</div>
+        <div class="button border-green">C3</div>
+        <div class="button">C4</div>
+        <div class="button">C5</div>
+        <div class="button border-green">C6</div>
+        <div class="button border-green">C7</div>
+        <div class="button">D1</div>
     </div>
-
-    <!-- Popup -->
-    <div class="popup" id="popup">
-        <div class="popup-header">
-            <h2>Cancel Item</h2>
-            <span class="close-btn" onclick="hidePopup()">×</span>
-        </div>
-        <div class="popup-content">
-            <p>Are you sure to cancel this item?</p>
-            <!-- Rectangular frame for item details -->
-            <div class="item-frame">
-                <p class="item-details">Tasty Burger</p>
-                <p class="item-options">Size: Small, Cheese: A little bit, Salt: No</p>
-            </div>
-        </div>
-        <button class="cancel-btn" onclick="hidePopup()">CANCEL ITEM</button>
-    </div>
-
-    <script>
-        // JavaScript to show and hide the popup
-        function showPopup() {
-            document.getElementById('popup').classList.add('active');
-        }
-
-        function hidePopup() {
-            document.getElementById('popup').classList.remove('active');
-        }
-    </script>
 </body>
 </html>
