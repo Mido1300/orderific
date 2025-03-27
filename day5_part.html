@@ -3,19 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WSP Figma Design</title>
+    <title>WSP Figma Design - Updated</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif; /* Using Roboto as it looks similar */
+            font-family: 'Roboto', sans-serif;
             background-color: #fff;
-            margin: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Center the frame vertically */
+        }
+
+        .frame {
+            background: linear-gradient(to bottom, #fde8e4 0%, #ebebeb 20%, #fde8e4 40%, #fde8e4 60%, #f7eae7 80%, #fde8e4 100%);
+            padding: 20px; /* Space inside the frame */
+            border: 2px solid #ccc; /* Frame border */
+            border-radius: 10px; /* Slightly rounded frame corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Frame shadow */
         }
 
         .container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(10, 60px); /* 10 columns, each 60px wide */
+            grid-template-rows: repeat(2, 40px); /* 2 rows, each 40px tall */
             gap: 10px; /* Space between buttons */
-            max-width: 700px; /* Approximate width to match the screenshot */
         }
 
         .button {
@@ -29,47 +41,51 @@
             font-size: 14px;
             font-weight: bold;
             color: #333; /* Dark text color */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            border: 2px solid transparent; /* Default border (transparent) */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Default subtle shadow */
+            border: none; /* No border */
             cursor: pointer;
         }
 
-        /* Red border class */
-        .border-red {
-            border: 2px solid #FF0000;
+        /* Red shadow on the left */
+        .shadow-red {
+            box-shadow: -4px 0 8px rgba(255, 0, 0, 0.5), /* Red shadow on the left */
+                        0 2px 4px rgba(0, 0, 0, 0.1); /* Retain default shadow */
         }
 
-        /* Green border class */
-        .border-green {
-            border: 2px solid #00CC00; /* Slightly darker green */
+        /* Green shadow on the left */
+        .shadow-green {
+            box-shadow: -4px 0 8px rgba(0, 204, 0, 0.5), /* Green shadow on the left */
+                        0 2px 4px rgba(0, 0, 0, 0.1); /* Retain default shadow */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Row 1 -->
-        <div class="button border-red">A1</div>
-        <div class="button border-red">A2</div>
-        <div class="button border-red">A3</div>
-        <div class="button">A4</div>
-        <div class="button border-green">A5</div>
-        <div class="button border-green">A6</div>
-        <div class="button border-green">B1</div>
-        <div class="button border-green">B2</div>
-        <div class="button border-green">B3</div>
-        <div class="button">B4</div>
+    <div class="frame">
+        <div class="container">
+            <!-- Row 1 -->
+            <div class="button shadow-red">A1</div>
+            <div class="button shadow-red">A2</div>
+            <div class="button shadow-red">A3</div>
+            <div class="button">A4</div>
+            <div class="button shadow-green">A5</div>
+            <div class="button shadow-green">A6</div>
+            <div class="button shadow-green">B1</div>
+            <div class="button shadow-green">B2</div>
+            <div class="button shadow-green">B3</div>
+            <div class="button">B4</div>
 
-        <!-- Row 2 -->
-        <div class="button border-red">B5</div>
-        <div class="button border-red">B6</div>
-        <div class="button border-green">C1</div>
-        <div class="button border-green">C2</div>
-        <div class="button border-green">C3</div>
-        <div class="button">C4</div>
-        <div class="button">C5</div>
-        <div class="button border-green">C6</div>
-        <div class="button border-green">C7</div>
-        <div class="button">D1</div>
+            <!-- Row 2 -->
+            <div class="button shadow-red">B5</div>
+            <div class="button shadow-red">B6</div>
+            <div class="button shadow-green">C1</div>
+            <div class="button shadow-green">C2</div>
+            <div class="button shadow-green">C3</div>
+            <div class="button">C4</div>
+            <div class="button">C5</div>
+            <div class="button shadow-green">C6</div>
+            <div class="button shadow-green">C7</div>
+            <div class="button">D1</div>
+        </div>
     </div>
 </body>
 </html>
