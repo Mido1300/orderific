@@ -3,326 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Orderific Service Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Reset and Base Styles */
+        /* Reset default styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'DM Sans', sans-serif;
         }
 
+        /* Body styles to center the container */
         body {
-            font-family: 'Inter', sans-serif;
             min-height: 100vh;
-        }
-
-        /* Main Container */
-        .login-page {
             display: flex;
-            width: 100%;
-            background: white;
-            min-height: 100vh;
-        }
-
-        /* Brand Panel Styles */
-        .brand-panel {
-            display: flex;
-            justify-content: end;
-            align-items: center;
-            width: 496px;
-        }
-
-        .brand-panel-content {
-            display: flex;
-            overflow: hidden;
-            position: relative;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: start;
-            padding: 40px;
-            height: 100%;
-            background: #ef4444;
-            border-radius: 32px;
-            width: 480px;
-        }
-
-        .brand-panel-bg1 {
-            position: absolute;
-            inset: 0;
-            background: #ef4444;
-            opacity: 0.5;
-        }
-
-        .brand-panel h1 {
-            width: 100%;
-            font-family: 'Poppins', sans-serif;
-            font-size: 3.75rem;
-            font-weight: 700;
-            letter-spacing: -0.05em;
-            color: white;
-            line-height: 56px;
-        }
-
-        .brand-panel p {
-            width: 100%;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 400;
-            letter-spacing: normal;
-            line-height: 1.5rem;
-            color: white;
-        }
-
-        /* Login Form Styles */
-        .login-form {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
             justify-content: center;
-            align-items: end;
-            padding: 16rem 11rem;
+            align-items: center;
+            background: #ffffff; /* Changed to white */
+        }
+
+        /* Main container for split layout */
+        .container {
+            width: 1244px; /* 546px (left) + 698px (right) */
+            height: 918px; /* Updated to match new left section height */
+            display: flex;
+            background: #ffffff; /* Changed to white */
+            border-radius: 32px;
+            overflow: hidden;
+        }
+
+        /* Left side (Image only) */
+        .left-section {
+            width: 546px; /* Increased from 496px */
+            height: 918px; /* Increased from 834px */
+            position: relative;
+            background: linear-gradient(to bottom, #fde8e4 0%, #ebebeb 20%, #fde8e4 40%, #fde8e4 60%, #f7eae7 80%, #fde8e4 100%); /* Applied gradient */
+        }
+
+        .introduction-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Right side (Login Form) */
+        .right-section {
+            width: 698px; /* Fixed width */
+            height: 918px; /* Updated to match new container height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 267px 169px; /* Top 267px, Right 169px, Bottom 267px, Left 169px */
+            background: linear-gradient(to bottom, #fde8e4 0%, #ebebeb 20%, #fde8e4 40%, #fde8e4 60%, #f7eae7 80%, #fde8e4 100%); /* Existing gradient */
         }
 
         .form-container {
+            width: 100%; /* Takes the available width after padding */
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
-            align-items: center;
-            width: 100%;
-            max-width: 360px;
+            gap: 10px; /* Gap between form elements */
+        }
+
+        .form-header {
+            margin-bottom: 24px;
+            text-align: center;
         }
 
         .form-header h2 {
-            width: 100%;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.875rem;
+            margin-bottom: 16px;
+            font-size: 30px;
             font-weight: 700;
-            letter-spacing: -0.05em;
-            line-height: 2.5rem;
-            text-align: center;
-            color: black;
+            color: #000000;
+            line-height: 40px;
+            letter-spacing: -0.02em;
         }
 
         .form-header p {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            font-size: 16px;
             font-weight: 400;
-            letter-spacing: normal;
-            line-height: 1.5rem;
-            text-align: center;
+            line-height: 20px;
             color: rgba(0, 0, 0, 0.6);
         }
 
-        /* Input Styles */
         .input-container {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            width: 100%;
+            margin-bottom: 16px;
         }
 
         .input-container label {
-            flex: 1;
-            gap: 0.5rem;
-            padding: 0 1rem;
-            width: 100%;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.875rem;
+            display: block;
+            padding: 0 16px;
+            margin-bottom: 8px;
+            font-size: 14px;
             font-weight: 700;
-            line-height: 1rem;
+            line-height: 16px;
             color: rgba(0, 0, 0, 0.6);
         }
 
         .input-wrapper {
             display: flex;
-            gap: 0.25rem;
+            justify-content: space-between;
             align-items: center;
-            width: 100%;
-            border-radius: 1.5rem;
+            padding: 0 16px;
+            height: 48px;
+            border-radius: 24px;
             border: 1px solid rgba(0, 0, 0, 0.1);
             background: rgba(255, 255, 255, 0.6);
         }
 
         .input-wrapper input {
-            flex: 1;
-            padding: 0 1rem;
-            height: 3rem;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 400;
-            letter-spacing: normal;
-            line-height: 1.25rem;
-            background: transparent;
-            border: none;
-            color: rgba(0, 0, 0, 0.6);
-        }
-
-        .input-wrapper input::placeholder {
-            color: rgba(0, 0, 0, 0.6);
-        }
-
-        /* Button Styles */
-        .button {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            letter-spacing: normal;
-            line-height: 1.5rem;
-            border-radius: 2rem;
-            padding: 0 2rem;
-            height: 3rem;
             width: 100%;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+            color: #000000;
             border: none;
+            background: transparent;
+            outline: none;
+        }
+
+        .toggle-password {
             cursor: pointer;
-        }
-
-        .button-secondary {
-            background: rgba(0, 0, 0, 0.1);
-            color: rgba(0, 0, 0, 0.4);
-        }
-
-        /* Checkbox Styles */
-        .checkbox-container {
+            border: none;
+            background: none;
+            padding: 0;
             display: flex;
-            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .toggle-password img {
+            width: 24px;
+            height: 24px;
+            opacity: 0.4;
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .remember-me {
+            display: flex;
+            gap: 8px;
             align-items: center;
         }
 
         .checkbox {
-            width: 1.75rem;
-            height: 1.75rem;
-            border-radius: 0.5rem;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
             background: rgba(0, 0, 0, 0.1);
-            border: none;
             cursor: pointer;
         }
 
-        .checkbox.checked {
-            background: black;
+        .checkbox.active {
+            background: #000000;
         }
 
-        .checkbox-container label {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 400;
-            color: rgba(0, 0, 0, 0.6);
-        }
-
-        /* Login with Code Link */
-        .login-with-code {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+        .remember-me span {
+            font-size: 16px;
             font-weight: 500;
-            letter-spacing: normal;
-            line-height: 1.25rem;
-            color: black;
+            line-height: 20px;
+            color: #000000;
+        }
+
+        .login-code {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+            color: #000000;
             text-decoration: underline;
             background: none;
             border: none;
             cursor: pointer;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .brand-panel {
-                width: 100%;
-            }
-
-            .brand-panel-content {
-                width: 100%;
-            }
-
-            .login-form {
-                padding: 6rem 4rem;
-            }
-
-            .brand-panel h1 {
-                font-size: 3rem;
-            }
+        .btn {
+            height: 48px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            cursor: pointer;
+            border: none;
+            border-radius: 32px;
+            width: 100%;
+            color: #ffffff; /* Changed to white */
+            background: #000000; /* Changed to black */
         }
 
         @media (max-width: 640px) {
-            .login-form {
-                padding: 2.5rem 1.25rem;
+            .container {
+                flex-direction: column;
+                width: 100%;
+                height: auto;
             }
 
-            .brand-panel h1 {
-                font-size: 2.25rem;
+            .left-section, .right-section {
+                width: 100%;
+                height: auto;
+            }
+
+            .right-section {
+                padding: 24px; /* Reduced padding for smaller screens */
+            }
+
+            .form-container {
+                width: 90%;
+                max-width: 360px;
+            }
+
+            .form-options {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .login-code {
+                margin-left: 36px;
             }
         }
     </style>
 </head>
 <body>
-    <main class="login-page">
-        <!-- Brand Panel -->
-        <section class="brand-panel">
-            <div class="brand-panel-content">
-                <div class="brand-panel-bg1"></div>
-                <header>
-                    <svg width="168" height="59" viewBox="0 0 168 59" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M41.0388 16.8541C40.5964 15.9063 40.5122 14.9795 40.9124 14.0739C41.1651 13.4841 41.5864 13.0208 42.155 12.7048C43.2292 12.073 44.6404 12.1993 45.5882 12.9997C46.7045 13.9475 46.9151 15.148 46.2411 16.9804C46.5992 17.0647 46.9362 17.1279 47.2942 17.1911C53.2759 18.518 57.8042 23.1938 58.8363 29.1965C59.3628 32.2294 58.9626 35.1571 57.6779 37.9584C57.5094 38.3164 57.3198 38.4849 56.8986 38.4638C55.024 38.4428 53.1706 38.4428 51.296 38.4428C51.1486 38.4428 51.0222 38.4428 50.7695 38.4428C52.981 36.1259 53.9499 33.4511 53.5286 30.376C53.1916 27.9328 52.0332 25.9319 50.1165 24.3733C46.4096 21.3614 41.2072 21.572 37.6267 24.9209C34.4042 27.9117 33.2036 33.9776 37.5214 38.4428C37.3529 38.4428 37.2054 38.4638 37.0791 38.4638C29.7916 38.4638 22.5251 38.4638 15.2376 38.4638C13.8686 38.4638 12.8155 37.7688 12.4363 36.5893C11.8677 34.8201 13.1946 33.0298 15.1112 33.0298C19.2605 33.0298 23.3887 33.0298 27.5379 33.0298C27.8117 33.0298 28.1066 33.0298 28.3593 32.9456C28.9701 32.7771 29.3703 32.1452 29.2861 31.5344C29.2018 30.9025 28.6963 30.4181 28.0434 30.376C27.7485 30.3549 27.4537 30.376 27.1588 30.376C23.1359 30.376 19.113 30.376 15.0902 30.376C13.5737 30.376 12.3732 29.3018 12.31 27.8696C12.2257 26.332 13.2578 25.1526 14.7953 24.9841C15.0691 24.963 15.3429 24.9419 15.6167 24.9419C20.4189 24.9419 25.2211 24.9419 30.0022 24.9419C31.0342 24.9419 31.6872 24.0784 31.3502 23.1517C31.1395 22.604 30.6551 22.267 29.9811 22.267C28.6331 22.267 27.2641 22.267 25.9161 22.267C24.4839 22.267 23.3255 21.2982 23.157 19.9713C22.9885 18.4969 23.852 17.2753 25.3053 16.9383C25.537 16.8751 25.7897 16.8751 26.0425 16.8751C30.8236 16.8751 35.6047 16.8751 40.3858 16.8751C40.5964 16.8541 40.7649 16.8541 41.0388 16.8541Z" fill="white"></path>
-                        <!-- Remaining SVG paths omitted for brevity -->
-                    </svg>
-                </header>
-                <article style="display: flex; flex-direction: column; gap: 1.5rem; z-index: 10; width: 100%;">
-                    <h1>Service Panel</h1>
-                    <p>Streamline your restaurant operations with BMS. Manage reservations, orders, inventory, and staff effortlessly, and focus on delivering exceptional dining experiences.</p>
-                </article>
-            </div>
-        </section>
+    <div class="container">
+        <!-- Left Section (Image only) -->
+        <div class="left-section">
+            <img 
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/543ba31f5d37fe4935e5f82f5412866cb668d184?placeholderIfAbsent=true&apiKey=ecaaee82aa814d438197e676842c80d8" 
+                alt="Introduction image" 
+                class="introduction-image"
+            >
+        </div>
 
-        <!-- Login Form -->
-        <section class="login-form">
+        <!-- Right Section (Login Form) -->
+        <div class="right-section">
             <div class="form-container">
-                <header class="form-header" style="display: flex; flex-direction: column; gap: 1.5rem; align-items: start; width: 100%;">
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: center; width: 100%;">
+                <form id="loginForm">
+                    <div class="form-header">
                         <h2>Welcome Back</h2>
                         <p>Manage, streamline, and thrive effortlessly.</p>
                     </div>
-                </header>
-                <form style="display: flex; flex-direction: column; gap: 1rem; align-items: start; padding-bottom: 1rem; width: 100%;">
                     <div class="input-container">
                         <label>Email</label>
                         <div class="input-wrapper">
-                            <input type="email" placeholder="Enter email address" aria-label="Email address">
+                            <input type="email" value="samsmith@gmail.com" id="emailInput">
                         </div>
                     </div>
                     <div class="input-container">
                         <label>Password</label>
                         <div class="input-wrapper">
-                            <input type="password" placeholder="Password" aria-label="Password">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 1rem;">
-                                <path d="M19.7615 21.8693L15.7155 17.8538C15.2027 18.0436 14.6343 18.1988 14.0105 18.3193C13.3868 18.4398 12.7167 18.5 12 18.5C9.65001 18.5 7.5366 17.8538 5.65976 16.5615C3.78276 15.2692 2.40901 13.582 1.53851 11.5C1.90768 10.6167 2.3846 9.79267 2.96926 9.028C3.55393 8.26317 4.19751 7.6 4.90001 7.0385L2.13076 4.2385L3.18476 3.18475L20.8153 20.8153L19.7615 21.8693ZM12 15.577C12.209 15.577 12.4231 15.559 12.6423 15.523C12.8616 15.4872 13.0565 15.4346 13.227 15.3653L8.13476 10.273C8.06543 10.4563 8.01285 10.656 7.97701 10.872C7.94101 11.0882 7.92301 11.2975 7.92301 11.5C7.92301 12.6347 8.31885 13.5978 9.11051 14.3895C9.90218 15.1812 10.8653 15.577 12 15.577ZM18.9538 16.0845L15.8173 12.973C15.8954 12.7602 15.9583 12.532 16.0058 12.2885C16.0533 12.0448 16.077 11.782 16.077 11.5C16.077 11.5 10.3653 15.6812 9.40217 14.8895 8.6105C14.0978 7.81884 13.1347 7.423 12 7.423C11.718 7.423 11.4584 7.44834 11.2213 7.499C10.9841 7.54967 10.7558 7.62567 10.5365 7.727L8.03476 5.23475C8.66676 4.98342 9.31226 4.79817 9.97126 4.679C10.6303 4.55967 11.3065 4.5 12 4.5C14.3435 4.5 16.4569 5.14617 18.3403 6.4385C20.2236 7.73084 21.5973 9.418 22.4615 11.5C22.091 12.3935 21.6125 13.2275 21.026 14.002C20.4393 14.7763 19.7486 15.4705 18.9538 16.0845ZM14.6845 11.85L11.675 8.85C12.116 8.76667 12.5323 8.79934 12.924 8.948C13.3157 9.09684 13.6532 9.318 13.9365 9.6115C14.2263 9.90517 14.4385 10.2494 14.573 10.6443C14.7077 11.0391 14.7448 11.441 14.6845 11.85Z" fill="black" fill-opacity="0.4"></path>
-                            </svg>
+                            <input type="password" value="********" id="passwordInput">
+                            <button type="button" class="toggle-password">
+                                <img src="eye.svg" alt="Toggle password visibility">
+                            </button>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 2rem; align-items: center; width: 100%;">
-                        <div class="checkbox-container">
-                            <button type="button" class="checkbox" id="rememberMe" aria-label="Remember me"></button>
-                            <label>Remember me</label>
+                    <div class="form-options">
+                        <div class="remember-me">
+                            <div class="checkbox"></div>
+                            <span>Remember me</span>
                         </div>
-                        <button type="button" class="login-with-code">Login with Code</button>
+                        <button type="button" class="login-code">Login with Code</button>
                     </div>
+                    <button type="submit" class="btn">Sign In</button>
                 </form>
-                <button class="button button-secondary" type="submit">Sign In</button>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <script>
-        // Simple React-like state management
         document.addEventListener('DOMContentLoaded', () => {
-            const checkbox = document.getElementById('rememberMe');
+            const form = document.getElementById('loginForm');
+            const emailInput = document.getElementById('emailInput');
+            const passwordInput = document.getElementById('passwordInput');
+            const togglePassword = document.querySelector('.toggle-password');
+            const checkbox = document.querySelector('.checkbox');
+            let showPassword = false;
             let rememberMe = false;
+
+            togglePassword.addEventListener('click', () => {
+                showPassword = !showPassword;
+                passwordInput.type = showPassword ? 'text' : 'password';
+            });
 
             checkbox.addEventListener('click', () => {
                 rememberMe = !rememberMe;
-                checkbox.classList.toggle('checked');
-                checkbox.setAttribute('aria-checked', rememberMe);
+                checkbox.classList.toggle('active');
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = emailInput.value;
+                const password = passwordInput.value;
+                console.log('Form submitted:', { email, password, rememberMe });
             });
         });
     </script>
