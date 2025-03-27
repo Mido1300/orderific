@@ -1,233 +1,248 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Display Board</title>
     <style>
-      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
 
-      :root {
-        --headline-font-family: "DM Sans", Helvetica;
-        --headline-font-weight: 500;
-        --headline-font-size: 20px;
-        --headline-letter-spacing: -0.2px;
-        --headline-line-height: 24px;
-        --title-1-font-family: "DM Sans", Helvetica;
-        --title-1-font-weight: 700;
-        --title-1-font-size: 32px;
-        --title-1-letter-spacing: -0.96px;
-        --title-1-line-height: 40px;
-        --title-2-font-family: "DM Sans", Helvetica;
-        --title-2-font-weight: 700;
-        --title-2-font-size: 24px;
-        --title-2-letter-spacing: -0.48px;
-        --title-2-line-height: 32px;
-        --spacing-spacing-2: 8px;
-        --spacing-spacing-4: 16px;
-        --spacing-spacing-6: 24px;
-        --colors-text-black-100: rgba(0, 0, 0, 1);
-        --colors-text-white-100: rgba(255, 255, 255, 1);
-        --colors-background-black-5: rgba(0, 0, 0, 0.05);
-        --colors-background-white-100: rgba(255, 255, 255, 1);
-        --colors-background-status-accepted: rgba(17, 151, 23, 1);
-        --radius-round-3: 16px;
-        --radius-round-5: 24px;
-      }
+        .container {
+            width: 1194px;
+            height: 834px;
+            background-color: #ffeae6;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 24px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-      * {
-        -webkit-font-smoothing: antialiased;
-        box-sizing: border-box;
-      }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 14px;
+            margin: 10px;
+        }
 
-      html,
-      body {
-        margin: 0;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #f0f0f0;
-      }
+        .logo-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
 
-      .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
+        .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+        }
 
-      .component {
-        width: 1194px;
-        height: 834px;
-        position: relative;
-        background-color: var(--colors-background-white-100);
-      }
+        .restaurant-name {
+            font-size: 24px;
+            font-weight: 500;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
 
-      .header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 24px 16px;
-        background-color: var(--colors-background-black-5);
-      }
+        .clock {
+            font-size: 36px;
+            font-weight: bold;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
 
-      .mcdonald-s {
-        font-family: var(--headline-font-family);
-        font-weight: var(--headline-font-weight);
-        color: var(--colors-text-black-100);
-        font-size: var(--headline-font-size);
-        letter-spacing: var(--headline-letter-spacing);
-        line-height: var(--headline-line-height);
-        white-space: nowrap;
-      }
+        .content {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            flex: 1;
+        }
 
-      .time {
-        font-family: var(--title-1-font-family);
-        font-weight: var(--title-1-font-weight);
-        color: var(--colors-text-black-100);
-        font-size: var(--title-1-font-size);
-        letter-spacing: var(--title-1-letter-spacing);
-        line-height: var(--title-1-line-height);
-        white-space: nowrap;
-      }
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+        }
 
-      .content {
-        display: flex;
-        height: 614px;
-        align-items: flex-start;
-        gap: var(--spacing-spacing-4);
-        padding: 0 var(--spacing-spacing-4);
-      }
+        .order-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            padding: 15px;
+            background-color: white;
+            border-radius: 20px;
+        }
 
-      .section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: var(--spacing-spacing-6);
-        padding: var(--spacing-spacing-6);
-        flex: 1;
-        background-color: var(--colors-background-white-100);
-        border-radius: var(--radius-round-5);
-        overflow: hidden;
-      }
+        .preparing-section {
+            flex: 1;
+        }
 
-      .section-ready {
-        width: 383px;
-      }
+        .ready-section {
+            width: 350px;
+        }
 
-      .title {
-        font-family: var(--title-1-font-family);
-        font-weight: var(--title-1-font-weight);
-        color: var(--colors-text-black-100);
-        font-size: var(--title-1-font-size);
-        letter-spacing: var(--title-1-letter-spacing);
-        line-height: var(--title-1-line-height);
-        white-space: nowrap;
-      }
+        @media (max-width: 768px) {
+            .ready-section {
+                width: 100%;
+            }
+        }
 
-      .order-grid {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        justify-content: center;
-        gap: var(--spacing-spacing-2);
-        width: 100%;
-      }
+        .section-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
 
-      .order-num {
-        display: flex;
-        width: 106px;
-        height: 64px;
-        align-items: center;
-        justify-content: center;
-        padding: 8px var(--spacing-spacing-6);
-        background-color: var(--colors-background-black-5);
-        border-radius: var(--radius-round-3);
-      }
+        .orders-container {
+            display: grid;
+            gap: 8px;
+            justify-content: center;
+        }
 
-      .order-num-ready {
-        background-color: var(--colors-background-status-accepted);
-      }
+        .preparing-section .orders-container {
+            grid-template-columns: repeat(6, 1fr);
+        }
 
-      .order-num-large {
-        width: 334px;
-        height: 128px;
-        background-color: var(--colors-background-status-accepted);
-      }
+        .ready-section .orders-container {
+            grid-template-columns: repeat(3, 1fr);
+        }
 
-      .order-text {
-        font-family: var(--title-2-font-family);
-        font-weight: var(--title-2-font-weight);
-        color: var(--colors-text-black-100);
-        font-size: var(--title-2-font-size);
-        letter-spacing: var(--title-2-letter-spacing);
-        line-height: var(--title-2-line-height);
-        white-space: nowrap;
-      }
+        @media (max-width: 768px) {
+            .preparing-section .orders-container,
+            .ready-section .orders-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
 
-      .order-text-ready {
-        color: var(--colors-text-white-100);
-      }
+        .order-number {
+            padding: 8px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 12px;
+            width: 90px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-      .order-text-large {
-        font-family: var(--title-1-font-family);
-        font-weight: var(--title-1-font-weight);
-        font-size: var(--title-1-font-size);
-        letter-spacing: var(--title-1-letter-spacing);
-        line-height: var(--title-1-line-height);
-      }
+        .order-number-small {
+            background-color: #e5e7eb;
+            color: black;
+        }
+
+        .order-number-large {
+            width: 100%;
+            height: 120px;
+            font-size: 36px;
+            background-color: #119717;
+            color: white;
+            grid-column: span 3;
+        }
+
+        .ready-section .order-number-small {
+            background-color: #119717;
+            color: white;
+        }
     </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="component">
-        <div class="header">
-          <div class="mcdonald-s">McDonald's</div>
-          <div class="time">15:03</div>
-        </div>
-        <div class="content">
-          <div class="section">
-            <div class="title">Preparing</div>
-            <div class="order-grid">
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-              <div class="order-num"><div class="order-text">3885</div></div>
-            </div>
-          </div>
-          <div class="section section-ready">
-            <div class="title">Ready</div>
-            <div class="order-grid">
-              <div class="order-num order-num-large"><div class="order-text order-text-ready order-text-large">3885</div></div>
-              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
-              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
-              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
-              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
-              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
-              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
-              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
-              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
-              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
-              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
-              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
-              <div class="order-num order-num-ready"><div class="order-text order-text-ready">3885</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+</head>
+<body>
+    <div class="container" id="app"></div>
+
+    <script>
+        class OrderDisplayBoard {
+            constructor() {
+                this.preparingOrders = Array(18).fill("3885");
+                this.readyOrders = Array(14).fill("3885");
+                this.init();
+            }
+
+            init() {
+                this.render();
+                this.startClock();
+            }
+
+            startClock() {
+                const updateTime = () => {
+                    const now = new Date();
+                    const time = now.toLocaleTimeString("en-US", {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        hour12: false
+                    });
+                    document.querySelector('.clock').textContent = time;
+                };
+
+                updateTime();
+                setInterval(updateTime, 1000);
+            }
+
+            createOrderNumber(number, isReady = false, large = false) {
+                return `
+                    <div class="order-number ${large ? 'order-number-large' : 'order-number-small'}">
+                        ${number}
+                    </div>
+                `;
+            }
+
+            createOrderSection(title, orders, isReady = false, className = "") {
+                let ordersHTML = '';
+                orders.forEach((order, index) => {
+                    if (index === 0 && isReady) {
+                        ordersHTML += this.createOrderNumber(order, isReady, true);
+                    } else {
+                        ordersHTML += this.createOrderNumber(order, isReady);
+                    }
+                });
+
+                return `
+                    <section class="order-section ${className}">
+                        <h2 class="section-title">${title}</h2>
+                        <div class="orders-container">
+                            ${ordersHTML}
+                        </div>
+                    </section>
+                `;
+            }
+
+            render() {
+                const app = document.getElementById('app');
+                app.innerHTML = `
+                    <header class="header">
+                        <div class="logo-container">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9f9314bf84704a7e717f329bfc8fbb8a4e909980" 
+                                 alt="McDonald's logo" 
+                                 class="logo">
+                            <h1 class="restaurant-name">McDonald's</h1>
+                        </div>
+                        <time class="clock"></time>
+                    </header>
+                    <div class="content">
+                        ${this.createOrderSection('Preparing', this.preparingOrders, false, 'preparing-section')}
+                        ${this.createOrderSection('Ready', this.readyOrders, true, 'ready-section')}
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize the application
+        new OrderDisplayBoard();
+    </script>
+</body>
 </html>
