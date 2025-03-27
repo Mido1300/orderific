@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Enhanced Webpage with Notifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+        nav {
+            background-color: #333;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #333;
+        }
+        button {
+            padding: 12px 25px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #004d99;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 30px 0;
+        }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            padding-left: 15px;
+            color: #666;
+            font-style: italic;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .notifications {
+            display: flex;
+            justify-content: space-between;
+        }
+        .notifications-list {
+            flex: 3;
+        }
+        .notifications-settings {
+            flex: 1;
+            padding-left: 20px;
+        }
+        .notification-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .notification-item:last-child {
+            border-bottom: none;
+        }
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 5px 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .tab.active {
+            background-color: #0066cc;
+            color: white;
+        }
+        .settings-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .toggle {
+            width: 40px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+        .toggle.active {
+            background-color: #28a745;
+        }
+        .toggle-circle {
+            width: 18px;
+            height: 18px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            transition: transform 0.3s;
+        }
+        .toggle.active .toggle-circle {
+            transform: translateX(20px);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav a {
+                padding: 10px;
+                display: block;
+            }
+            .section {
+                padding: 15px;
+            }
+            h1 { font-size: 1.5em; }
+            h2 { font-size: 1.3em; }
+            h3 { font-size: 1.2em; }
+            p { font-size: 0.95em; }
+            .notifications {
+                flex-direction: column;
+            }
+            .notifications-settings {
+                padding-left: 0;
+                margin-top: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 0.9em;
+                letter-spacing: 1px;
+            }
+            .section {
+                margin-bottom: 20px;
+            }
+            button {
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar Section (Task 6) -->
+    <nav>
+        <a href="#home">H O M E</a>
+        <a href="#profile">P R O F I L E</a>
+        <a href="#blog">B L O G</a>
+        <a href="#books">B O O K S</a>
+        <a href="#notifications">N O T I F I C A T I O N S</a>
+    </nav>
+
+    <!-- Home Section (Tasks 1, 2, 3, 4, 8, 10, 11, 12, 18) -->
+    <div class="section" id="home">
+        <h1>Welcome to My Enhanced Webpage</h1>
+        <h2>Exploring HTML Structure</h2>
+        <h3>Different Heading Sizes</h3>
+        <h4>With More Details</h4>
+        <h5>And Styling Options</h5>
+        <h6>Smallest Heading</h6>
+        
+        <p>This is an enhanced paragraph showcasing <a href="https://www.example.com" target="_blank">external links</a> 
+        that open in new tabs. Enjoy some <b>bold text</b>, <i>italic styling</i>, and 
+        <u>underlined content</u> to make it visually appealing.</p>
+        
+        <img src="https://via.placeholder.com/400x250" alt="A stunning landscape placeholder image">
+        <p>Above is a sample image demonstrating proper sizing and alt text usage.</p>
+        
+        <br>
+        <hr>
+    </div>
+
+    <!-- Profile Section (Tasks 7, 11, 12, 13, 16) -->
+    <div class="section" id="profile">
+        <h2>My Detailed Profile</h2>
+        <div>
+            <img src="https://via.placeholder.com/200" alt="Detailed profile picture" style="float:left; margin-right:15px; border-radius:50%;">
+            <p><strong>Greetings!</strong> I'm a passionate web developer exploring HTML and CSS. 
+            I <em>absolutely love</em> creating well-structured layouts and experimenting with nested elements. 
+            My journey in web development started recently, and I'm excited to share my progress!</p>
+            <br style="clear:both;">
+            <p>Contact me at: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+        </div>
+        <hr>
+    </div>
+
+    <!-- Blog Section (Tasks 14, 17, 19) -->
+    <div class="section" id="blog">
+        <h2>Latest Blog Post</h2>
+        <div>
+            <h3>A Wonderful Day in Web Development</h3>
+            <p>Today, I dove deeper into HTML structuring and CSS styling. I learned about semantic elements, 
+            responsive design, and how to create engaging content layouts. Here's an inspiring quote:</p>
+            <blockquote>
+                "The only way to do great work is to love what you do." 
+                <cite>- Steve Jobs</cite>
+            </blockquote>
+            <p>This quote motivates me to keep learning and improving my skills daily.</p>
+            <button onclick="window.location.href='#books'">Explore My Favorite Books</button>
+        </div>
+        <hr>
+    </div>
+
+    <!-- Books Section (Tasks 15, 13) -->
+    <div class="section" id="books">
+        <h2>My Favorite Books Collection</h2>
+        <div>
+            <h3>Top 3 in Order:</h3>
+            <ol>
+                <li><b>The Great Gatsby</b> - F. Scott Fitzgerald</li>
+                <li><i>To Kill a Mockingbird</i> - Harper Lee</li>
+                <li><u>1984</u> - George Orwell</li>
+            </ol>
+            
+            <h3>Other Favorites:</h3>
+            <ul style="list-style-type: square;">
+                <li><strong>Pride and Prejudice</strong> - Jane Austen</li>
+                <li><em>The Catcher in the Rye</em> - J.D. Salinger</li>
+                <li>Brave New World - Aldous Huxley</li>
+            </ul>
+            <p>These books have inspired me in various ways, from storytelling to critical thinking.</p>
+        </div>
+        <hr>
+    </div>
+
+    <!-- Notifications Section (Figma Data, Task 5, 9) -->
+    <div class="section" id="notifications">
+        <h2>Notifications</h2>
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class="tab active">Unread <span style="background:#0066cc; color:white; padding:2px 6px; border-radius:10px;">8</span></div>
+            <div class="tab">All</div>
+        </div>
+        <div class="notifications">
+            <!-- Notifications List -->
+            <div class="notifications-list">
+                <div class="notification-item">
+                    <p>#202 order, "mushroom burger" was "accepted". <span style="float:right;">11:32</span><br>6 Jan 2024</p>
+                </div>
+                <div class="notification-item">
+                    <p>#588 order, "Soda" was Ready. <span style="float:right;">11:11</span><br>6 Jan 2024</p>
+                </div>
+                <div class="notification-item">
+                    <p>#164 order for "Table A101" Placed. <span style="float:right;">10:59</span><br>6 Jan 2024</p>
+                </div>
+                <div class="notification-item">
+                    <p>#202 order was Completed. <span style="float:right;">18:36</span><br>5 Jan 2024</p>
+                </div>
+                <div class="notification-item">
+                    <p>#202 order, "mushroom burger" was "Served". <span style="float:right;">18:07</span><br>5 Jan 2024</p>
+                </div>
+                <div class="notification-item">
+                    <p>#202 order was Completed. <span style="float:right;">17:17</span><br>5 Jan 2024</p>
+                </div>
+                <div class="notification-item">
+                    <p>#164 order for "Table A101" Placed. <span style="float:right;">17:01</span><br>5 Jan 2024</p>
+                </div>
+                <div class="notification-item">
+                    <p>#164 order for "Table A101" Placed. <span style="float:right;">16:24</span><br>5 Jan 2024</p>
+                </div>
+                <div class="notification-item">
+                    <p>#202 order was Completed. <span style="float:right;">16:20</span><br>5 Jan 2024</p>
+                </div>
+                <div class="notification-item">
+                    <p>#588 order, "Soda" was Ready. <span style="float:right;">16:10</span><br>5 Jan 2024</p>
+                </div>
+                <p style="text-align:center; color:#666;">Loading More...</p>
+            </div>
+            <!-- Notifications Settings -->
+            <div class="notifications-settings">
+                <h3>Settings</h3>
+                <div class="settings-item">
+                    <span>Banner and sound</span>
+                    <div class="toggle active"><div class="toggle-circle"></div></div>
+                </div>
+                <div class="settings-item">
+                    <span>Banner only</span>
+                    <div class="toggle"><div class="toggle-circle"></div></div>
+                </div>
+                <div class="settings-item">
+                    <span>Sound only</span>
+                    <div class="toggle"><div class="toggle-circle"></div></div>
+                </div>
+                <div class="settings-item">
+                    <span>None</span>
+                    <div class="toggle"><div class="toggle-circle"></div></div>
+                </div>
+                <div class="settings-item">
+                    <span>Play Repeatedly</span>
+                    <div class="toggle"><div class="toggle-circle"></div></div>
+                </div>
+                <div class="settings-item">
+                    <span>Table Notifications</span>
+                    <div class="toggle active"><div class="toggle-circle"></div></div>
+                </div>
+                <div class="settings-item">
+                    <span>Order Notifications</span>
+                    <div class="toggle"><div class="toggle-circle"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
