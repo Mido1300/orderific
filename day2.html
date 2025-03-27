@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CSS3 Day 2 Practice - Styling and Effects">
+    <title>CSS3 Day 2 Practice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #50e3c2;
+            --accent-color: #f5a623;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 10px;
+            --spacing: 1.5rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: var(--spacing);
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: var(--spacing);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing);
+            box-shadow: var(--shadow);
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 600;
+        }
+
+        .section {
+            margin-bottom: var(--spacing);
+            padding: var(--spacing);
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+            line-height: 1.8;
+        }
+
+        /* Task 1: Apply different font styles and sizes */
+        .font-demo {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+        .font-demo span {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+
+        /* Task 2: Set background images and colors */
+        .background-demo {
+            background: url('https://via.placeholder.com/400x200') no-repeat center/cover;
+            background-color: #e0f7fa;
+            height: 200px;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+        }
+
+        /* Task 3: Styled buttons with hover effects */
+        .button {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .button:hover {
+            background-color: #d68f1a;
+            transform: scale(1.05);
+        }
+
+        /* Task 4: Change text color and align text */
+        .text-demo {
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Task 5: Use Google Fonts to style text */
+        .google-fonts {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+
+        /* Task 6: Implement a gradient background effect */
+        .gradient-demo {
+            height: 150px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        /* Task 7: Use CSS variables for theme colors */
+        /* Defined in :root above */
+
+        /* Task 8: Use box-shadow for depth */
+        .shadow-button {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+        }
+        .shadow-button:hover {
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.3);
+        }
+
+        /* Task 9: Section with semi-transparent background */
+        .semi-transparent {
+            background-color: rgba(74, 144, 226, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+        }
+
+        /* Task 10: Style form elements with different border styles */
+        .form-demo input {
+            border: 2px solid var(--primary-color);
+            border-style: dashed;
+            margin-bottom: 1rem;
+        }
+
+        /* Task 11: Use border-radius for rounded buttons and divs */
+        .rounded-div {
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            background-color: #f0f4ff;
+            margin-bottom: 1rem;
+        }
+
+        /* Task 12: Implement CSS transitions on hover */
+        /* Applied to .button and .shadow-button above */
+
+        /* Task 13: Letter-spacing and line-height adjustments */
+        .readable-text {
+            letter-spacing: 1px;
+            line-height: 2;
+            padding: 1rem;
+        }
+
+        /* Task 14: Notification badge with bell icon */
+        .notification-badge {
+            position: relative;
+            display: inline-block;
+            margin: 1rem 0;
+        }
+        .notification-badge .bell-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        .notification-badge .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding: 0.5rem;
+            }
+            .section {
+                padding: 1rem;
+            }
+            .button, .shadow-button {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            .notifications {
+                flex-direction: column;
+            }
+            .notifications-settings {
+                padding-left: 0;
+                margin-top: 1rem;
+            }
+            iframe {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+            .section {
+                margin-bottom: 0.75rem;
+            }
+            input, button, .shadow-button {
+                font-size: 0.9rem;
+                padding: 0.5rem;
+            }
+            .gradient-demo, .background-demo {
+                height: 120px;
+            }
+        }
+
+        /* Accessibility */
+        [aria-hidden="true"] {
+            display: none;
+        }
+        button, input {
+            touch-action: manipulation;
+        }
+        .section:focus-within {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS3 Day 2 Practice</h1>
+    </header>
+
+    <!-- Task 1: Apply different font styles and sizes -->
+    <section class="section" aria-labelledby="font-section">
+        <h2 id="font-section">Font Styles and Sizes</h2>
+        <p class="font-demo">This is Roboto with normal weight. <span>This is Poppins with bold weight.</span></p>
+    </section>
+
+    <!-- Task 2: Set background images and colors -->
+    <section class="section" aria-labelledby="background-section">
+        <h2 id="background-section">Backgrounds</h2>
+        <div class="background-demo"></div>
+        <p>Background with image and fallback color.</p>
+    </section>
+
+    <!-- Task 3: Styled buttons with hover effects -->
+    <section class="section" aria-labelledby="button-section">
+        <h2 id="button-section">Styled Buttons</h2>
+        <button class="button">Click Me</button>
+    </section>
+
+    <!-- Task 4: Change text color and align text -->
+    <section class="section" aria-labelledby="text-section">
+        <h2 id="text-section">Text Styling</h2>
+        <p class="text-demo">Centered text with custom color.</p>
+    </section>
+
+    <!-- Task 5: Use Google Fonts to style text -->
+    <section class="section" aria-labelledby="google-fonts-section">
+        <h2 id="google-fonts-section">Google Fonts</h2>
+        <p class="google-fonts">Styled with Roboto font from Google Fonts.</p>
+    </section>
+
+    <!-- Task 6: Implement a gradient background effect -->
+    <section class="section" aria-labelledby="gradient-section">
+        <h2 id="gradient-section">Gradient Background</h2>
+        <div class="gradient-demo">Gradient Effect</div>
+    </section>
+
+    <!-- Task 7: Use CSS variables for theme colors -->
+    <!-- Defined in :root above -->
+
+    <!-- Task 8: Use box-shadow for depth -->
+    <section class="section" aria-labelledby="shadow-section">
+        <h2 id="shadow-section">Shadowed Buttons</h2>
+        <button class="shadow-button">Shadow Button</button>
+    </section>
+
+    <!-- Task 9: Section with semi-transparent background -->
+    <section class="section" aria-labelledby="semi-transparent-section">
+        <h2 id="semi-transparent-section">Semi-Transparent Background</h2>
+        <div class="semi-transparent">
+            <p>This section has a semi-transparent background.</p>
+        </div>
+    </section>
+
+    <!-- Task 10: Style form elements with different border styles -->
+    <section class="section" aria-labelledby="form-section">
+        <h2 id="form-section">Styled Form</h2>
+        <div class="form-demo">
+            <input type="text" placeholder="Enter text" aria-label="Styled input">
+        </div>
+    </section>
+
+    <!-- Task 11: Use border-radius for rounded buttons and divs -->
+    <section class="section" aria-labelledby="rounded-section">
+        <h2 id="rounded-section">Rounded Elements</h2>
+        <div class="rounded-div">
+            <p>Rounded div with padding.</p>
+        </div>
+        <button class="button">Rounded Button</button>
+    </section>
+
+    <!-- Task 12: Implement CSS transitions on hover -->
+    <!-- Applied to .button and .shadow-button above -->
+
+    <!-- Task 13: Letter-spacing and line-height adjustments -->
+    <section class="section" aria-labelledby="readable-section">
+        <h2 id="readable-section">Readable Text</h2>
+        <p class="readable-text">This text has adjusted letter spacing and line height for better readability.</p>
+    </section>
+
+    <!-- Task 14: Notification badge with bell icon -->
+    <section class="section" aria-labelledby="notification-section">
+        <h2 id="notification-section">Notification Badge</h2>
+        <div class="notification-badge">
+            <span class="bell-icon">🔔</span>
+            <span class="badge">5</span>
+        </div>
+    </section>
+
+    <script>
+        // No additional JavaScript required for this exercise
+    </script>
+</body>
+</html>
