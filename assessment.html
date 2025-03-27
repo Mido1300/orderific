@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Orderific Pricing Section - Full/Pro Plan">
+    <title>Orderific Pricing Section</title>
+    <style>
+        :root {
+            --primary-color: #ff5733; /* Orange for button */
+            --text-color: #333;
+            --light-text-color: #666;
+            --background-color: #fff;
+            --check-color: #ff5733; /* Orange for checkmarks */
+            --border-radius: 15px;
+            --spacing: 1.5rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: var(--spacing);
+        }
+
+        .pricing-container {
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+        }
+
+        .pricing-card {
+            background-color: var(--background-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: visible; /* Allows image to extend outside */
+        }
+
+        .top-image {
+            position: absolute;
+            top: 0rem; /* Adjusted to move down, 1/4 inside */
+            left:  -3.3rem; /* 3/4 outside on left */
+            width: 8rem; /* Increased size */
+            height: 8rem; /* Increased size */
+            border-radius: 50%; /* Circular shape */
+            background: url('https://orderific.com/ord-website/assets/img/pricing/logo/icon7.png') no-repeat center/cover; /* Larger image */
+            border: 2px solid var(--primary-color); /* Optional border for visibility */
+            transform: translateY(-50%); /* Center vertically with top offset */
+        }
+
+        .header-group {
+            margin-bottom: 0.5rem;
+        }
+
+        .small-image {
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 50%;
+            background: url('https://orderific.com/ord-website/assets/img/pricing/logo/icon4.png') no-repeat center/cover;
+            display: inline-block;
+            vertical-align: 0.3rem;
+            margin-right: 0.5rem;
+        }
+
+        .pricing-card h2 {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-bottom: 0.25rem;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .pricing-card .price {
+            font-size: 2.25rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            color: var(--light-text-color);
+            font-weight: normal;
+            margin-left: 0.25rem;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .pricing-card .description {
+            font-size: 0.875rem;
+            color: var(--light-text-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .pricing-card .btn {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto 2rem;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .pricing-card .btn:hover {
+            background-color: #e64a19;
+            transform: scale(1.05);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.125rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-card ul li {
+            font-size: 0.875rem;
+            color: var(--light-text-color);
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .pricing-card ul li::before {
+            content: "✔";
+            color: var(--check-color);
+            position: absolute;
+            left: 0;
+            font-size: 0.875rem;
+            font-weight: bold;
+        }
+
+        .pricing-card ul li strong {
+            font-weight: bold;
+            color: var(--light-text-color);
+        }
+
+        .pricing-card .features-more {
+            font-size: 0.875rem;
+            color: var(--light-text-color);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card .ideal-section {
+            font-size: 0.875rem;
+            color: var(--light-text-color);
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .pricing-card .ideal-section strong {
+            color: var(--text-color);
+            font-weight: bold;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .pricing-container {
+                padding: 1rem;
+                max-width: 350px; /* Slightly smaller for tablets */
+            }
+
+            .pricing-card {
+                padding: 1.5rem;
+            }
+
+            .pricing-card h2 {
+                font-size: 1.25rem;
+            }
+
+            .pricing-card .price {
+                font-size: 1.75rem;
+            }
+
+            .pricing-card .price span {
+                font-size: 0.875rem;
+            }
+
+            .pricing-card .description {
+                font-size: 0.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .pricing-card .btn {
+                padding: 0.5rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .pricing-card h3 {
+                font-size: 1rem;
+            }
+
+            .pricing-card ul li {
+                font-size: 0.75rem;
+                padding-left: 1.25rem;
+            }
+
+            .pricing-card ul li::before {
+                font-size: 0.75rem;
+            }
+
+            .pricing-card .features-more {
+                font-size: 0.75rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .pricing-card .ideal-section {
+                font-size: 0.75rem;
+            }
+
+            .top-image {
+                top: -3rem;
+                left: -4.5rem;
+                width: 6rem;
+                height: 6rem;
+            }
+
+            .small-image {
+                width: 2rem;
+                height: -2rem;
+                margin-right: 0.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pricing-container {
+                padding: 0.5rem;
+                max-width: 300px; /* Smaller for mobile */
+            }
+
+            .pricing-card {
+                padding: 1rem;
+            }
+
+            .pricing-card h2 {
+                font-size: 1.1rem;
+            }
+
+            .pricing-card .price {
+                font-size: 1.5rem;
+            }
+
+            .pricing-card .price span {
+                font-size: 0.75rem;
+            }
+
+            .pricing-card .description {
+                font-size: 0.65rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .pricing-card .btn {
+                padding: 0.5rem 1.25rem;
+                font-size: 0.85rem;
+            }
+
+            .pricing-card h3 {
+                font-size: 0.9rem;
+            }
+
+            .pricing-card ul li {
+                font-size: 0.65rem;
+                padding-left: 1rem;
+            }
+
+            .pricing-card ul li::before {
+                font-size: 0.65rem;
+            }
+
+            .pricing-card .features-more {
+                font-size: 0.65rem;
+                margin-bottom: 1rem;
+            }
+
+            .pricing-card .ideal-section {
+                font-size: 0.65rem;
+            }
+
+            .top-image {
+                top: -2rem;
+                left: -3rem;
+                width: 4rem;
+                height: 4rem;
+            }
+
+            .small-image {
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-right: 0.2rem;
+            }
+        }
+
+        /* Browser Compatibility and Accessibility */
+        .pricing-card .btn:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        a {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+        }
+
+        /* Ensure smooth scrolling on iOS */
+        html {
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Fix for older browsers */
+        img, a {
+            border: 0;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="pricing-container">
+        <!-- Full/Pro Plan -->
+        <div class="pricing-card">
+            <div class="top-image"></div>
+            <div class="header-group">
+                <h2>Full/Pro Plan</h2>
+            </div>
+            <div class="header-group">
+                <span class="small-image"></span>
+                <div class="price">$99<span>/month</span></div>
+            </div>
+            <p class="description">Become a culinary sensation with Orderific's Full Plan at just $99/month.</p>
+            <a href="#" class="btn">Get Started</a>
+            <h3>Key Features:</h3>
+            <ul>
+                <li><strong>Digital Smart Menu</strong><br>Interactive menu system with real-time updates.</li>
+                <li><strong>Loyalty Program</strong><br>Features for rewarding and retaining customers.</li>
+                <li><strong>Business Analytics</strong><br>Tools for analyzing and strategizing business data.</li>
+                <li><strong>Loyalty Program</strong><br>Features for rewarding and retaining customers.</li>
+                <li><strong>Website Builder</strong><br>Tools for creating a dynamic online presence.</li>
+                <li><strong>Integrated Payment Options</strong><br>Diverse payment methods for customer convenience.</li>
+                <li><strong>Delivery System Setup</strong><br>Tools for establishing and managing delivery services.</li>
+                <li><strong>Marketing Tools</strong><br>Resources to enhance marketing reach and effectiveness.</li>
+                <li><strong>Menu Translation</strong><br>Feature to translate menus into multiple languages.</li>
+                <li><strong>Clear Reporting</strong><br>Stay informed with straightforward analytics.</li>
+                <li><strong>Seamless POS Integration</strong><br>Efficient integration with point-of-sale systems.</li>
+            </ul>
+            <p class="features-more">...and much more!</p>
+            <div class="ideal-section">
+                <strong>Ideal for Visionary Restaurateurs:</strong><br>
+                Choose this plan to elevate your dining experience and set your restaurant apart. Ideal for combining technology and insights to grow your business.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
