@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popup Example</title>
+    <title>Popup with Rectangular Frames</title>
     <style>
         /* Reset default styles */
         * {
@@ -22,26 +22,34 @@
             background-color: #f0f0f0;
         }
 
-        /* Style for the "CLICK HERE" button */
-        .click-btn {
+        /* Style for the "CLICK HERE" button container */
+        .click-btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
             padding: 15px 30px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
+            border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.1s ease;
         }
 
-        .click-btn:hover {
+        .click-btn-container:hover {
             transform: scale(1.05);
         }
 
-        .click-btn:active {
+        .click-btn-container:active {
             transform: scale(0.95);
+        }
+
+        /* Style for the "CLICK HERE" button */
+        .click-btn {
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: #007bff;
+            cursor: pointer;
         }
 
         /* Popup container */
@@ -91,6 +99,15 @@
             margin-bottom: 10px;
         }
 
+        /* Rectangular frame for item details */
+        .item-frame {
+            background-color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+
         .item-details {
             font-size: 16px;
             font-weight: bold;
@@ -133,8 +150,10 @@
     </style>
 </head>
 <body>
-    <!-- "CLICK HERE" Button -->
-    <button class="click-btn" onclick="showPopup()">CLICK HERE</button>
+    <!-- "CLICK HERE" Button in a rectangular frame -->
+    <div class="click-btn-container">
+        <button class="click-btn" onclick="showPopup()">CLICK HERE</button>
+    </div>
 
     <!-- Popup -->
     <div class="popup" id="popup">
@@ -144,8 +163,11 @@
         </div>
         <div class="popup-content">
             <p>Are you sure to cancel this item?</p>
-            <p class="item-details">Tasty Burger</p>
-            <p class="item-options">Size: Small, Cheese: A little bit, Salt: No</p>
+            <!-- Rectangular frame for item details -->
+            <div class="item-frame">
+                <p class="item-details">Tasty Burger</p>
+                <p class="item-options">Size: Small, Cheese: A little bit, Salt: No</p>
+            </div>
         </div>
         <button class="cancel-btn" onclick="hidePopup()">CANCEL ITEM</button>
     </div>
