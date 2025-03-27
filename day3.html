@@ -112,7 +112,6 @@
             background-color: #c82333;
         }
 
-        /* Overlay for background dimming */
         .overlay {
             display: none;
             position: fixed;
@@ -147,15 +146,14 @@
         }
 
         .card {
-            background-color: #f7f3f2;
+            background-color: #f7f3f2; /* Matches the light beige background in the image */
             padding: 15px;
             border-radius: 10px;
             width: 250px;
             text-align: center;
-            box-shadow: -8px 0 12px rgba(0, 0, 0, 0.15);
+            box-shadow: -8px 0 12px rgba(0, 0, 0, 0.15); /* Matches the shadow in the image */
             border: 1px solid #e0e0e0;
             margin: 20px auto;
- subtitle: 10px auto;
         }
 
         .card h3 {
@@ -169,6 +167,7 @@
             color: #666;
             margin: 0;
             font-size: 14px;
+            line-height: 1.5; /* Matches the spacing in the image */
         }
 
         /* Section 3: Grid Layout Exercise */
@@ -220,7 +219,7 @@
         .grid-item:nth-child(2),
         .grid-item:nth-child(11),
         .grid-item:nth-child(12) {
-            border-left: 2px solid #ff4444;
+            border-left: 2px solid #ff4444; /* Matches the red border in the image */
         }
 
         .grid-item:nth-child(1)::before,
@@ -265,7 +264,7 @@
         .grid-item:nth-child(17),
         .grid-item:nth-child(18),
         .grid-item:nth-child(19) {
-            border-left: 2px solid #00cc00;
+            border-left: 2px solid #00cc00; /* Matches the green border in the image */
         }
 
         .grid-item:nth-child(5)::before,
@@ -304,12 +303,11 @@
         }
 
         .container {
-            background-color: #e0e0e0;
+            background-color: #e0e0e0; /* Matches the light gray background in the image */
             border-radius: 10px;
             padding: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            width: 600px;
-            height: 800px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Matches the shadow in the image */
+            width: 400px; /* Adjusted to match the image width */
             display: flex;
             flex-direction: column;
             margin: 20px 0;
@@ -332,7 +330,7 @@
 
         .items-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr; /* Matches the 2-column layout in the image */
             gap: 20px;
             width: 100%;
             padding: 0 10px;
@@ -340,9 +338,9 @@
 
         .item {
             background-color: #fff;
-            width: 180px;
-            height: 180px;
-            border-radius: 30px;
+            width: 160px; /* Adjusted to match the image */
+            height: 160px; /* Adjusted to match the image */
+            border-radius: 20px; /* Matches the rounded corners in the image */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border: 1px solid #e0e0e0;
             display: flex;
@@ -354,7 +352,7 @@
         }
 
         .item h3 {
-            font-size: 16px;
+            font-size: 14px; /* Matches the font size in the image */
             color: #333;
             margin: 0 0 5px 0;
             font-weight: 600;
@@ -365,12 +363,11 @@
         .item p {
             color: #666;
             margin: 0;
-            font-size: 14px;
+            font-size: 12px; /* Matches the font size in the image */
         }
 
-        /* Mobile Responsiveness (Combined for All Sections) */
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            /* Popup Exercise */
             .btn {
                 padding: 8px 16px;
                 font-size: 14px;
@@ -394,7 +391,6 @@
                 font-size: 14px;
             }
 
-            /* Order Details */
             section.order-details {
                 padding: 10px;
             }
@@ -418,7 +414,6 @@
                 font-size: 12px;
             }
 
-            /* Grid Layout */
             .grid-section h1 {
                 font-size: 20px;
             }
@@ -433,10 +428,8 @@
                 width: 4px;
             }
 
-            /* Popular Items */
             .container {
                 width: 90%;
-                height: 700px;
                 padding: 8px;
             }
 
@@ -467,7 +460,6 @@
         }
 
         @media (max-width: 480px) {
-            /* Popup Exercise */
             .btn {
                 padding: 6px 12px;
                 font-size: 12px;
@@ -491,7 +483,6 @@
                 font-size: 12px;
             }
 
-            /* Order Details */
             section.order-details {
                 padding: 5px;
                 margin-bottom: 20px;
@@ -516,7 +507,6 @@
                 font-size: 10px;
             }
 
-            /* Grid Layout */
             .grid-section h1 {
                 font-size: 18px;
             }
@@ -531,10 +521,8 @@
                 width: 3px;
             }
 
-            /* Popular Items */
             .container {
                 width: 95%;
-                height: 1000px;
                 padding: 5px;
             }
 
@@ -565,7 +553,7 @@
             }
         }
 
-        /* Browser Compatibility and Accessibility (Combined) */
+        /* Browser Compatibility and Accessibility */
         button:focus {
             outline: 2px solid #dc3545;
             outline-offset: 2px;
@@ -654,20 +642,20 @@
                         <p>Order: 88</p>
                     </div>
                     <div class="item">
-                        <h3>Double Cheese</h3>
-                        <p>Order: 56</p>
-                    </div>
-                    <div class="item">
-                        <h3>Potato Gems</h3>
-                        <p>Order: 38</p>
-                    </div>
-                    <div class="item">
                         <h3>Mexican Burger</h3>
                         <p>Order: 74</p>
                     </div>
                     <div class="item">
+                        <h3>Double Cheese</h3>
+                        <p>Order: 56</p>
+                    </div>
+                    <div class="item">
                         <h3>Double Spicy Bean Burger</h3>
                         <p>Order: 41</p>
+                    </div>
+                    <div class="item">
+                        <h3>Potato Gems</h3>
+                        <p>Order: 38</p>
                     </div>
                     <div class="item">
                         <h3>Beer</h3>
