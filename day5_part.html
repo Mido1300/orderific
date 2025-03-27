@@ -24,6 +24,8 @@
             overflow: hidden;
             border-radius: 24px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px; /* Add padding for spacing */
+            box-sizing: border-box; /* Include padding in width/height */
         }
 
         .header {
@@ -33,7 +35,7 @@
             padding: 10px 20px;
             background-color: rgba(0, 0, 0, 0.05);
             border-radius: 14px;
-            margin: 10px;
+            margin-bottom: 20px; /* Space between header and content */
         }
 
         .logo-container {
@@ -65,7 +67,6 @@
         .content {
             display: flex;
             gap: 10px;
-            padding: 10px;
             flex: 1;
         }
 
@@ -83,14 +84,17 @@
             padding: 15px;
             background-color: white;
             border-radius: 20px;
+            flex: 1;
+            box-sizing: border-box; /* Include padding in width/height */
         }
 
         .preparing-section {
-            flex: 1;
+            flex: 2; /* Adjust flex to make it wider */
         }
 
         .ready-section {
             width: 350px;
+            flex-shrink: 0; /* Prevent ready section from shrinking */
         }
 
         @media (max-width: 768px) {
@@ -226,9 +230,7 @@
                 app.innerHTML = `
                     <header class="header">
                         <div class="logo-container">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9f9314bf84704a7e717f329bfc8fbb8a4e909980" 
-                                 alt="McDonald's logo" 
-                                 class="logo">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9f9314bf84704a7e717f329bfc8fbb8a4e909980" alt="McDonald's logo" class="logo">
                             <h1 class="restaurant-name">McDonald's</h1>
                         </div>
                         <time class="clock"></time>
