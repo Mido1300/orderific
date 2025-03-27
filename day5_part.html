@@ -1,120 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Box Model Exercises</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashtag Card Layout</title>
+    <style>
+        /* Reset default margins and paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    h2 {
-      margin-top: 30px;
-      color: #333;
-    }
+        /* Body styling for centering the card */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0; /* Light gray background for contrast */
+            font-family: Arial, sans-serif;
+        }
 
-    /* Task 1: Box with different border widths and colors */
-    .task1-box {
-      width: 200px;
-      height: 100px;
-      border-top: 5px solid red;
-      border-right: 3px dashed blue;
-      border-bottom: 7px dotted green;
-      border-left: 2px solid purple;
-      text-align: center;
-      line-height: 100px;
-      margin-bottom: 20px;
-    }
+        /* Card container styling */
+        .card {
+            background-color: #f8f5f5; /* Light pinkish background as in the image */
+            border-radius: 10px; /* Rounded corners */
+            padding: 15px;
+            width: 200px; /* Adjust width to match the image */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
 
-    /* Task 2: Add padding to a <div> and observe changes */
-    .task2-box {
-      width: 200px;
-      height: 100px;
-      border: 2px solid black;
-      padding: 20px;
-      text-align: center;
-      line-height: 100px;
-      margin-bottom: 20px;
-    }
+        /* Hashtag styling */
+        .hashtag {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 5px;
+        }
 
-    /* Task 3: Adjust margins to space elements properly */
-    .task3-box1, .task3-box2 {
-      width: 200px;
-      height: 100px;
-      border: 2px solid black;
-      text-align: center;
-      line-height: 100px;
-    }
-    .task3-box1 {
-      margin-bottom: 30px; /* Space below Box 1 */
-    }
-    .task3-box2 {
-      margin-top: 20px; /* Space above Box 2 */
-      margin-bottom: 20px;
-    }
+        /* Name styling */
+        .name {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+        }
 
-    /* Task 4: Use box-sizing: border-box to control width calculations */
-    .task4-box-default, .task4-box-border {
-      width: 200px;
-      height: 100px;
-      padding: 20px;
-      border: 5px solid black;
-      text-align: center;
-      line-height: 100px;
-      margin-bottom: 20px;
-    }
-    .task4-box-border {
-      box-sizing: border-box;
-    }
+        /* Label (Order) styling */
+        .label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 5px;
+        }
 
-    /* Task 5: Create a card-like component with padding, margin, and a border */
-    .task5-card {
-      width: 300px;
-      border: 1px solid #ccc;
-      padding: 20px;
-      margin: 20px auto; /* Center the card with margin */
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      background-color: #fff;
-    }
-    .task5-card h3 {
-      margin: 0 0 10px 0;
-    }
-    .task5-card p {
-      margin: 0;
-    }
-  </style>
+        /* Timestamp styling */
+        .timestamp {
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-  <h1>CSS Box Model Exercises - Day 3</h1>
-
-  <!-- Task 1 -->
-  <h2>Task 1: Box with Different Borders</h2>
-  <div class="task1-box">Box with Different Borders</div>
-
-  <!-- Task 2 -->
-  <h2>Task 2: Box with Padding</h2>
-  <div class="task2-box">Box with Padding</div>
-
-  <!-- Task 3 -->
-  <h2>Task 3: Boxes with Margin Spacing</h2>
-  <div class="task3-box1">Box 1</div>
-  <div class="task3-box2">Box 2</div>
-
-  <!-- Task 4 -->
-  <h2>Task 4: Box-Sizing Comparison</h2>
-  <div class="task4-box-default">Default Box (content-box)</div>
-  <div class="task4-box-border">Border-Box</div>
-
-  <!-- Task 5 -->
-  <h2>Task 5: Card Component</h2>
-  <div class="task5-card">
-    <h3>Card Title</h3>
-    <p>This is a simple card with padding, margin, and a border.</p>
-  </div>
+    <div class="card">
+        <div class="hashtag">#2001</div>
+        <div class="name">Ralph Edwards</div>
+        <div class="label">Order</div>
+        <div class="timestamp">14 min ago</div>
+    </div>
 </body>
 </html>
