@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hashtag Card Layout - With Left Shadow</title>
+    <title>Hashtag Card Layout - Updated Gradient and Shadow</title>
     <style>
         /* Reset default margins and paddings */
         * {
@@ -28,7 +28,7 @@
             border-radius: 15px; /* Rounded corners */
             padding: 25px; /* Padding */
             width: 300px; /* Width */
-            box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1); /* Shadow on the left side */
+            box-shadow: -8px 0 15px rgba(0, 0, 0, 0.2); /* Darker and larger shadow on the left */
         }
 
         /* Hashtag styling */
@@ -36,21 +36,23 @@
             font-size: 24px; /* Font size */
             font-weight: bold; /* Bold */
             color: #000;
-            margin-bottom: 8px; /* Spacing */
+            background: linear-gradient(to bottom, #fde8e4 0%, #ebebeb 20%, #fde8e4 40%, #fde8e4 60%, #f7eae7 80%, #fde8e4 100%); /* Same gradient as card */
+            padding: 5px 0; /* Small padding to make the background visible */
+            margin-bottom: 20px; /* Increased spacing for a full line */
         }
 
         /* Name styling */
         .name {
             font-size: 18px; /* Font size */
             color: #333;
-            margin-bottom: 15px; /* Spacing */
+            margin-bottom: 20px; /* Increased spacing for a full line */
         }
 
         /* Label (Order) styling */
         .label {
             font-size: 18px; /* Font size */
             color: #000;
-            margin-bottom: 8px; /* Spacing */
+            margin-bottom: 20px; /* Increased spacing for a full line */
             /* Not bold as per previous request */
         }
 
