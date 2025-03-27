@@ -4,177 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orderific Service Panel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
         body {
-            font-family: 'Roboto', sans-serif; /* More accurate font */
-            background: linear-gradient(180deg, #FFF 0%, #FFF9F9 100%);
+            background: linear-gradient(to bottom, #ffffff, #ffe6e6);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 1048px;
-            width: 934px;
-            margin: 0;
         }
 
         .container {
-            width: 375px;
-            padding: 40px;
-            box-sizing: border-box;
+            text-align: center;
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        header {
+            margin-bottom: 40px;
         }
 
         .logo {
-            text-align: center;
-            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
         }
 
-        .logo img {
-            width: 150px; /* Increased size, more accurate */
+        .logo-img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
         }
 
-        h1 {
-            text-align: center;
+        .logo-text {
             font-size: 24px;
-            margin-bottom: 5px;
-            color: #222; /* Darker heading color */
-            font-weight: 500; /* Medium font weight */
+            font-weight: bold;
+            color: #ff6200; /* Orange color for Orderific */
         }
 
-        p {
-            text-align: center;
+        header h2 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        main h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        main p {
             font-size: 14px;
             color: #666;
             margin-bottom: 30px;
         }
 
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
         .input-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #333; /* Darker label color */
-            font-weight: 500;
-        }
-
-        input[type="email"],
-        input[type="password"] {
-            width: calc(100% - 22px);
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-            box-sizing: border-box; /* Ensure padding doesn't affect width */
-        }
-
-        .password-input {
             position: relative;
         }
 
-        .password-input button {
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: #f9f9f9;
+        }
+
+        .password-group {
+            position: relative;
+        }
+
+        .eye-icon {
             position: absolute;
             right: 10px;
             top: 50%;
             transform: translateY(-50%);
-            background: none;
-            border: none;
+            font-size: 16px;
             cursor: pointer;
         }
 
-        .password-input button img {
-            width: 20px;
-        }
-
-        .remember-forgot {
+        .options {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            font-size: 14px;
+            margin-top: 10px;
         }
 
-        .remember-forgot label {
+        .options label {
             display: flex;
             align-items: center;
-            font-size: 14px;
-            color: #333;
+            color: #666;
         }
 
-        .remember-forgot input[type="checkbox"] {
+        .options input[type="checkbox"] {
             margin-right: 5px;
         }
 
-        .remember-forgot a {
+        .login-code {
+            color: #007bff;
             text-decoration: none;
-            color: #007bff; /* Use a standard blue for the link */
-            font-size: 14px;
         }
 
         button {
-            width: 100%;
+            background-color: #333;
+            color: #fff;
             padding: 12px;
-            background-color: #000;
-            color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
             font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s ease; /* Smooth transition */
+            margin-top: 20px;
         }
 
         button:hover {
-            background-color: #222; /* Slightly darker on hover */
+            background-color: #555;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">
-            <img src="https://orderific.com/wp-content/uploads/2023/07/orderific-logo-dark.svg" alt="Orderific Logo">
-        </div>
-        <h1>Login to your Service Panel</h1>
-        <p>Enter your email address and password to access your account.</p>
-
-        <div class="input-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email address">
-        </div>
-
-        <div class="input-group">
-            <label for="password">Password</label>
-            <div class="password-input">
-                <input type="password" id="password" name="password" placeholder="Enter your password">
-                <button id="toggle-password">
-                    <img id="eye-icon" src="https://unpkg.com/lucide-static@latest/icons/eye.svg" alt="Show Password">
-                </button>
+        <header>
+            <div class="logo">
+                <img src="orderific-logo.png" alt="Orderific Logo" class="logo-img">
+                <span class="logo-text">Orderific</span>
             </div>
-        </div>
-
-        <div class="remember-forgot">
-            <label>
-                <input type="checkbox" name="remember"> Remember Me
-            </label>
-            <a href="#">Forgot Password?</a>
-        </div>
-
-        <button type="submit">Log in</button>
+            <h2>SERVICE PANEL</h2>
+        </header>
+        <main>
+            <h1>Welcome Back</h1>
+            <p>Manage, streamline, and thrive efficiently</p>
+            <form>
+                <div class="input-group">
+                    <input type="email" value="samith@gmail.com" readonly>
+                </div>
+                <div class="input-group password-group">
+                    <input type="password" value="password123" readonly>
+                    <span class="eye-icon">👁️</span>
+                </div>
+                <div class="options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="login-code">Login with Code</a>
+                </div>
+                <button type="submit">Sign In</button>
+            </form>
+        </main>
     </div>
-
-    <script>
-        const passwordInput = document.getElementById('password');
-        const togglePasswordButton = document.getElementById('toggle-password');
-        const eyeIcon = document.getElementById('eye-icon');
-
-        togglePasswordButton.addEventListener('click', function() {
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                eyeIcon.src = "https://unpkg.com/lucide-static@latest/icons/eye-off.svg"; // Change to eye-off icon
-            } else {
-                passwordInput.type = 'password';
-                eyeIcon.src = "https://unpkg.com/lucide-static@latest/icons/eye.svg";     // Change to eye icon
-            }
-        });
-    </script>
 </body>
 </html>
