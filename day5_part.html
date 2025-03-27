@@ -123,11 +123,18 @@
         }
 
         .toggle-password {
-            font-size: 24px;
-            color: rgba(0, 0, 0, 0.4);
             cursor: pointer;
             border: none;
             background: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .toggle-password img {
+            width: 24px; /* Match the previous font-size of the emoji */
+            height: 24px;
+            opacity: 0.4; /* Match the previous color opacity */
         }
 
         .form-options {
@@ -248,7 +255,9 @@
                         <label>Password</label>
                         <div class="input-wrapper">
                             <input type="password" placeholder="Password" id="passwordInput">
-                            <button type="button" class="toggle-password">👁️</button>
+                            <button type="button" class="toggle-password">
+                                <img src="eye.svg" alt="Toggle password visibility">
+                            </button>
                         </div>
                     </div>
                     <div class="form-options">
