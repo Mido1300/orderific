@@ -3,59 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction</title>
+    <title>Task 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styles to center the container */
         body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #f0f0f0; /* Light gray background to show centering */
+            background: linear-gradient(to bottom, #FEF4F2, #FFEAE6);
         }
 
-        /* Container styles */
-        .container {
-            width: 480px;
-            height: 802px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #fff;
-        }
-
-        /* Image styles */
-        .introduction-image {
-            width: 100%;
-            max-width: 480px;
-            height: auto;
-            aspect-ratio: 0.6;
-            object-fit: contain;
+        .gcard {
+            width: 407px;
+            height: 633px;
             border-radius: 32px;
+            background-image: url(https://s3-alpha-sig.figma.com/img/97c5/77dd/b047dd3c09ed673e80bc7a6d07bed063?Expires=1743984000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=HVwcohuuOmh-X7Qqo7uHWp9YRQEoc8lJNe65ZFvm3SYM0kwYAm9oSsA7budFfes6m7jFmwVSS7BAvpHsJFjwWOZQAAni9HStdxF4A3e2wyMYLzlmZv0b81b1eDuv72IzYx8o2oNcHwF1xc1waQI-otPK0tDnk3F-~j~YJk88MyArdXPhYcZl5u2OD5driF9hzdkqQCneoaiBUCilcgu1TlsOX9DD5SsSWbyMQv8hJtlnG9Z50gjSej5Z0qPIP~cc7ZKSrCtbhZt5XllsOj8Y~2yI~Op49I9eIIbioEDxmV6yg9Z5DizT8oSknJlP-KfcnOVI-0H4f4VgA1iAUDkKDg__);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 40px;
+        }
+
+        .goverlay {
+            position: absolute;
+            inset: 0;
+            background: #e2401f;
+            border-radius: 32px;
+            opacity: 0.5;
+        }
+
+        .glogo {
+            height: 38.97px;
+            position: relative;
+            z-index: 1; /* Ensure logo is above overlay */
+        }
+
+        .gtext-container {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            right: 40px;
+            color: white;
+            text-align: left;
+            z-index: 1; /* Ensure text is above overlay */
+        }
+
+        .gtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 56px;
+            letter-spacing: -3px;
+            margin-bottom: 14px;
+        }
+
+        .gdescription {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 20px;
+            letter-spacing: -0.2px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img 
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/543ba31f5d37fe4935e5f82f5412866cb668d184?placeholderIfAbsent=true&apiKey=ecaaee82aa814d438197e676842c80d8" 
-            alt="Introduction image" 
-            class="introduction-image"
-        >
+    <div class="gcard">
+        <div class="goverlay"></div>
+        <img src="./logo.svg" alt="Logo" class="glogo">
+        <div class="gtext-container">
+            <p class="gtitle"><br>Service Panel</p>
+            <p class="gdescription">
+                Streamline your restaurant operations with BMS.<br>
+                Manage reservations, orders, inventory, and staff<br>
+                effortlessly, and focus on delivering exceptional dining<br>
+                experiences.
+            </p>
+        </div>
     </div>
-
-    <script>
-        // No JavaScript functionality needed for this static component
-        document.addEventListener('DOMContentLoaded', () => {
-            // Any initialization code could go here if needed
-        });
-    </script>
 </body>
 </html>
