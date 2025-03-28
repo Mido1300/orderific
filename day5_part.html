@@ -3,102 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WSP Figma Design - Left Side Shadow</title>
+    <title>Order Display Board</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #fff;
             margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            background: linear-gradient(180deg, #F8E5E1 0%, #FCEAE6 100%);
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            height: 100vh; /* Center the frame vertically */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 14px;
+            margin: 20px;
         }
 
-        .frame {
-            background: linear-gradient(to bottom, #fde8e4 0%, #ebebeb 20%, #fde8e4 40%, #fde8e4 60%, #f7eae7 80%, #fde8e4 100%);
-            padding: 20px; /* Space inside the frame */
-            border: 2px solid #ccc; /* Frame border */
-            border-radius: 10px; /* Slightly rounded frame corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Frame shadow */
+        .logo-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
         }
 
-        .container {
-            display: grid;
-            grid-template-columns: repeat(10, 60px); /* 10 columns, each 60px wide */
-            grid-template-rows: repeat(2, 40px); /* 2 rows, each 40px tall */
-            gap: 10px; /* Space between buttons */
-        }
-
-        .button {
-            position: relative; /* For positioning the pseudo-element */
-            width: 60px;
+        .logo {
+            width: 40px;
             height: 40px;
-            background-color: #F5F5F5; /* Light gray background */
-            border-radius: 8px; /* Rounded corners */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
+            border-radius: 10px;
+        }
+
+        .restaurant-name {
+            font-size: 24px;
+            font-weight: 500;
+            color: black;
+        }
+
+        .clock {
+            font-size: 36px;
             font-weight: bold;
-            color: #333; /* Dark text color */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Default subtle shadow */
-            border: none; /* No border */
-            cursor: pointer;
+            color: black;
         }
 
-        /* Red shadow on the left using ::before */
-        .shadow-red::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 2px; /* Thin strip on the left */
-            height: 100%;
-            background: transparent;
-            box-shadow: -4px 0 8px rgba(255, 0, 0, 0.5); /* Red shadow to the left */
+        .content {
+            display: flex;
+            gap: 20px;
+            flex: 1;
+            padding: 0 20px 20px 20px;
         }
 
-        /* Green shadow on the left using ::before */
-        .shadow-green::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 2px; /* Thin strip on the left */
-            height: 100%;
-            background: transparent;
-            box-shadow: -4px 0 8px rgba(0, 204, 0, 0.5); /* Green shadow to the left */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+        }
+
+        .order-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            padding: 15px;
+            background-color: white;
+            border-radius: 20px;
+            flex: 1;
+            box-sizing: border-box;
+        }
+
+        .preparing-section {
+            flex: 2;
+        }
+
+        .ready-section {
+            width: 390px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .ready-section {
+                width: 100%;
+            }
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+        }
+
+        .orders-container {
+            display: grid;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .preparing-section .orders-container {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        .ready-section .orders-container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 768px) {
+            .preparing-section .orders-container,
+            .ready-section .orders-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .order-number {
+            padding: 8px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 12px;
+            width: 105px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .order-number-small {
+            background-color: #e5e7eb;
+            color: black;
+        }
+
+        .order-number-large {
+            width: 100%;
+            height: 120px;
+            font-size: 36px;
+            background-color: #119717;
+            color: white;
+            grid-column: span 3;
+        }
+
+        .ready-section .order-number-small {
+            background-color: #119717;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <div class="frame">
-        <div class="container">
-            <!-- Row 1 -->
-            <div class="button shadow-red">A1</div>
-            <div class="button shadow-red">A2</div>
-            <div class="button shadow-red">A3</div>
-            <div class="button">A4</div>
-            <div class="button shadow-green">A5</div>
-            <div class="button shadow-green">A6</div>
-            <div class="button shadow-green">B1</div>
-            <div class="button shadow-green">B2</div>
-            <div class="button shadow-green">B3</div>
-            <div class="button">B4</div>
+    <div id="app"></div>
 
-            <!-- Row 2 -->
-            <div class="button shadow-red">B5</div>
-            <div class="button shadow-red">B6</div>
-            <div class="button shadow-green">C1</div>
-            <div class="button shadow-green">C2</div>
-            <div class="button shadow-green">C3</div>
-            <div class="button">C4</div>
-            <div class="button">C5</div>
-            <div class="button shadow-green">C6</div>
-            <div class="button shadow-green">C7</div>
-            <div class="button">D1</div>
-        </div>
-    </div>
+    <script>
+        class OrderDisplayBoard {
+            constructor() {
+                this.preparingOrders = Array(18).fill("3885");
+                this.readyOrders = Array(14).fill("3885");
+                this.init();
+            }
+
+            init() {
+                this.render();
+                this.startClock();
+            }
+
+            startClock() {
+                const updateTime = () => {
+                    const now = new Date();
+                    const time = now.toLocaleTimeString("en-US", {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        hour12: false
+                    });
+                    document.querySelector('.clock').textContent = time;
+                };
+
+                updateTime();
+                setInterval(updateTime, 1000);
+            }
+
+            createOrderNumber(number, isReady = false, large = false) {
+                return `
+                    <div class="order-number ${large ? 'order-number-large' : 'order-number-small'}">
+                        ${number}
+                    </div>
+                `;
+            }
+
+            createOrderSection(title, orders, isReady = false, className = "") {
+                let ordersHTML = '';
+                orders.forEach((order, index) => {
+                    if (index === 0 && isReady) {
+                        ordersHTML += this.createOrderNumber(order, isReady, true);
+                    } else {
+                        ordersHTML += this.createOrderNumber(order, isReady);
+                    }
+                });
+
+                return `
+                    <section class="order-section ${className}">
+                        <h2 class="section-title">${title}</h2>
+                        <div class="orders-container">
+                            ${ordersHTML}
+                        </div>
+                    </section>
+                `;
+            }
+
+            render() {
+                const app = document.getElementById('app');
+                app.innerHTML = `
+                    <header class="header">
+                        <div class="logo-container">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9f9314bf84704a7e717f329bfc8fbb8a4e909980" alt="McDonald's logo" class="logo">
+                            <h1 class="restaurant-name">McDonald's</h1>
+                        </div>
+                        <time class="clock"></time>
+                    </header>
+                    <div class="content">
+                        ${this.createOrderSection('Preparing', this.preparingOrders, false, 'preparing-section')}
+                        ${this.createOrderSection('Ready', this.readyOrders, true, 'ready-section')}
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize the application
+        new OrderDisplayBoard();
+    </script>
 </body>
 </html>
