@@ -7,71 +7,73 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(to bottom, #D4E4FF, #FFE4E1); }
+        .gradient-bg { background: linear-gradient(to bottom, #f9e9e6, #d9d9d9); }
         .section { margin: 2rem 0; padding: 1rem; }
+        .popular-gradient { background: linear-gradient(to bottom, #f2f2f2, #f2f2f2); }
+        .card-gradient { background: linear-gradient(to bottom, #f9e9e6, #f9e9e6); }
     </style>
 </head>
 <body class="min-h-screen bg-gray-50 flex flex-col items-center p-6">
     
     <!-- Task 1: Border Box -->
     <div class="section">
-        <div class="w-64 h-64 flex items-center justify-center text-center font-semibold text-lg border-t-8 border-t-purple-600 border-r-8 border-r-teal-500 border-b-8 border-b-indigo-600 border-l-8 border-l-orange-500 bg-white shadow-lg">
+        <div class="w-64 h-64 flex items-center justify-center text-center font-semibold text-lg border-t-8 border-t-[#f9e9e6] border-r-8 border-r-[#f9e9e6] border-b-8 border-b-[#f9e9e6] border-l-8 border-l-[#f9e9e6] bg-white shadow-lg">
             This is a box with different border widths and colors.
         </div>
     </div>
 
     <!-- Task 2: Padding Div -->
     <div class="section">
-        <div class="p-8 bg-purple-100 text-center text-lg font-semibold shadow-lg rounded-lg">
+        <div class="p-8 bg-[#f9e9e6] text-center text-lg font-semibold shadow-lg rounded-lg">
             Added padding to a "div" to observe the changes!
         </div>
     </div>
 
     <!-- Task 3: Stacked Divs -->
     <div class="section">
-        <div class="bg-teal-200 text-black text-lg font-bold p-6 rounded-lg m-4">
+        <div class="bg-[#f9e9e6] text-black text-lg font-bold p-6 rounded-lg m-4">
             Task 3:
         </div>
-        <div class="bg-orange-300 text-white text-lg font-bold p-6 rounded-lg m-6">
+        <div class="bg-[#f9e9e6] text-white text-lg font-bold p-6 rounded-lg m-6">
             Adjustment
         </div>
     </div>
 
     <!-- Task 4: Box Sizing -->
     <div class="section">
-        <div class="w-64 p-6 border-4 border-indigo-500 bg-gray-100 text-center text-lg font-semibold box-border">
+        <div class="w-64 p-6 border-4 border-[#f9e9e6] bg-gray-100 text-center text-lg font-semibold box-border">
             Task 4: Using box-sizing: border-box; to control width calculations.
         </div>
     </div>
 
     <!-- Task 5: Card with Shadow -->
     <div class="section">
-        <div class="relative bg-[#FDF6E3] p-6 w-64 rounded-2xl shadow-lg" style="box-shadow: -6px 0px 0px rgba(0.1, 0.1, 0.1, 0.1);">
+        <div class="relative card-gradient p-6 w-64 rounded-2xl shadow-lg" style="box-shadow: -6px 0px 0px rgba(0.1, 0.1, 0.1, 0.1);">
             <h2 class="text-2xl font-bold text-black">#2001</h2>
             <p class="text-gray-600 font-semibold mt-1">Ralph Edwards</p>
             <p class="font-semibold mt-4 text-gray-800">Ordered</p>
-            <p class="text-gray-500 text-sm">14 min ago</p>
+            <p class="text-gray-500 text-sm">8 min ago</p>
         </div>
     </div>
 
     <!-- Task 6: Popup Modal -->
     <div class="section">
         <input type="checkbox" id="popup-toggle" class="peer hidden">
-        <label for="popup-toggle" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md cursor-pointer hover:bg-indigo-700 text-lg">
+        <label for="popup-toggle" class="bg-[#f9e9e6] text-black px-6 py-3 rounded-lg font-semibold shadow-md cursor-pointer hover:bg-[#f9e9e6] text-lg">
             Cancel Items
         </label>
         <div class="fixed inset-0 flex justify-center items-center hidden peer-checked:flex">
-            <div class="bg-white p-6 rounded-2xl shadow-2xl w-80 relative">
+            <div class="bg-red-500 p-6 rounded-2xl shadow-2xl w-80 relative">
                 <label for="popup-toggle" class="absolute top-3 right-3 bg-white w-8 h-8 flex items-center justify-center rounded-full shadow-md cursor-pointer">
                     <span class="text-black text-lg font-bold">×</span>
                 </label>
-                <h2 class="text-xl font-bold text-black">Cancel Item</h2>
-                <p class="text-gray-600 mt-1 text-sm">Are you sure to cancel this item?</p>
+                <h2 class="text-xl font-bold text-white">Cancel Item</h2>
+                <p class="text-white mt-1 text-sm">Are you sure to cancel this item?</p>
                 <div class="border border-gray-300 rounded-lg p-3 mt-4 bg-gray-50">
                     <p class="font-semibold text-base text-black">Tasty Burger</p>
                     <p class="text-gray-500 text-xs">Size: Small, Cheese: A little bit, Salt: No</p>
                 </div>
-                <label for="popup-toggle" class="w-full block bg-red-500 text-white font-semibold py-3 rounded-full mt-4 shadow-md text-center cursor-pointer hover:bg-red-600 text-lg">
+                <label for="popup-toggle" class="w-full block bg-white text-black font-semibold py-3 rounded-full mt-4 shadow-md text-center cursor-pointer hover:bg-gray-100 text-lg">
                     Cancel Items
                 </label>
             </div>
@@ -82,27 +84,27 @@
     <div class="section">
         <div class="gradient-bg p-6 rounded-xl shadow-lg flex flex-col gap-3 w-fit">
             <div class="flex gap-3">
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-purple-400">A1</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-purple-400">A2</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-purple-400">A3</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-red-500">A1</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-red-500">A2</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-red-500">A3</div>
                 <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm">A4</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-teal-400">A5</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-green-500">A5</div>
                 <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm">A6</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-teal-400">B1</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-teal-400">B2</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-teal-400">B3</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-teal-400">B4</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-green-500">B1</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-green-500">B2</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-green-500">B3</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-green-500">B4</div>
             </div>
             <div class="flex gap-3">
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-teal-400">B5</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-purple-400">B6</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-teal-400">C1</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-teal-400">C2</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-teal-400">C3</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-teal-400">C4</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-teal-400">C5</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-teal-400">C6</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-teal-400">C7</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-green-500">B5</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-red-500">B6</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-green-500">C1</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-green-500">C2</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-green-500">C3</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-green-500">C4</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-green-500">C5</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-green-500">C6</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border-l-4 border-green-500">C7</div>
                 <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm">D1</div>
             </div>
         </div>
@@ -110,31 +112,31 @@
 
     <!-- Task 8: Popular Items Grid -->
     <div class="section">
-        <div class="bg-gray-100 p-6 rounded-xl shadow-lg w-[27rem] h-[32rem]">
-            <h1 class="text-xl font-semibold mb-4 text-indigo-700">Popular Items</h1>
+        <div class="popular-gradient p-6 rounded-xl shadow-lg w-[27rem] h-[32rem]">
+            <h1 class="text-xl font-semibold mb-4 text-[#f9e9e6]">Popular Items</h1>
             <div class="grid grid-cols-2 gap-4 w-[24rem]">
                 <div class="bg-white p-4 rounded-lg shadow-sm">
-                    <p class="font-semibold text-purple-800">Double Chicken Burger + French fries</p>
+                    <p class="font-semibold text-[#f9e9e6]">Double Chicken Burger + French fries</p>
                     <p class="text-gray-500 mt-2">Order: <span class="font-semibold text-black">88</span></p>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm">
-                    <p class="font-semibold text-purple-800">Mexican Burger</p>
+                    <p class="font-semibold text-[#f9e9e6]">Mexican Burger</p>
                     <p class="text-gray-500 mt-12">Order: <span class="font-semibold text-black">74</span></p>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm">
-                    <p class="font-semibold text-purple-800">Double Cheese</p>
+                    <p class="font-semibold text-[#f9e9e6]">Double Cheese</p>
                     <p class="text-gray-500 mt-2">Order: <span class="font-semibold text-black">56</span></p>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm">
-                    <p class="font-semibold text-purple-800">Double Spicy Bean Burger</p>
+                    <p class="font-semibold text-[#f9e9e6]">Double Spicy Bean Burger</p>
                     <p class="text-gray-500 mt-2">Order: <span class="font-semibold text-black">41</span></p>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm h-[8rem]">
-                    <p class="font-semibold text-purple-800">Potato Gems</p>
+                    <p class="font-semibold text-[#f9e9e6]">Potato Gems</p>
                     <p class="text-gray-500 mt-12">Order: <span class="font-semibold text-black">38</span></p>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm">
-                    <p class="font-semibold text-purple-800">Beer</p>
+                    <p class="font-semibold text-[#f9e9e6]">Beer</p>
                     <p class="text-gray-500 mt-12">Order: <span class="font-semibold text-black">32</span></p>
                 </div>
             </div>
