@@ -8,41 +8,46 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         .gradient-bg { background: linear-gradient(to bottom, #f9e9e6, #d9d9d9); }
-        .section { margin: 2rem 0; padding: 1rem; }
+        .section { margin: 2rem 0; padding: 1rem; border-bottom: 1px solid #e5e7eb; }
         .popular-gradient { background: linear-gradient(to bottom, #f2f2f2, #f2f2f2); }
         .card-gradient { background: linear-gradient(to bottom, #f9e9e6, #f9e9e6); }
+        .dark-red-bg { background-color: #8B0000; }
     </style>
 </head>
 <body class="min-h-screen bg-gray-50 flex flex-col items-center p-6">
     
-    <!-- Task 1: Border Box -->
+    <!-- Task 1: Understanding the CSS Box Model -->
     <div class="section">
+        <h2 class="text-xl font-bold mb-4">Understanding the CSS Box Model</h2>
         <div class="w-64 h-64 flex items-center justify-center text-center font-semibold text-lg border-t-8 border-t-[#f9e9e6] border-r-8 border-r-[#f9e9e6] border-b-8 border-b-[#f9e9e6] border-l-8 border-l-[#f9e9e6] bg-white shadow-lg">
             This is a box with different border widths and colors.
         </div>
     </div>
 
-    <!-- Task 2: Padding Div -->
+    <!-- Task 2: CSS Display Properties -->
     <div class="section">
+        <h2 class="text-xl font-bold mb-4">CSS Display Properties</h2>
         <div class="p-8 bg-[#f9e9e6] text-center text-lg font-semibold shadow-lg rounded-lg">
             Added padding to a "div" to observe the changes!
         </div>
     </div>
 
-    <!-- Task 3: Stacked Divs -->
+    <!-- Task 3: CSS Positioning and Float -->
     <div class="section">
+        <h2 class="text-xl font-bold mb-4">CSS Positioning and Float</h2>
         <div class="bg-[#f9e9e6] text-black text-lg font-bold p-6 rounded-lg m-4">
             Task 3:
         </div>
-        <div class="bg-[#f9e9e6] text-white text-lg font-bold p-6 rounded-lg m-6">
+        <div class="bg-[#f9e9e6] text-black text-lg font-bold p-6 rounded-lg m-6">
             Adjustment
         </div>
     </div>
 
-    <!-- Task 4: Box Sizing -->
+    <!-- Task 4: Flexbox - Modern Layout System -->
     <div class="section">
+        <h2 class="text-xl font-bold mb-4">Flexbox - Modern Layout System</h2>
         <div class="w-64 p-6 border-4 border-[#f9e9e6] bg-gray-100 text-center text-lg font-semibold box-border">
-            Task 4: Using box-sizing: border-box; to control width calculations.
+            Using box-sizing: border-box; to control width calculations.
         </div>
     </div>
 
@@ -57,23 +62,23 @@
     </div>
 
     <!-- Task 6: Popup Modal -->
-    <div class="section">
+    <div class="section dark-red-bg p-6 rounded-xl">
         <input type="checkbox" id="popup-toggle" class="peer hidden">
         <label for="popup-toggle" class="bg-[#f9e9e6] text-black px-6 py-3 rounded-lg font-semibold shadow-md cursor-pointer hover:bg-[#f9e9e6] text-lg">
             Cancel Items
         </label>
         <div class="fixed inset-0 flex justify-center items-center hidden peer-checked:flex">
-            <div class="bg-red-500 p-6 rounded-2xl shadow-2xl w-80 relative">
-                <label for="popup-toggle" class="absolute top-3 right-3 bg-white w-8 h-8 flex items-center justify-center rounded-full shadow-md cursor-pointer">
+            <div class="bg-white p-6 rounded-2xl shadow-2xl w-80 relative">
+                <label for="popup-toggle" class="absolute top-3 right-3 bg-gray-200 w-8 h-8 flex items-center justify-center rounded-full shadow-md cursor-pointer">
                     <span class="text-black text-lg font-bold">×</span>
                 </label>
-                <h2 class="text-xl font-bold text-white">Cancel Item</h2>
-                <p class="text-white mt-1 text-sm">Are you sure to cancel this item?</p>
+                <h2 class="text-xl font-bold text-black">Cancel Item</h2>
+                <p class="text-gray-600 mt-1 text-sm">Are you sure to cancel this item?</p>
                 <div class="border border-gray-300 rounded-lg p-3 mt-4 bg-gray-50">
                     <p class="font-semibold text-base text-black">Tasty Burger</p>
                     <p class="text-gray-500 text-xs">Size: Small, Cheese: A little bit, Salt: No</p>
                 </div>
-                <label for="popup-toggle" class="w-full block bg-white text-black font-semibold py-3 rounded-full mt-4 shadow-md text-center cursor-pointer hover:bg-gray-100 text-lg">
+                <label for="popup-toggle" class="w-full block bg-red-600 text-white font-semibold py-3 rounded-full mt-4 shadow-md text-center cursor-pointer hover:bg-red-700 text-lg">
                     Cancel Items
                 </label>
             </div>
@@ -113,30 +118,30 @@
     <!-- Task 8: Popular Items Grid -->
     <div class="section">
         <div class="popular-gradient p-6 rounded-xl shadow-lg w-[27rem] h-[32rem]">
-            <h1 class="text-xl font-semibold mb-4 text-[#f9e9e6]">Popular Items</h1>
+            <h1 class="text-xl font-semibold mb-4 text-black">Popular Items</h1>
             <div class="grid grid-cols-2 gap-4 w-[24rem]">
                 <div class="bg-white p-4 rounded-lg shadow-sm">
-                    <p class="font-semibold text-[#f9e9e6]">Double Chicken Burger + French fries</p>
+                    <p class="font-semibold text-black">Double Chicken Burger + French fries</p>
                     <p class="text-gray-500 mt-2">Order: <span class="font-semibold text-black">88</span></p>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm">
-                    <p class="font-semibold text-[#f9e9e6]">Mexican Burger</p>
+                    <p class="font-semibold text-black">Mexican Burger</p>
                     <p class="text-gray-500 mt-12">Order: <span class="font-semibold text-black">74</span></p>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm">
-                    <p class="font-semibold text-[#f9e9e6]">Double Cheese</p>
+                    <p class="font-semibold text-black">Double Cheese</p>
                     <p class="text-gray-500 mt-2">Order: <span class="font-semibold text-black">56</span></p>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm">
-                    <p class="font-semibold text-[#f9e9e6]">Double Spicy Bean Burger</p>
+                    <p class="font-semibold text-black">Double Spicy Bean Burger</p>
                     <p class="text-gray-500 mt-2">Order: <span class="font-semibold text-black">41</span></p>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm h-[8rem]">
-                    <p class="font-semibold text-[#f9e9e6]">Potato Gems</p>
+                    <p class="font-semibold text-black">Potato Gems</p>
                     <p class="text-gray-500 mt-12">Order: <span class="font-semibold text-black">38</span></p>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm">
-                    <p class="font-semibold text-[#f9e9e6]">Beer</p>
+                    <p class="font-semibold text-black">Beer</p>
                     <p class="text-gray-500 mt-12">Order: <span class="font-semibold text-black">32</span></p>
                 </div>
             </div>
