@@ -37,21 +37,39 @@
     <div class="section w-full max-w-4xl">
         <h2 class="text-2xl font-bold mb-6">CSS Concepts Demonstrated</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="p-4 border-l-4 border-blue-500">
+            <div class="p-4 border-l-4 border-purple-500">
                 <h3 class="font-semibold text-lg">Task 1: Understanding the CSS Box Model</h3>
-                <p class="text-gray-600 mt-2">Created a box with varying border widths (8px) and unique colors on each side (blue top, green right, black bottom, red left), demonstrating how borders affect the box model dimensions while maintaining content centering.</p>
+                <div class="w-64 h-64 flex items-center justify-center text-center font-semibold text-lg 
+                            border-t-8 border-t-purple-600 
+                            border-r-8 border-r-teal-600 
+                            border-b-8 border-b-gray-800 
+                            border-l-8 border-l-orange-600 
+                            bg-white shadow-lg">
+                    This is a box with different border widths and colors.
+                </div>
             </div>
-            <div class="p-4 border-l-4 border-blue-500">
+            <div class="p-4 border-l-4 border-purple-500">
                 <h3 class="font-semibold text-lg">Task 2: CSS Display Properties</h3>
-                <p class="text-gray-600 mt-2">Added 2rem (32px) padding to a div with a blue background, showing how padding expands the content area while maintaining block display properties and text centering.</p>
+                <div class="p-8 bg-indigo-300 text-center text-lg font-semibold shadow-lg rounded-lg">
+                    Added padding to a "div" to observe the changes!
+                </div>
             </div>
-            <div class="p-4 border-l-4 border-blue-500">
+            <div class="p-4 border-l-4 border-purple-500">
                 <h3 class="font-semibold text-lg">Task 3: CSS Positioning and Float</h3>
-                <p class="text-gray-600 mt-2">Demonstrated vertical stacking with adjusted margins (1rem and 1.5rem) between two divs, using flex column layout to control spacing and positioning without floating elements.</p>
+                <div class="flex flex-col items-center">
+                    <div class="bg-teal-400 text-black text-lg font-bold p-6 rounded-lg m-4">
+                        Task 3:
+                    </div>
+                    <div class="bg-yellow-400 text-black text-lg font-bold p-6 rounded-lg m-6">
+                        Adjustment
+                    </div>
+                </div>
             </div>
-            <div class="p-4 border-l-4 border-blue-500">
+            <div class="p-4 border-l-4 border-purple-500">
                 <h3 class="font-semibold text-lg">Task 4: Flexbox - Modern Layout System</h3>
-                <p class="text-gray-600 mt-2">Implemented box-sizing: border-box on a 16rem wide div with 4px red border and 1.5rem padding, showing how it includes padding and border in total width calculation for precise layout control.</p>
+                <div class="w-64 p-6 border-4 border-green-600 bg-gray-200 text-center text-lg font-semibold box-border">
+                    Task 4: Using box-sizing: border-box; to control width calculations.
+                </div>
             </div>
         </div>
     </div>
@@ -68,7 +86,7 @@
     </div>
 
     <!-- Task 6: Popup Modal -->
-    <div class="section dark-red-bg p-6 rounded-xl">
+    <div class="section dark-red-bg p-6 rounded-xl text-white">
         <h2 class="text-2xl font-bold mb-6">Popup Modal</h2>
         <input type="checkbox" id="popup-toggle" class="peer hidden">
         <label for="popup-toggle" class="bg-white text-black px-6 py-3 rounded-lg font-semibold shadow-md cursor-pointer hover:bg-gray-100 text-lg transition-colors">
@@ -100,7 +118,7 @@
                 <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-red-500 hover:bg-red-50">A1</div>
                 <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-red-500 hover:bg-red-50">A2</div>
                 <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-red-500 hover:bg-red-50">A3</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md hover:bg-gray-50">A4</div>
+                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-gray-50">A4</div>
                 <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-green-500 hover:bg-green-50">A5</div>
                 <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md hover:bg-gray-50">A6</div>
                 <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-green-500 hover:bg-green-50">B1</div>
