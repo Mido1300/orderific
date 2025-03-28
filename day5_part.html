@@ -74,7 +74,7 @@
             border-radius: 20px;
             flex: 1;
             box-sizing: border-box;
-            height: 100%; /* Make order sections fill the height */
+            height: calc(100% - 20px); /* Adjust height for consistent spacing */
         }
 
         .preparing-section {
@@ -103,7 +103,8 @@
             display: grid;
             gap: 8px;
             justify-content: center;
-            flex-grow: 1; /* Allow orders container to expand and fill space */
+            flex-grow: 1;
+            margin-bottom: 20px; /* Add margin to bottom to match spacing */
         }
 
         .preparing-section .orders-container {
