@@ -1,644 +1,647 @@
+
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <style>
-      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<link rel="stylesheet" href="style.css">
+</head>
 
-      :root {
-        --headline-font-family: "DM Sans", Helvetica;
-        --headline-font-weight: 500;
-        --headline-font-size: 20px;
-        --headline-letter-spacing: -0.2px;
-        --headline-line-height: 24px;
-        --headline-font-style: normal;
-        --title-1-font-family: "DM Sans", Helvetica;
-        --title-1-font-weight: 700;
-        --title-1-font-size: 32px;
-        --title-1-letter-spacing: -0.96px;
-        --title-1-line-height: 40px;
-        --title-1-font-style: normal;
-        --button-small-font-family: "DM Sans", Helvetica;
-        --button-small-font-weight: 700;
-        --button-small-font-size: 14px;
-        --button-small-letter-spacing: 0px;
-        --button-small-line-height: 16px;
-        --button-small-font-style: normal;
-        --title-2-font-family: "DM Sans", Helvetica;
-        --title-2-font-weight: 700;
-        --title-2-font-size: 24px;
-        --title-2-letter-spacing: -0.48px;
-        --title-2-line-height: 32px;
-        --title-2-font-style: normal;
-        --spacing-1: 4px;
-        --spacing-spacing-0: 0px;
-        --spacing-spacing-6: 24px;
-        --spacing-spacing-2: 8px;
-        --spacing-spacing-4: 16px;
-        --colors-text-black-100: rgba(0, 0, 0, 1);
-        --colors-text-white-100: rgba(255, 255, 255, 1);
-        --colors-background-semantic-red-100: rgba(225, 14, 14, 1);
-        --colors-background-body-white-100: rgba(255, 255, 255, 1);
-        --colors-background-white-20: rgba(255, 255, 255, 0.2);
-        --colors-border-black-10: rgba(0, 0, 0, 0.1);
-        --colors-background-black-10: rgba(0, 0, 0, 0.1);
-        --colors-background-brand-orange-100: rgba(255, 86, 52, 1);
-        --colors-background-status-accepted: rgba(17, 151, 23, 1);
-        --colors-background-black-5: rgba(0, 0, 0, 0.05);
-        --colors-background-white-100: rgba(255, 255, 255, 1);
-        --colors-background-black-100: rgba(0, 0, 0, 1);
-        --radius-round-5: 24px;
-        --radius-round-3: 16px;
-      }
+<style>html {
+  font-size: 16px;
+  height: 100%;
+}
 
-      * {
-        -webkit-font-smoothing: antialiased;
-        box-sizing: border-box;
-      }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-      html,
-      body {
-        margin: 0px;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #f0f0f0; /* Optional: adds a light gray background */
-      }
+body {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  background: linear-gradient(67.75deg, #ffffff 19.18%, #ffebe7 75.31%);
+  font-family: 'DM Sans', sans-serif;
+}
 
-      /* a blue color as a generic focus style */
-      button:focus-visible {
-        outline: 2px solid #4a90e2 !important;
-        outline: -webkit-focus-ring-color auto 5px !important;
-      }
-      a {
-        text-decoration: none;
-      }
+.sidebar {
+  display: flex;
+  height: 100vh;
+  width: auto;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  background: transparent;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
 
-      .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
+.sidebar-logo {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 32px;
+}
 
-      .component {
-        width: 1194px;
-        height: 834px;
-        position: relative;
-      }
+.black-sidebard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 48px;
+  background-color: black;
+}
 
-      .component .overlap-group {
-        position: relative;
-        height: 834px;
-      }
+.sidebar-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-      .component .background-of-body {
-        display: flex;
-        width: 1194px;
-        height: 834px;
-        align-items: center;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: var(--colors-background-body-white-100);
-        overflow: hidden;
-      }
+.sidebar-icon.active {
+  background-color: #ff5634;
+}
 
-      .component .colorful {
-        position: relative;
-        width: 1105px;
-        height: 1879.94px;
-        margin-top: -522.97px;
-        margin-bottom: -522.97px;
-        background-color: #ff563433;
-        border-radius: 552.5px/939.97px;
-        transform: rotate(-42.41deg);
-        filter: blur(194px);
-      }
+.sidebar-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 48px;
+  background: var(--Background-White-100, #ffffff);
+}
 
-      .component .gray {
-        position: relative;
-        width: 1009.68px;
-        height: 1310.33px;
-        margin-top: -238.17px;
-        margin-bottom: -238.17px;
-        background-color: #00000020;
-        border-radius: 504.84px/655.17px;
-        transform: rotate(-37.86deg);
-        filter: blur(138px);
-      }
+.main-content {
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 96px;
+  overflow-y: auto;
+}
 
-      .component .navigation {
-        display: flex;
-        flex-direction: column;
-        width: 96px;
-        height: 834px;
-        align-items: flex-start;
-        justify-content: space-between;
-        padding: 16px;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
+.header {
+  width: 100%;
+  height: 96px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 16px 24px 0px;
+  align-self: stretch;
+  position: sticky;
+  top: 0;
+  background: linear-gradient(67.75deg, #ffffff 19.18%, #ffebe7 75.31%);
+  z-index: 900;
+}
 
-      .component .logo {
-        display: flex;
-        width: 70px;
-        height: 70px;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        position: relative;
-        border-radius: 32px;
-      }
+.header h1 {
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: -0.03em;
+}
 
-      .component .img {
-        position: relative;
-        width: 60px;
-        height: 60px;
-      }
+.fullscreen-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 18px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
 
-      .component .other-links {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        padding: 8px;
-        position: relative;
-        flex: 0 0 auto;
-        background-color: var(--colors-background-white-100);
-        border-radius: 48px;
-      }
+.fullscreen-btn svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 3;
+  stroke: black;
+}
 
-      .component .frame {
-        display: flex;
-        width: 48px;
-        height: 48px;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        position: relative;
-        border-radius: 48px;
-        background-image: url(data:image/jpeg;base64,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);
-        background-size: cover;
-        background-position: 50% 50%;
-      }
-      
-      .component .text-wrapper {
-        position: relative;
-        width: fit-content;
-        opacity: 0;
-        font-family: var(--headline-font-family);
-        font-weight: var(--headline-font-weight);
-        color: var(--colors-text-black-100);
-        font-size: var(--headline-font-size);
-        letter-spacing: var(--headline-letter-spacing);
-        line-height: var(--headline-line-height);
-        white-space: nowrap;
-        font-style: var(--headline-font-style);
-      }
+/* Fullscreen styles */
+:fullscreen .sub-content {
+  width: 100% !important;
+  height: 100vh !important;
+  margin-left: 0 !important;
+  padding: 16px !important;
+}
 
-      .component .div {
-        display: flex;
-        width: 48px;
-        height: 48px;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        position: relative;
-        background-color: var(--colors-background-black-10);
-        border-radius: 48px;
-      }
+:fullscreen .main-content {
+  margin-left: 0 !important;
+}
 
-      .component .img-2 {
-        position: relative;
-        width: 20px;
-        height: 20px;
-      }
+:fullscreen .sidebar {
+  display: none !important; /* Hide the entire sidebar in fullscreen mode */
+}
 
-      .component .rectangle {
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        top: 0;
-        left: 34px;
-        background-color: var(--colors-background-semantic-red-100);
-        border-radius: 31px;
-        border: 2px solid;
-        border-color: #ffffff;
-      }
+:fullscreen .header {
+  display: none !important; /* Hide the header in fullscreen mode (as per original JavaScript intent) */
+}
 
-      .component .main-menu {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 8px;
-        position: absolute;
-        top: 245px;
-        left: 16px;
-        background-color: var(--colors-background-black-100);
-        border-radius: 48px;
-      }
+.sub-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-bottom: 16px;
+}
 
-      .component .div-2 {
-        display: flex;
-        width: 48px;
-        height: 48px;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        position: relative;
-        background-color: var(--colors-background-white-20);
-        border-radius: var(--radius-round-5);
-      }
+.brand-card {
+  display: flex;
+  width: 100%;
+  height: 92px;
+  padding: 16px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+  background: var(--Background-Black-5, rgba(0, 0, 0, 0.05));
+}
 
-      .component .customer-display {
-        display: flex;
-        width: 48px;
-        height: 48px;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        background-color: var(--colors-background-brand-orange-100);
-        border-radius: var(--radius-round-5);
-        gap: var(--spacing-spacing-0);
-      }
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -1%;
+}
 
-      .component .frame-2 {
-        display: flex;
-        flex-direction: column;
-        width: 1098px;
-        height: 834px;
-        align-items: flex-start;
-        position: absolute;
-        top: 0;
-        left: 96px;
-        gap: var(--spacing-spacing-0);
-      }
+.brand-logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+}
 
-      .component .header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 24px 16px 24px 0px;
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-        flex: 0 0 auto;
-        background-color: transparent;
-      }
+.time {
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: -3%;
+}
 
-      .component .text-wrapper-2 {
-        position: relative;
-        width: fit-content;
-        font-family: var(--title-1-font-family);
-        font-weight: var(--title-1-font-weight);
-        color: var(--colors-text-black-100);
-        font-size: var(--title-1-font-size);
-        letter-spacing: var(--title-1-letter-spacing);
-        line-height: var(--title-1-line-height);
-        white-space: nowrap;
-        font-style: var(--title-1-font-style);
-      }
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 383px;
+  gap: 16px;
+  width: 100%;
+  flex-grow: 1;
+  margin-top: 16px;
+}
 
-      .component .frame-3 {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--spacing-spacing-2);
-        position: relative;
-        flex: 0 0 auto;
-      }
+.section {
+  display: flex;
+  flex-direction: column;
+}
 
-      .component .iconic-buttons-large {
-        display: inline-flex;
-        height: 48px;
-        align-items: center;
-        gap: 4px;
-        padding: 8px 16px 8px 12px;
-        position: relative;
-        flex: 0 0 auto;
-        border-radius: 48px;
-        border: 1px solid;
-        border-color: var(--colors-border-black-10);
-      }
+.section-preparing {
+  max-width: 100%;
+  height: 100vh;
+  border-radius: 24px;
+  padding: var(--Spacing-6, 24px);
+  gap: var(--Spacing-6, 24px);
+  background: var(--Background-White-100, #ffffff);
+}
 
-      .component .text-button {
-        font-size: var(--button-small-font-size);
-        letter-spacing: var(--button-small-letter-spacing);
-        line-height: var(--button-small-line-height);
-        position: relative;
-        width: fit-content;
-        font-family: var(--button-small-font-family);
-        font-weight: var(--button-small-font-weight);
-        color: var(--colors-text-black-100);
-        white-space: nowrap;
-        font-style: var(--button-small-font-style);
-      }
+.section-ready {
+  max-width: 100%;
+  height: 100vh;
+  border-radius: 24px;
+  padding: var(--Spacing-6, 24px);
+  gap: var(--Spacing-6, 24px);
+  background: var(--Background-White-100, #ffffff);
+}
 
-      .component .frame-4 {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--spacing-spacing-4);
-        padding: 0px var(--spacing-spacing-4) 0px var(--spacing-spacing-4);
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-        flex: 0 0 auto;
-      }
+.section h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: -3%;
+}
 
-      .component .profile-widget {
-        display: flex;
-        height: 92px;
-        align-items: center;
-        justify-content: space-between;
-        padding: 16px;
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-        background-color: var(--colors-background-black-5);
-        border-radius: 16px;
-      }
+.box-item {
+  overflow-y: auto;
+  flex-grow: 2;
+}
 
-      .component .frame-5 {
-        display: inline-flex;
-        align-items: center;
-        gap: 16px;
-        position: relative;
-        flex: 0 0 auto;
-      }
+.items {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
 
-      .component .image {
-        position: relative;
-        width: 60px;
-        height: 60px;
-        object-fit: cover;
-      }
+.item {
+  display: flex;
+  width: 106px;
+  height: 64px;
+  align-items: center;
+  border-radius: 16px;
+  background: var(--Background-Black-10, rgba(0, 0, 0, 0.1));
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.48px;
+  justify-content: center;
+}
 
-      .component .mcdonald-s-wrapper {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--spacing-1);
-        position: relative;
-        flex: 0 0 auto;
-      }
+.section-ready .item {
+  background: var(--Background-Status-Accepted, #119717);
+  color: white;
+}
 
-      .component .mcdonald-s {
-        position: relative;
-        width: fit-content;
-        margin-top: -1px;
-        font-family: var(--headline-font-family);
-        font-weight: var(--headline-font-weight);
-        color: var(--colors-text-black-100);
-        font-size: var(--headline-font-size);
-        letter-spacing: var(--headline-letter-spacing);
-        line-height: var(--headline-line-height);
-        white-space: nowrap;
-        font-style: var(--headline-font-style);
-      }
+.section-ready .item:first-child {
+  justify-content: center;
+  width: 100%;
+  height: 128px;
+  font-size: 32px;
+  padding: var(--Spacing-6, 24px);
+}
 
-      .component .frame-6 {
-        display: flex;
-        height: 614px;
-        align-items: flex-start;
-        gap: var(--spacing-spacing-4);
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-      }
+.section-preparing .item {
+  background: var(--Background-Black-10, #0000001a);
+  color: black;
+}
 
-      .component .frame-7 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: var(--spacing-spacing-6);
-        padding: var(--spacing-spacing-6);
-        position: relative;
-        flex: 1;
-        align-self: stretch;
-        flex-grow: 1;
-        background-color: var(--colors-background-white-100);
-        border-radius: 24px;
-        overflow: hidden;
-      }
+/* Portrait mode (below 992px) */
+@media (max-width: 992px) {
+  body {
+    flex-direction: column;
+  }
 
-      .component .text-wrapper-3 {
-        position: relative;
-        width: fit-content;
-        margin-top: -1px;
-        font-family: var(--title-1-font-family);
-        font-weight: var(--title-1-font-weight);
-        color: var(--colors-text-black-100);
-        font-size: var(--title-1-font-size);
-        letter-spacing: var(--title-1-letter-spacing);
-        line-height: var(--title-1-line-height);
-        white-space: nowrap;
-        font-style: var(--title-1-font-style);
-      }
+  .header {
+    padding: 16px 8px 16px 8px;
+    padding-top: 16px;
+  }
+  .header h1 {
+    font-size: 32px;
+  }
 
-      .component .frame-8 {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        justify-content: center;
-        gap: var(--spacing-spacing-2);
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-        flex: 0 0 auto;
-      }
+  .sub-content {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
 
-      .component .order-num {
-        display: flex;
-        width: 106px;
-        height: 64px;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 8px var(--spacing-spacing-6) 8px var(--spacing-spacing-6);
-        position: relative;
-        background-color: var(--colors-background-black-10);
-        border-radius: var(--radius-round-3);
-      }
+  .sidebar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    width: calc(100% - 32px);
+    padding: 8px 16px;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    z-index: 1000;
+    border-radius: 48px;
+    background: var(--Background-White-100, #fff);
+    box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.08);
+  }
 
-      .component .text-wrapper-4 {
-        position: relative;
-        width: fit-content;
-        margin-left: -0.5px;
-        margin-right: -0.5px;
-        font-family: var(--title-2-font-family);
-        font-weight: var(--title-2-font-weight);
-        color: var(--colors-text-black-100);
-        font-size: var(--title-2-font-size);
-        letter-spacing: var(--title-2-letter-spacing);
-        line-height: var(--title-2-line-height);
-        white-space: nowrap;
-        font-style: var(--title-2-font-style);
-      }
+  .sidebar-logo {
+    padding: 0;
+    gap: 8px;
+  }
 
-      .component .frame-9 {
-        display: flex;
-        flex-direction: column;
-        width: 383px;
-        align-items: center;
-        gap: var(--spacing-spacing-6);
-        padding: var(--spacing-spacing-6);
-        position: relative;
-        align-self: stretch;
-        background-color: var(--colors-background-white-100);
-        border-radius: 24px;
-        overflow: hidden;
-      }
+  .sidebar-profile {
+    flex-direction: row;
+    padding: 0;
+  }
 
-      .component .div-wrapper {
-        width: 334px;
-        height: 128px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 8px var(--spacing-spacing-6) 8px var(--spacing-spacing-6);
-        position: relative;
-        background-color: var(--colors-background-status-accepted);
-        border-radius: var(--radius-round-3);
-      }
+  .black-sidebard {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    z-index: 1000;
+    border-radius: 48px;
+    background: black;
+    box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.14);
+  }
 
-      .component .text-wrapper-5 {
-        font-size: var(--title-1-font-size);
-        letter-spacing: var(--title-1-letter-spacing);
-        line-height: var(--title-1-line-height);
-        position: relative;
-        width: fit-content;
-        font-family: var(--title-1-font-family);
-        font-weight: var(--title-1-font-weight);
-        color: var(--colors-text-white-100);
-        white-space: nowrap;
-        font-style: var(--title-1-font-style);
-      }
+  .main-content {
+    margin-left: 0;
+    padding-top: 96px;
+    padding-bottom: 16px;
+  }
 
-      .component .order-num-2 {
-        width: 106px;
-        height: 64px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 8px var(--spacing-spacing-6) 8px var(--spacing-spacing-6);
-        position: relative;
-        background-color: var(--colors-background-status-accepted);
-        border-radius: var(--radius-round-3);
-      }
+  .brand-card {
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 5px;
+  }
 
-      .component .text-wrapper-6 {
-        margin-left: -0.5px;
-        margin-right: -0.5px;
-        font-size: var(--title-2-font-size);
-        letter-spacing: var(--title-2-letter-spacing);
-        line-height: var(--title-2-line-height);
-        position: relative;
-        width: fit-content;
-        font-family: var(--title-2-font-family);
-        font-weight: var(--title-2-font-weight);
-        color: var(--colors-text-white-100);
-        white-space: nowrap;
-        font-style: var(--title-2-font-style);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="component">
-        <div class="overlap-group">
-          <div class="background-of-body">
-            <div class="colorful"></div>
-            <div class="gray"></div>
-          </div>
-          <div class="navigation">
-           <div class="logo"><img class="img" src="https://images.lumacdn.com/avatars/f9/e00a05c2-f06a-49ad-b743-dd396126c354.png" /></div>
-            <div class="other-links">
-              <div class="frame"><div class="text-wrapper">S</div></div>
-              <div class="div">
-                <img class="img-2" src="notification.svg" />
-                <div class="rectangle"></div>
-              </div>
-            </div>
-            <div class="main-menu">
-              <div class="div-2"><img class="img-2" src="file1.svg" /></div>
-              <div class="div-2"><img class="img-2" src="file2.svg" /></div>
-              <div class="div-2"><img class="img-2" src="file3.svg" /></div>
-              <div class="customer-display"><img class="img-2" src="file4.svg" /></div>
-              <div class="div-2"><img class="img-2" src="file5.svg" /></div>
-              <div class="div-2"><img class="img-2" src="file6.svg" /></div>
-            </div>
-          </div>
-          <div class="frame-2">
-            <header class="header">
-              <div class="text-wrapper-2">Order Status</div>
-              <div class="frame-3">
-                <div class="iconic-buttons-large">
-                  <img class="img-2" src="file8.svg" />
-                  <div class="text-button">FullScreen</div>
-                </div>
-              </div>
-            </header>
-            <div class="frame-4">
-              <div class="profile-widget">
-                <div class="frame-5">
-                  <img class="image" src="data:image/png;base64,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">                                  <div class="mcdonald-s-wrapper"><div class="mcdonald-s">McDonald's</div></div>
-                </div>
-                <div class="text-wrapper-2">15:03</div>
-              </div>
-              <div class="frame-6">
-                <div class="frame-7">
-                  <div class="text-wrapper-3">Preparing</div>
-                  <div class="frame-8">
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                    <div class="order-num"><div class="text-wrapper-4">3885</div></div>
-                  </div>
-                </div>
-                <div class="frame-9">
-                  <div class="text-wrapper-3">Ready</div>
-                  <div class="frame-8">
-                    <div class="div-wrapper"><div class="text-wrapper-5">3885</div></div>
-                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                    <div class="order-num-2"><div class="text-wrapper-6">3885</div></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+  .brand-logo {
+    gap: 8px;
+  }
+
+  .brand-logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 16px;
+  }
+
+  .time {
+    font-size: 24px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 5px;
+  }
+
+  .section {
+    width: 100%;
+    height: 100vh;
+    padding: 16px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
+
+  .items {
+    display: grid;
+    grid-template-columns: repeat(3, 106px);
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .item {
+    width: 106px;
+    height: 64px;
+    padding: 8px var(--Spacing-6, 24px) 8px var(--Spacing-6, 24px);
+    border-radius: 16px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section-ready .item:first-child {
+    width: 334px;
+    height: 128px;
+    padding: 8px var(--Spacing-6, 24px) 8px var(--Spacing-6, 24px);
+    border-radius: 16px;
+    font-size: 24px;
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+}
+
+/* Mobile mode (below 480px) */
+@media (max-width: 480px) {
+  .header {
+    padding: 16px 8px 16px 8px;
+  }
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .sub-content {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .sidebar {
+    padding: 8px 16px;
+  }
+
+  .sidebar-logo,
+  .sidebar-profile {
+    width: auto;
+  }
+
+  .sidebar-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .black-sidebard {
+    bottom: 24px;
+    max-width: 344px;
+    width: calc(100% - 32px);
+    height: 64px;
+  }
+
+  .main-content {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .brand-card {
+    padding: 16px;
+    margin-bottom: 5px;
+  }
+
+  .brand-logo {
+    gap: 8px;
+  }
+
+  .brand-logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 16px;
+  }
+
+  .time {
+    font-size: 20px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 5px;
+  }
+
+  .section {
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 96px - 92px - 64px - 32px);
+    padding: 16px;
+    overflow-y: auto;
+  }
+
+  .section h2 {
+    font-size: 20px;
+  }
+
+  .items {
+    grid-template-columns: repeat(3, minmax(64px, 1fr));
+    gap: 8px;
+  }
+
+  .item {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    padding: 8px var(--Spacing-6, 24px) 8px var(--Spacing-6, 24px);
+    border-radius: 16px;
+  }
+
+  .section-ready .item:first-child {
+    max-width: 334px;
+    width: 100%;
+    height: 80px;
+    font-size: 20px;
+    padding: 8px var(--Spacing-6, 24px) 8px var(--Spacing-6, 24px);
+    border-radius: 16px;
+    grid-column: 1 / -1;
+  }
+}</style>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Logo%20(1).png" alt="Order Status Logo">
         </div>
-      </div>
+        <div class="black-sidebard">
+            <div class="sidebar-icon">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector.png" alt="z">
+            </div>
+            <div class="sidebar-icon">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(1).png" alt="z">
+            </div>
+            <div class="sidebar-icon">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(2).png" alt="z">
+            </div>
+            <div class="sidebar-icon active">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(3).png" alt="z">
+            </div>
+            <div class="sidebar-icon">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(4).png" alt="z">
+            </div>
+            <div class="sidebar-icon">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(8).png" alt="z">
+            </div>
+        </div>
+        <div class="sidebar-profile">
+            <img src="https://fresher-repo-blob.vercel.app/wsp-bar/img%208.png" alt="Profile">
+            <img src="https://fresher-repo-blob.vercel.app/wsp-bar/img%207%20(1).png" alt="Notification">
+        </div>
     </div>
-  </body>
-  </html>
+    <!-- Main Content -->
+    <div class="main-content">
+        <header class="header">
+            <h1>Order Status</h1>
+            <button class="fullscreen-btn">
+                <svg viewBox="0 0 24 24"  fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 16V20H8" stroke-linecap="square" stroke-linejoin="bevel"/>
+                    <path d="M20 8V4H16" stroke-linecap="square" stroke-linejoin="bevel"/>
+                </svg>
+                FullScreen
+            </button>
+        </header>
+
+        <div class="sub-content">
+            <div class="brand-card">
+                <div class="brand-logo">
+                    <img src="https://fresher-repo-blob.vercel.app/wsp-bar/img%202.png" alt="McDonald's Logo">
+                    <span>McDonald's</span>
+                </div>
+                <div class="time">15:03</div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="grid-container">
+                <!-- Preparing Section -->
+                <div class="section section-preparing">
+                    <h2>Preparing</h2>
+                    <div class="box-item">
+                        <div class="items">
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ready Section -->
+                <div class="section section-ready">
+                    <h2>Ready</h2>
+                    <div class="box-item">
+                        <div class="items">
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
