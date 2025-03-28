@@ -1,14 +1,13 @@
+
+
 <!doctype html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 </head>
 <style>
     * {
@@ -16,7 +15,7 @@
         padding: 0;
         box-sizing: border-box;
     }
-
+    
     body {
         font-family: "DM Sans", sans-serif;
         font-optical-sizing: auto;
@@ -30,17 +29,17 @@
         flex-direction: column;
         flex-wrap: nowrap;
     }
-
+    
     .main-container {
         padding: 20px;
     }
-
+    
     .table-container {
         width: 100%;
         min-height: 100vh;
         overflow: hidden;
     }
-
+    
     .table-row {
         display: grid;
         grid-template-columns: 0.6fr 2fr;
@@ -50,7 +49,7 @@
         min-height: 0;
         overflow: auto;
     }
-
+    
     .parent-imgsec {
         background-image: url('./bg_img.png');
         background-size: cover;
@@ -62,7 +61,7 @@
         max-width: 100%;
         min-height: 300px;
     }
-
+    
     .parent-imgsec::before {
         content: '';
         position: absolute;
@@ -74,7 +73,7 @@
         background: rgba(255, 86, 52, 0.5);
         z-index: 1;
     }
-
+    
     .left-side {
         position: relative;
         z-index: 5;
@@ -83,23 +82,23 @@
         color: rgba(255, 255, 255, 1);
         min-height: 100%;
     }
-
+    
     .logo {
         width: 180px;
     }
-
+    
     .text-title {
         font-size: 64px;
         font-weight: 700;
         margin-top: 140%;
     }
-
+    
     .text {
         font-size: 16px;
         line-height: 20px;
         color: rgba(255, 255, 255, 1);
     }
-
+    
     .parent-form {
         padding-left: 40px;
         padding-right: 40px;
@@ -108,46 +107,47 @@
         min-height: 100%;
         justify-content: center;
         width: 100%;
-        display: flex;
-        /* or any layout that puts children side by side */
+        display: flex; /* or any layout that puts children side by side */
         flex-direction: row;
         align-items: center;
     }
-
+    
     .right-side {
         display: flex;
         flex-direction: column;
         gap: 8px;
         max-width: 360px;
         width: 100%;
+        
     }
-
+    
     .right-side h3 {
         font-size: 32px;
         font-weight: 700;
         color: #1A1A1A;
         text-align: center;
     }
-
+    
     .subtitle {
         font-size: 16px;
         color: rgba(0, 0, 0, 0.6);
         margin-bottom: 8px;
         text-align: center;
     }
-
+    
     .label1 {
         color: rgba(0, 0, 0, 0.6);
         margin-bottom: 8px;
         display: block;
         padding-left: 16px;
         font-family: DM Sans;
-        font-weight: 700;
-        font-size: 13px;
-        line-height: 16px;
-        letter-spacing: 0%;
-    }
+font-weight: 700;
+font-size: 13px;
+line-height: 16px;
+letter-spacing: 0%;
 
+    }
+    
     .right-side input[type="email"],
     .right-side input[type="password"] {
         width: 100%;
@@ -159,11 +159,11 @@
         margin-bottom: 16px;
         margin-top: 0px;
     }
-
+    
     .password-container {
         position: relative;
     }
-
+    
     .eye-icon {
         position: absolute;
         right: 15px;
@@ -171,7 +171,7 @@
         transform: translateY(-50%);
         color: #666;
     }
-
+    
     .form-options {
         display: flex;
         justify-content: space-between;
@@ -179,14 +179,14 @@
         font-size: 16px;
         margin-top: 14px;
     }
-
+    
     .form-options label {
         display: flex;
         align-items: center;
         gap: 8px;
         color: black;
     }
-
+    
     .form-options a {
         color: rgba(0, 0, 0, 1);
         text-decoration: none;
@@ -195,14 +195,14 @@
         text-decoration: underline;
         text-decoration-thickness: 0px;
     }
-
+    
     .Remember {
         color: rgba(0, 0, 0, 1);
         padding-left: 0px;
         font-size: 16px;
         color: rgba(0, 0, 0, 0.6);
     }
-
+    
     .right-side input[type="checkbox"] {
         appearance: none;
         border-radius: 8px;
@@ -213,11 +213,11 @@
         cursor: pointer;
         position: relative;
     }
-
+    
     .form-options a:hover {
         text-decoration: underline;
     }
-
+    
     .right-side button {
         background-color: rgba(0, 0, 0, 1);
         color: rgba(255, 255, 255, 1);
@@ -236,20 +236,20 @@
         margin-top: 26px;
         height: 48px;
     }
-
+    
     .right-side button:hover {
         background-color: rgba(0, 0, 0, 0.05);
         color: rgba(0, 0, 0, 0.4);
     }
-
+    
     .logo2 {
         display: none;
     }
-
+    
     .panel {
         display: none;
     }
-
+    
     /* cehck box */
     .right-side input[type="checkbox"]:checked::after {
         content: '✔';
@@ -259,7 +259,7 @@
         font-size: 16px;
         color: #000;
     }
-
+    
     @media (max-width: 1024px) {
         .main-container {
             max-width: 100vw;
@@ -268,11 +268,11 @@
             padding-left: 48px;
             padding-right: 48px;
         }
-
+    
         .table-container {
             height: auto;
         }
-
+    
         .table-row {
             grid-template-columns: 1fr;
             grid-template-rows: auto auto;
@@ -281,7 +281,7 @@
             justify-items: center;
             align-items: center;
         }
-
+    
         .parent-imgsec {
             padding: 20px;
             border-radius: 20px 20px 0 0;
@@ -290,21 +290,21 @@
             background-position: center;
             display: none;
         }
-
+    
         .parent-imgsec::before {
             border-radius: 20px 20px 0 0;
             display: none;
         }
-
+    
         .left-side {
             align-items: center;
             text-align: center;
         }
-
+    
         .logo {
             width: 120px;
         }
-
+    
         .logo2 {
             display: flex;
             align-items: center;
@@ -316,11 +316,11 @@
             transform: translateX(-50%);
             grid-template-columns: 1fr;
         }
-
+    
         .logo2 img {
             display: block;
         }
-
+    
         .panel {
             display: block;
             font-size: 32px;
@@ -332,16 +332,16 @@
             grid-template-columns: 1fr;
             margin-top: 58px;
         }
-
+    
         .text-title {
             font-size: 36px;
             margin-top: 20px;
         }
-
+    
         .text {
             font-size: 0.9rem;
         }
-
+    
         .parent-form {
             padding-left: 20px;
             padding-right: 20px;
@@ -352,37 +352,37 @@
             transform: translateY(-50%);
             /* width: 61%; */
         }
-
+    
         .right-side {
             max-width: 360px;
             padding: 0 10px;
             margin-left: 0px;
         }
-
+    
         .right-side h3 {
             font-size: 1.5rem;
         }
-
+    
         .subtitle {
             font-size: 14px;
         }
-
+    
         .right-side input[type="email"],
         .right-side input[type="password"] {
             padding: 10px 12px;
             font-size: 0.9rem;
         }
-
+    
         .right-side button {
             padding: 10px;
             font-size: 0.9rem;
         }
-
+    
         .eye-icon {
             top: 20px;
         }
     }
-
+    
     /* Media Query for Very Small Screens (max-width: 480px) */
     @media (max-width: 480px) {
         .main-container {
@@ -390,77 +390,77 @@
             padding: 16px;
             /* background: linear-gradient(33.85deg, #FDE8E4 37.88%, #ECECEC 73.61%); */
         }
-
+    
         .parent-imgsec {
             height: 250px;
             display: none;
         }
-
+    
         .parent-form {
             width: 100%;
         }
-
+    
         .logo2 {
             left: 47%;
             height: 42px;
             overflow: hidden;
         }
-
+    
         .logo2 img {
             display: block;
         }
-
+    
         .lg {
             height: 40px;
             width: auto;
         }
-
+    
         .right-side h3 {
             font-size: 1.3rem;
         }
-
+    
         .subtitle {
             font-size: 12px;
         }
-
+    
         .panel {
             font-size: 18px;
             margin-top: 40px;
         }
     }
-
+    
     @media (min-resolution: 1dpi) {
         .main-container {
             transform: scale(1);
         }
     }
 </style>
-
 <body>
     <div class="main-container">
-        <div class="logo2"> <img src="./oderificimg.png" alt="logo2" class="lg"></div>
-        <b class="panel">Service Panel</b>
+       <div class="logo2"> <img  src="./oderificimg.png" alt="logo2" class="lg"></div>
+       <b class="panel">Service Panel</b>
         <table class="table-container">
             <tr class="table-row">
+                <!-- Left side image section -->
                 <td class="parent-imgsec">
                     <div class="left-side">
                         <img class="logo" src="Logo.png" alt="logo">
-
+                        
                         <h2 class="text-title">Service Panel</h2>
-                        <p class="text">Streamline your restaurant operations with BMS. Manage reservations, orders, inventory, and staff
-                            effortlessly, and focus on delivering exceptional dining experiences.</p>
+                        <p class="text">Streamline your restaurant operations with BMS. Manage reservations, orders, inventory, and staff effortlessly, and focus on delivering exceptional dining experiences.</p>
                     </div>
                 </td>
+                <!-- Right side form -->
                 <td class="parent-form">
                     <div class="right-side">
                         <h3>Welcome Back</h3>
                         <p class="subtitle">Manage, streamline, and thrive effortlessly.</p>
                         <form action="OTP.html" method="post">
                             <label class="label1">Email</label>
-                            <input type="email" placeholder="Enter your Email" value="samsmith@gmail.com" required><br>
+                            <input type="email" placeholder="Enter your Email" required><br>
                             <label class="label1">Password</label>
                             <div class="password-container">
-                                <input type="password" placeholder="••••••••" value="********" required>
+                                <input type="password" placeholder="••••••••" required>
                                 <span><img class="eye-icon" src="./eyeicon.png"></span>
                             </div>
                             <div class="form-options">
@@ -477,5 +477,4 @@
         </table>
     </div>
 </body>
-
 </html>
