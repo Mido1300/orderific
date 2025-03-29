@@ -85,9 +85,9 @@
             position: relative;
             max-width: 500px;
             margin: 0 auto;
-            display: flex; /* Flexbox for layout */
-            flex-wrap: wrap; /* Allows wrapping if needed */
-            justify-content: space-between; /* Spreads content */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
 
         .no-fee-circle {
@@ -159,12 +159,18 @@
             font-weight: 400;
         }
 
+        .para-99 .line-1,
+        .para-99 .line-2 {
+            display: block; /* Each line is a block to stack vertically */
+        }
+
         /* Button Styles */
         .button-container {
             display: flex;
             justify-content: center; /* Centers button horizontally */
             align-items: center; /* Centers button vertically */
             width: 50%; /* Takes right half of the card */
+            margin-top: 40px; /* Adds suitable spacing between text and button */
         }
 
         .plan-button {
@@ -278,7 +284,7 @@
 
             .button-container {
                 width: 100%; /* Full width on small screens */
-                margin-top: 20px; /* Add spacing */
+                margin-top: 20px; /* Adjust spacing */
             }
 
             .plan-button {
@@ -343,13 +349,17 @@
                                         <h4>$99/month</h4>
                                     </div>
                                 </div>
-                                <p class="para-99">Become a culinary sensation with Orderific's Full Plan at just $99/month.</p>
+                                <!-- Split the text into two lines -->
+                                <p class="para-99">
+                                    <span class="line-1">Become a culinary sensation with Orderific's Full Plan</span>
+                                    <span class="line-2">$99/month.</span>
+                                </p>
                             </div>
-                                <!-- Get Started button centered and moved down one line -->
-                               <div class="button-container" style="position: relative; top: 55px; left: -115px;">
-                              <a href="#" class="plan-button">Get Started</a>
-                             </div>                            
-                                <div class="pricing-row" style="width: 100%;">
+                            <!-- Get Started button on the right side -->
+                            <div class="button-container">
+                                <a href="#" class="plan-button">Get Started</a>
+                            </div>
+                            <div class="pricing-row" style="width: 100%;">
                                 <div class="pricing-list">
                                     <p class="title">Key features:</p>
                                     <div class="feature-list">
