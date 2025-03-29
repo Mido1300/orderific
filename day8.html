@@ -1,396 +1,187 @@
-
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-    rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Updating Pricing Plan</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .pricing-container {
+            width: 100%; /* Ensure the container takes full width */
+        }
+        .content-padding {
+            width: 100%; /* Ensure the content padding takes full width */
+        }
+    </style>
 </head>
-
-<body class="font-['DM_Sans'] background1 min-h-screen w-full max-w-[100vw] overflow-x-hidden flex flex-col">
-  <div class="flex h-full flex-col lg:flex-row ">
-    <!-- Sidebar -->
-    <div
-      class="lg:w-auto md:w-full w-[95%] lg:left-0 top-1 lg:h-screen h-16 justify-between rounded-full  bg-white lg:bg-none  flex px-4 py-2 items-center mt-1 lg:max-h-screen lg:overflow-hidden overflow-visible  lg:ml-0 ml-auto lg:flex-col sm:flex-row flex-row space-y-4 lg:space-y-auto lg:fixed sticky z-20 duration-300 ">
-      <div class="bg-white  h-16 w-16 text-2xl font-bold rounded-full flex items-center justify-center">
-        <img src="Logo (1).png" alt="brandLogo" class="w-8 h-8 object-contain">
-      </div>
-      <div
-        class="w-auto h-auto gap-2 p-2 rounded-full bg-black text-white hidden lg:flex flex-col space-y-4 bg-black p-3">
-        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-          <img src="Vector (6).png" alt="menuItem">
+<body>
+    <section class="pricing-container">
+        <div class="container">
+            <div class="content-padding">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="pricing-card holder-card card-1">
+                            <div class="position-absolute">
+                                <div class="img-container">
+                                    <div class="no-fee-circle">No Setup Fee or Binding Contracts</div>
+                                </div>
+                            </div>
+                            <div class="pricing-row">
+                                <div class="icon-row d-flex gap-4 align-items-center justify-content-center">
+                                    <div class="logo-container">
+                                        <img class="dollar-sign" src="https://orderific.com/ord-website/assets/img/pricing/logo/icon4.png" alt="">
+                                    </div>
+                                    <div class="pricing-quote">
+                                        <p class="pro-plan">Full/Pro Plan</p>
+                                        <h4>$99/month</h4>
+                                    </div>
+                                </div>
+                                <p class="para-99">Become a culinary sensation with Orderific's Full Plan at just $99/month.</p>
+                            </div>
+                            <div class="pricing-row">
+                                <div class="btn-group" role="group">
+                                    <div class="btn-row-left text-center">
+                                        <a href="#" class="plan-button">Get Started</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pricing-row">
+                                <div class="pricing-list">
+                                    <p class="title"><b>Key Features:</b></p>
+                                    <div class="feature-list">
+                                        <div class="list-item">
+                                            <div class="d-inline-flex gap-4">
+                                                <div class="img-container">
+                                                    <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check" />
+                                                </div>
+                                                <div>
+                                                    <p class="feature-head">Digital Smart Menu</p>
+                                                    <p class="feature-sub">Interactive menu system with real-time updates.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item">
+                                            <div class="d-inline-flex gap-4">
+                                                <div class="img-container">
+                                                    <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check" />
+                                                </div>
+                                                <div>
+                                                    <p class="feature-head">Loyalty Program</p>
+                                                    <p class="feature-sub">Features for rewarding and retaining customers.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item">
+                                            <div class="d-inline-flex gap-4">
+                                                <div class="img-container">
+                                                    <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check" />
+                                                </div>
+                                                <div>
+                                                    <p class="feature-head">Business Analytics</p>
+                                                    <p class="feature-sub">Tools for analyzing and strategizing business data.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item">
+                                            <div class="d-inline-flex gap-4">
+                                                <div class="img-container">
+                                                    <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check" />
+                                                </div>
+                                                <div>
+                                                    <p class="feature-head">Website Builder</p>
+                                                    <p class="feature-sub">Tools for creating a dynamic online presence.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item">
+                                            <div class="d-inline-flex gap-4">
+                                                <div class="img-container">
+                                                    <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check" />
+                                                </div>
+                                                <div>
+                                                    <p class="feature-head">Integrated Payment Options</p>
+                                                    <p class="feature-sub">Diverse payment methods for customer convenience.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item">
+                                            <div class="d-inline-flex gap-4">
+                                                <div class="img-container">
+                                                    <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check" />
+                                                </div>
+                                                <div>
+                                                    <p class="feature-head">Delivery System Setup</p>
+                                                    <p class="feature-sub">Tools for establishing and managing delivery services.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item">
+                                            <div class="d-inline-flex gap-4">
+                                                <div class="img-container">
+                                                    <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check" />
+                                                </div>
+                                                <div>
+                                                    <p class="feature-head">Marketing Tools</p>
+                                                    <p class="feature-sub">Resources to enhance marketing reach and effectiveness.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item">
+                                            <div class="d-inline-flex gap-4">
+                                                <div class="img-container">
+                                                    <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check" />
+                                                </div>
+                                                <div>
+                                                    <p class="feature-head">Menu Translation</p>
+                                                    <p class="feature-sub">Feature to translate menus into multiple languages.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item">
+                                            <div class="d-inline-flex gap-4">
+                                                <div class="img-container">
+                                                    <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check" />
+                                                </div>
+                                                <div>
+                                                    <p class="feature-head">Clear Reporting</p>
+                                                    <p class="feature-sub">Stay informed with straightforward analytics.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item">
+                                            <div class="d-inline-flex gap-4">
+                                                <div class="img-container">
+                                                    <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="Check" />
+                                                </div>
+                                                <div>
+                                                    <p class="feature-head">Seamless POS Integration</p>
+                                                    <p class="feature-sub">Efficient integration with point-of-sale systems.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-end text-black">...and much more!</p>
+                                </div>
+                                <div class="pricing-footer">
+                                    <p class="footer-header">Ideal for Visionary Restaurateurs:</p>
+                                    <div class="footer-word">
+                                        Choose this plan to elevate your dining experience and set your restaurant apart. Ideal for combining technology and insights to grow your business.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-          <img src="Vector (7).png" alt="menuItem">
-        </div>
-        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-          <img src="Vector (8).png" alt="menuItem">
-        </div>
-        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-          <img src="Vector (9).png" alt="menuItem">
-        </div>
-        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-          <img src="Vector (10).png" alt="menuItem">
-        </div>
-        <div class="w-10 h-10 bg3 rounded-full relative flex items-center justify-center">
-          <img src="Vector (11).png" alt="menuItem">
-          <span
-            class="absolute -top-1 -right-1 bg2 text-white w-4 h-4 min-w-4 gap-0 rounded-full pt-0 pr-1 pb-0 pl-1 border-2 border-black text-xs flex items-center justify-center">1</span>
-        </div>
-      </div>
-      <div class="gap-2 p-2 rounded-full flex lg:flex-col flex-row lg:mb-5">
-        <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden">
-          <img src="4357ccf260ffcb69e9a74820541e8969.png" alt="profile" class="w-full h-full object-cover">
-        </div>
-        <div class="w-12 h-12 bg-black/10 rounded-full relative flex items-center justify-center">
-          <img src="Vector.png" alt="Notification">
-          <span
-            class="absolute -top-1 -right-0 bg2 text-white text-xs border-2 w-4 h-4 flex items-center justify-center rounded-full"></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="flex flex-grow flex-col h-full  lg:ml-20">
-      <!-- Pending Transactions -->
-      <div id="mainHeader" class="h-full w-full pt-[16px] md:pt-[24px] pr-[16px] md:pb-[24px] pb-[16px] pl-[16px] lg:top-0 top-16 sticky block z-11 bg-transparent transition-colors duration-300">
-        <h2
-          class="font-bold md:text-[32px] text-[24px] leading-[40px] tracking-[3%] font-sans text-center md:text-left ">
-          OTP Confirmation
-        </h2>
-      </div>
-      <div
-        class=" h-screen gap-0 rounded-[24px] pr-0  flex flex-col md:flex-row min-h-screen ml-2 mr-2 mx-auto  ">
-        <!-- Sidebar (Sticky on Left) -->
-        <div class="w-full md:w-[320px] h-screen md:h-[100vh] gap-6 pt-7 pr-0 pb-1 pl-0 bg-white/60 sticky  z-10">
-          <!-- Header with Pending and Search -->
-          <div class="flex justify-between w-full md:w-[320px] h-12 gap-4 px-4" id="headerSection">
-            <h3 class=" font-semibold flex items-center gap-2 text-[20px]">
-              Pending
-              <span class="bg-black text-white text-xs w-6 h-6 flex items-center justify-center rounded-full">1</span>
-            </h3>
-            <div
-              class="w-[48px] h-[48px] border border-black/5 rounded-full flex items-center justify-center hidden md:flex cursor-pointer"
-              id="searchBtn">
-              <img src="Vector13.png" alt="search" class="w-4.5 h-4.5">
-            </div>
-          </div>
-          <!-- Search Overlay (replaces headerSection when active) -->
-          <div class="w-full md:w-[320px] h-12 gap-4 px-4 hidden" id="searchOverlay">
-            <div class="bg-white rounded-full shadow-lg p-2 flex items-center w-full h-full">
-              <input type="text" placeholder="Search..." class="w-full p-2 rounded-full border-none focus:outline-none">
-              <button class="ml-2 text-black/60 hover:text-black text-2xl font-bold cursor-pointer " id="searchCloseBtn">×</button>
-            </div>
-          </div>
-          <!-- Scrollable List -->
-          <div
-            class="w-full md:w-[320px] h-[calc(100%-3rem)] mt-6 overflow-y-auto overflow-x-hidden border-r border-black/10">
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="fa1be286e3b17627a17bbb20e41bbdc5 (1).png" alt="users" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Nasser Alsubai</p>
-                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 - 10:24</p>
-                </div>
-              </div>
-              <p class="font-sans font-medium text-base leading-6 flex items-center gap-2 flex-shrink-0">
-                <span
-                  class="bg-red-500 text-white text-xs w-2 h-2 flex items-center justify-center rounded-full"></span>
-                <span class="text-black">674951</span>
-              </p>
-            </div>
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="dd7e73a85c1a6716fa387cae6e0d5302.png" alt="users" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Nguyen, Shane</p>
-                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 10:20</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="db97e1ca6fed7991ee043f68dedada2f.png" alt="" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Flores, Juanita</p>
-                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 10:04</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="bd99690039f35eb8f13e58adae118810.png" alt="" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Miles, Esther</p>
-                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 09:30</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="b2df27fc83f170007341358a821fa3bd.png" alt="" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Miles, Esther</p>
-                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 09:26</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="5952fe808473ca364d45dfb6d88c433f.png" alt="" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Black, Marvin</p>
-                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 09:20</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="4357ccf260ffcb69e9a74820541e8969.png" alt="" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Cooper, Kristin</p>
-                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 09:18</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="432a756d1ebdc6151dac288cfa3ef1f7.png" alt="" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Flores, Juanita</p>
-                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 09:07</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="91ff9a60558873cde74916290a286e84.png" alt="" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Black, Marvin</p>
-                  <p class="text-[13px] text-black/60 truncate">8 Feb 2024 — 22:20</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="dd7e73a85c1a6716fa387cae6e0d5302.png" alt="users" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Nguyen, Shane</p>
-                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 10:20</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="dd7e73a85c1a6716fa387cae6e0d5302.png" alt="users" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Nguyen, Shane</p>
-                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 10:20</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="dd7e73a85c1a6716fa387cae6e0d5302.png" alt="users" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Nguyen, Shane</p>
-                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 10:20</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="dd7e73a85c1a6716fa387cae6e0d5302.png" alt="users" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Nguyen, Shane</p>
-                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 10:20</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="dd7e73a85c1a6716fa387cae6e0d5302.png" alt="users" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Nguyen, Shane</p>
-                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 10:20</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="dd7e73a85c1a6716fa387cae6e0d5302.png" alt="users" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Nguyen, Shane</p>
-                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 10:20</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="dd7e73a85c1a6716fa387cae6e0d5302.png" alt="users" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Nguyen, Shane</p>
-                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 10:20</p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
-              <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                  <img src="dd7e73a85c1a6716fa387cae6e0d5302.png" alt="users" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Nguyen, Shane</p>
-                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 10:20</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- OTP Details (Fixed, No Scroll) -->
-        <div
-          class="flex-grow w-full md:w-1/2 h-auto rounded-md gap-2 lg:gap-0 md:px-5 border-l border-black/5 flex flex-col bg-white ">
-          <button
-            class="self-start text-black font-['DM_Sans'] font-medium text-[16px] leading-5 tracking-[-0.01em] underline mt-8 mb-5 pl-7 md:pl-0">Close</button>
-          <div class="text-center space-y-10 mx-auto max-w-[600px] flex flex-col pt-[117px] overflow-hidden ">
-            <div class="space-y-0">
-              <div class="w-[120px] h-[120px] bg-black/5 rounded-full mx-auto overflow-hidden mb-2">
-                <img src="7a53e28c8e0fb3041bea3c00aa660a58.png" alt="" class="w-full h-full object-cover">
-              </div>
-              <h3 class="text-[22px] font-semibold">Nasser Alsubai</h3>
-              <p class="text-black/60">ID: 296571905</p>
-            </div>
-            <div class="space-y-4">
-              <h1 class="text-[32px] font-bold text-[rgba(255,86,52,1)]">674951</h1>
-              <p class="text-black text-[16px]">
-                To accept cash transfers, the rider must enter this 4-digit code in their app before you can accept the
-                transaction.
-              </p>
-            </div>
-            <div class="space-y-0 ">
-              <p class="text-[16px] ">The amount you should receive:</p>
-              <p class="text-[32px] leading-10 font-bold mb-4">$86.60</p>
-              <button class="bg-black/5 text-black/40 text-4 px-6 py-2 rounded-full cursor-pointer">Accept Cash
-                Transfer</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="md:w-auto md:h-auto h-15 gap-2 p-2 rounded-full bg-black text-white fixed bottom-3 left-1/2 transform -translate-x-1/2 p-3 rounded-full flex md:space-x-4 space-x-2 lg:hidden z-20 pointer-events-auto">
-    <div class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center">
-      <img src="Vector (6).png" alt="menuItems">
-    </div>
-    <div class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center">
-      <img src="Vector (6).png" alt="menuItems">
-    </div>
-    <div class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center">
-      <img src="Vector (6).png" alt="menuItems">
-    </div>
-    <div class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center">
-      <img src="Vector (6).png" alt="menuItems">
-    </div>
-    <div class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center">
-      <img src="Vector (6).png" alt="menuItems">
-    </div>
-    <div class="md:w-10 w-8 md:h-10 h-8 bg3 rounded-full relative flex items-center justify-center">
-      <img src="Vector (6).png" alt="menuItems">
-      <span
-        class="absolute -top-1 -right-1 bg2 text-white w-4 h-4 min-w-4 gap-0 rounded-full pt-0 pr-1 pb-0 pl-1 border-2 border-black text-xs flex items-center justify-center">1</span>
-    </div>
-  </div>
-  <!-- Search js file -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const searchBtn = document.getElementById('searchBtn');
-      const headerSection = document.getElementById('headerSection');
-      const searchOverlay = document.getElementById('searchOverlay');
-      const searchCloseBtn = document.getElementById('searchCloseBtn');
-      // Search functionality
-      searchBtn.addEventListener('click', () => {
-        headerSection.classList.add('hidden');
-        searchOverlay.classList.remove('hidden');
-      });
-
-      searchCloseBtn.addEventListener('click', () => {
-        searchOverlay.classList.add('hidden');
-        headerSection.classList.remove('hidden');
-      });
-    });
-  </script>
-  <!-- Js for scrolling effect header -->
-    <script>
-      document.addEventListener('scroll', () => {
-          const element = document.getElementById('mainHeader');
-  
-          if (window.scrollY > 0) {
-              // Remove transparent, add semi-transparent white
-              element.classList.remove('bg-transparent');
-              element.classList.add('bg-[rgba(255,255,255,1)]', 'rounded-2xl');
-          } else {
-              // Remove semi-transparent white, add transparent
-              element.classList.remove('bg-[rgba(255,255,255,1)]', 'rounded-2xl');
-              element.classList.add('bg-transparent');
-          }
-      });
-  </script>
+    </section>
 </body>
 </html>
