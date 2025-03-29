@@ -1,92 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-    />
-    <title>Day4 Task1</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      body {
-        font-family: 'DM Sans', sans-serif;
-      }
+        body {
+            font-family: 'DM Sans', sans-serif;
+        }
+        /* Custom fullscreen styles that can't be achieved with Tailwind alone */
+        :fullscreen .sub-content {
+            width: 100% !important;
+            height: 100vh !important;
+            margin-left: 0 !important;
+            padding: 1rem !important;
+        }
+        :fullscreen .main-content {
+            margin-left: 0 !important;
+        }
+        :fullscreen .sidebar {
+            display: none !important;
+        }
+        :fullscreen .header {
+            display: none !important;
+        }
     </style>
-  </head>
-
-  <body class="flex flex-col items-center h-screen bg-gradient-to-r from-white to-[#ffebe7] p-4">
-    <!-- McDonald's Info Card -->
-    <div class="brand-card flex w-full h-[92px] justify-between items-center p-4 rounded-xl bg-black/5">
-      <div class="brand-logo flex items-center gap-4 font-medium text-xl tracking-tight">
-        <img src="https://fresher-repo-blob.vercel.app/wsp-bar/img%202.png" alt="McDonald's Logo" class="w-14 h-14 rounded-xl" />
-        <span>McDonald's</span>
-      </div>
-      <div class="time font-bold text-3xl tracking-tight">15:03</div>
+</head>
+<body class="flex flex-row h-screen bg-gradient-to-r from-white via-white to-[#ffebe7]">
+    <!-- Sidebar -->
+    <div class="sidebar fixed left-0 top-0 h-screen w-auto flex flex-col justify-between p-4 z-[1000]">
+        <div class="sidebar-logo w-16 h-16 flex items-center justify-center gap-2 rounded-full">
+            <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Logo%20(1).png" alt="Order Status Logo">
+        </div>
+        <div class="black-sidebard flex flex-col items-center gap-2 p-2 rounded-3xl bg-black">
+            <div class="sidebar-icon w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector.png" alt="z">
+            </div>
+            <div class="sidebar-icon w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(1).png" alt="z">
+            </div>
+            <div class="sidebar-icon w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(2).png" alt="z">
+            </div>
+            <div class="sidebar-icon active w-12 h-12 rounded-full bg-[#ff5634] flex items-center justify-center">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(3).png" alt="z">
+            </div>
+            <div class="sidebar-icon w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(4).png" alt="z">
+            </div>
+            <div class="sidebar-icon w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(8).png" alt="z">
+            </div>
+        </div>
+        <div class="sidebar-profile flex flex-col justify-center items-center gap-2 p-2 rounded-3xl bg-white">
+            <img src="https://fresher-repo-blob.vercel.app/wsp-bar/img%208.png" alt="Profile">
+            <img src="https://fresher-repo-blob.vercel.app/wsp-bar/img%207%20(1).png" alt="Notification">
+        </div>
     </div>
 
     <!-- Main Content -->
-    <div class="grid-container grid grid-cols-[1fr_383px] gap-4 w-full flex-1 mt-4">
-      <!-- Preparing Section -->
-      <div class="section section-preparing flex flex-col max-w-full h-full rounded-2xl p-6 gap-6 bg-white shadow-md">
-        <h2 class="text-center font-bold text-3xl tracking-tight">Preparing</h2>
-        <div class="box-item overflow-y-auto flex-1">
-          <div class="items flex flex-wrap justify-center items-start gap-2 flex-1">
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-          </div>
-        </div>
-      </div>
+    <div class="main-content flex-1 h-screen flex flex-col items-center ml-24 overflow-y-auto">
+        <header class="header w-full h-24 flex justify-between items-center p-6 pr-4 sticky top-0 bg-gradient-to-r from-white via-white to-[#ffebe7] z-[900]">
+            <h1 class="text-3xl font-bold tracking-tight">Order Status</h1>
+            <button class="fullscreen-btn flex items-center gap-1.5 p-4 border border-black/10 rounded-xl bg-transparent font-bold text-sm cursor-pointer">
+                <svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 16V20H8" stroke="black" stroke-width="3" stroke-linecap="square" stroke-linejoin="bevel"/>
+                    <path d="M20 8V4H16" stroke="black" stroke-width="3" stroke-linecap="square" stroke-linejoin="bevel"/>
+                </svg>
+                FullScreen
+            </button>
+        </header>
 
-      <!-- Ready Section -->
-      <div class="section section-ready flex flex-col w-[383px] h-full rounded-2xl p-6 gap-6 bg-white shadow-md">
-        <h2 class="text-center font-bold text-3xl tracking-tight">Ready</h2>
-        <div class="box-item overflow-y-auto flex-1">
-          <div class="items flex flex-wrap justify-center items-start gap-2 flex-1">
-            <div class="item flex w-full h-32 items-center justify-center rounded-xl bg-[#119717] font-bold text-3xl text-white p-6">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-[#119717] font-bold text-2xl text-white">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-[#119717] font-bold text-2xl text-white">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-[#119717] font-bold text-2xl text-white">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-[#119717] font-bold text-2xl text-white">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-[#119717] font-bold text-2xl text-white">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-[#119717] font-bold text-2xl text-white">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-[#119717] font-bold text-2xl text-white">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-[#119717] font-bold text-2xl text-white">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-[#119717] font-bold text-2xl text-white">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-[#119717] font-bold text-2xl text-white">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-[#119717] font-bold text-2xl text-white">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-[#119717] font-bold text-2xl text-white">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-[#119717] font-bold text-2xl text-white">3885</div>
-            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-[#119717] font-bold text-2xl text-white">3885</div>
-          </div>
+        <div class="sub-content flex flex-col items-center h-full px-4 mb-4 w-full">
+            <div class="brand-card flex w-full h-[92px] p-4 justify-between items-center rounded-xl bg-black/5">
+                <div class="brand-logo flex items-center gap-4 font-medium text-xl">
+                    <img src="https://fresher-repo-blob.vercel.app/wsp-bar/img%202.png" alt="McDonald's Logo" class="w-[60px] h-[60px] rounded-xl">
+                    <span>McDonald's</span>
+                </div>
+                <div class="time font-bold text-3xl tracking-tight">15:03</div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="grid-container grid grid-cols-[1fr_383px] gap-4 w-full flex-1 mt-4">
+                <!-- Preparing Section -->
+                <div class="section section-preparing flex flex-col w-full h-screen rounded-2xl p-6 bg-white">
+                    <h2 class="text-center font-bold text-3xl tracking-tight">Preparing</h2>
+                    <div class="box-item overflow-y-auto flex-1">
+                        <div class="items flex gap-2 justify-center flex-wrap">
+                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-black/10 font-bold text-2xl">3885</div>
+                            <!-- Repeat items as needed -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ready Section -->
+                <div class="section section-ready flex flex-col w-full h-screen rounded-2xl p-6 bg-white">
+                    <h2 class="text-center font-bold text-3xl tracking-tight">Ready</h2>
+                    <div class="box-item overflow-y-auto flex-1">
+                        <div class="items flex gap-2 justify-center flex-wrap">
+                            <div class="item flex w-full h-32 items-center justify-center rounded-xl bg-[#119717] text-white font-bold text-3xl p-6">3885</div>
+                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-xl bg-[#119717] text-white font-bold text-2xl">3885</div>
+                            <!-- Repeat items as needed -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </body>
+
+    <!-- Media Queries using Tailwind -->
+    <script>
+        // Add responsive classes dynamically if needed
+        const applyResponsiveStyles = () => {
+            const width = window.innerWidth;
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+            const gridContainer = document.querySelector('.grid-container');
+
+            if (width <= 992) {
+                document.body.classList.remove('flex-row');
+                document.body.classList.add('flex-col');
+                sidebar.classList.add('flex-row', 'h-16', 'w-[calc(100%-2rem)]', 'top-4', 'left-4', 'right-4', 'rounded-3xl', 'bg-white', 'shadow-lg');
+                mainContent.classList.add('pt-24', 'pb-4', 'ml-0');
+                gridContainer.classList.remove('grid-cols-[1fr_383px]');
+                gridContainer.classList.add('grid-cols-2');
+            }
+            if (width <= 480) {
+                gridContainer.classList.remove('grid-cols-2');
+                gridContainer.classList.add('grid-cols-1');
+            }
+        };
+        window.addEventListener('resize', applyResponsiveStyles);
+        applyResponsiveStyles();
+    </script>
+</body>
 </html>
