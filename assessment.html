@@ -38,7 +38,7 @@
         }
 
         .custom-content-heading .highlight-text {
-            font-family: 'Metropolis', sans-serif; /* Use Metropolis for headings */
+            font-family: 'Metropolis', sans-serif;
             font-weight: 600;
             letter-spacing: 1.2px;
             text-transform: uppercase;
@@ -88,9 +88,9 @@
 
         .no-fee-circle {
             position: absolute;
-            top: -30px; /* Adjusted to move the circle down slightly */
-            left: 0%; /* Center the circle horizontally */
-            transform: translateX(-50%); /* Adjust for the width to truly center it */
+            top: -30px;
+            left: 0%;
+            transform: translateX(-50%);
             width: 140px;
             aspect-ratio: 1/1;
             border-radius: 50%;
@@ -158,20 +158,18 @@
         .plan-button {
             background-color: #FF5634;
             color: #ffffff;
-            font-family: 'Metropolis', sans-serif;
             font-weight: 600;
-            padding: 20px 30px;
+            padding: 15px;
             border-radius: 10px;
             text-decoration: none;
-            border: 1px solid #FF5634;
+            border: none;
             display: block;
             text-align: center;
-            width: 100%;
             font-size: 16px;
-            line-height: 18px;
-            transition: all 0.2s ease-in-out;
+            width: 100%;
+            max-width: 280px;
+            margin: 20px auto;
         }
-
         .plan-button:hover {
             background-color: #fa5f12;
             color: #ffffff;
@@ -180,8 +178,8 @@
 
         /* Feature List */
         .title {
-            font-family: 'Metropolis', sans-serif; /* Match the bold heading in the image */
-            font-weight: 700;
+            font-family: 'Metropolis', sans-serif; /* Matches the bold heading in the image */
+            font-weight: 700; /* Bold as in the image */
             font-size: 20px;
             color: #121212;
             margin-bottom: 20px;
@@ -204,7 +202,7 @@
         .feature-head {
             font-family: 'Inter', sans-serif;
             color: #121212;
-            font-weight: 600;
+            font-weight: 600; /* Bold as in the image */
             line-height: 18px;
             margin-bottom: 3px;
             font-size: 14px;
@@ -214,7 +212,7 @@
             font-family: 'Inter', sans-serif;
             color: #121212;
             font-size: 13px;
-            font-weight: 400;
+            font-weight: 400; /* Not bold, as in the image */
             line-height: 18px;
             font-style: italic; /* Matches the italic subtext in the image */
         }
@@ -263,7 +261,7 @@
             .no-fee-circle {
                 width: 100px;
                 font-size: 12px;
-                top: -50px; /* Slightly different top position for smaller screens */
+                top: -50px;
             }
 
             .plan-button {
@@ -300,7 +298,7 @@
                 </div>
                 <div class="custom-content-heading">
                     <span class="highlight-text">PRICING</span>
-                    <h1> </h1>
+                    <h1> </h1>
                 </div>
             </div>
         </div>
@@ -319,7 +317,7 @@
                             <div class="pricing-row">
                                 <div class="icon-row">
                                     <div class="logo-container">
-                                    <img class="dollar-sign" src="https://orderific.com/ord-website/assets/img/pricing/logo/icon4.png" alt="Dollar Sign" style="width: 40px; height: 40px;">                                      
+                                        <img class="dollar-sign" src="https://orderific.com/ord-website/assets/img/pricing/logo/icon4.png" alt="Dollar Sign" style="width: 40px; height: 40px;">
                                     </div>
                                     <div class="pricing-quote">
                                         <p class="pro-plan">Full/Pro Plan</p>
