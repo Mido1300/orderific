@@ -1,380 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Orderific Pricing Section - Full/Pro Plan">
-    <title>Orderific Pricing Section</title>
-    <style>
-        :root {
-            --primary-color: #ff5733; /* Orange for button */
-            --text-color: #333;
-            --light-text-color: #666;
-            --background-color: #fff;
-            --check-color: #ff5733; /* Orange for checkmarks */
-            --border-radius: 15px;
-            --spacing: 1rem;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            background-color: #f5f5f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: var(--spacing);
-        }
-
-        .pricing-container {
-            max-width: 480px; /* Increased width from 400px to 480px */
-            width: 100%;
-            position: relative;
-        }
-
-        .pricing-card {
-            background-color: var(--background-color);
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            position: relative;
-            overflow: visible;
-        }
-
-        .top-image {
-            position: absolute;
-            top: 0rem;
-            left: -3.3rem; /* Kept the same, as we're expanding to the right */
-            width: 8rem;
-            height: 8rem;
-            border-radius: 50%;
-            background: url('https://orderific.com/ord-website/assets/img/pricing/logo/icon7.png') no-repeat center/cover;
-            border: 2px solid var(--primary-color);
-            transform: translateY(-50%);
-        }
-
-        .header-group {
-            margin-bottom: 0.3rem;
-        }
-
-        .small-image {
-            width: 2.4rem;
-            height: 2.4rem;
-            border-radius: 50%;
-            background: url('https://orderific.com/ord-website/assets/img/pricing/logo/icon4.png') no-repeat center/cover;
-            display: inline-block;
-            vertical-align: 0.3rem;
-            margin-right: 0.5rem;
-        }
-
-        .pricing-card h2 {
-            font-size: 1.4rem;
-            color: var(--text-color);
-            margin-bottom: 0.2rem;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        .pricing-card .price {
-            font-size: 2.5rem;
-            color: var(--text-color);
-            font-weight: 700;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        .pricing-card .price span {
-            font-size: 0.9rem;
-            color: var(--light-text-color);
-            font-weight: 700; /* Made /month bold */
-            margin-left: 0.25rem;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        .pricing-card .description {
-            font-size: 0.85rem;
-            color: var(--light-text-color);
-            margin-bottom: 1rem;
-            line-height: 1.4;
-            text-align: center;
-        }
-
-        .pricing-card .btn {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 0.6rem 1.8rem;
-            border: none;
-            border-radius: 25px;
-            font-size: 0.95rem;
-            cursor: pointer;
-            display: block;
-            margin: 0 auto 1.5rem;
-            text-align: center;
-            text-decoration: none;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .pricing-card .btn:hover {
-            background-color: #e64a19;
-            transform: scale(1.05);
-        }
-
-        .pricing-card h3 {
-            font-size: 1.1rem;
-            color: var(--text-color);
-            margin-bottom: 0.8rem;
-            font-weight: bold;
-            text-align: left;
-        }
-
-        .pricing-card ul {
-            list-style: none;
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .pricing-card ul li {
-            font-size: 0.85rem;
-            color: var(--light-text-color);
-            margin-bottom: 0.6rem;
-            position: relative;
-            padding-left: 1.5rem;
-            line-height: 1.4;
-        }
-
-        .pricing-card ul li::before {
-            content: "✔";
-            color: var(--check-color);
-            position: absolute;
-            left: 0;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-
-        .pricing-card ul li strong {
-            font-weight: bold;
-            color: var(--light-text-color);
-        }
-
-        .pricing-card .features-more {
-            font-size: 0.85rem;
-            color: var(--light-text-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .pricing-card .ideal-section {
-            font-size: 0.85rem;
-            color: var(--light-text-color);
-            line-height: 1.4;
-            text-align: left;
-        }
-
-        .pricing-card .ideal-section strong {
-            color: var(--text-color);
-            font-weight: bold;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .pricing-container {
-                padding: 0.8rem;
-                max-width: 420px; /* Adjusted for wider container */
-            }
-
-            .pricing-card {
-                padding: 1.2rem;
-            }
-
-            .pricing-card h2 {
-                font-size: 1.2rem;
-            }
-
-            .pricing-card .price {
-                font-size: 2rem;
-            }
-
-            .pricing-card .price span {
-                font-size: 0.8rem;
-            }
-
-            .pricing-card .description {
-                font-size: 0.7rem;
-                margin-bottom: 0.8rem;
-            }
-
-            .pricing-card .btn {
-                padding: 0.4rem 1.2rem;
-                font-size: 0.85rem;
-            }
-
-            .pricing-card h3 {
-                font-size: 0.95rem;
-            }
-
-            .pricing-card ul li {
-                font-size: 0.7rem;
-                padding-left: 1.25rem;
-            }
-
-            .pricing-card ul li::before {
-                font-size: 0.7rem;
-            }
-
-            .pricing-card .features-more {
-                font-size: 0.7rem;
-                margin-bottom: 1.2rem;
-            }
-
-            .pricing-card .ideal-section {
-                font-size: 0.7rem;
-            }
-
-            .top-image {
-                top: -3rem;
-                left: -4.5rem;
-                width: 6rem;
-                height: 6rem;
-            }
-
-            .small-image {
-                width: 2rem;
-                height: 2rem;
-                margin-right: 0.25rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .pricing-container {
-                padding: 0.4rem;
-                max-width: 360px; /* Adjusted for wider container */
-            }
-
-            .pricing-card {
-                padding: 0.8rem;
-            }
-
-            .pricing-card h2 {
-                font-size: 1rem;
-            }
-
-            .pricing-card .price {
-                font-size: 1.8rem;
-            }
-
-            .pricing-card .price span {
-                font-size: 0.7rem;
-            }
-
-            .pricing-card .description {
-                font-size: 0.6rem;
-                margin-bottom: 0.6rem;
-            }
-
-            .pricing-card .btn {
-                padding: 0.4rem 1rem;
-                font-size: 0.8rem;
-            }
-
-            .pricing-card h3 {
-                font-size: 0.85rem;
-            }
-
-            .pricing-card ul li {
-                font-size: 0.6rem;
-                padding-left: 1rem;
-            }
-
-            .pricing-card ul li::before {
-                font-size: 0.6rem;
-            }
-
-            .pricing-card .features-more {
-                font-size: 0.6rem;
-                margin-bottom: 0.8rem;
-            }
-
-            .pricing-card .ideal-section {
-                font-size: 0.6rem;
-            }
-
-            .top-image {
-                top: -2rem;
-                left: -3rem;
-                width: 4rem;
-                height: 4rem;
-            }
-
-            .small-image {
-                width: 1.5rem;
-                height: 1.5rem;
-                margin-right: 0.2rem;
-            }
-        }
-
-        /* Browser Compatibility and Accessibility */
-        .pricing-card .btn:focus {
-            outline: 2px solid var(--primary-color);
-            outline-offset: 2px;
-        }
-
-        a {
-            touch-action: manipulation;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        img, a {
-            border: 0;
-            outline: none;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Check out transparent pricing plans for Orderific's restaurant POS and management solution. Find the perfect plan to elevate your business. Get started today!">
+    <title>Pricing Plan | Orderific</title>
+    <link rel="stylesheet" href="https://orderific.com/ord-website/assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://orderific.com/ord-website/assets/css/style.css">
 </head>
 <body>
-    <div class="pricing-container">
-        <!-- Full/Pro Plan -->
-        <div class="pricing-card">
-            <div class="top-image"></div>
-            <div class="header-group">
-                <h2>Full/Pro Plan</h2>
-            </div>
-            <div class="header-group">
-                <span class="small-image"></span>
-                <div class="price">$99<span>/month</span></div>
-            </div>
-            <p class="description">Become a culinary sensation with Orderific's Full Plan at just $99/month.</p>
-            <a href="#" class="btn">Get Started</a>
-            <h3>Key Features:</h3>
-            <ul>
-                <li><strong>Digital Smart Menu</strong><br>Interactive menu system with real-time updates.</li>
-                <li><strong>Loyalty Program</strong><br>Features for rewarding and retaining customers.</li>
-                <li><strong>Business Analytics</strong><br>Tools for analyzing and strategizing business data.</li>
-                <li><strong>Loyalty Program</strong><br>Features for rewarding and retaining customers.</li>
-                <li><strong>Website Builder</strong><br>Tools for creating a dynamic online presence.</li>
-                <li><strong>Integrated Payment Options</strong><br>Diverse payment methods for customer convenience.</li>
-                <li><strong>Delivery System Setup</strong><br>Tools for establishing and managing delivery services.</li>
-                <li><strong>Marketing Tools</strong><br>Resources to enhance marketing reach and effectiveness.</li>
-                <li><strong>Menu Translation</strong><br>Feature to translate menus into multiple languages.</li>
-                <li><strong>Clear Reporting</strong><br>Stay informed with straightforward analytics.</li>
-                <li><strong>Seamless POS Integration</strong><br>Efficient integration with point-of-sale systems.</li>
-            </ul>
-            <p class="features-more">...and much more!</p>
-            <div class="ideal-section">
-                <strong>Ideal for Visionary Restaurateurs:</strong><br>
-                Choose this plan to elevate your dining experience and set your restaurant apart. Ideal for combining technology and insights to grow your business.
+    <section class="pricing-card-holder">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="pricing-card card-1 gsapCardAnimation">
+                        <div class="pricing-header">
+                            <div class="d-flex gap-3 align-items-center justify-content-between">
+                                <div class="d-flex gap-3 align-items-center">
+                                    <div class="img-container">
+                                        <img src="https://orderific.com/ord-website/assets/img/pricing/icon1.svg" alt="">
+                                    </div>
+                                    <p class="title">Full/Pro Plan</p>
+                                </div>
+                                <div class="highlight-text">
+                                    <span class="highlight">NO SETUP FEE</span>
+                                    <p class="sub">Binding Contracts</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 align-items-end">
+                                <div class="price">
+                                    <span class="currency">$</span>
+                                    <span class="amount">999</span>
+                                    <span class="duration">/month</span>
+                                </div>
+                            </div>
+                            <p class="description">Become a culinary sensation with Orderific’s Full Plan at just 999/month.</p>
+                            <div class="btn-container">
+                                <a href="javascript:" class="btn-fill btn-color">Get Started</a>
+                            </div>
+                        </div>
+                        <div class="pricing-row">
+                            <div class="pricing-list">
+                                <p class="title"><b>Key features:</b></p>
+                                <ul>
+                                    <li>
+                                        <div class="d-inline-flex gap-4">
+                                            <div class="img-container">
+                                                <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="">
+                                            </div>
+                                            <p class="feature-head">Digital Smart Menu</p>
+                                        </div>
+                                        <p class="feature-sub">Interactive menu system with real-time updates.</p>
+                                    </li>
+                                    <li>
+                                        <div class="d-inline-flex gap-4">
+                                            <div class="img-container">
+                                                <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="">
+                                            </div>
+                                            <p class="feature-head">Loyalty Program</p>
+                                        </div>
+                                        <p class="feature-sub">Features for rewarding and retaining customers.</p>
+                                    </li>
+                                    <li>
+                                        <div class="d-inline-flex gap-4">
+                                            <div class="img-container">
+                                                <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="">
+                                            </div>
+                                            <p class="feature-head">Business Analytics</p>
+                                        </div>
+                                        <p class="feature-sub">Tools for analyzing and strategizing business data.</p>
+                                    </li>
+                                    <li>
+                                        <div class="d-inline-flex gap-4">
+                                            <div class="img-container">
+                                                <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="">
+                                            </div>
+                                            <p class="feature-head">Website Builder</p>
+                                        </div>
+                                        <p class="feature-sub">Tools for creating a dynamic online presence.</p>
+                                    </li>
+                                    <li>
+                                        <div class="d-inline-flex gap-4">
+                                            <div class="img-container">
+                                                <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="">
+                                            </div>
+                                            <p class="feature-head">Integrated Payment Options</p>
+                                        </div>
+                                        <p class="feature-sub">Diverse payment methods for customer convenience.</p>
+                                    </li>
+                                    <li>
+                                        <div class="d-inline-flex gap-4">
+                                            <div class="img-container">
+                                                <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="">
+                                            </div>
+                                            <p class="feature-head">Delivery System Setup</p>
+                                        </div>
+                                        <p class="feature-sub">Tools for establishing and managing delivery services.</p>
+                                    </li>
+                                    <li>
+                                        <div class="d-inline-flex gap-4">
+                                            <div class="img-container">
+                                                <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="">
+                                            </div>
+                                            <p class="feature-head">Marketing Tools</p>
+                                        </div>
+                                        <p class="feature-sub">Resources to enhance marketing reach and effectiveness.</p>
+                                    </li>
+                                    <li>
+                                        <div class="d-inline-flex gap-4">
+                                            <div class="img-container">
+                                                <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="">
+                                            </div>
+                                            <p class="feature-head">Menu Translation</p>
+                                        </div>
+                                        <p class="feature-sub">Feature to translate menus into multiple languages.</p>
+                                    </li>
+                                    <li>
+                                        <div class="d-inline-flex gap-4">
+                                            <div class="img-container">
+                                                <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="">
+                                            </div>
+                                            <p class="feature-head">Clear Reporting</p>
+                                        </div>
+                                        <p class="feature-sub">Stay informed with straightforward analytics.</p>
+                                    </li>
+                                    <li>
+                                        <div class="d-inline-flex gap-4">
+                                            <div class="img-container">
+                                                <img src="https://orderific.com/ord-website/assets/img/Check.svg" alt="">
+                                            </div>
+                                            <p class="feature-head">Seamless POS Integration</p>
+                                        </div>
+                                        <p class="feature-sub">Efficient integration with point-of-sale systems.</p>
+                                    </li>
+                                    <li>
+                                        <p class="feature-sub">...and much more!</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pricing-footer">
+                                <p class="footer-header">Ideal for Visionary Restaurateurs:</p>
+                                <div class="footer-body">
+                                    Choose this plan to elevate your dining experience and set your restaurant apart. Ideal for combining technology and insights to grow your business.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Bootstrap Script Files -->
+    <script type="text/javascript" src="https://orderific.com/ord-website/assets/js/bootstrap/bootstrap.min.js"></script>
 </body>
 </html>
