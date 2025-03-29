@@ -2,349 +2,214 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="output.css">
+  <style>
+    @media (max-width: 992px) {
+      body {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      
+      .flex-grow {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+  </style>
 </head>
 
-<style>
-    /* ... (Tailwind CSS from your original code) ... */
-    .background1 {
-        background: linear-gradient(67.75deg, #FFFFFF 19.18%, #FFEBE7 75.31%);
-    }
-
-    .bg2 {
-        background: rgba(225, 14, 14, 1);
-    }
-
-    .bg3 {
-        background: rgba(255, 86, 52, 1);
-    }
-
-    /* Additional styles for JavaScript functionality */
-    .transaction-item {
-        cursor: pointer;
-        padding: 1rem;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .transaction-item:hover {
-        background-color: rgba(0, 0, 0, 0.05);
-    }
-</style>
-
 <body class="font-['DM_Sans'] background1 min-h-screen w-full max-w-[100vw] overflow-x-hidden flex flex-col">
-    <div class="flex h-full flex-col lg:flex-row">
-        <div class="lg:w-auto md:w-full w-[95%] lg:left-0 top-1 lg:h-screen h-17 justify-between rounded-full bg-white lg:bg-none flex px-4 py-2 items-center mt-4 lg:max-h-screen lg:overflow-hidden overflow-visible lg:ml-0 ml-auto lg:flex-col sm:flex-row flex-row space-y-4 lg:space-y-auto lg:fixed sticky z-20 duration-300">
-            <div class="bg-white h-16 w-16 text-2xl font-bold rounded-full flex items-center justify-center">
-                <img src="Logo (1).png" alt="brandLogo" class="w-8 h-8 object-contain">
-            </div>
-            <div class="w-auto h-auto gap-2 p-2 rounded-full bg-black text-white hidden lg:flex flex-col space-y-4 bg-black p-3">
-                <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-                    <img src="Vector (6).png" alt="menuItem">
-                </div>
-                <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-                    <img src="Vector (7).png" alt="menuItem">
-                </div>
-                <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-                    <img src="Vector (8).png" alt="menuItem">
-                </div>
-                <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-                    <img src="Vector (9).png" alt="menuItem">
-                </div>
-                <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-                    <img src="Vector (10).png" alt="menuItem">
-                </div>
-                <div class="w-10 h-10 bg3 rounded-full relative flex items-center justify-center">
-                    <img src="Vector (11).png" alt="menuItem">
-                    <span class="absolute -top-1 -right-1 bg2 text-white w-4 h-4 min-w-4 gap-0 rounded-full pt-0 pr-1 pb-0 pl-1 border-2 border-black text-xs flex items-center justify-center">1</span>
-                </div>
-            </div>
-            <div class="gap-2 p-2 rounded-full flex lg:flex-col flex-row lg:mb-5">
-                <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden">
-                    <img src="user12.png" alt="profile" class="w-full h-full object-cover">
-                </div>
-                <div class="w-12 h-12 bg-black/10 rounded-full relative flex items-center justify-center">
-                    <img src="Vector.png" alt="Notification">
-                    <span class="absolute -top-1 -right-0 bg2 text-white text-xs border-2 w-4 h-4 flex items-center justify-center rounded-full"></span>
-                </div>
-            </div>
+  <div class="flex h-full flex-col lg:flex-row">
+    <!-- Sidebar -->
+    <div
+      class="lg:w-auto md:w-full w-[95%] lg:left-0 top-1 lg:h-screen h-17 justify-between rounded-full bg-white lg:bg-none flex px-4 py-2 items-center mt-6 lg:max-h-screen lg:overflow-hidden overflow-visible lg:ml-0 ml-auto lg:flex-col sm:flex-row flex-row space-y-4 lg:space-y-auto lg:fixed sticky z-20 duration-300">
+      <div class="bg-white h-16 w-16 text-2xl font-bold rounded-full flex items-center justify-center transform -translate-y-3">
+        <img src="Logo (1).png" alt="brandLogo" class="w-8 h-8 object-contain">
+      </div>
+      <div
+        class="w-auto h-auto gap-2 p-2 rounded-full bg-black text-white hidden lg:flex flex-col space-y-4 bg-black p-3">
+        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
+          <img src="Vector (6).png" alt="menuItem">
         </div>
-
-        <div class="flex flex-grow flex-col h-full lg:ml-20">
-            <div id="mainHeader" class="h-full w-full pt-[16px] md:pt-[24px] pr-[16px] md:pb-[24px] pb-[16px] pl-[16px] lg:top-0 top-16 sticky block z-11 bg-transparent transition-colors duration-300">
-                <h2 class="font-bold md:text-[32px] text-[24px] leading-[40px] tracking-[3%] font-sans text-center md:text-left">
-                    OTP Confirmation
-                </h2>
-            </div>
-            <div class="h-screen gap-0 rounded-[24px] pr-0 flex flex-col md:flex-row min-h-screen ml-2 mr-2 mx-auto">
-                <div class="w-full md:w-[320px] h-screen md:h-[100vh] gap-6 pt-7 pr-0 pb-1 pl-0 bg-white/60 sticky z-10">
-                    <div class="flex justify-between w-full md:w-[320px] h-12 gap-4 px-4" id="headerSection">
-                        <h3 class="font-semibold flex items-center gap-2 text-[20px]">
-                            Pending
-                            <span class="bg-black text-white text-xs w-6 h-6 flex items-center justify-center rounded-full">1</span>
-                        </h3>
-                        <div class="w-[48px] h-[48px] border border-black/5 rounded-full flex items-center justify-center hidden md:flex cursor-pointer" id="searchBtn">
-                            <img src="Vector13.png" alt="search" class="w-4.5 h-4.5">
-                        </div>
-                    </div>
-                    <div class="w-full md:w-[320px] h-12 gap-4 px-4 hidden" id="searchOverlay">
-                        <div class="bg-white rounded-full shadow-lg p-2 flex items-center w-full h-full">
-                            <input type="text" placeholder="Search..." class="w-full p-2 rounded-full border-none focus:outline-none">
-                            <button class="ml-2 text-black/60 hover:text-black text-2xl font-bold cursor-pointer" id="searchCloseBtn">×</button>
-                        </div>
-                    </div>
-                    <div id="transactionList" class="w-full md:w-[320px] h-[calc(100%-3rem)] mt-6 overflow-y-auto overflow-x-hidden border-r border-black/10">
-                        <div class="transaction-item" data-id="1">
-                            <div class="flex items-center gap-2">
-                                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                                    <img src="user.png" alt="users" class="w-full h-full object-cover">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <p class="font-medium truncate">Nasser Alsubai</p>
-                                    <p class="text-[13px] text-black/60 truncate">9 Feb 2024 - 10:24</p>
-                                </div>
-                            </div>
-                            <p class="font-sans font-medium text-base leading-6 flex items-center gap-2 flex-shrink-0">
-                                <span class="bg-red-500 text-white text-xs w-2 h-2 flex items-center justify-center rounded-full"></span>
-                                <span class="text-black">674951</span>
-                            </p>
-                        </div>
-                        <div class="transaction-item" data-id="2">
-                            <div class="flex items-center gap-2">
-                                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                                    <img src="user1.png" alt="users" class="w-full h-full object-cover">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <p class="font-medium truncate">Nguyen, Shane</p>
-                                    <p class="text-[13px] text-black/60 truncate">9 Feb 2024 - 10:20</p>
-                                </div>
-                            </div>
-                            <p class="font-sans font-medium text-base leading-6 flex items-center gap-2 flex-shrink-0">
-                                <span class="bg-red-500 text-white text-xs w-2 h-2 flex items-center justify-center rounded-full"></span>
-                                <span class="text-black">123456</span>
-                            </p>
-                        </div>
-                        <div class="transaction-item" data-id="3">
-                            <div class="flex items-center gap-2">
-                                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                                    <img src="user2.png" alt="users" class="w-full h-full object-cover">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <p class="font-medium truncate">Flores, Juanita</p>
-                                    <p class="text-[13px] text-black/60 truncate">9 Feb 2024 - 10:04</p>
-                                </div>
-                            </div>
-                            <p class="font-sans font-medium text-base leading-6 flex items-center gap-2 flex-shrink-0">
-                                <span class="bg-red-500 text-white text-xs w-2 h-2 flex items-center justify-center rounded-full"></span>
-                                <span class="text-black">987654</span>
-                            </p>
-                        </div>
-                         <div class="transaction-item" data-id="4">
-                            <div class="flex items-center gap-2">
-                                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                                    <img src="user3.png" alt="users" class="w-full h-full object-cover">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <p class="font-medium truncate">Miles, Esther</p>
-                                    <p class="text-[13px] text-black/60 truncate">9 Feb 2024 - 09:30</p>
-                                </div>
-                            </div>
-                            <p class="font-sans font-medium text-base leading-6 flex items-center gap-2 flex-shrink-0">
-                                <span class="bg-red-500 text-white text-xs w-2 h-2 flex items-center justify-center rounded-full"></span>
-                                <span class="text-black">555555</span>
-                            </p>
-                        </div>
-                        <div class="transaction-item" data-id="5">
-                            <div class="flex items-center gap-2">
-                                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                                    <img src="user4.png" alt="users" class="w-full h-full object-cover">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <p class="font-medium truncate">Miles, Esther</p>
-                                    <p class="text-[13px] text-black/60 truncate">9 Feb 2024 - 09:28</p>
-                                </div>
-                            </div>
-                            <p class="font-sans font-medium text-base leading-6 flex items-center gap-2 flex-shrink-0">
-                                <span class="bg-red-500 text-white text-xs w-2 h-2 flex items-center justify-center rounded-full"></span>
-                                <span class="text-black">444444</span>
-                            </p>
-                        </div>
-                        <div class="transaction-item" data-id="6">
-                            <div class="flex items-center gap-2">
-                                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                                    <img src="user5.png" alt="users" class="w-full h-full object-cover">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <p class="font-medium truncate">Black, Marvin</p>
-                                    <p class="text-[13px] text-black/60 truncate">9 Feb 2024 - 09:20</p>
-                                </div>
-                            </div>
-                            <p class="font-sans font-medium text-base leading-6 flex items-center gap-2 flex-shrink-0">
-                                <span class="bg-red-500 text-white text-xs w-2 h-2 flex items-center justify-center rounded-full"></span>
-                                <span class="text-black">333333</span>
-                            </p>
-                        </div>
-                        <div class="transaction-item" data-id="7">
-                            <div class="flex items-center gap-2">
-                                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                                    <img src="user6.png" alt="users" class="w-full h-full object-cover">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <p class="font-medium truncate">Cooper, Kristin</p>
-                                    <p class="text-[13px] text-black/60 truncate">9 Feb 2024 - 09:18</p>
-                                </div>
-                            </div>
-                            <p class="font-sans font-medium text-base leading-6 flex items-center gap-2 flex-shrink-0">
-                                <span class="bg-red-500 text-white text-xs w-2 h-2 flex items-center justify-center rounded-full"></span>
-                                <span class="text-black">222222</span>
-                            </p>
-                        </div>
-                        <div class="transaction-item" data-id="8">
-                            <div class="flex items-center gap-2">
-                                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                                    <img src="user2.png" alt="users" class="w-full h-full object-cover">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <p class="font-medium truncate">Flores, Juanita</p>
-                                    <p class="text-[13px] text-black/60 truncate">9 Feb 2024 - 09:07</p>
-                                </div>
-                            </div>
-                            <p class="font-sans font-medium text-base leading-6 flex items-center gap-2 flex-shrink-0">
-                                <span class="bg-red-500 text-white text-xs w-2 h-2 flex items-center justify-center rounded-full"></span>
-                                <span class="text-black">111111</span>
-                            </p>
-                        </div>
-                        <div class="transaction-item" data-id="9">
-                            <div class="flex items-center gap-2">
-                                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                                    <img src="user5.png" alt="users" class="w-full h-full object-cover">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <p class="font-medium truncate">Black, Marvin</p>
-                                    <p class="text-[13px] text-black/60 truncate">8 Feb 2024 - 22:20</p>
-                                </div>
-                            </div>
-                            <p class="font-sans font-medium text-base leading-6 flex items-center gap-2 flex-shrink-0">
-                                <span class="bg-red-500 text-white text-xs w-2 h-2 flex items-center justify-center rounded-full"></span>
-                                <span class="text-black">777777</span>
-                            </p>
-                        </div>
-                        <div class="transaction-item" data-id="10">
-                            <div class="flex items-center gap-2">
-                                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
-                                    <img src="user7.png" alt="users" class="w-full h-full object-cover">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <p class="font-medium truncate">Henry, Arthur</p>
-                                    <p class="text-[13px] text-black/60 truncate">8 Feb 2024 - 22:17</p>
-                                </div>
-                            </div>
-                            <p class="font-sans font-medium text-base leading-6 flex items-center gap-2 flex-shrink-0">
-                                <span class="bg-red-500 text-white text-xs w-2 h-2 flex items-center justify-center rounded-full"></span>
-                                <span class="text-black">888888</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div id="mainContentArea" class="md:w-1/2 w-full bg-white px-8 py-6 flex flex-col items-center justify-center">
-                    <div class="flex flex-col items-center justify-center">
-                        <div class="w-[120px] h-[120px] bg-gray-300 rounded-full overflow-hidden">
-                            <img src="user.png" alt="user" class="w-full h-full object-cover">
-                        </div>
-                        <h2 class="text-2xl font-bold mt-4">Nasser Alsubai</h2>
-                        <p class="text-sm text-black/60">ID: 296571905</p>
-                        <p class="text-[32px] font-bold mt-8">674951</p>
-                        <p class="text-base text-center mt-6 leading-6">To accept cash transfers, the rider must enter this 4-digit code in their app before you can accept the transaction.</p>
-                        <p class="text-base font-semibold mt-8">The amount you should receive:</p>
-                        <p class="text-[22px] font-bold mt-1">$86.60</p>
-                        <button class="bg3 text-white px-6 py-3 rounded-md mt-8 w-full">Accept Cash Transfer</button>
-                    </div>
-                </div>
-            </div>
+        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
+          <img src="Vector (7).png" alt="menuItem">
         </div>
+        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
+          <img src="Vector (8).png" alt="menuItem">
+        </div>
+        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
+          <img src="Vector (9).png" alt="menuItem">
+        </div>
+        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
+          <img src="Vector (10).png" alt="menuItem">
+        </div>
+        <div class="w-10 h-10 bg3 rounded-full relative flex items-center justify-center">
+          <img src="Vector (11).png" alt="menuItem">
+          <span
+            class="absolute -top-1 -right-1 bg2 text-white w-4 h-4 min-w-4 gap-0 rounded-full pt-0 pr-1 pb-0 pl-1 border-2 border-black text-xs flex items-center justify-center">1</span>
+        </div>
+      </div>
+      <div class="gap-2 p-2 rounded-full flex lg:flex-col flex-row lg:mb-5">
+        <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden">
+          <img src="user12.png" alt="profile" class="w-full h-full object-cover">
+        </div>
+        <div class="w-12 h-12 bg-black/10 rounded-full relative flex items-center justify-center">
+          <img src="Vector.png" alt="Notification">
+          <span
+            class="absolute -top-1 -right-0 bg2 text-white text-xs border-2 w-4 h-4 flex items-center justify-center rounded-full"></span>
+        </div>
+      </div>
     </div>
-    <script>
-        // JavaScript for Search Functionality
-        const searchBtn = document.getElementById('searchBtn');
-        const searchOverlay = document.getElementById('searchOverlay');
-        const searchCloseBtn = document.getElementById('searchCloseBtn');
-        const headerSection = document.getElementById('headerSection');
-        const searchInput = searchOverlay.querySelector('input');
-        const transactionItems = document.querySelectorAll('.transaction-item');
 
-        searchBtn.addEventListener('click', () => {
-            headerSection.style.display = 'none';
-            searchOverlay.style.display = 'flex';
-            searchInput.focus();
-        });
+    <!-- Main Content -->
+    <div class="flex flex-grow flex-col h-full lg:ml-20">
+      <!-- Pending Transactions -->
+      <div id="mainHeader" class="h-full w-full pt-[16px] md:pt-[24px] pr-[16px] md:pb-[24px] pb-[16px] pl-[16px] lg:top-0 top-16 sticky block z-11 bg-transparent transition-colors duration-300">
+        <h2
+          class="font-bold md:text-[32px] text-[24px] leading-[40px] tracking-[3%] font-sans text-center md:text-left">
+          OTP Confirmation
+        </h2>
+      </div>
+      <div
+        class="h-screen gap-0 rounded-[24px] pr-0 flex flex-col md:flex-row min-h-screen ml-2 mr-2 mx-auto">
+        <!-- Sidebar (Sticky on Left) -->
+        <div class="w-full md:w-[320px] h-screen md:h-[100vh] gap-6 pt-7 pr-0 pb-1 pl-0 bg-white/60 sticky z-10">
+          <!-- Header with Pending and Search -->
+          <div class="flex justify-between w-full md:w-[320px] h-12 gap-4 px-4" id="headerSection">
+            <h3 class="font-semibold flex items-center gap-2 text-[20px]">
+              Pending
+              <span class="bg-black text-white text-xs w-6 h-6 flex items-center justify-center rounded-full">1</span>
+            </h3>
+            <div
+              class="w-[48px] h-[48px] border border-black/5 rounded-full flex items-center justify-center hidden md:flex cursor-pointer"
+              id="searchBtn">
+              <img src="Vector13.png" alt="search" class="w-4.5 h-4.5">
+            </div>
+          </div>
+          <!-- Search Overlay (replaces headerSection when active) -->
+          <div class="w-full md:w-[320px] h-12 gap-4 px-4 hidden" id="searchOverlay">
+            <div class="bg-white rounded-full shadow-lg p-2 flex items-center w-full h-full">
+              <input type="text" placeholder="Search..." class="w-full p-2 rounded-full border-none focus:outline-none">
+              <button class="ml-2 text-black/60 hover:text-black text-2xl font-bold cursor-pointer" id="searchCloseBtn">×</button>
+            </div>
+          </div>
+          <!-- Scrollable List -->
+          <div
+            class="w-full md:w-[320px] h-[calc(100%-3rem)] mt-6 overflow-y-auto overflow-x-hidden border-r border-black/10">
+            <div
+              class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
+                  <img src="user.png" alt="users" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-medium truncate">Nasser Alsubai</p>
+                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 - 10:24</p>
+                </div>
+              </div>
+              <p class="font-sans font-medium text-base leading-6 flex items-center gap-2 flex-shrink-0">
+                <span
+                  class="bg-red-500 text-white text-xs w-2 h-2 flex items-center justify-center rounded-full"></span>
+                <span class="text-black">674951</span>
+              </p>
+            </div>
+            <!-- Other list items remain unchanged -->
+          </div>
+        </div>
 
-        searchCloseBtn.addEventListener('click', () => {
-            headerSection.style.display = 'flex';
-            searchOverlay.style.display = 'none';
-            searchInput.value = '';
-            transactionItems.forEach(item => item.style.display = 'flex');
-        });
-
-        searchInput.addEventListener('input', () => {
-            const searchTerm = searchInput.value.toLowerCase();
-            transactionItems.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                if (text.includes(searchTerm)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-
-        // JavaScript for Transaction Item Click
-        const mainContentArea = document.getElementById('mainContentArea');
-        transactionItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const userId = item.dataset.id;
-                updateMainContent(userId);
-            });
-        });
-
-        function updateMainContent(userId) {
-            let userData = {
-                1: { name: 'Nasser Alsubai', id: '296571905', otp: '674951', amount: '$86.60', image: 'user.png' },
-                2: { name: 'Nguyen, Shane', id: '123456789', otp: '123456', amount: '$50.00', image: 'user1.png' },
-                3: { name: 'Flores, Juanita', id: '987654321', otp: '987654', amount: '$75.25', image: 'user2.png' },
-                4: { name: 'Miles, Esther', id: '555555555', otp: '555555', amount: '$100.00', image: 'user3.png' },
-                5: { name: 'Miles, Esther', id: '444444444', otp: '444444', amount: '$90.50', image: 'user4.png' },
-                6: { name: 'Black, Marvin', id: '333333333', otp: '333333', amount: '$65.80', image: 'user5.png' },
-                7: { name: 'Cooper, Kristin', id: '222222222', otp: '222222', amount: '$80.00', image: 'user6.png' },
-                8: { name: 'Flores, Juanita', id: '111111111', otp: '111111', amount: '$120.00', image: 'user2.png' },
-                9: { name: 'Black, Marvin', id: '777777777', otp: '777777', amount: '$55.00', image: 'user5.png' },
-                10: { name: 'Henry, Arthur', id: '888888888', otp: '888888', amount: '$95.75', image: 'user7.png' }
-            };
-
-            const user = userData[userId];
-            if (user) {
-                mainContentArea.innerHTML = `
-                    <div class="flex flex-col items-center justify-center">
-                        <div class="w-[120px] h-[120px] bg-gray-300 rounded-full overflow-hidden">
-                            <img src="${user.image}" alt="user" class="w-full h-full object-cover">
-                        </div>
-                        <h2 class="text-2xl font-bold mt-4">${user.name}</h2>
-                        <p class="text-sm text-black/60">ID: ${user.id}</p>
-                        <p class="text-[32px] font-bold mt-8">${user.otp}</p>
-                        <p class="text-base text-center mt-6 leading-6">To accept cash transfers, the rider must enter this 4-digit code in their app before you can accept the transaction.</p>
-                        <p class="text-base font-semibold mt-8">The amount you should receive:</p>
-                        <p class="text-[22px] font-bold mt-1">${user.amount}</p>
-                        <button class="bg3 text-white px-6 py-3 rounded-md mt-8 w-full">Accept Cash Transfer</button>
-                    </div>
-                `;
-            }
-        }
-    </script>
+        <!-- OTP Details (Fixed, No Scroll) -->
+        <div
+          class="flex-grow w-full md:w-1/2 h-auto rounded-md gap-2 lg:gap-0 md:px-5 border-l border-black/5 flex flex-col bg-white">
+          <button
+            class="self-start text-black font-['DM_Sans'] font-medium text-[16px] leading-5 tracking-[-0.01em] underline mt-8 mb-5 pl-7 md:pl-0">Close</button>
+          <div class="text-center flex flex-col justify-center items-center h-full max-w-[600px] mx-auto space-y-10">
+            <div class="space-y-0">
+              <div class="w-[120px] h-[120px] bg-black/5 rounded-full mx-auto overflow-hidden mb-2">
+                <img src="user.png" alt="" class="w-full h-full object-cover">
+              </div>
+              <h3 class="text-[22px] font-semibold">Nasser Alsubai</h3>
+              <p class="text-black/60">ID: 296571905</p>
+            </div>
+            <div class="space-y-4">
+              <h1 class="text-[32px] font-bold text-[rgba(255,86,52,1)]">674951</h1>
+              <p class="text-black text-[16px]">
+                To accept cash transfers, the rider must enter this 4-digit code in their app before you can accept the
+                transaction.
+              </p>
+            </div>
+            <div class="space-y-0">
+              <p class="text-[16px]">The amount you should receive:</p>
+              <p class="text-[32px] leading-10 font-bold mb-4">$86.60</p>
+              <button class="bg-black/5 text-black/40 text-4 px-6 py-2 rounded-full cursor-pointer">Accept Cash
+                Transfer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom Navigation (unchanged) -->
+  <div
+    class="md:w-auto md:h-auto h-15 gap-2 p-2 rounded-full bg-black text-white fixed bottom-3 left-1/2 transform -translate-x-1/2 p-3 rounded-full flex md:space-x-4 space-x-2 lg:hidden z-20 pointer-events-auto">
+    <div class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center">
+      <img src="Vector (6).png" alt="menuItems">
+    </div>
+    <div class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center">
+      <img src="Vector (6).png" alt="menuItems">
+    </div>
+    <div class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center">
+      <img src="Vector (6).png" alt="menuItems">
+    </div>
+    <div class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center">
+      <img src="Vector (6).png" alt="menuItems">
+    </div>
+    <div class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center">
+      <img src="Vector (6).png" alt="menuItems">
+    </div>
+    <div class="md:w-10 w-8 md:h-10 h-8 bg3 rounded-full relative flex items-center justify-center">
+      <img src="Vector (6).png" alt="menuItems">
+      <span
+        class="absolute -top-1 -right-1 bg2 text-white w-4 h-4 min-w-4 gap-0 rounded-full pt-0 pr-1 pb-0 pl-1 border-2 border-black text-xs flex items-center justify-center">1</span>
+    </div>
+  </div>
 </body>
+<!-- Search js file -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchBtn = document.getElementById('searchBtn');
+    const headerSection = document.getElementById('headerSection');
+    const searchOverlay = document.getElementById('searchOverlay');
+    const searchCloseBtn = document.getElementById('searchCloseBtn');
+    // Search functionality
+    searchBtn.addEventListener('click', () => {
+      headerSection.classList.add('hidden');
+      searchOverlay.classList.remove('hidden');
+    });
 
+    searchCloseBtn.addEventListener('click', () => {
+      searchOverlay.classList.add('hidden');
+      headerSection.classList.remove('hidden');
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('scroll', () => {
+    const element = document.getElementById('mainHeader');
+    if (window.scrollY > 0) {
+      element.classList.remove('bg-transparent');
+      element.classList.add('bg-[rgba(255,255,255,1)]', 'rounded-2xl');
+    } else {
+      element.classList.remove('bg-[rgba(255,255,255,1)]', 'rounded-2xl');
+      element.classList.add('bg-transparent');
+    }
+  });
+</script>
 </html>
