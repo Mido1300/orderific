@@ -1,434 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OTP Confirmation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: linear-gradient(67.75deg, #FFFFFF 19.18%, #FFEBE7 75.31%);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .sidebar {
-            width: 80px;
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 0;
-            gap: 16px;
-        }
-
-        .sidebar-item {
-            width: 48px;
-            height: 48px;
-            background-color: #374151;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .sidebar-item img {
-            width: 24px;
-            height: 24px;
-        }
-
-        .sidebar-item.red {
-            background-color: #FF5634;
-            position: relative;
-        }
-
-        .sidebar-item.red::after {
-            content: '1';
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: #E10E0E;
-            color: white;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 12px;
-            border: 2px solid black;
-        }
-
-        .profile {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            overflow: hidden;
-        }
-
-        .profile img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .notification {
-            width: 48px;
-            height: 48px;
-            background-color: #F3F4F6;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .notification::after {
-            content: '';
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: #E10E0E;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-        }
-
-        .main-content {
-            flex-grow: 1;
-            display: flex;
-            background-color: white;
-            border-radius: 24px;
-            margin: 20px;
-            overflow: hidden;
-        }
-
-        .pending-list {
-            width: 320px;
-            border-right: 1px solid #E5E7EB;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        .pending-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .pending-header h3 {
-            font-size: 20px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .pending-header span {
-            background-color: black;
-            color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 12px;
-        }
-
-        .pending-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid #E5E7EB;
-            cursor: pointer;
-        }
-
-        .pending-item:hover {
-            background-color: #F9FAFB;
-        }
-
-        .pending-item img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .pending-item-details {
-            flex-grow: 1;
-            margin: 0 10px;
-            min-width: 0;
-        }
-
-        .pending-item-details p {
-            margin: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .pending-item-details p:first-child {
-            font-weight: 500;
-        }
-
-        .pending-item-otp {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .pending-item-otp span {
-            width: 8px;
-            height: 8px;
-            background-color: #FF5634;
-            border-radius: 50%;
-        }
-
-        .otp-details {
-            flex-grow: 2;
-            padding: 40px;
-            overflow-y: auto;
-        }
-
-        .otp-details button {
-            background: none;
-            border: none;
-            color: black;
-            font-size: 16px;
-            text-decoration: underline;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
-
-        .otp-details-content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .otp-details-content img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
-
-        .otp-details-content h3 {
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .otp-details-content p {
-            color: #6B7280;
-            margin-bottom: 20px;
-        }
-
-        .otp-details-content h1 {
-            font-size: 32px;
-            color: #FF5634;
-            margin-bottom: 10px;
-        }
-
-        .otp-details-content button.accept {
-            background-color: #F3F4F6;
-            color: #6B7280;
-            font-weight: 600;
-            font-size: 16px;
-            padding: 12px 32px;
-            border-radius: 24px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .search-bar {
-            background-color: white;
-            border-radius: 24px;
-            padding: 8px;
-            display: flex;
-            align-items: center;
-            border: 1px solid #E5E7EB;
-            display: none;
-        }
-
-        .search-bar input {
-            border: none;
-            outline: none;
-            padding: 8px;
-            flex-grow: 1;
-        }
-
-        .search-bar button {
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: #6B7280;
-            cursor: pointer;
-        }
-
-        .search-bar.active {
-            display: flex;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Confirmation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="sidebar">
-        <div class="sidebar-item">
-            <img src="https://day8-task-16yq.vercel.app/Vector%20(6).png" alt="menu">
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-4xl flex">
+    <div class="w-1/4 pr-8 space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg font-semibold">Pending <span class="bg-red-500 text-white rounded-full px-2 py-0.5 text-xs">1</span></h2>
+        <button class="text-gray-500 hover:text-gray-700">Close</button>
+      </div>
+      <div class="relative">
+        <input type="text" placeholder="Search" class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+      <div class="space-y-2">
+        <div class="flex items-center space-x-2 bg-gray-50 p-2 rounded-lg cursor-pointer hover:bg-gray-100">
+          <img src="https://i.pravatar.cc/40?img=1" alt="User Avatar" class="w-10 h-10 rounded-full">
+          <div>
+            <p class="font-medium">Nasser Alsubai</p>
+            <p class="text-xs text-gray-500">9 Feb 2024 - 10:24</p>
+          </div>
+          <span class="ml-auto bg-blue-100 text-blue-800 rounded-full px-2 py-0.5 text-xs">674951</span>
         </div>
-        <div class="sidebar-item">
-            <img src="https://day8-task-16yq.vercel.app/Vector%20(7).png" alt="menu">
+        <div class="flex items-center space-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-100">
+          <img src="https://i.pravatar.cc/40?img=2" alt="User Avatar" class="w-10 h-10 rounded-full">
+          <div>
+            <p class="font-medium">Nguyen, Shane</p>
+            <p class="text-xs text-gray-500">9 Feb 2024 - 10:20</p>
+          </div>
         </div>
-        <div class="sidebar-item">
-            <img src="https://day8-task-16yq.vercel.app/Vector%20(8).png" alt="menu">
+        <div class="flex items-center space-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-100">
+          <div class="bg-blue-200 w-10 h-10 rounded-full flex items-center justify-center">
+            <span class="text-blue-800 font-semibold">S</span>
+          </div>
+          <div>
+            <p class="font-medium">Flores, Juanita</p>
+            <p class="text-xs text-gray-500">9 Feb 2024 - 10:04</p>
+          </div>
         </div>
-        <div class="sidebar-item">
-            <img src="https://day8-task-16yq.vercel.app/Vector%20(9).png" alt="menu">
+        <div class="flex items-center space-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-100">
+          <img src="https://i.pravatar.cc/40?img=3" alt="User Avatar" class="w-10 h-10 rounded-full">
+          <div>
+            <p class="font-medium">Miles, Esther</p>
+            <p class="text-xs text-gray-500">9 Feb 2024 - 09:30</p>
+          </div>
         </div>
-        <div class="sidebar-item">
-            <img src="https://day8-task-16yq.vercel.app/Vector%20(10).png" alt="menu">
+        <div class="flex items-center space-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-100">
+          <img src="https://i.pravatar.cc/40?img=4" alt="User Avatar" class="w-10 h-10 rounded-full">
+          <div>
+            <p class="font-medium">Miles, Esther</p>
+            <p class="text-xs text-gray-500">9 Feb 2024 - 09:26</p>
+          </div>
         </div>
-        <div class="sidebar-item red">
-            <img src="https://day8-task-16yq.vercel.app/Vector%20(11).png" alt="menu">
+        <div class="flex items-center space-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-100">
+          <img src="https://i.pravatar.cc/40?img=5" alt="User Avatar" class="w-10 h-10 rounded-full">
+          <div>
+            <p class="font-medium">Black, Marvin</p>
+            <p class="text-xs text-gray-500">9 Feb 2024 - 09:20</p>
+          </div>
         </div>
-        <div class="profile">
-            <img src="https://day8-task-16yq.vercel.app/4357ccf260ffcb69e9a74820541e8969.png" alt="profile">
+        <div class="flex items-center space-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-100">
+          <img src="https://i.pravatar.cc/40?img=6" alt="User Avatar" class="w-10 h-10 rounded-full">
+          <div>
+            <p class="font-medium">Cooper, Kristin</p>
+            <p class="text-xs text-gray-500">9 Feb 2024 - 09:18</p>
+          </div>
         </div>
-        <div class="notification">
-            <img src="https://day8-task-16yq.vercel.app/Vector.png" alt="notification">
+        <div class="flex items-center space-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-100">
+          <img src="https://i.pravatar.cc/40?img=7" alt="User Avatar" class="w-10 h-10 rounded-full">
+          <div>
+            <p class="font-medium">Flores, Juanita</p>
+            <p class="text-xs text-gray-500">9 Feb 2024 - 09:07</p>
+          </div>
         </div>
+        <div class="flex items-center space-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-100">
+          <img src="https://i.pravatar.cc/40?img=8" alt="User Avatar" class="w-10 h-10 rounded-full">
+          <div>
+            <p class="font-medium">Black, Marvin</p>
+            <p class="text-xs text-gray-500">8 Feb 2024 - 22:20</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-2 p-2 rounded-lg cursor-pointer hover:bg-gray-100">
+          <img src="https://i.pravatar.cc/40?img=9" alt="User Avatar" class="w-10 h-10 rounded-full">
+          <div>
+            <p class="font-medium">Henry, Arthur</p>
+            <p class="text-xs text-gray-500">8 Feb 2024 - 22:17</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="main-content">
-        <div class="pending-list">
-            <div class="pending-header">
-                <h3>Pending <span>1</span></h3>
-                <div class="search-bar">
-                    <input type="text" placeholder="Search...">
-                    <button>&#x2715;</button>
-                </div>
-                <button id="search-btn">🔍</button>
-            </div>
-            <div class="pending-item">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <img src="https://day8-task-16yq.vercel.app/fa1be286e3b17627a17bbb20e41bbdc5%20(1).png" alt="user">
-                    <div class="pending-item-details">
-                        <p>Nasser Alsubai</p>
-                        <p>9 Feb 2024 - 10:24</p>
-                    </div>
-                </div>
-                <div class="pending-item-otp">
-                    <span></span>
-                    <span>674951</span>
-                </div>
-            </div>
-            <div class="pending-item">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <img src="https://day8-task-16yq.vercel.app/dd7e73a85c1a6716fa387cae6e0d5302.png" alt="user">
-                    <div class="pending-item-details">
-                        <p>Nguyen, Shane</p>
-                        <p>9 Feb 2024 - 10:20</p>
-                    </div>
-                </div>
-            </div>
-            <div class="pending-item">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <img src="https://day8-task-16yq.vercel.app/db97e1ca6fed7991ee043f68dedada2f.png" alt="user">
-                    <div class="pending-item-details">
-                        <p>Flores, Juanita</p>
-                        <p>9 Feb 2024 - 10:04</p>
-                    </div>
-                </div>
-            </div>
-            <div class="pending-item">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <img src="https://day8-task-16yq.vercel.app/bd99690039f35eb8f13e58adae118810.png" alt="user">
-                    <div class="pending-item-details">
-                        <p>Miles, Esther</p>
-                        <p>9 Feb 2024 - 09:30</p>
-                    </div>
-                </div>
-            </div>
-            <div class="pending-item">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <img src="https://day8-task-16yq.vercel.app/b2df27fc83f170007341358a821fa3bd.png" alt="user">
-                    <div class="pending-item-details">
-                        <p>Miles, Esther</p>
-                        <p>9 Feb 2024 - 09:26</p>
-                    </div>
-                </div>
-            </div>
-            <div class="pending-item">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <img src="https://day8-task-16yq.vercel.app/5952fe808473ca364d45dfb6d88c433f.png" alt="user">
-                    <div class="pending-item-details">
-                        <p>Black, Marvin</p>
-                        <p>9 Feb 2024 - 09:20</p>
-                    </div>
-                </div>
-            </div>
-            <div class="pending-item">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <img src="https://day8-task-16yq.vercel.app/4357ccf260ffcb69e9a74820541e8969.png" alt="user">
-                    <div class="pending-item-details">
-                        <p>Cooper, Kristin</p>
-                        <p>9 Feb 2024 - 09:18</p>
-                    </div>
-                </div>
-            </div>
-            <div class="pending-item">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <img src="https://day8-task-16yq.vercel.app/432a756d1ebdc6151dac288cfa3ef1f7.png" alt="user">
-                    <div class="pending-item-details">
-                        <p>Flores, Juanita</p>
-                        <p>9 Feb 2024 - 09:07</p>
-                    </div>
-                </div>
-            </div>
-            <div class="pending-item">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <img src="https://day8-task-16yq.vercel.app/91ff9a60558873cde74916290a286e84.png" alt="user">
-                    <div class="pending-item-details">
-                        <p>Black, Marvin</p>
-                        <p>8 Feb 2024 - 22:20</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="otp-details">
-            <button>Close</button>
-            <div class="otp-details-content">
-                <img src="https://day8-task-16yq.vercel.app/432a756d1ebdc6151dac288cfa3ef1f7.png" alt="user">
-                <h3>Nasser Alsubai</h3>
-                <p>ID: 296571905</p>
-                <h1>674951</h1>
-                <p>To accept cash transfers, the rider must enter this 4-digit code in their app before you can accept the transaction.</p>
-                <p>The amount you should receive:</p>
-                <h1>$86.60</h1>
-                <button class="accept">Accept Cash Transfer</button>
-            </div>
-        </div>
+    <div class="w-3/4 pl-8 space-y-4">
+      <div class="flex flex-col items-center">
+        <img src="https://i.pravatar.cc/150?img=1" alt="User Avatar" class="w-32 h-32 rounded-full">
+        <h3 class="text-xl font-semibold mt-4">Nasser Alsubai</h3>
+        <p class="text-sm text-gray-500">ID: 296571905</p>
+      </div>
+      <div class="text-center">
+        <p class="text-5xl font-bold text-blue-600">674951</p>
+        <p class="text-sm text-gray-600 mt-2">To accept cash transfers, the rider must enter this 4-digit code in their app before you can accept the transaction.</p>
+      </div>
+      <div class="text-center">
+        <p class="text-lg font-medium">The amount you should receive:</p>
+        <p class="text-4xl font-bold">$86.60</p>
+      </div>
+      <div class="text-center">
+        <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg">Accept Cash Transfer</button>
+      </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchBtn = document.getElementById('search-btn');
-            const searchBar = document.querySelector('.search-bar');
-
-            searchBtn.addEventListener('click', function() {
-                searchBar.classList.toggle('active');
-            });
-        });
-    </script>
+  </div>
 </body>
 </html>
