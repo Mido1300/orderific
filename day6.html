@@ -3,192 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Tasks Demo</title>
+    <title>Interactive CSS Tasks - External Links</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
         }
-        .section { 
-            margin: 3rem 0; 
-            padding: 2rem; 
-            border-radius: 1rem;
-            background: white;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-        .section:hover { transform: translateY(-5px); }
-        .gradient-bg { background: linear-gradient(to bottom right, #f9e9e6, #d9d9d9); }
-        .popular-gradient { background: linear-gradient(to bottom right, #f2f2f2, #e5e5e5); }
-        .card-gradient { background: linear-gradient(to bottom right, #f9e9e6, #f2dede); }
-        h2 { 
-            background: linear-gradient(to right, #4b5563, #1f2937);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .creative-button {
-            background: linear-gradient(45deg, #ff6b6b, #ff8787);
+        .task-button {
+            background: linear-gradient(45deg, #8b5cf6, #d946ef);
             border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 2rem;
-            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border-radius: 3rem;
+            font-weight: 700;
             color: white;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-decoration: none;
             display: inline-block;
         }
-        .creative-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
-            background: linear-gradient(45deg, #ff8787, #ff6b6b);
+        .task-button:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 12px 35px rgba(139, 92, 246, 0.7);
+            background: linear-gradient(45deg, #d946ef, #8b5cf6);
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center p-8">
-    
-    <!-- Answers to First Four Tasks -->
-    <div class="section w-full max-w-4xl">
-        <h2 class="text-2xl font-bold mb-6">CSS Concepts Demonstrated</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="p-4 border-l-4 border-purple-500">
-                <h3 class="font-semibold text-lg">Task 1: Understanding the CSS Box Model</h3>
-                <div class="w-64 h-64 flex items-center justify-center text-center font-semibold text-lg 
-                            border-t-8 border-t-purple-600 
-                            border-r-8 border-r-teal-600 
-                            border-b-8 border-b-gray-800 
-                            border-l-8 border-l-orange-600 
-                            bg-white shadow-lg">
-                    This is a box with different border widths and colors.
-                </div>
-            </div>
-            <div class="p-4 border-l-4 border-purple-500">
-                <h3 class="font-semibold text-lg">Task 2: CSS Display Properties</h3>
-                <div class="p-8 bg-indigo-300 text-center text-lg font-semibold shadow-lg rounded-lg">
-                    Added padding to a "div" to observe the changes!
-                </div>
-            </div>
-            <div class="p-4 border-l-4 border-purple-500">
-                <h3 class="font-semibold text-lg">Task 3: CSS Positioning and Float</h3>
-                <div class="flex flex-col items-center">
-                    <div class="bg-teal-400 text-black text-lg font-bold p-6 rounded-lg m-4">
-                        Task 3:
-                    </div>
-                    <div class="bg-yellow-400 text-black text-lg font-bold p-6 rounded-lg m-6">
-                        Adjustment
-                    </div>
-                </div>
-            </div>
-            <div class="p-4 border-l-4 border-purple-500">
-                <h3 class="font-semibold text-lg">Task 4: Flexbox - Modern Layout System</h3>
-                <div class="w-64 p-6 border-4 border-green-600 bg-gray-200 text-center text-lg font-semibold box-border">
-                    Task 4: Using box-sizing: border-box; to control width calculations.
-                </div>
-            </div>
+<body>
+    <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold text-white mb-12" style="text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
+            Interactive CSS Tasks
+        </h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <a href="https://orderific-ashen.vercel.app/day6_task1.html" target="_blank" class="task-button">Task 1</a>
+            <a href="https://orderific-ashen.vercel.app/day6_task2.html" target="_blank" class="task-button">Task 2</a>
+            <a href="https://orderific-ashen.vercel.app/day6_task3.html" target="_blank" class="task-button">Task 3</a>
+            <a href="https://orderific-ashen.vercel.app/day6_task4.html" target="_blank" class="task-button">Task 4</a>
+            <a href="https://orderific-ashen.vercel.app/day6_task5.html" target="_blank" class="task-button">Task 5</a>
+            <a href="https://orderific-ashen.vercel.app/day6_task6.html" target="_blank" class="task-button">Task 6</a>
+            <a href="https://orderific-ashen.vercel.app/day6_task7.html" target="_blank" class="task-button">Task 7</a>
+            <a href="https://orderific-ashen.vercel.app/day6_task8.html" target="_blank" class="task-button">Task 8</a>
         </div>
     </div>
-
-    <!-- Task 5: Card with Shadow -->
-    <div class="section">
-        <h2 class="text-2xl font-bold mb-6">Card with Shadow</h2>
-        <div class="relative card-gradient p-6 w-72 rounded-2xl shadow-xl border border-gray-100" style="box-shadow: -8px 0px 0px rgba(0, 0, 0, 0.1);">
-            <h3 class="text-2xl font-bold text-gray-800">#2001</h3>
-            <p class="text-gray-600 font-semibold mt-1">Ralph Edwards</p>
-            <p class="font-semibold mt-4 text-gray-800">Ordered</p>
-            <p class="text-gray-500 text-sm">8 min ago</p>
-        </div>
-    </div>
-
-    <!-- Task 6: Popup Modal -->
-    <div class="section flex flex-col items-center">
-        <h2 class="text-2xl font-bold mb-4">Popup Modal</h2>
-        <input type="checkbox" id="popup-toggle" class="peer hidden">
-        <label for="popup-toggle" class="creative-button text-lg cursor-pointer">
-            Cancel Items
-        </label>
-        <div class="fixed inset-0 flex justify-center items-center hidden peer-checked:flex bg-black/50">
-            <div class="bg-white p-6 rounded-2xl shadow-2xl w-80 relative">
-                <label for="popup-toggle" class="absolute top-3 right-3 bg-gray-200 w-8 h-8 flex items-center justify-center rounded-full shadow-md cursor-pointer hover:bg-gray-300">
-                    <span class="text-black text-lg font-bold">×</span>
-                </label>
-                <h2 class="text-xl font-bold text-black">Cancel Item</h2>
-                <p class="text-gray-600 mt-1 text-sm">Are you sure to cancel this item?</p>
-                <div class="border border-gray-300 rounded-lg p-3 mt-4 bg-gray-50">
-                    <p class="font-semibold text-base text-black">Tasty Burger</p>
-                    <p class="text-gray-500 text-xs">Size: Small, Cheese: A little bit, Salt: No</p>
-                </div>
-                <label for="popup-toggle" class="w-full block bg-red-600 text-white font-semibold py-3 rounded-full mt-4 shadow-md text-center cursor-pointer hover:bg-red-700 text-lg">
-                    Cancel Items
-                </label>
-            </div>
-        </div>
-    </div>
-
-    <!-- Task 7: Flexbox Layout -->
-    <div class="section">
-        <h2 class="text-2xl font-bold mb-6">Flexbox Layout</h2>
-        <div class="gradient-bg p-6 rounded-xl shadow-lg flex flex-col gap-4 w-fit">
-            <div class="flex gap-3 flex-wrap">
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-red-500 hover:bg-red-50">A1</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-red-500 hover:bg-red-50">A2</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-red-500 hover:bg-red-50">A3</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-gray-50">A4</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-green-500 hover:bg-green-50">A5</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md hover:bg-gray-50">A6</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-green-500 hover:bg-green-50">B1</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-green-500 hover:bg-green-50">B2</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-green-500 hover:bg-green-50">B3</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-green-500 hover:bg-green-50">B4</div>
-            </div>
-            <div class="flex gap-3 flex-wrap">
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-green-500 hover:bg-green-50">B5</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-red-500 hover:bg-red-50">B6</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-green-500 hover:bg-green-50">C1</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-green-500 hover:bg-green-50">C2</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-green-500 hover:bg-green-50">C3</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-green-500 hover:bg-green-50">C4</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-green-500 hover:bg-green-50">C5</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-green-500 hover:bg-green-50">C6</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md border-l-4 border-green-500 hover:bg-green-50">C7</div>
-                <div class="w-16 h-10 flex items-center justify-center bg-white rounded-lg shadow-md hover:bg-gray-50">D1</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Task 8: Popular Items Grid -->
-    <div class="section">
-        <h2 class="text-2xl font-bold mb-6">Popular Items Grid</h2>
-        <div class="popular-gradient p-6 rounded-xl shadow-lg w-[28rem] h-[34rem]">
-            <h1 class="text-xl font-semibold mb-6 text-black">Popular Items</h1>
-            <div class="grid grid-cols-2 gap-4 w-[24rem]">
-                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <p class="font-semibold text-black">Double Chicken Burger + French fries</p>
-                    <p class="text-gray-500 mt-2">Order: <span class="font-semibold text-black">88</span></p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <p class="font-semibold text-black">Mexican Burger</p>
-                    <p class="text-gray-500 mt-12">Order: <span class="font-semibold text-black">74</span></p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <p class="font-semibold text-black">Double Cheese</p>
-                    <p class="text-gray-500 mt-2">Order: <span class="font-semibold text-black">56</span></p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <p class="font-semibold text-black">Double Spicy Bean Burger</p>
-                    <p class="text-gray-500 mt-2">Order: <span class="font-semibold text-black">41</span></p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow h-[8rem]">
-                    <p class="font-semibold text-black">Potato Gems</p>
-                    <p class="text-gray-500 mt-12">Order: <span class="font-semibold text-black">38</span></p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <p class="font-semibold text-black">Beer</p>
-                    <p class="text-gray-500 mt-12">Order: <span class="font-semibold text-black">32</span></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </body>
 </html>
