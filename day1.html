@@ -11,9 +11,13 @@
             background: linear-gradient(135deg, #1e3a8a, #3b82f6);
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             padding: 2rem;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
         }
         .task-button {
             background: linear-gradient(45deg, #8b5cf6, #d946ef);
@@ -29,6 +33,7 @@
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
+            margin: 0.5rem;
         }
         .task-button:hover {
             transform: scale(1.1) rotate(2deg);
@@ -38,11 +43,11 @@
     </style>
 </head>
 <body>
-    <div class="container mx-auto text-center">
+    <div class="container">
         <h1 class="text-4xl font-bold text-white mb-12" style="text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
             Day 1
         </h1>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="flex justify-center gap-6">
             <a href="https://orderific-gamma.vercel.app/day1_part1.html" target="_blank" class="task-button">Part 1</a>
             <a href="https://orderific-gamma.vercel.app/day1_part2.html" target="_blank" class="task-button">Part 2</a>
         </div>
