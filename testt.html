@@ -189,6 +189,7 @@
     .gap-2 { gap: calc(var(--spacing) * 2); }
     .gap-4 { gap: calc(var(--spacing) * 4); }
     .gap-6 { gap: calc(var(--spacing) * 6); }
+    .gap-\[14px\] { gap: 14px; }
     .space-y-0 { :where(& > :not(:last-child)) { --tw-space-y-reverse: 0; margin-block-start: calc(calc(var(--spacing) * 0) * var(--tw-space-y-reverse)); margin-block-end: calc(calc(var(--spacing) * 0) * calc(1 - var(--tw-space-y-reverse))); } }
     .space-y-4 { :where(& > :not(:last-child)) { --tw-space-y-reverse: 0; margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse)); margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse))); } }
     .space-y-10 { :where(& > :not(:last-child)) { --tw-space-y-reverse: 0; margin-block-start: calc(calc(var(--spacing) * 10) * var(--tw-space-y-reverse)); margin-block-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-y-reverse))); } }
@@ -350,12 +351,12 @@
 <body class="font-['DM_Sans'] background1 min-h-screen w-full max-w-[100vw] overflow-x-hidden flex flex-col">
   <div class="flex h-full flex-col lg:flex-row">
     <!-- Sidebar -->
-    <div class="lg:w-auto md:w-full w-[95%] lg:left-0 top-1 lg:h-screen h-17 justify-between rounded-full bg-white lg:bg-none flex px-4 py-2 items-center mt-6 lg:max-h-screen lg:overflow-hidden overflow-visible lg:ml-0 ml-auto lg:flex-col sm:flex-row flex-row gap-4 lg:gap-6 lg:fixed sticky z-20 duration-300">
+    <div class="lg:w-auto md:w-full w-[95%] lg:left-0 top-1 lg:h-screen h-17 justify-between rounded-full bg-white lg:bg-none flex px-4 py-2 items-center mt-6 lg:max-h-screen lg:overflow-hidden overflow-visible lg:ml-0 ml-auto lg:flex-col sm:flex-row flex-row gap-[14px] lg:gap-[14px] lg:fixed sticky z-20 duration-300">
       <div class="bg-white h-16 w-16 text-2xl font-bold rounded-full flex items-center justify-center">
         <img src="unnamed.webp" alt="brandLogo" class="w-8 h-8 object-contain" style="margin-top: -30px; margin-bottom: 10px;">
       </div>
       <!-- Sidebar menu with <a> tags -->
-      <div class="w-auto h-auto gap-4 p-2 rounded-full bg-black text-white hidden lg:flex flex-col p-3">
+      <div class="w-auto h-auto gap-[14px] p-2 rounded-full bg-black text-white hidden lg:flex flex-col p-3">
         <a href="/dashboard" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
           <img src="filee1.svg" alt="Dashboard">
         </a>
@@ -376,7 +377,7 @@
           <span class="absolute -top-1 -right-1 bg2 text-white w-4 h-4 min-w-4 gap-0 rounded-full pt-0 pr-1 pb-0 pl-1 border-2 border-black text-xs flex items-center justify-center">1</span>
         </a>
       </div>
-      <div class="gap-4 p-2 rounded-full flex lg:flex-col flex-row lg:mb-5">
+      <div class="gap-[14px] p-2 rounded-full flex lg:flex-col flex-row lg:mb-5">
         <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden">
           <img src="4357ccf260ffcb69e9a74820541e8969.png" alt="profile" class="w-full h-full object-cover">
         </div>
@@ -562,7 +563,7 @@
     </div>
   </div>
   <!-- Mobile menu -->
-  <div class="md:w-auto md:h-auto h-15 gap-4 p-2 rounded-full bg-black text-white fixed bottom-3 left-1/2 transform -translate-x-1/2 p-3 rounded-full flex md:space-x-4 space-x-2 lg:hidden z-20 pointer-events-auto">
+  <div class="md:w-auto md:h-auto h-15 gap-[14px] p-2 rounded-full bg-black text-white fixed bottom-3 left-1/2 transform -translate-x-1/2 p-3 rounded-full flex md:space-x-4 space-x-2 lg:hidden z-20 pointer-events-auto">
     <a href="/dashboard" class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
       <img src="filee1.svg" alt="Dashboard">
     </a>
