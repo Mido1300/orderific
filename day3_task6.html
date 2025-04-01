@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6: Popup Modal</title>
+    <style>
+        .modal-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #popup-toggle {
+            display: none;
+        }
+
+        .creative-button {
+            background: linear-gradient(45deg, #ff6b6b, #ff8787);
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+            font-size: 1.125rem;
+        }
+
+        .creative-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+            background: linear-gradient(45deg, #ff8787, #ff6b6b);
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        #popup-toggle:checked ~ .modal {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+            width: 20rem;
+            position: relative;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: #e5e7eb;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            font-size: 1.125rem;
+            font-weight: bold;
+        }
+
+        .close-button:hover {
+            background: #d1d5db;
+        }
+
+        .cancel-button {
+            width: 100%;
+            background: #dc2626;
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem;
+            border-radius: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            font-size: 1.125rem;
+        }
+
+        .cancel-button:hover {
+            background: #b91c1c;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-container">
+        <h2>Popup Modal</h2>
+        <input type="checkbox" id="popup-toggle">
+        <label for="popup-toggle" class="creative-button">Cancel Items</label>
+        <div class="modal">
+            <div class="modal-content">
+                <label for="popup-toggle" class="close-button">×</label>
+                <h2 style="font-size: 1.25rem; font-weight: bold; color: black;">Cancel Item</h2>
+                <p style="color: #6b7280; margin-top: 0.25rem; font-size: 0.875rem;">Are you sure to cancel this item?</p>
+                <div style="border: 1px solid #d1d5db; border-radius: 0.5rem; padding: 0.75rem; margin-top: 1rem; background: #f9fafb;">
+                    <p style="font-weight: 600; font-size: 1rem; color: black;">Tasty Burger</p>
+                    <p style="color: #6b7280; font-size: 0.75rem;">Size: Small, Cheese: A little bit, Salt: No</p>
+                </div>
+                <label for="popup-toggle" class="cancel-button">Cancel Items</label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
