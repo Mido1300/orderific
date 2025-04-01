@@ -1,0 +1,483 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: "DM Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        background: linear-gradient(67.75deg, #FFFFFF 19.18%, #FFEBE7 75.31%);
+        width: 100%;
+        min-height: 100vh;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    
+    .main-container {
+        padding: 20px;
+    }
+    
+    .table-container {
+        width: 100%;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+    
+    .table-row {
+        display: grid;
+        grid-template-columns: 0.6fr 2fr;
+        gap: 0;
+        border-radius: 30px;
+        grid-template-rows: auto;
+        min-height: 0;
+        overflow: auto;
+    }
+    
+    .parent-imgsec {
+        background-image: url('https://s3-alpha-sig.figma.com/img/97c5/77dd/b047dd3c09ed673e80bc7a6d07bed063?Expires=1743984000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=HVwcohuuOmh-X7Qqo7uHWp9YRQEoc8lJNe65ZFvm3SYM0kwYAm9oSsA7budFfes6m7jFmwVSS7BAvpHsJFjwWOZQAAni9HStdxF4A3e2wyMYLzlmZv0b81b1eDuv72IzYx8o2oNcHwF1xc1waQI-otPK0tDnk3F-~j~YJk88MyArdXPhYcZl5u2OD5driF9hzdkqQCneoaiBUCilcgu1TlsOX9DD5SsSWbyMQv8hJtlnG9Z50gjSej5Z0qPIP~cc7ZKSrCtbhZt5XllsOj8Y~2yI~Op49I9eIIbioEDxmV6yg9Z5DizT8oSknJlP-KfcnOVI-0H4f4VgA1iAUDkKDg__');
+        background-size: cover;
+        position: relative;
+        padding: 40px;
+        border-radius: 30px;
+        background-color: #ff5524;
+        width: 480px;
+        max-width: 100%;
+        min-height: 300px;
+    }
+    
+    .parent-imgsec::before {
+        content: '';
+        position: absolute;
+        border-radius: 30px;
+        top: 0;
+        left: 0;
+        width: 480px;
+        height: 100%;
+        background: rgba(255, 86, 52, 0.5);
+        z-index: 1;
+    }
+    
+    .left-side {
+        position: relative;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        color: rgba(255, 255, 255, 1);
+        min-height: 100%;
+    }
+    
+    .logo {
+        width: 180px;
+    }
+    
+    .text-title {
+        font-size: 64px;
+        font-weight: 700;
+        margin-top: 140%;
+    }
+    
+    .text {
+        font-size: 16px;
+        line-height: 20px;
+        color: rgba(255, 255, 255, 1);
+    }
+    
+    .parent-form {
+        padding-left: 40px;
+        padding-right: 40px;
+        align-content: center;
+        color: rgba(255, 255, 255, 1);
+        min-height: 100%;
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .right-side {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        max-width: 360px;
+        width: 100%;
+    }
+    
+    .right-side h3 {
+        font-size: 32px;
+        font-weight: 700;
+        color: #1A1A1A;
+        text-align: center;
+    }
+    
+    .subtitle {
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.6);
+        margin-bottom: 8px;
+        text-align: center;
+    }
+    
+    .label1 {
+        color: rgba(0, 0, 0, 0.6);
+        margin-bottom: 8px;
+        display: block;
+        padding-left: 16px;
+        font-family: DM Sans;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 16px;
+        letter-spacing: 0%;
+    }
+    
+    .right-side input[type="email"],
+    .right-side input[type="password"] {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #E0E0E0;
+        border-radius: 25px;
+        font-size: 1rem;
+        background-color: #F9F9F9;
+        margin-bottom: 16px;
+        margin-top: 0px;
+    }
+    
+    .password-container {
+        position: relative;
+    }
+    
+    .eye-icon {
+        position: absolute;
+        right: 15px;
+        top: 23px;
+        transform: translateY(-50%);
+        color: #666;
+    }
+    
+    .form-options {
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        margin-top: 14px;
+    }
+    
+    .form-options label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: black;
+    }
+    
+    .form-options a {
+        color: rgba(0, 0, 0, 1);
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: underline;
+        text-decoration-thickness: 0px;
+    }
+    
+    .Remember {
+        color: rgba(0, 0, 0, 1);
+        padding-left: 0px;
+        font-size: 16px;
+    }
+    
+    .right-side input[type="checkbox"] {
+        appearance: none;
+        border-radius: 8px;
+        border: none;
+        width: 28px;
+        height: 28px;
+        background-color: rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        position: relative;
+    }
+    
+    .form-options a:hover {
+        text-decoration: underline;
+    }
+    
+    .right-side button {
+        background-color: rgba(0, 0, 0, 1);
+        color: rgba(255, 255, 255, 1);
+        padding-left: 32px;
+        padding-right: 32px;
+        border: none;
+        border-radius: 25px;
+        font-family: DM Sans;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-align: center;
+        width: 100%;
+        margin-top: 26px;
+        height: 48px;
+    }
+    
+    .right-side button:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        color: rgba(0, 0, 0, 0.4);
+    }
+    
+    .logo2 {
+        display: none;
+    }
+    
+    .panel {
+        display: none;
+    }
+    
+    /* Checkbox */
+    .right-side input[type="checkbox"]:checked::after {
+        content: '✔';
+        position: absolute;
+        left: 8px;
+        top: 4px;
+        font-size: 16px;
+        color: #000;
+    }
+    
+    @media (max-width: 1024px) {
+        .main-container {
+            max-width: 100vw;
+            height: auto;
+            padding: 20px;
+            display: flex; /* Ensure the container is a flexbox */
+            flex-direction: column; /* Stack children vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            min-height: 100vh; /* Ensure it takes full viewport height */
+        }
+    
+        .table-container {
+            height: auto;
+            min-height: unset; /* Remove min-height to allow centering */
+        }
+    
+        .table-row {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            height: auto;
+            border-radius: 0; /* Remove border radius for mobile */
+            justify-items: center;
+            align-items: center;
+        }
+    
+        .parent-imgsec {
+            padding: 20px;
+            border-radius: 20px 20px 0 0;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            display: none; /* Hide the image section in mobile */
+        }
+    
+        .parent-imgsec::before {
+            border-radius: 20px 20px 0 0;
+            display: none;
+        }
+    
+        .left-side {
+            align-items: center;
+            text-align: center;
+        }
+    
+        .logo {
+            width: 120px;
+        }
+    
+        .logo2 {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            text-align: center;
+            flex-wrap: nowrap;
+            position: static; /* Remove absolute positioning */
+            margin-bottom: 20px; /* Add spacing below logo */
+        }
+    
+        .logo2 img {
+            display: block;
+        }
+    
+        .panel {
+            display: block;
+            font-size: 32px;
+            color: #1A1A1A;
+            font-weight: 600;
+            position: static; /* Remove absolute positioning */
+            margin-bottom: 40px; /* Add spacing below the panel text */
+            text-align: center;
+        }
+    
+        .text-title {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+    
+        .text {
+            font-size: 0.9rem;
+        }
+    
+        .parent-form {
+            padding: 0; /* Remove padding to align with the design */
+            border-radius: 0;
+            position: static; /* Remove absolute positioning */
+            transform: none; /* Remove transform */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .right-side {
+            max-width: 360px;
+            padding: 0 20px;
+            margin-left: 0;
+        }
+    
+        .right-side h3 {
+            font-size: 1.5rem;
+        }
+    
+        .subtitle {
+            font-size: 14px;
+        }
+    
+        .right-side input[type="email"],
+        .right-side input[type="password"] {
+            padding: 10px 12px;
+            font-size: 0.9rem;
+        }
+    
+        .right-side button {
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+    
+        .eye-icon {
+            top: 20px;
+        }
+    }
+    
+    /* Media Query for Very Small Screens (max-width: 480px) */
+    @media (max-width: 480px) {
+        .main-container {
+            max-width: 100vw;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    
+        .parent-imgsec {
+            height: 250px;
+            display: none;
+        }
+    
+        .parent-form {
+            width: 100%;
+            padding: 0;
+        }
+    
+        .logo2 {
+            height: 42px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+    
+        .logo2 img {
+            display: block;
+        }
+    
+        .lg {
+            height: 40px;
+            width: auto;
+        }
+    
+        .right-side h3 {
+            font-size: 1.3rem;
+        }
+    
+        .subtitle {
+            font-size: 12px;
+        }
+    
+        .panel {
+            font-size: 18px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    
+        .right-side {
+            padding: 0 16px;
+        }
+    }
+    
+    @media (min-resolution: 1dpi) {
+        .main-container {
+            transform: scale(1);
+        }
+    }
+</style>
+<body>
+    <div class="main-container">
+       <div class="logo2"> <img src="https://orderific.com/ord-website/assets/img/company-logo/logo-black-2.webp" alt="logo2" class="lg"></div>
+       <b class="panel">Service Panel</b>
+        <table class="table-container">
+            <tr class="table-row">
+                <!-- Left side image section -->
+                <td class="parent-imgsec">
+                    <div class="left-side">
+                        <img class="logo" src="logo.svg" alt="logo">
+                        <h2 class="text-title">Service Panel</h2>
+                        <p class="text">Streamline your restaurant operations with BMS. Manage reservations, orders, inventory, and staff effortlessly, and focus on delivering exceptional dining experiences.</p>
+                    </div>
+                </td>
+                <!-- Right side form -->
+                <td class="parent-form">
+                    <div class="right-side">
+                        <h3>Welcome Back</h3>
+                        <p class="subtitle">Manage, streamline, and thrive effortlessly.</p>
+                        <form action="OTP.html" method="post">
+                            <label class="label1">Email</label>
+                            <input type="email" placeholder="samsmith@gmail.com" required><br>
+                            <label class="label1">Password</label>
+                            <div class="password-container">
+                                <input type="password" placeholder="********" required>
+                                <span><img class="eye-icon" src="eye.svg"></span>
+                            </div>
+                            <div class="form-options">
+                                <label class="Remember">
+                                    <input class="check" type="checkbox" name="rememberMe"> Remember me
+                                </label>
+                                <a href="#">Login with Code</a>
+                            </div>
+                            <button type="submit" name="submit">Sign In</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
