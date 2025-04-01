@@ -1,86 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html>
+  <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 1</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(to bottom, #FEF4F2, #FFEAE6);
-        }
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
-        .gcard {
-            width: 407px;
-            height: 633px;
-            border-radius: 32px;
-            background-image: url(https://s3-alpha-sig.figma.com/img/97c5/77dd/b047dd3c09ed673e80bc7a6d07bed063?Expires=1743984000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=HVwcohuuOmh-X7Qqo7uHWp9YRQEoc8lJNe65ZFvm3SYM0kwYAm9oSsA7budFfes6m7jFmwVSS7BAvpHsJFjwWOZQAAni9HStdxF4A3e2wyMYLzlmZv0b81b1eDuv72IzYx8o2oNcHwF1xc1waQI-otPK0tDnk3F-~j~YJk88MyArdXPhYcZl5u2OD5driF9hzdkqQCneoaiBUCilcgu1TlsOX9DD5SsSWbyMQv8hJtlnG9Z50gjSej5Z0qPIP~cc7ZKSrCtbhZt5XllsOj8Y~2yI~Op49I9eIIbioEDxmV6yg9Z5DizT8oSknJlP-KfcnOVI-0H4f4VgA1iAUDkKDg__);
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            padding: 40px;
-        }
+      :root {
+        --spacing-spacing-8: 40px;
+        --radius-round-6: 32px;
+        --colors-text-white-100: rgba(255, 255, 255, 1);
+        --colors-background-brand-orange-100: rgba(255, 86, 52, 1);
+        /* Logo customization variables */
+        --logo-height: 38.97px;
+        --logo-width: auto;
+        --logo-x-position: 0px; /* Controls position on x-axis (positive moves right, negative moves left) */
+        --logo-y-position: 0px; /* Controls position on y-axis (positive moves down, negative moves up) */
+        --logo-align: flex-start; /* Default left alignment */
+      }
 
-        .goverlay {
-            position: absolute;
-            inset: 0;
-            background: #e2401f;
-            border-radius: 32px;
-            opacity: 0.5;
-        }
+      * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+      }
 
-        .glogo {
-            height: 38.97px;
-            position: relative;
-            z-index: 1; /* Ensure logo is above overlay */
-        }
+      html,
+      body {
+        margin: 0px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom, #FEF4F2, #FFEAE6);
+      }
 
-        .gtext-container {
-            position: absolute;
-            bottom: 40px;
-            left: 40px;
-            right: 40px;
-            color: white;
-            text-align: left;
-            z-index: 1; /* Ensure text is above overlay */
-        }
+      button:focus-visible {
+        outline: 2px solid #4a90e2 !important;
+        outline: -webkit-focus-ring-color auto 5px !important;
+      }
 
-        .gtitle {
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 700;
-            font-size: 50px;
-            line-height: 56px;
-            letter-spacing: -3px;
-            margin-bottom: 14px;
-        }
+      a {
+        text-decoration: none;
+      }
 
-        .gdescription {
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 400;
-            font-size: 15px;
-            line-height: 20px;
-            letter-spacing: -0.2px;
-        }
+      .introduction {
+        display: flex;
+        flex-direction: column;
+        width: 480px;
+        height: 802px;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: var(--spacing-spacing-8);
+        position: relative;
+        border-radius: var(--radius-round-6);
+        overflow: hidden;
+        background-image: url(https://s3-alpha-sig.figma.com/img/97c5/77dd/b047dd3c09ed673e80bc7a6d07bed063?Expires=1743984000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=HVwcohuuOmh-X7Qqo7uHWp9YRQEoc8lJNe65ZFvm3SYM0kwYAm9oSsA7budFfes6m7jFmwVSS7BAvpHsJFjwWOZQAAni9HStdxF4A3e2wyMYLzlmZv0b81b1eDuv72IzYx8o2oNcHwF1xc1waQI-otPK0tDnk3F-~j~YJk88MyArdXPhYcZl5u2OD5driF9hzdkqQCneoaiBUCilcgu1TlsOX9DD5SsSWbyMQv8hJtlnG9Z50gjSej5Z0qPIP~cc7ZKSrCtbhZt5XllsOj8Y~2yI~Op49I9eIIbioEDxmV6yg9Z5DizT8oSknJlP-KfcnOVI-0H4f4VgA1iAUDkKDg__);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .introduction .BG {
+        height: 976px;
+        top: 0;
+        background-color: var(--colors-background-brand-orange-100);
+        position: absolute;
+        width: 480px;
+        left: 0;
+        opacity: 0.5;
+        z-index: 1;
+      }
+
+      .introduction .div {
+        height: 460px;
+        top: 516px;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 1) 50%,
+          rgba(0, 0, 0, 1) 100%
+        );
+        position: absolute;
+        width: 480px;
+        left: 0;
+        opacity: 0.5;
+        z-index: 2;
+      }
+
+      .introduction .logo {
+        height: var(--logo-height);
+        width: var(--logo-width);
+        position: relative;
+        z-index: 3;
+        transform: translateX(var(--logo-x-position)) translateY(var(--logo-y-position)); /* Moves logo on both axes */
+        align-self: var(--logo-align); /* Maintains left/right alignment */
+      }
+
+      .introduction .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+        margin-top: -460px;
+        z-index: 3;
+      }
+
+      .introduction .big-title {
+        position: relative;
+        align-self: stretch;
+        margin-top: -1.00px;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        color: var(--colors-text-white-100);
+        font-size: 58px;
+        letter-spacing: -1.92px;
+        line-height: 56px;
+      }
+
+      .introduction .description {
+        position: relative;
+        align-self: stretch;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+        color: var(--colors-text-white-100);
+        font-size: 16px;
+        letter-spacing: -0.16px;
+        line-height: 20px;
+      }
+
+      [data-colors-mode="dark-mode"] {
+        --colors-text-white-100: rgba(34, 34, 34, 1);
+      }
+
+      [data-colors-mode="light-mode"] {
+        --colors-text-white-100: rgba(255, 255, 255, 1);
+      }
     </style>
-</head>
-<body>
-    <div class="gcard">
-        <div class="goverlay"></div>
-        <img src="./logo.svg" alt="Logo" class="glogo">
-        <div class="gtext-container">
-            <p class="gtitle"><br>Service Panel</p>
-            <p class="gdescription">
-                Streamline your restaurant operations with BMS.<br>
-                Manage reservations, orders, inventory, and staff<br>
-                effortlessly, and focus on delivering exceptional dining<br>
-                experiences.
-            </p>
-        </div>
+  </head>
+  <body>
+    <div class="introduction">
+      <div class="BG"></div>
+      <div class="div"></div>
+      <img src="./logo.svg" alt="Logo" class="logo">
+      <div class="content">
+        <div class="big-title">Service Panel</div>
+        <p class="description">
+          Streamline your restaurant operations with BMS. Manage reservations, orders, inventory, and staff
+          effortlessly, and focus on delivering exceptional dining experiences.
+        </p>
+      </div>
     </div>
-</body>
+
+    <!-- Customization block for logo positioning -->
+    <style>
+      :root {
+        /* Default: Logo on left with ability to adjust both axes */
+        --logo-align: flex-start; /* Left alignment */
+        --logo-x-position: 12px;   /* Change this to move logo on x-axis (right/left) */
+        --logo-y-position: 10px;   /* Change this to move logo on y-axis (up/down) */
+                                  /* X: Positive moves right, negative moves left */
+                                  /* Y: Positive moves down, negative moves up */
+        
+        /* Optional: Adjust size if needed */
+        --logo-height: 38px;
+        --logo-width: 150px; /* or 'auto' */
+      }
+    </style>
+  </body>
 </html>
