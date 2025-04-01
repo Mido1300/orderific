@@ -3,444 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Tasks Demo</title>
+    <title>Interactive CSS Tasks - External Links</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 2rem;
         }
-
-        .section {
-            margin: 3rem 0;
-            padding: 2rem;
-            border-radius: 1rem;
-            background: white;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .section:hover {
-            transform: translateY(-5px);
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, #4b5563, #1f2937);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        /* Grid layout for first section */
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .grid-container {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .grid-item {
-            padding: 1rem;
-            border-left: 4px solid #8b5cf6;
-        }
-
-        /* Box Model Demo */
-        .box-model {
-            width: 16rem;
-            height: 16rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-weight: 600;
-            font-size: 1.125rem;
-            border-top: 8px solid #9333ea;
-            border-right: 8px solid #0d9488;
-            border-bottom: 8px solid #1f2937;
-            border-left: 8px solid #ea580c;
-            background: white;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Display Properties Demo */
-        .display-demo {
-            padding: 2rem;
-            background: #a5b4fc;
-            text-align: center;
-            font-size: 1.125rem;
-            font-weight: 600;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 0.5rem;
-        }
-
-        /* Positioning Demo */
-        .positioning-demo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .positioning-item {
-            background: #2dd4bf;
-            color: black;
-            font-size: 1.125rem;
-            font-weight: bold;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            margin: 1rem;
-        }
-
-        .positioning-item:nth-child(2) {
-            background: #facc15;
-            margin: 1.5rem;
-        }
-
-        /* Flexbox Demo */
-        .flexbox-demo {
-            width: 16rem;
-            padding: 1.5rem;
-            border: 4px solid #16a34a;
-            background: #e5e7eb;
-            text-align: center;
-            font-size: 1.125rem;
-            font-weight: 600;
-            box-sizing: border-box;
-        }
-
-        /* Card with Shadow */
-        .card {
-            position: relative;
-            background: linear-gradient(to bottom right, #f9e9e6, #f2dede);
-            padding: 1.5rem;
-            width: 18rem;
-            border-radius: 1rem;
-            box-shadow: -8px 0px 0px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e5e7eb;
-        }
-
-        /* Popup Modal */
-        .modal-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #popup-toggle {
-            display: none;
-        }
-
-        .creative-button {
-            background: linear-gradient(45deg, #ff6b6b, #ff8787);
+        .task-button {
+            background: linear-gradient(45deg, #8b5cf6, #d946ef);
             border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 2rem;
-            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border-radius: 3rem;
+            font-weight: 700;
             color: white;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-decoration: none;
             display: inline-block;
-            cursor: pointer;
-            font-size: 1.125rem;
         }
-
-        .creative-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
-            background: linear-gradient(45deg, #ff8787, #ff6b6b);
-        }
-
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        #popup-toggle:checked ~ .modal {
-            display: flex;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
-            width: 20rem;
-            position: relative;
-        }
-
-        .close-button {
-            position: absolute;
-            top: 0.75rem;
-            right: 0.75rem;
-            background: #e5e7eb;
-            width: 2rem;
-            height: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            font-size: 1.125rem;
-            font-weight: bold;
-        }
-
-        .close-button:hover {
-            background: #d1d5db;
-        }
-
-        .cancel-button {
-            width: 100%;
-            background: #dc2626;
-            color: white;
-            font-weight: 600;
-            padding: 0.75rem;
-            border-radius: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            cursor: pointer;
-            font-size: 1.125rem;
-        }
-
-        .cancel-button:hover {
-            background: #b91c1c;
-        }
-
-        /* Flexbox Layout */
-        .flexbox-layout {
-            background: linear-gradient(to bottom right, #f9e9e6, #d9d9d9);
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            width: fit-content;
-        }
-
-        .flex-row {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .flex-item {
-            width: 4rem;
-            height: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .flex-item.red {
-            border-left: 4px solid #ef4444;
-        }
-
-        .flex-item.red:hover {
-            background: #fef2f2;
-        }
-
-        .flex-item.green {
-            border-left: 4px solid #22c55e;
-        }
-
-        .flex-item.green:hover {
-            background: #f0fdf4;
-        }
-
-        .flex-item:hover {
-            background: #f3f4f6;
-        }
-
-        /* Popular Items Grid */
-        .popular-grid {
-            background: linear-gradient(to bottom right, #f2f2f2, #e5e5e5);
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-            width: 28rem;
-            height: 34rem;
-        }
-
-        .popular-grid h1 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: black;
-        }
-
-        .items-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            width: 24rem;
-        }
-
-        .grid-card {
-            background: white;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
-        }
-
-        .grid-card:hover {
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        .task-button:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 12px 35px rgba(139, 92, 246, 0.7);
+            background: linear-gradient(45deg, #d946ef, #8b5cf6);
         }
     </style>
 </head>
 <body>
-    <!-- Answers to First Four Tasks -->
-    <div class="section" style="width: 100%; max-width: 64rem;">
-        <h2>CSS Concepts Demonstrated</h2>
-        <div class="grid-container">
-            <div class="grid-item">
-                <h3 style="font-weight: 600; font-size: 1.125rem;">Task 1: Understanding the CSS Box Model</h3>
-                <div class="box-model">
-                    This is a box with different border widths and colors.
-                </div>
-            </div>
-            <div class="grid-item">
-                <h3 style="font-weight: 600; font-size: 1.125rem;">Task 2: CSS Display Properties</h3>
-                <div class="display-demo">
-                    Added padding to a "div" to observe the changes!
-                </div>
-            </div>
-            <div class="grid-item">
-                <h3 style="font-weight: 600; font-size: 1.125rem;">Task 3: CSS Positioning and Float</h3>
-                <div class="positioning-demo">
-                    <div class="positioning-item">Task 3:</div>
-                    <div class="positioning-item">Adjustment</div>
-                </div>
-            </div>
-            <div class="grid-item">
-                <h3 style="font-weight: 600; font-size: 1.125rem;">Task 4: Flexbox - Modern Layout System</h3>
-                <div class="flexbox-demo">
-                    Task 4: Using box-sizing: border-box; to control width calculations.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Task 5: Card with Shadow -->
-    <div class="section">
-        <h2>Card with Shadow</h2>
-        <div class="card">
-            <h3 style="font-size: 1.5rem; font-weight: bold; color: #1f2937;">#2001</h3>
-            <p style="color: #6b7280; font-weight: 600; margin-top: 0.25rem;">Ralph Edwards</p>
-            <p style="font-weight: 600; margin-top: 1rem; color: #1f2937;">Ordered</p>
-            <p style="color: #6b7280; font-size: 0.875rem;">8 min ago</p>
-        </div>
-    </div>
-
-    <!-- Task 6: Popup Modal -->
-    <div class="section modal-container">
-        <h2>Popup Modal</h2>
-        <input type="checkbox" id="popup-toggle">
-        <label for="popup-toggle" class="creative-button">Cancel Items</label>
-        <div class="modal">
-            <div class="modal-content">
-                <label for="popup-toggle" class="close-button">×</label>
-                <h2 style="font-size: 1.25rem; font-weight: bold; color: black;">Cancel Item</h2>
-                <p style="color: #6b7280; margin-top: 0.25rem; font-size: 0.875rem;">Are you sure to cancel this item?</p>
-                <div style="border: 1px solid #d1d5db; border-radius: 0.5rem; padding: 0.75rem; margin-top: 1rem; background: #f9fafb;">
-                    <p style="font-weight: 600; font-size: 1rem; color: black;">Tasty Burger</p>
-                    <p style="color: #6b7280; font-size: 0.75rem;">Size: Small, Cheese: A little bit, Salt: No</p>
-                </div>
-                <label for="popup-toggle" class="cancel-button">Cancel Items</label>
-            </div>
-        </div>
-    </div>
-
-    <!-- Task 7: Flexbox Layout -->
-    <div class="section">
-        <h2>Flexbox Layout</h2>
-        <div class="flexbox-layout">
-            <div class="flex-row">
-                <div class="flex-item red">A1</div>
-                <div class="flex-item red">A2</div>
-                <div class="flex-item red">A3</div>
-                <div class="flex-item">A4</div>
-                <div class="flex-item green">A5</div>
-                <div class="flex-item">A6</div>
-                <div class="flex-item green">B1</div>
-                <div class="flex-item green">B2</div>
-                <div class="flex-item green">B3</div>
-                <div class="flex-item green">B4</div>
-            </div>
-            <div class="flex-row">
-                <div class="flex-item green">B5</div>
-                <div class="flex-item red">B6</div>
-                <div class="flex-item green">C1</div>
-                <div class="flex-item green">C2</div>
-                <div class="flex-item green">C3</div>
-                <div class="flex-item green">C4</div>
-                <div class="flex-item green">C5</div>
-                <div class="flex-item green">C6</div>
-                <div class="flex-item green">C7</div>
-                <div class="flex-item">D1</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Task 8: Popular Items Grid -->
-    <div class="section">
-        <h2>Popular Items Grid</h2>
-        <div class="popular-grid">
-            <h1>Popular Items</h1>
-            <div class="items-grid">
-                <div class="grid-card">
-                    <p style="font-weight: 600; color: black;">Double Chicken Burger + French fries</p>
-                    <p style="color: #6b7280; margin-top: 0.5rem;">Order: <span style="font-weight: 600; color: black;">88</span></p>
-                </div>
-                <div class="grid-card">
-                    <p style="font-weight: 600; color: black;">Mexican Burger</p>
-                    <p style="color: #6b7280; margin-top: 3rem;">Order: <span style="font-weight: 600; color: black;">74</span></p>
-                </div>
-                <div class="grid-card">
-                    <p style="font-weight: 600; color: black;">Double Cheese</p>
-                    <p style="color: #6b7280; margin-top: 0.5rem;">Order: <span style="font-weight: 600; color: black;">56</span></p>
-                </div>
-                <div class="grid-card">
-                    <p style="font-weight: 600; color: black;">Double Spicy Bean Burger</p>
-                    <p style="color: #6b7280; margin-top: 0.5rem;">Order: <span style="font-weight: 600; color: black;">41</span></p>
-                </div>
-                <div class="grid-card" style="height: 8rem;">
-                    <p style="font-weight: 600; color: black;">Potato Gems</p>
-                    <p style="color: #6b7280; margin-top: 3rem;">Order: <span style="font-weight: 600; color: black;">38</span></p>
-                </div>
-                <div class="grid-card">
-                    <p style="font-weight: 600; color: black;">Beer</p>
-                    <p style="color: #6b7280; margin-top: 3rem;">Order: <span style="font-weight: 600; color: black;">32</span></p>
-                </div>
-            </div>
+    <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold text-white mb-12" style="text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
+            Day 3
+        </h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <a href="https://orderific-gamma.vercel.app/day3_task1.html" target="_blank" class="task-button">Task 1</a>
+            <a href="https://orderific-gamma.vercel.app/day3_task2.html" target="_blank" class="task-button">Task 2</a>
+            <a href="https://orderific-gamma.vercel.app/day3_task3.html" target="_blank" class="task-button">Task 3</a>
+            <a href="https://orderific-gamma.vercel.app/day3_task4.html" target="_blank" class="task-button">Task 4</a>
+            <a href="https://orderific-gamma.vercel.app/day3_task5.html" target="_blank" class="task-button">Task 5</a>
+            <a href="https://orderific-gamma.vercel.app/day3_task6.html" target="_blank" class="task-button">Task 6</a>
+            <a href="https://orderific-gamma.vercel.app/day3_task7.html" target="_blank" class="task-button">Task 7</a>
+            <a href="https://orderific-gamma.vercel.app/day3_task8.html" target="_blank" class="task-button">Task 8</a>
         </div>
     </div>
 </body>
