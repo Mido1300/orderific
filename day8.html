@@ -121,6 +121,7 @@
     .w-12 { width: calc(var(--spacing) * 12); }
     .w-16 { width: calc(var(--spacing) * 16); }
     .w-\[48px\] { width: 48px; }
+    .w-\[64px\] { width: 64px; }
     .w-\[95\%\] { width: 95%; }
     .w-\[120px\] { width: 120px; }
     .w-auto { width: auto; }
@@ -148,6 +149,7 @@
     .gap-2 { gap: calc(var(--spacing) * 2); }
     .gap-4 { gap: calc(var(--spacing) * 4); }
     .gap-6 { gap: calc(var(--spacing) * 6); }
+    .gap-8 { gap: calc(var(--spacing) * 8); }
     .space-y-0 { :where(& > :not(:last-child)) { --tw-space-y-reverse: 0; margin-block-start: calc(calc(var(--spacing) * 0) * var(--tw-space-y-reverse)); margin-block-end: calc(calc(var(--spacing) * 0) * calc(1 - var(--tw-space-y-reverse))); } }
     .space-y-4 { :where(& > :not(:last-child)) { --tw-space-y-reverse: 0; margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse)); margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse))); } }
     .space-y-10 { :where(& > :not(:last-child)) { --tw-space-y-reverse: 0; margin-block-start: calc(calc(var(--spacing) * 10) * var(--tw-space-y-reverse)); margin-block-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-y-reverse))); } }
@@ -160,6 +162,7 @@
     .overflow-y-auto { overflow-y: auto; }
     .rounded-2xl { border-radius: var(--radius-2xl); }
     .rounded-\[24px\] { border-radius: 24px; }
+    .rounded-\[48px\] { border-radius: 48px; }
     .rounded-full { border-radius: calc(infinity * 1px); }
     .rounded-md { border-radius: var(--radius-md); }
     .border { border-style: var(--tw-border-style); border-width: 1px; }
@@ -281,13 +284,13 @@
 
 <body class="font-['DM_Sans'] background1 min-h-screen w-full max-w-[100vw] overflow-x-hidden flex flex-col">
   <div class="flex h-full flex-col lg:flex-row">
-    <!-- Sidebar (Updated Sizes) -->
-    <div class="w-[64px] h-[344px] rounded-[48px] bg-white lg:bg-none flex flex-col px-4 py-2 items-center mt-6 lg:max-h-screen lg:overflow-hidden overflow-visible lg:ml-0 ml-auto lg:flex-col sm:flex-row flex-row space-y-4 lg:space-y-auto lg:fixed sticky z-20 top-1 lg:left-0 duration-300">
+    <!-- Sidebar (Updated Size Only) -->
+    <div class="w-[64px] h-screen rounded-[48px] bg-white lg:bg-none flex flex-col px-4 py-2 items-center mt-0 lg:max-h-screen lg:overflow-hidden overflow-visible lg:ml-0 ml-0 lg:flex-col sm:flex-col flex-col space-y-4 lg:space-y-auto lg:fixed fixed z-20 top-0 lg:left-0 left-0 duration-300">
       <div class="bg-white h-16 w-16 text-2xl font-bold rounded-full flex items-center justify-center">
         <img src="unnamed.webp" alt="brandLogo" class="w-8 h-8 object-contain" style="margin-top: -30px; margin-bottom: 10px;">
       </div>
-      <!-- Sidebar menu with updated button sizes -->
-      <div class="w-auto h-auto gap-[8px] p-2 rounded-full bg-black text-white hidden lg:flex flex-col p-3">
+      <!-- Sidebar menu (unchanged) -->
+      <div class="w-auto h-auto gap-8 p-2 rounded-full bg-black text-white hidden lg:flex flex-col p-3">
         <a href="/dashboard" class="w-[48px] h-[48px] bg-gray-800 rounded-[24px] flex items-center justify-center hover:bg-gray-100 transition-colors">
           <img src="filee1.svg" alt="Dashboard">
         </a>
@@ -308,7 +311,7 @@
           <span class="absolute -top-1 -right-1 bg2 text-white w-4 h-4 min-w-4 gap-0 rounded-full pt-0 pr-1 pb-0 pl-1 border-2 border-black text-xs flex items-center justify-center">1</span>
         </a>
       </div>
-      <div class="gap-2 p-2 rounded-full flex lg:flex-col flex-row lg:mb-5">
+      <div class="gap-2 p-2 rounded-full flex lg:flex-col flex-col lg:mb-5">
         <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden">
           <img src="4357ccf260ffcb69e9a74820541e8969.png" alt="profile" class="w-full h-full object-cover">
         </div>
@@ -350,7 +353,7 @@
                   <img src="nasser.png" alt="users" class="w-full h-full object-cover">
                 </div>
                 <div class="flex-1 min-w-0">
-                  <p class="font-medium truncate">Nasser Alsubai</p>
+                  <p class Margin-top: 0px; class="font-medium truncate">Nasser Alsubai</p>
                   <p class="text-[13px] text-black/60 truncate">9 Feb 2024 - 10:24</p>
                 </div>
               </div>
@@ -359,7 +362,105 @@
                 <span class="text-black">674951</span>
               </p>
             </div>
-            <!-- Other list items unchanged -->
+            <div class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
+                  <img src="76c29c3974ca2943f2f77b5e0544f484.png" alt="users" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-medium truncate">Nguyen, Shane</p>
+                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 10:20</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
+                  <img src="db97e1ca6fed7991ee043f68dedada2f.png" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-medium truncate">Flores, Juanita</p>
+                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 10:04</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
+                  <img src="7a53e28c8e0fb3041bea3c00aa660a58.png" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-medium truncate">Miles, Esther</p>
+                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 09:30</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
+                  <img src="b2df27fc83f170007341358a821fa3bd.png" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-medium truncate">Miles, Esther</p>
+                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 09:26</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
+                  <img src="91ff9a60558873cde74916290a286e84.png" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-medium truncate">Black, Marvin</p>
+                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 09:20</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
+                  <img src="fa1be286e3b17627a17bbb20e41bbdc5.png" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-medium truncate">Cooper, Kristin</p>
+                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 09:18</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
+                  <img src="5952fe808473ca364d45dfb6d88c433f.png" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-medium truncate">Flores, Juanita</p>
+                  <p class="text-[13px] text-black/60 truncate">9 Feb 2024 — 09:07</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
+                  <img src="bd99690039f35eb8f13e58adae118810.png" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-medium truncate">Black, Marvin</p>
+                  <p class="text-[13px] text-black/60 truncate">8 Feb 2024 — 22:20</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full gap-2 px-4 py-3 border-b border-black/10 flex items-center justify-between cursor-pointer hover:bg-gray-100">
+              <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
+                  <img src="dd7e73a85c1a6716fa387cae6e0d5302.png" alt="users" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-medium truncate">Henry, Arthur</p>
+                  <p class="text-[13px] text-black/60 truncate">8 Feb 2024 — 22:17</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -390,24 +491,24 @@
     </div>
   </div>
 
-  <!-- Mobile menu (Updated Sizes for Buttons) -->
+  <!-- Mobile menu (Unchanged) -->
   <div class="md:w-auto md:h-auto h-15 gap-2 p-2 rounded-full bg-black text-white fixed bottom-3 left-1/2 transform -translate-x-1/2 p-3 rounded-full flex md:space-x-4 space-x-2 lg:hidden z-20 pointer-events-auto">
-    <a href="/dashboard" class="md:w-[48px] w-[48px] md:h-[48px] h-[48px] bg-gray-800 rounded-[24px] flex items-center justify-center hover:bg-gray-100 transition-colors">
+    <a href="/dashboard" class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
       <img src="filee1.svg" alt="Dashboard">
     </a>
-    <a href="/transactions" class="md:w-[48px] w-[48px] md:h-[48px] h-[48px] bg-gray-800 rounded-[24px] flex items-center justify-center hover:bg-gray-100 transition-colors">
+    <a href="/transactions" class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
       <img src="filee2.svg" alt="Transactions">
     </a>
-    <a href="/users" class="md:w-[48px] w-[48px] md:h-[48px] h-[48px] bg-gray-800 rounded-[24px] flex items-center justify-center hover:bg-gray-100 transition-colors">
+    <a href="/users" class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
       <img src="filee3.svg" alt="Users">
     </a>
-    <a href="/settings" class="md:w-[48px] w-[48px] md:h-[48px] h-[48px] bg-gray-800 rounded-[24px] flex items-center justify-center hover:bg-gray-100 transition-colors">
+    <a href="/settings" class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
       <img src="filee4.svg" alt="Settings">
     </a>
-    <a href="/reports" class="md:w-[48px] w-[48px] md:h-[48px] h-[48px] bg-gray-800 rounded-[24px] flex items-center justify-center hover:bg-gray-100 transition-colors">
+    <a href="/reports" class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
       <img src="filee5.svg" alt="Reports">
     </a>
-    <a href="/notifications" class="md:w-[48px] w-[48px] md:h-[48px] h-[48px] bg3 rounded-[24px] relative flex items-center justify-center hover:bg-gray-100 transition-colors">
+    <a href="/notifications" class="md:w-10 w-8 md:h-10 h-8 bg3 rounded-full relative flex items-center justify-center hover:bg-gray-100 transition-colors">
       <img src="filee6.svg" alt="Notifications">
       <span class="absolute -top-1 -right-1 bg2 text-white w-4 h-4 min-w-4 gap-0 rounded-full pt-0 pr-1 pb-0 pl-1 border-2 border-black text-xs flex items-center justify-center">1</span>
     </a>
