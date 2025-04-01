@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6: Popup Modal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .task-button {
+            background: linear-gradient(45deg, #8b5cf6, #d946ef);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 3rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        .task-button:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 12px 35px rgba(139, 92, 246, 0.7);
+            background: linear-gradient(45deg, #d946ef, #8b5cf6);
+        }
+        .task-container {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+        .task-container.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .task-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.8);
+            transition: transform 0.4s ease;
+            position: relative;
+        }
+        .task-container.active .task-content {
+            transform: scale(1);
+        }
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: #ef4444;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .close-btn:hover {
+            background: #dc2626;
+        }
+        h2 {
+            background: linear-gradient(to right, #6b7280, #111827);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+        .answer-text {
+            font-size: 1.1rem;
+            color: #374151;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Initial Button -->
+    <div class="container mx-auto text-center">
+        <label for="task6" class="task-button">Click Here</label>
+    </div>
+
+    <!-- Task 6 Popup Modal -->
+    <input type="checkbox" id="task6" class="hidden peer">
+    <div class="task-container peer-checked:active">
+        <div class="task-content relative">
+            <label for="task6" class="close-btn">×</label>
+            <h2>Task 6: Popup Modal</h2>
+            <div class="bg-white p-6 rounded-2xl shadow-2xl w-80">
+                <h2 class="text-xl font-bold text-black">Cancel Item</h2>
+                <p class="text-gray-600 mt-1 text-sm">Are you sure to cancel this item?</p>
+                <div class="border border-gray-300 rounded-lg p-3 mt-4 bg-gray-50">
+                    <p class="font-semibold text-base text-black">Tasty Burger</p>
+                    <p class="text-gray-500 text-xs">Size: Small, Cheese: A little bit, Salt: No</p>
+                </div>
+                <div class="w-full block bg-red-600 text-white font-semibold py-3 rounded-full mt-4 shadow-md text-center hover:bg-red-700 text-lg">
+                    Cancel Items
+                </div>
+            </div>
+            <p class="answer-text">Answer: This modal uses absolute positioning and shadows to create a popup effect, with interactive elements styled for user engagement.</p>
+        </div>
+    </div>
+</body>
+</html>
