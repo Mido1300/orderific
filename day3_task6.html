@@ -5,92 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 6: Popup Modal</title>
     <style>
-        .modal-container {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            padding: 2rem;
         }
 
-        #popup-toggle {
-            display: none;
+        .container {
+            text-align: center;
         }
 
-        .creative-button {
-            background: linear-gradient(45deg, #ff6b6b, #ff8787);
+        .task-button {
+            background: linear-gradient(45deg, #8b5cf6, #d946ef);
             border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 2rem;
-            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border-radius: 3rem;
+            font-weight: 700;
             color: white;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-            transition: all 0.3s ease;
-            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+            transition: all 0.4s ease;
             cursor: pointer;
-            font-size: 1.125rem;
         }
 
-        .creative-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
-            background: linear-gradient(45deg, #ff8787, #ff6b6b);
+        .task-button:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 12px 35px rgba(139, 92, 246, 0.7);
+            background: linear-gradient(45deg, #d946ef, #8b5cf6);
         }
 
-        .modal {
+        .task-container {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            display: none;
+            display: flex;
             justify-content: center;
             align-items: center;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
         }
 
-        #popup-toggle:checked ~ .modal {
-            display: flex;
+        .task-container.active {
+            opacity: 1;
+            visibility: visible;
         }
 
-        .modal-content {
+        .task-content {
             background: white;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
-            width: 20rem;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.8);
+            transition: transform 0.4s ease;
             position: relative;
         }
 
-        .close-button {
+        .task-container.active .task-content {
+            transform: scale(1);
+        }
+
+        .close-btn {
             position: absolute;
-            top: 0.75rem;
-            right: 0.75rem;
-            background: #e5e7eb;
-            width: 2rem;
-            height: 2rem;
+            top: 1rem;
+            right: 1rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: #ef4444;
+            color: white;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            font-size: 1.125rem;
+            font-size: 1.5rem;
             font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
         }
 
-        .close-button:hover {
-            background: #d1d5db;
+        .close-btn:hover {
+            background: #dc2626;
+        }
+
+        h2 {
+            background: linear-gradient(to right, #6b7280, #111827);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-inner {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 320px;
+        }
+
+        .modal-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: black;
+        }
+
+        .modal-text {
+            color: #6b7280;
+            margin-top: 0.25rem;
+            font-size: 0.875rem;
+        }
+
+        .item-details {
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            margin-top: 1rem;
+            background: #f9fafb;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: black;
+        }
+
+        .item-specs {
+            color: #6b7280;
+            font-size: 0.75rem;
         }
 
         .cancel-button {
             width: 100%;
+            display: block;
             background: #dc2626;
             color: white;
             font-weight: 600;
             padding: 0.75rem;
-            border-radius: 2rem;
+            border-radius: 9999px;
+            margin-top: 1rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
-            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
             font-size: 1.125rem;
         }
 
@@ -100,22 +176,36 @@
     </style>
 </head>
 <body>
-    <div class="modal-container">
-        <h2>Popup Modal</h2>
-        <input type="checkbox" id="popup-toggle">
-        <label for="popup-toggle" class="creative-button">Cancel Items</label>
-        <div class="modal">
-            <div class="modal-content">
-                <label for="popup-toggle" class="close-button">×</label>
-                <h2 style="font-size: 1.25rem; font-weight: bold; color: black;">Cancel Item</h2>
-                <p style="color: #6b7280; margin-top: 0.25rem; font-size: 0.875rem;">Are you sure to cancel this item?</p>
-                <div style="border: 1px solid #d1d5db; border-radius: 0.5rem; padding: 0.75rem; margin-top: 1rem; background: #f9fafb;">
-                    <p style="font-weight: 600; font-size: 1rem; color: black;">Tasty Burger</p>
-                    <p style="color: #6b7280; font-size: 0.75rem;">Size: Small, Cheese: A little bit, Salt: No</p>
+    <!-- Initial Button -->
+    <div class="container">
+        <button class="task-button" onclick="document.getElementById('task-container').classList.add('active')">Click Here</button>
+    </div>
+
+    <!-- Task 6 Popup Modal -->
+    <div id="task-container" class="task-container">
+        <div class="task-content">
+            <div class="close-btn" onclick="document.getElementById('task-container').classList.remove('active')">×</div>
+            <h2>Task 6: Popup Modal</h2>
+            <div class="modal-inner">
+                <h2 class="modal-title">Cancel Item</h2>
+                <p class="modal-text">Are you sure to cancel this item?</p>
+                <div class="item-details">
+                    <p class="item-title">Tasty Burger</p>
+                    <p class="item-specs">Size: Small, Cheese: A little bit, Salt: No</p>
                 </div>
-                <label for="popup-toggle" class="cancel-button">Cancel Items</label>
+                <div class="cancel-button">Cancel Items</div>
             </div>
         </div>
     </div>
+
+    <script>
+        // Close modal when clicking outside the content
+        document.getElementById('task-container').classList.remove('active')
+        document.getElementById('task-container').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
