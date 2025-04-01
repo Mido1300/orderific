@@ -14,16 +14,15 @@
             justify-content: center;
             align-items: center;
             padding: 2rem;
-            overflow-x: hidden; /* Prevent horizontal overflow */
+            overflow-x: hidden;
         }
         .container {
-            position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1.5rem;
             width: 100%;
-            max-width: 600px; /* Limit container width for larger screens */
+            max-width: 600px;
         }
         .task-button {
             position: relative;
@@ -71,37 +70,32 @@
             transform: scale(0.95);
         }
         h1 {
-            position: absolute;
-            top: 20px; /* Adjusted for better visibility */
             text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             color: white;
-            font-size: 2.5rem; /* Slightly smaller for better fit */
+            font-size: 2.5rem;
             text-align: center;
         }
 
         /* Mobile-friendly adjustments */
         @media (max-width: 768px) {
             body {
-                padding: 1rem; /* Reduce padding for smaller screens */
+                padding: 1rem;
             }
             .container {
-                gap: 1rem; /* Reduce gap between buttons */
-                padding-top: 5rem; /* Add padding to account for the h1 position */
+                gap: 1rem;
             }
             h1 {
-                font-size: 1.8rem; /* Smaller font size for mobile */
-                top: 10px; /* Closer to the top */
-                position: fixed; /* Fix the header to the top */
+                font-size: 1.8rem;
                 width: 100%;
-                background: rgba(30, 58, 138, 0.8); /* Add a semi-transparent background for readability */
+                background: rgba(30, 58, 138, 0.8);
                 padding: 0.5rem 0;
             }
             .task-button {
-                width: 180px; /* Slightly smaller buttons for mobile */
-                padding: 0.75rem 2rem; /* Adjust padding for better fit */
-                font-size: 0.9rem; /* Smaller font size */
-                letter-spacing: 1px; /* Adjust letter spacing */
-                min-height: 44px; /* Ensure touch target is at least 44px tall */
+                width: 180px;
+                padding: 0.75rem 2rem;
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+                min-height: 44px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -111,11 +105,11 @@
                 height: 0;
             }
             .task-button:hover::before {
-                width: 250px; /* Slightly smaller ripple effect for mobile */
+                width: 250px;
                 height: 250px;
             }
             .task-button:hover {
-                transform: translateY(-4px) scale(1.02); /* Reduced hover effect for mobile */
+                transform: translateY(-4px) scale(1.02);
                 box-shadow: 0 10px 30px rgba(139, 92, 246, 0.6);
             }
         }
@@ -126,28 +120,26 @@
             }
             .container {
                 gap: 0.75rem;
-                padding-top: 4.5rem; /* Adjust for smaller h1 */
             }
             h1 {
-                font-size: 1.5rem; /* Even smaller for very small screens */
-                top: 5px;
+                font-size: 1.5rem;
             }
             .task-button {
-                width: 160px; /* Further reduce button width */
+                width: 160px;
                 padding: 0.6rem 1.5rem;
                 font-size: 0.8rem;
-                min-height: 44px; /* Maintain touch target size */
+                min-height: 44px;
             }
             .task-button::before {
                 width: 0;
                 height: 0;
             }
             .task-button:hover::before {
-                width: 200px; /* Further reduce ripple effect */
+                width: 200px;
                 height: 200px;
             }
             .task-button:hover {
-                transform: translateY(-2px) scale(1.01); /* Minimal hover effect */
+                transform: translateY(-2px) scale(1.01);
                 box-shadow: 0 8px 20px rgba(139, 92, 246, 0.5);
             }
         }
@@ -155,7 +147,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="text-4xl font-bold text-white mb-12">
+        <h1 class="text-4xl font-bold text-white">
             Interactive CSS Tasks
         </h1>
         <a href="https://orderific-gamma.vercel.app/day1.html" target="_blank" class="task-button">Day 1</a>
