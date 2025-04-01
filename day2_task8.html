@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8: Shadowed Buttons</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            padding: 1.5rem;
+        }
+        .shadow-button {
+            padding: 0.75rem 1.5rem;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+        }
+        .shadow-button:hover {
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>Shadowed Buttons</h2>
+        <button class="shadow-button">Shadow Button</button>
+    </section>
+</body>
+</html>
