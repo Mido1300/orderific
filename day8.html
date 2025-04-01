@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html>
 
@@ -1088,32 +1086,32 @@
   <div class="flex h-full flex-col lg:flex-row ">
     <!-- Sidebar -->
     <div
-      class="lg:w-auto md:w-full w-[95%] lg:left-0 top-1 lg:h-screen h-17 justify-between rounded-full  bg-white lg:bg-none  flex px-4 py-2 items-center mt-6 lg:max-h-screen lg:overflow-hidden overflow-visible  lg:ml-0 ml-auto lg:flex-col sm:flex-row flex-row space-y-4 lg:space-y-auto lg:fixed sticky z-20 duration-300 ">
-      <div class="bg-white  h-16 w-16 text-2xl font-bold rounded-full flex items-center justify-center">
-      <img src="unnamed.webp" alt="brandLogo" class="w-8 h-8 object-contain" style="margin-top: -30px; margin-bottom: 10px;">
+      class="lg:w-auto md:w-full w-[95%] lg:left-0 top-1 lg:h-screen h-17 justify-between rounded-full bg-white lg:bg-none flex px-4 py-2 items-center mt-6 lg:max-h-screen lg:overflow-hidden overflow-visible lg:ml-0 ml-auto lg:flex-col sm:flex-row flex-row space-y-4 lg:space-y-auto lg:fixed sticky z-20 duration-300">
+      <div class="bg-white h-16 w-16 text-2xl font-bold rounded-full flex items-center justify-center">
+        <img src="unnamed.webp" alt="brandLogo" class="w-8 h-8 object-contain" style="margin-top: -30px; margin-bottom: 10px;">
       </div>
-      <div
-        class="w-auto h-auto gap-2 p-2 rounded-full bg-black text-white hidden lg:flex flex-col space-y-4 bg-black p-3">
-        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-          <img src="filee1.svg" alt="menuItem">
-        </div>
-        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-          <img src="filee2.svg" alt="menuItem">
-        </div>
-        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-          <img src="filee3.svg" alt="menuItem">
-        </div>
-        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-          <img src="filee4.svg" alt="menuItem">
-        </div>
-        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-          <img src="filee5.svg" alt="menuItem">
-        </div>
-        <div class="w-10 h-10 bg3 rounded-full relative flex items-center justify-center">
-          <img src="filee6.svg" alt="menuItem">
+      <!-- Sidebar menu with <a> tags -->
+      <div class="w-auto h-auto gap-2 p-2 rounded-full bg-black text-white hidden lg:flex flex-col space-y-4 p-3">
+        <a href="/dashboard" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+          <img src="filee1.svg" alt="Dashboard">
+        </a>
+        <a href="/transactions" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+          <img src="filee2.svg" alt="Transactions">
+        </a>
+        <a href="/users" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+          <img src="filee3.svg" alt="Users">
+        </a>
+        <a href="/settings" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+          <img src="filee4.svg" alt="Settings">
+        </a>
+        <a href="/reports" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+          <img src="filee5.svg" alt="Reports">
+        </a>
+        <a href="/notifications" class="w-10 h-10 bg3 rounded-full relative flex items-center justify-center hover:bg-gray-100 transition-colors">
+          <img src="filee6.svg" alt="Notifications">
           <span
             class="absolute -top-1 -right-1 bg2 text-white w-4 h-4 min-w-4 gap-0 rounded-full pt-0 pr-1 pb-0 pl-1 border-2 border-black text-xs flex items-center justify-center">1</span>
-        </div>
+        </a>
       </div>
       <div class="gap-2 p-2 rounded-full flex lg:flex-col flex-row lg:mb-5">
         <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden">
@@ -1128,21 +1126,21 @@
     </div>
 
     <!-- Main Content -->
-    <div class="flex flex-grow flex-col h-full  lg:ml-20">
+    <div class="flex flex-grow flex-col h-full lg:ml-20">
       <!-- Pending Transactions -->
       <div id="mainHeader" class="h-full w-full pt-[16px] md:pt-[24px] pr-[16px] md:pb-[24px] pb-[16px] pl-[16px] lg:top-0 top-16 sticky block z-11 bg-transparent transition-colors duration-300">
         <h2
-          class="font-bold md:text-[32px] text-[24px] leading-[40px] tracking-[3%] font-sans text-center md:text-left ">
+          class="font-bold md:text-[32px] text-[24px] leading-[40px] tracking-[3%] font-sans text-center md:text-left">
           OTP Confirmation
         </h2>
       </div>
       <div
-        class=" h-screen gap-0 rounded-[24px] pr-0  flex flex-col md:flex-row min-h-screen ml-2 mr-2 mx-auto  ">
+        class="h-screen gap-0 rounded-[24px] pr-0 flex flex-col md:flex-row min-h-screen ml-2 mr-2 mx-auto">
         <!-- Sidebar (Sticky on Left) -->
-        <div class="w-full md:w-[320px] h-screen md:h-[100vh] gap-6 pt-7 pr-0 pb-1 pl-0 bg-white/60 sticky  z-10">
+        <div class="w-full md:w-[320px] h-screen md:h-[100vh] gap-6 pt-7 pr-0 pb-1 pl-0 bg-white/60 sticky z-10">
           <!-- Header with Pending and Search -->
           <div class="flex justify-between w-full md:w-[320px] h-12 gap-4 px-4" id="headerSection">
-            <h3 class=" font-semibold flex items-center gap-2 text-[20px]">
+            <h3 class="font-semibold flex items-center gap-2 text-[20px]">
               Pending
               <span class="bg-black text-white text-xs w-6 h-6 flex items-center justify-center rounded-full">1</span>
             </h3>
@@ -1156,7 +1154,7 @@
           <div class="w-full md:w-[320px] h-12 gap-4 px-4 hidden" id="searchOverlay">
             <div class="bg-white rounded-full shadow-lg p-2 flex items-center w-full h-full">
               <input type="text" placeholder="Search..." class="w-full p-2 rounded-full border-none focus:outline-none">
-              <button class="ml-2 text-black/60 hover:text-black text-2xl font-bold cursor-pointer " id="searchCloseBtn">×</button>
+              <button class="ml-2 text-black/60 hover:text-black text-2xl font-bold cursor-pointer" id="searchCloseBtn">×</button>
             </div>
           </div>
           <!-- Scrollable List -->
@@ -1292,10 +1290,10 @@
 
         <!-- OTP Details (Fixed, No Scroll) -->
         <div
-          class="flex-grow w-full md:w-1/2 h-auto rounded-md gap-2 lg:gap-0 md:px-5 border-l border-black/5 flex flex-col bg-white ">
+          class="flex-grow w-full md:w-1/2 h-auto rounded-md gap-2 lg:gap-0 md:px-5 border-l border-black/5 flex flex-col bg-white">
           <button
             class="self-start text-black font-['DM_Sans'] font-medium text-[16px] leading-5 tracking-[-0.01em] underline mt-8 mb-5 pl-7 md:pl-0">Close</button>
-          <div class="text-center space-y-10 mx-auto max-w-[600px] flex flex-col  overflow-hidden ">
+          <div class="text-center space-y-10 mx-auto max-w-[600px] flex flex-col overflow-hidden">
             <div class="space-y-0">
               <div class="w-[120px] h-[120px] bg-black/5 rounded-full mx-auto overflow-hidden mb-2">
                 <img src="./432a756d1ebdc6151dac288cfa3ef1f7.png" alt="" class="w-full h-full object-cover">
@@ -1310,8 +1308,8 @@
                 transaction.
               </p>
             </div>
-            <div class="space-y-0 ">
-              <p class="text-[16px] ">The amount you should receive:</p>
+            <div class="space-y-0">
+              <p class="text-[16px]">The amount you should receive:</p>
               <p class="text-[32px] leading-10 font-bold mb-4">$86.60</p>
               <button class="bg-black/5 text-black/40 text-4 px-6 py-2 rounded-full cursor-pointer">Accept Cash
                 Transfer</button>
@@ -1321,63 +1319,64 @@
       </div>
     </div>
   </div>
+  <!-- Mobile menu with corrected icons and <a> tags -->
   <div
     class="md:w-auto md:h-auto h-15 gap-2 p-2 rounded-full bg-black text-white fixed bottom-3 left-1/2 transform -translate-x-1/2 p-3 rounded-full flex md:space-x-4 space-x-2 lg:hidden z-20 pointer-events-auto">
-    <div class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center">
-      <img src="Vector (6).png" alt="menuItems">
-    </div>
-    <div class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center">
-      <img src="Vector (6).png" alt="menuItems">
-    </div>
-    <div class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center">
-      <img src="Vector (6).png" alt="menuItems">
-    </div>
-    <div class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center">
-      <img src="Vector (6).png" alt="menuItems">
-    </div>
-    <div class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center">
-      <img src="Vector (6).png" alt="menuItems">
-    </div>
-    <div class="md:w-10 w-8 md:h-10 h-8 bg3 rounded-full relative flex items-center justify-center">
-      <img src="Vector (6).png" alt="menuItems">
+    <a href="/dashboard" class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+      <img src="filee1.svg" alt="Dashboard">
+    </a>
+    <a href="/transactions" class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+      <img src="filee2.svg" alt="Transactions">
+    </a>
+    <a href="/users" class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+      <img src="filee3.svg" alt="Users">
+    </a>
+    <a href="/settings" class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+      <img src="filee4.svg" alt="Settings">
+    </a>
+    <a href="/reports" class="md:w-10 w-8 md:h-10 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+      <img src="filee5.svg" alt="Reports">
+    </a>
+    <a href="/notifications" class="md:w-10 w-8 md:h-10 h-8 bg3 rounded-full relative flex items-center justify-center hover:bg-gray-100 transition-colors">
+      <img src="filee6.svg" alt="Notifications">
       <span
         class="absolute -top-1 -right-1 bg2 text-white w-4 h-4 min-w-4 gap-0 rounded-full pt-0 pr-1 pb-0 pl-1 border-2 border-black text-xs flex items-center justify-center">1</span>
-    </div>
+    </a>
   </div>
 </body>
 <!-- Search js file -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const searchBtn = document.getElementById('searchBtn');
-      const headerSection = document.getElementById('headerSection');
-      const searchOverlay = document.getElementById('searchOverlay');
-      const searchCloseBtn = document.getElementById('searchCloseBtn');
-      // Search functionality
-      searchBtn.addEventListener('click', () => {
-        headerSection.classList.add('hidden');
-        searchOverlay.classList.remove('hidden');
-      });
-
-      searchCloseBtn.addEventListener('click', () => {
-        searchOverlay.classList.add('hidden');
-        headerSection.classList.remove('hidden');
-      });
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchBtn = document.getElementById('searchBtn');
+    const headerSection = document.getElementById('headerSection');
+    const searchOverlay = document.getElementById('searchOverlay');
+    const searchCloseBtn = document.getElementById('searchCloseBtn');
+    // Search functionality
+    searchBtn.addEventListener('click', () => {
+      headerSection.classList.add('hidden');
+      searchOverlay.classList.remove('hidden');
     });
-  </script>
-  <!-- Js for scrolling effect header -->
-    <script>
-      document.addEventListener('scroll', () => {
-          const element = document.getElementById('mainHeader');
-  
-          if (window.scrollY > 0) {
-              // Remove transparent, add semi-transparent white
-              element.classList.remove('bg-transparent');
-              element.classList.add('bg-[rgba(255,255,255,1)]', 'rounded-2xl');
-          } else {
-              // Remove semi-transparent white, add transparent
-              element.classList.remove('bg-[rgba(255,255,255,1)]', 'rounded-2xl');
-              element.classList.add('bg-transparent');
-          }
-      });
-  </script>
+
+    searchCloseBtn.addEventListener('click', () => {
+      searchOverlay.classList.add('hidden');
+      headerSection.classList.remove('hidden');
+    });
+  });
+</script>
+<!-- Js for scrolling effect header -->
+<script>
+  document.addEventListener('scroll', () => {
+    const element = document.getElementById('mainHeader');
+
+    if (window.scrollY > 0) {
+      // Remove transparent, add semi-transparent white
+      element.classList.remove('bg-transparent');
+      element.classList.add('bg-[rgba(255,255,255,1)]', 'rounded-2xl');
+    } else {
+      // Remove semi-transparent white, add transparent
+      element.classList.remove('bg-[rgba(255,255,255,1)]', 'rounded-2xl');
+      element.classList.add('bg-transparent');
+    }
+  });
+</script>
 </html>
