@@ -3,47 +3,441 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>day4 task2</title>
+    <title>Order Status</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            font-size: 16px;
+            height: 100%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            background: linear-gradient(67.75deg, #ffffff 19.18%, #ffebe7 75.31%);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .sidebar {
+            display: flex;
+            height: 100vh;
+            width: auto;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 16px;
+            background: transparent;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .sidebar-logo {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border-radius: 32px;
+        }
+
+        .black-sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            border-radius: 48px;
+            background-color: black;
+        }
+
+        .sidebar-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .sidebar-icon.active {
+            background-color: #ff5634;
+        }
+
+        .sidebar-icon:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .sidebar-profile {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            border-radius: 48px;
+            background: #ffffff;
+        }
+
+        .main-content {
+            flex: 1;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 96px;
+            overflow-y: auto;
+        }
+
+        .header {
+            width: 100%;
+            height: 96px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 16px 24px 0;
+            position: sticky;
+            top: 0;
+            background: linear-gradient(67.75deg, #ffffff 19.18%, #ffebe7 75.31%);
+            z-index: 900;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .fullscreen-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 16px 12px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 25px;
+            background: transparent;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 124px;
+            height: 48px;
+        }
+
+        .fullscreen-btn svg {
+            width: 14px;
+            height: 14px;
+            stroke-width: 3;
+            stroke: black;
+        }
+
+        :fullscreen .sub-content {
+            width: 100% !important;
+            height: 100vh !important;
+            margin-left: 0 !important;
+            padding: 16px !important;
+        }
+
+        :fullscreen .main-content {
+            margin-left: 0 !important;
+        }
+
+        :fullscreen .sidebar,
+        :fullscreen .header {
+            display: none !important;
+        }
+
+        .sub-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            padding: 0 16px;
+            margin-bottom: 16px;
+        }
+
+        .brand-card {
+            display: flex;
+            width: 100%;
+            height: 92px;
+            padding: 16px;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 16px;
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-weight: 500;
+            font-size: 20px;
+            letter-spacing: -1%;
+        }
+
+        .brand-logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+        }
+
+        .time {
+            font-weight: 700;
+            font-size: 32px;
+            letter-spacing: -3%;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 383px;
+            gap: 16px;
+            width: 100%;
+            flex-grow: 1;
+            margin-top: 16px;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-preparing,
+        .section-ready {
+            max-width: 100%;
+            height: 100vh;
+            border-radius: 24px;
+            padding: 24px;
+            gap: 24px;
+            background: #ffffff;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-weight: 700;
+            font-size: 32px;
+            letter-spacing: -3%;
+        }
+
+        .box-item {
+            overflow-y: auto;
+            flex-grow: 2;
+        }
+
+        .items {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            flex-grow: 1;
+        }
+
+        .item {
+            display: flex;
+            width: 106px;
+            height: 64px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 24px;
+            letter-spacing: -0.48px;
+        }
+
+        .section-preparing .item {
+            background: rgba(0, 0, 0, 0.1);
+            color: black;
+        }
+
+        .section-ready .item {
+            background: #119717;
+            color: white;
+        }
+
+        .section-ready .item:first-child {
+            width: 100%;
+            height: 128px;
+            font-size: 32px;
+            padding: 24px;
+        }
+
+        /* Portrait mode (below 992px) */
+        @media (max-width: 992px) {
+            body {
+                flex-direction: column;
+            }
+
+            .header {
+                padding: 16px 8px;
+            }
+
+            .sub-content {
+                width: 100%;
+                padding: 16px;
+            }
+
+            .sidebar {
+                flex-direction: row;
+                height: 64px;
+                width: calc(100% - 32px);
+                padding: 8px 16px;
+                position: fixed;
+                top: 16px;
+                left: 16px;
+                border-radius: 48px;
+                background: #fff;
+                box-shadow: 0 0 32px rgba(0, 0, 0, 0.08);
+            }
+
+            .black-sidebar {
+                position: fixed;
+                bottom: 32px;
+                left: 50%;
+                transform: translateX(-50%);
+                flex-direction: row;
+                box-shadow: 0 0 32px rgba(0, 0, 0, 0.14);
+            }
+
+            .sidebar-profile {
+                flex-direction: row; /* Changed to row for portrait mode */
+                gap: 8px;
+                padding: 0 8px;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding-top: 96px;
+                padding-bottom: 16px;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .items {
+                display: grid;
+                grid-template-columns: repeat(3, 106px);
+            }
+
+            .section-ready .item:first-child {
+                width: 334px;
+                grid-column: 1 / -1;
+            }
+        }
+
+        /* Mobile mode (below 480px) */
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .sidebar-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .black-sidebar {
+                bottom: 24px;
+                width: calc(100% - 32px);
+                max-width: 344px;
+                height: 64px;
+            }
+
+            .main-content {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+
+            .brand-logo img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .time {
+                font-size: 20px;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                height: auto;
+                max-height: calc(100vh - 96px - 92px - 64px - 32px);
+                overflow-y: auto;
+            }
+
+            .section h2 {
+                font-size: 20px;
+            }
+
+            .items {
+                grid-template-columns: repeat(3, minmax(64px, 1fr));
+            }
+
+            .item {
+                width: 100%;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .section-ready .item:first-child {
+                width: 100%;
+                height: 80px;
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
-<body class="flex flex-row h-screen bg-gradient-to-r from-white to-[#ffebe7] font-['DM_Sans'] text-base">
+<body>
     <!-- Sidebar -->
-    <div class="sidebar flex flex-col justify-between h-screen w-auto p-4 fixed left-0 top-0 z-[1000] bg-transparent">
-        <div class="sidebar-logo w-16 h-16 flex items-center justify-center gap-2 rounded-full">
-            <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Logo%20(1).png" alt="Order Status Logo" class="w-full h-full object-contain">
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Logo%20(1).png" alt="Order Status Logo">
         </div>
-        <div class="black-sidebard flex flex-col items-center gap-2 p-2 rounded-[48px] bg-black">
-            <div class="sidebar-icon w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector.png" alt="z">
-            </div>
-            <div class="sidebar-icon w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(1).png" alt="z">
-            </div>
-            <div class="sidebar-icon w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(2).png" alt="z">
-            </div>
-            <div class="sidebar-icon active w-12 h-12 rounded-full bg-[#ff5634] flex items-center justify-center">
-                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(3).png" alt="z">
-            </div>
-            <div class="sidebar-icon w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(4).png" alt="z">
-            </div>
-            <div class="sidebar-icon w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(8).png" alt="z">
-            </div>
-        </div>
-        <div class="sidebar-profile flex flex-col justify-center items-center gap-2 p-2 rounded-[48px] bg-white">
-            <img src="https://fresher-repo-blob.vercel.app/wsp-bar/img%208.png" alt="Profile" class="w-12 h-12">
-            <img src="https://fresher-repo-blob.vercel.app/wsp-bar/img%207%20(1).png" alt="Notification" class="w-12 h-12">
+        <nav class="black-sidebar">
+            <a href="/page1" class="sidebar-icon">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector.png" alt="Page 1 Icon">
+            </a>
+            <a href="/page2" class="sidebar-icon">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(1).png" alt="Page 2 Icon">
+            </a>
+            <a href="/page3" class="sidebar-icon">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(2).png" alt="Page 3 Icon">
+            </a>
+            <a href="/order-status" class="sidebar-icon active">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(3).png" alt="Order Status Icon">
+            </a>
+            <a href="/page5" class="sidebar-icon">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(4).png" alt="Page 5 Icon">
+            </a>
+            <a href="/page6" class="sidebar-icon">
+                <img src="https://fresher-repo-blob.vercel.app/wsp-bar/Vector%20(8).png" alt="Page 6 Icon">
+            </a>
+        </nav>
+        <div class="sidebar-profile">
+            <img src="https://fresher-repo-blob.vercel.app/wsp-bar/img%208.png" alt="Profile">
+            <img src="https://fresher-repo-blob.vercel.app/wsp-bar/img%207%20(1).png" alt="Notification">
         </div>
     </div>
+
     <!-- Main Content -->
-    <div class="main-content flex-1 h-screen flex flex-col items-center ml-24 overflow-y-auto">
-        <header class="header w-full h-24 flex justify-between items-center p-6 pr-4 sticky top-0 bg-gradient-to-r from-white to-[#ffebe7] z-[900]">
-            <h1 class="text-3xl font-bold tracking-tight">Order Status</h1>
-            <button class="fullscreen-btn flex items-center gap-1.5 p-4 border border-black/10 rounded-[25px] bg-transparent text-sm font-bold cursor-pointer w-32 h-12">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 stroke-black stroke-[3]">
+    <div class="main-content">
+        <header class="header">
+            <h1>Order Status</h1>
+            <button class="fullscreen-btn">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 16V20H8" stroke-linecap="square" stroke-linejoin="bevel"/>
                     <path d="M20 8V4H16" stroke-linecap="square" stroke-linejoin="bevel"/>
                 </svg>
@@ -51,71 +445,69 @@
             </button>
         </header>
 
-        <div class="sub-content flex flex-col items-center h-full px-4 mb-4 w-full">
-            <div class="brand-card flex w-full h-[92px] p-4 justify-between items-center rounded-2xl bg-black/5">
-                <div class="brand-logo flex items-center gap-4 font-medium text-xl tracking-tight">
-                    <img src="https://fresher-repo-blob.vercel.app/wsp-bar/img%202.png" alt="McDonald's Logo" class="w-[60px] h-[60px] rounded-2xl">
+        <div class="sub-content">
+            <div class="brand-card">
+                <div class="brand-logo">
+                    <img src="https://fresher-repo-blob.vercel.app/wsp-bar/img%202.png" alt="McDonald's Logo">
                     <span>McDonald's</span>
                 </div>
-                <div class="time font-bold text-3xl tracking-tight">15:03</div>
+                <div class="time">15:03</div>
             </div>
 
-            <!-- Main Content -->
-            <div class="grid-container grid grid-cols-[1fr_383px] gap-4 w-full flex-grow mt-4">
+            <div class="grid-container">
                 <!-- Preparing Section -->
-                <div class="section section-preparing flex flex-col max-w-full h-screen rounded-3xl p-6 gap-6 bg-white">
-                    <h2 class="text-center font-bold text-3xl tracking-tight">Preparing</h2>
-                    <div class="box-item overflow-y-auto flex-grow">
-                        <div class="items flex gap-2 justify-center items-start flex-wrap">
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-black/10 font-bold text-2xl tracking-tight">3885</div>
+                <div class="section section-preparing">
+                    <h2>Preparing</h2>
+                    <div class="box-item">
+                        <div class="items">
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Ready Section -->
-                <div class="section section-ready flex flex-col max-w-full h-screen rounded-3xl p-6 gap-6 bg-white">
-                    <h2 class="text-center font-bold text-3xl tracking-tight">Ready</h2>
-                    <div class="box-item overflow-y-auto flex-grow">
-                        <div class="items flex gap-2 justify-center items-start flex-wrap">
-                            <div class="item flex w-full h-32 items-center justify-center rounded-2xl bg-[#119717] text-white font-bold text-3xl tracking-tight p-6">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-[#119717] text-white font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-[#119717] text-white font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-[#119717] text-white font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-[#119717] text-white font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-[#119717] text-white font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-[#119717] text-white font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-[#119717] text-white font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-[#119717] text-white font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-[#119717] text-white font-bold text-2xl tracking-tight">3885</div>
-                            <div class="item flex w-[106px] h-16 items-center justify-center rounded-2xl bg-[#119717] text-white font-bold text-2xl tracking-tight">3885</div>
+                <div class="section section-ready">
+                    <h2>Ready</h2>
+                    <div class="box-item">
+                        <div class="items">
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
+                            <div class="item">3885</div>
                         </div>
                     </div>
                 </div>
