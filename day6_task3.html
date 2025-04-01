@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3: CSS Positioning and Float</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .task-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        h2 {
+            background: linear-gradient(to right, #6b7280, #111827);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+        .answer-text {
+            font-size: 1.1rem;
+            color: #374151;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="task-content">
+        <h2>Task 3: CSS Positioning and Float</h2>
+        <div class="flex flex-col items-center">
+            <div class="bg-teal-400 text-black text-lg font-bold p-6 rounded-lg m-4">
+                Task 3:
+            </div>
+            <div class="bg-yellow-400 text-black text-lg font-bold p-6 rounded-lg m-6">
+                Adjustment
+            </div>
+        </div>
+        <p class="answer-text">Answer: This uses Flexbox positioning (flex-col) to stack elements vertically with centered alignment, replacing older float techniques for modern layout control.</p>
+    </div>
+</body>
+</html>
