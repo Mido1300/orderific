@@ -1,152 +1,131 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full/Pro Plan - Orderific</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f5f5f5;
-            font-family: Arial, sans-serif;
-        }
-
-        .pricing-card {
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            max-width: 500px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .plan-title {
-            font-size: 28px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .plan-price {
-            font-size: 24px;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .plan-description {
-            font-size: 16px;
-            color: #777;
-            margin-bottom: 20px;
-        }
-
-        .get-started-btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #ff6f61;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 16px;
-            margin-bottom: 30px;
-            transition: background-color 0.3s ease;
-        }
-
-        .get-started-btn:hover {
-            background-color: #e65a50;
-        }
-
-        .features-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-
-        .feature-list li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            font-size: 14px;
-            color: #555;
-        }
-
-        .feature-list li::before {
-            content: "✔";
-            color: #ff6f61;
-            margin-right: 10px;
-            font-size: 16px;
-        }
-
-        .feature-list li span {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .ideal-section {
-            margin-top: 30px;
-            text-align: left;
-        }
-
-        .ideal-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .ideal-description {
-            font-size: 14px;
-            color: #777;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Orderific Pricing</title>
+  <link rel="stylesheet" href="pricing.css"/>
 </head>
 <body>
-    <div class="pricing-card">
-        <div class="plan-title">Full/Pro Plan</div>
-        <div class="plan-price">$99/month</div>
-        <div class="plan-description">
-            Become a culinary sensation with Orderific's Full Plan at just $99/month.
+
+  <!-- Main Container (Center in page) -->
+  <div class="page-center">
+
+    <!-- Pricing Card Container -->
+    <div class="pricing-wrapper">
+
+      <!-- Circular Badge (Lighter color + Orange text) -->
+      <div class="badge-circle">
+        No Setup Fee <br> or <br> Binding Contracts
+      </div>
+
+      <!-- Main Card -->
+      <div class="pricing-card">
+
+        <!-- Plan Header -->
+        <div class="plan-header">
+          <h3 class="plan-name">Full/Pro Plan</h3>
+          <h2>$99/month</h2>
+          <p class="subtitle">
+            Become a culinary sensation with Orderific’s Full Plan at just 99$/month.
+          </p>
         </div>
-        <a href="#" class="get-started-btn">Get started</a>
-        <div class="features-title">Key features:</div>
-        <ul class="feature-list">
-            <li><span>Digital Smart Menu</span><br>Interactive menu system with real-time updates.</li>
-            <li><span>Loyalty Program</span><br>Features for rewarding and retaining customers.</li>
-            <li><span>Business Analytics</span><br>Tools for analyzing and strategizing business data.</li>
-            <li><span>Loyalty Program</span><br>Features for rewarding and retaining customers.</li>
-            <li><span>Website Builder</span><br>Tools for creating a dynamic online presence.</li>
-            <li><span>Integrated Payment Options</span><br>Diverse payment methods for customer convenience.</li>
-            <li><span>Delivery System Setup</span><br>Tools for establishing and managing delivery services.</li>
-            <li><span>Marketing Tools</span><br>Resources to enhance marketing reach and effectiveness.</li>
-            <li><span>Menu Translation</span><br>Feature to translate menus into multiple languages.</li>
-            <li><span>Clear Reporting</span><br>Stay informed with straightforward analytics.</li>
-            <li><span>Seamless POS Integration</span><br>Efficient integration with point-of-sale systems.</li>
-            <li><span>...and much more!</span></li>
-        </ul>
-        <div class="ideal-section">
-            <div class="ideal-title">Ideal for Visionary Restaurateurs:</div>
-            <div class="ideal-description">
-                Choose this plan to elevate your dining experience and set your restaurant apart. Ideal for combining technology and insights to grow your business.
-            </div>
+
+        <!-- CTA Button -->
+        <button class="cta-button">Get Started</button>
+
+        <!-- Key Features -->
+        <div class="features">
+          <h4>Key features:</h4>
+          <ul>
+            <li>
+              <span class="checkmark">✔</span>
+              <div>
+                <strong>Digital Smart Menu</strong><br>
+                <span class="desc">Interactive menu system with real-time updates.</span>
+              </div>
+            </li>
+            <li>
+              <span class="checkmark">✔</span>
+              <div>
+                <strong>Loyalty Program</strong><br>
+                <span class="desc">Features for rewarding and retaining customers.</span>
+              </div>
+            </li>
+            <li>
+              <span class="checkmark">✔</span>
+              <div>
+                <strong>Business Analytics</strong><br>
+                <span class="desc">Tools for analyzing and strategizing business data.</span>
+              </div>
+            </li>
+            <li>
+              <span class="checkmark">✔</span>
+              <div>
+                <strong>Website Builder</strong><br>
+                <span class="desc">Tools for creating a dynamic online presence.</span>
+              </div>
+            </li>
+            <li>
+              <span class="checkmark">✔</span>
+              <div>
+                <strong>Integrated Payment Options</strong><br>
+                <span class="desc">Diverse payment methods for customer convenience.</span>
+              </div>
+            </li>
+            <li>
+              <span class="checkmark">✔</span>
+              <div>
+                <strong>Delivery System Setup</strong><br>
+                <span class="desc">Tools for establishing and managing delivery services.</span>
+              </div>
+            </li>
+            <li>
+              <span class="checkmark">✔</span>
+              <div>
+                <strong>Marketing Tools</strong><br>
+                <span class="desc">Resources to enhance marketing reach and effectiveness.</span>
+              </div>
+            </li>
+            <li>
+              <span class="checkmark">✔</span>
+              <div>
+                <strong>Menu Translation</strong><br>
+                <span class="desc">Feature to translate menus into multiple languages.</span>
+              </div>
+            </li>
+            <li>
+              <span class="checkmark">✔</span>
+              <div>
+                <strong>Clear Reporting</strong><br>
+                <span class="desc">Stay informed with straightforward analytics.</span>
+              </div>
+            </li>
+            <li>
+              <span class="checkmark">✔</span>
+              <div>
+                <strong>Seamless POS Integration</strong><br>
+                <span class="desc">Efficient integration with point-of-sale systems.</span>
+              </div>
+            </li>
+          </ul>
+          <p class="more">...and much more!</p>
         </div>
-    </div>
+
+        <!-- Visionary Section -->
+        <div class="visionary">
+          <h4>Ideal for Visionary Restaurateurs:</h4>
+          <p>
+            Choose this plan to elevate your dining experience and set your restaurant apart.
+            Ideal for combining technology and insights to grow your business.
+          </p>
+        </div>
+
+      </div> <!-- End pricing-card -->
+    </div> <!-- End pricing-wrapper -->
+
+  </div> <!-- End page-center -->
+
 </body>
 </html>
