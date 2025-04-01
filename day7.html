@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive CSS Tasks - External Links</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .task-button {
+            background: linear-gradient(45deg, #8b5cf6, #d946ef);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 3rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0.5rem;
+        }
+        .task-button:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 12px 35px rgba(139, 92, 246, 0.7);
+            background: linear-gradient(45deg, #d946ef, #8b5cf6);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-4xl font-bold text-white mb-12" style="text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
+            Day 7
+        </h1>
+        <div class="flex justify-center gap-6">
+            <a href="https://orderific-gamma.vercel.app/day7_part1.html" target="_blank" class="task-button">Part 1</a>
+            <a href="https://orderific-gamma.vercel.app/day7_part2.html" target="_blank" class="task-button">Part 2</a>
+        </div>
+    </div>
+</body>
+</html>
