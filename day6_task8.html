@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8: Popular Items Grid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .task-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        h2 {
+            background: linear-gradient(to right, #6b7280, #111827);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+        .answer-text {
+            font-size: 1.1rem;
+            color: #374151;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="task-content">
+        <h2>Task 8: Popular Items Grid</h2>
+        <div class="p-6 rounded-xl shadow-lg w-[28rem] h-[34rem]" style="background: linear-gradient(to bottom right, #f2f2f2, #e5e5e5);">
+            <h1 class="text-xl font-semibold mb-6 text-black">Popular Items</h1>
+            <div class="grid grid-cols-2 gap-4 w-[24rem]">
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <p class="font-semibold text-black">Double Chicken Burger + French fries</p>
+                    <p class="text-gray-500 mt-2">Order: <span class="font-semibold text-black">88</span></p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <p class="font-semibold text-black">Mexican Burger</p>
+                    <p class="text-gray-500 mt-12">Order: <span class="font-semibold text-black">74</span></p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <p class="font-semibold text-black">Double Cheese</p>
+                    <p class="text-gray-500 mt-2">Order: <span class="font-semibold text-black">56</span></p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <p class="font-semibold text-black">Double Spicy Bean Burger</p>
+                    <p class="text-gray-500 mt-2">Order: <span class="font-semibold text-black">41</span></p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow h-[8rem]">
+                    <p class="font-semibold text-black">Potato Gems</p>
+                    <p class="text-gray-500 mt-12">Order: <span class="font-semibold text-black">38</span></p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <p class="font-semibold text-black">Beer</p>
+                    <p class="text-gray-500 mt-12">Order: <span class="font-semibold text-black">32</span></p>
+                </div>
+            </div>
+        </div>
+        <p class="answer-text">Answer: This grid layout uses CSS Grid to display popular items in a 2-column format, with hover effects and shadows for interactivity and visual appeal.</p>
+    </div>
+</body>
+</html>
