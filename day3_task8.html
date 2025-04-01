@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8: Popular Items Grid</title>
+    <style>
+        .popular-grid {
+            background: linear-gradient(to bottom right, #f2f2f2, #e5e5e5);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            width: 28rem;
+            height: 34rem;
+        }
+
+        .popular-grid h1 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: black;
+        }
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            width: 24rem;
+        }
+
+        .grid-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .grid-card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Popular Items Grid</h2>
+        <div class="popular-grid">
+            <h1>Popular Items</h1>
+            <div class="items-grid">
+                <div class="grid-card">
+                    <p style="font-weight: 600; color: black;">Double Chicken Burger + French fries</p>
+                    <p style="color: #6b7280; margin-top: 0.5rem;">Order: <span style="font-weight: 600; color: black;">88</span></p>
+                </div>
+                <div class="grid-card">
+                    <p style="font-weight: 600; color: black;">Mexican Burger</p>
+                    <p style="color: #6b7280; margin-top: 3rem;">Order: <span style="font-weight: 600; color: black;">74</span></p>
+                </div>
+                <div class="grid-card">
+                    <p style="font-weight: 600; color: black;">Double Cheese</p>
+                    <p style="color: #6b7280; margin-top: 0.5rem;">Order: <span style="font-weight: 600; color: black;">56</span></p>
+                </div>
+                <div class="grid-card">
+                    <p style="font-weight: 600; color: black;">Double Spicy Bean Burger</p>
+                    <p style="color: #6b7280; margin-top: 0.5rem;">Order: <span style="font-weight: 600; color: black;">41</span></p>
+                </div>
+                <div class="grid-card" style="height: 8rem;">
+                    <p style="font-weight: 600; color: black;">Potato Gems</p>
+                    <p style="color: #6b7280; margin-top: 3rem;">Order: <span style="font-weight: 600; color: black;">38</span></p>
+                </div>
+                <div class="grid-card">
+                    <p style="font-weight: 600; color: black;">Beer</p>
+                    <p style="color: #6b7280; margin-top: 3rem;">Order: <span style="font-weight: 600; color: black;">32</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
