@@ -259,23 +259,23 @@
             max-width: 100vw;
             height: auto;
             padding: 20px;
-            display: flex; /* Ensure the container is a flexbox */
-            flex-direction: column; /* Stack children vertically */
-            justify-content: center; /* Center vertically */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align content to the top */
             align-items: center; /* Center horizontally */
-            min-height: 100vh; /* Ensure it takes full viewport height */
+            min-height: 100vh;
         }
     
         .table-container {
             height: auto;
-            min-height: unset; /* Remove min-height to allow centering */
+            min-height: unset;
         }
     
         .table-row {
             grid-template-columns: 1fr;
             grid-template-rows: auto;
             height: auto;
-            border-radius: 0; /* Remove border radius for mobile */
+            border-radius: 0;
             justify-items: center;
             align-items: center;
         }
@@ -286,7 +286,7 @@
             height: 300px;
             background-size: cover;
             background-position: center;
-            display: none; /* Hide the image section in mobile */
+            display: none;
         }
     
         .parent-imgsec::before {
@@ -309,21 +309,23 @@
             gap: 2px;
             text-align: center;
             flex-wrap: nowrap;
-            position: static; /* Remove absolute positioning */
-            margin-bottom: 20px; /* Add spacing below logo */
+            position: static;
+            margin-bottom: 10px; /* Reduced spacing below logo */
         }
     
         .logo2 img {
             display: block;
+            height: 30px; /* Make the logo smaller */
+            width: auto;
         }
     
         .panel {
             display: block;
-            font-size: 32px;
+            font-size: 1.5rem; /* Match the size of Welcome Back (h3) */
             color: #1A1A1A;
             font-weight: 600;
-            position: static; /* Remove absolute positioning */
-            margin-bottom: 40px; /* Add spacing below the panel text */
+            position: static;
+            margin-bottom: 40px;
             text-align: center;
         }
     
@@ -337,10 +339,10 @@
         }
     
         .parent-form {
-            padding: 0; /* Remove padding to align with the design */
+            padding: 0;
             border-radius: 0;
-            position: static; /* Remove absolute positioning */
-            transform: none; /* Remove transform */
+            position: static;
+            transform: none;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -384,7 +386,7 @@
             padding: 16px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; /* Align content to the top */
             align-items: center;
             min-height: 100vh;
         }
@@ -400,17 +402,19 @@
         }
     
         .logo2 {
-            height: 42px;
+            height: 30px; /* Make the logo smaller */
             overflow: hidden;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
     
         .logo2 img {
             display: block;
+            height: 25px; /* Further reduce logo size for very small screens */
+            width: auto;
         }
     
         .lg {
-            height: 40px;
+            height: 25px;
             width: auto;
         }
     
@@ -423,7 +427,7 @@
         }
     
         .panel {
-            font-size: 18px;
+            font-size: 1.3rem; /* Match the size of Welcome Back (h3) */
             margin-bottom: 30px;
             text-align: center;
         }
