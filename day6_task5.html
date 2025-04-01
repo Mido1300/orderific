@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5: Card with Shadow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .task-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        h2 {
+            background: linear-gradient(to right, #6b7280, #111827);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+        .answer-text {
+            font-size: 1.1rem;
+            color: #374151;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="task-content">
+        <h2>Task 5: Card with Shadow</h2>
+        <div class="relative p-6 w-72 rounded-2xl shadow-xl border border-gray-100" style="background: linear-gradient(to bottom right, #f9e9e6, #f2dede); box-shadow: -8px 0px 0px rgba(0, 0, 0, 0.1);">
+            <h3 class="text-2xl font-bold text-gray-800">#2001</h3>
+            <p class="text-gray-600 font-semibold mt-1">Ralph Edwards</p>
+            <p class="font-semibold mt-4 text-gray-800">Ordered</p>
+            <p class="text-gray-500 text-sm">8 min ago</p>
+        </div>
+        <p class="answer-text">Answer: This card uses shadows and gradients to create a visually appealing design, with CSS properties like 'box-shadow' and 'border-radius' enhancing depth and style.</p>
+    </div>
+</body>
+</html>
