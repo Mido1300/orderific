@@ -14,7 +14,7 @@
             justify-content: center;
             align-items: center;
             padding: 2rem;
-            overflow: hidden;
+            overflow-x: hidden; /* Prevent horizontal overflow */
         }
         .container {
             position: relative;
@@ -22,6 +22,8 @@
             flex-direction: column;
             align-items: center;
             gap: 1.5rem;
+            width: 100%;
+            max-width: 600px; /* Limit container width for larger screens */
         }
         .task-button {
             position: relative;
@@ -61,7 +63,7 @@
         }
         .task-button:hover {
             transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.8);
+            box-shadow: 0 15px 40px rgba(139, 92,246, 0.8);
             background: linear-gradient(45deg, #d946ef, #8b5cf6);
             border-color: rgba(255, 255, 255, 0.6);
         }
@@ -70,8 +72,84 @@
         }
         h1 {
             position: absolute;
-            top: -100px;
+            top: 20px; /* Adjusted for better visibility */
             text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 2.5rem; /* Slightly smaller for better fit */
+            text-align: center;
+        }
+
+        /* Mobile-friendly adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem; /* Reduce padding for smaller screens */
+            }
+            .container {
+                gap: 1rem; /* Reduce gap between buttons */
+                padding-top: 5rem; /* Add padding to account for the h1 position */
+            }
+            h1 {
+                font-size: 1.8rem; /* Smaller font size for mobile */
+                top: 10px; /* Closer to the top */
+                position: fixed; /* Fix the header to the top */
+                width: 100%;
+                background: rgba(30, 58, 138, 0.8); /* Add a semi-transparent background for readability */
+                padding: 0.5rem 0;
+            }
+            .task-button {
+                width: 180px; /* Slightly smaller buttons for mobile */
+                padding: 0.75rem 2rem; /* Adjust padding for better fit */
+                font-size: 0.9rem; /* Smaller font size */
+                letter-spacing: 1px; /* Adjust letter spacing */
+                min-height: 44px; /* Ensure touch target is at least 44px tall */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .task-button::before {
+                width: 0;
+                height: 0;
+            }
+            .task-button:hover::before {
+                width: 250px; /* Slightly smaller ripple effect for mobile */
+                height: 250px;
+            }
+            .task-button:hover {
+                transform: translateY(-4px) scale(1.02); /* Reduced hover effect for mobile */
+                box-shadow: 0 10px 30px rgba(139, 92, 246, 0.6);
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 0.5rem;
+            }
+            .container {
+                gap: 0.75rem;
+                padding-top: 4.5rem; /* Adjust for smaller h1 */
+            }
+            h1 {
+                font-size: 1.5rem; /* Even smaller for very small screens */
+                top: 5px;
+            }
+            .task-button {
+                width: 160px; /* Further reduce button width */
+                padding: 0.6rem 1.5rem;
+                font-size: 0.8rem;
+                min-height: 44px; /* Maintain touch target size */
+            }
+            .task-button::before {
+                width: 0;
+                height: 0;
+            }
+            .task-button:hover::before {
+                width: 200px; /* Further reduce ripple effect */
+                height: 200px;
+            }
+            .task-button:hover {
+                transform: translateY(-2px) scale(1.01); /* Minimal hover effect */
+                box-shadow: 0 8px 20px rgba(139, 92, 246, 0.5);
+            }
         }
     </style>
 </head>
