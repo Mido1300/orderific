@@ -1,1421 +1,327 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="styleguide.css" />
-    <style>
-        @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-
-        :root {
-            --neutral-colors100: rgba(255, 255, 255, 1);
-            --neutral-colors800: rgba(18, 18, 18, 1);
-            --neutral-colors700: rgba(63, 63, 63, 1);
-            --neutral-colors600: rgba(101, 101, 101, 1);
-            --neutral-colors300: rgba(237, 237, 237, 1);
-            --headings-typography-size-1-font-family: "Metropolis", Helvetica;
-            --headings-typography-size-1-font-weight: 700;
-            --headings-typography-size-1-font-size: 62px;
-            --headings-typography-size-1-letter-spacing: 0px;
-            --headings-typography-size-1-line-height: 72px;
-            --headings-typography-size-1-font-style: normal;
-            --paragraph-default-font-family: "Metropolis", Helvetica;
-            --paragraph-default-font-weight: 400;
-            --paragraph-default-font-size: 18px;
-            --paragraph-default-letter-spacing: 0px;
-            --paragraph-default-line-height: 30px;
-            --paragraph-default-font-style: normal;
-            --headings-typography-size-2-font-family: "Metropolis", Helvetica;
-            --headings-typography-size-2-font-weight: 700;
-            --headings-typography-size-2-font-size: 44px;
-            --headings-typography-size-2-letter-spacing: 0px;
-            --headings-typography-size-2-line-height: 54px;
-            --headings-typography-size-2-font-style: normal;
-            --headings-typography-size-3-font-family: "Metropolis", Helvetica;
-            --headings-typography-size-3-font-weight: 700;
-            --headings-typography-size-3-font-size: 24px;
-            --headings-typography-size-3-letter-spacing: 0px;
-            --headings-typography-size-3-line-height: 34px;
-            --headings-typography-size-3-font-style: normal;
-            --text-single-100-medium-font-family: "Metropolis", Helvetica;
-            --text-single-100-medium-font-weight: 500;
-            --text-single-100-medium-font-size: 16px;
-            --text-single-100-medium-letter-spacing: 0px;
-            --text-single-100-medium-line-height: 18px;
-            --text-single-100-medium-font-style: normal;
-            --text-single-100-bold-font-family: "Metropolis", Helvetica;
-            --text-single-100-bold-font-weight: 700;
-            --text-single-100-bold-font-size: 16px;
-            --text-single-100-bold-letter-spacing: 0px;
-            --text-single-100-bold-line-height: 18px;
-            --text-single-100-bold-font-style: normal;
-            --text-single-200-bold-font-family: "Metropolis", Helvetica;
-            --text-single-200-bold-font-weight: 700;
-            --text-single-200-bold-font-size: 18px;
-            --text-single-200-bold-letter-spacing: 0px;
-            --text-single-200-bold-line-height: 20px;
-            --text-single-200-bold-font-style: normal;
-            --special-headings-display-4-font-family: "Metropolis", Helvetica;
-            --special-headings-display-4-font-weight: 700;
-            --special-headings-display-4-font-size: 28px;
-            --special-headings-display-4-letter-spacing: 0px;
-            --special-headings-display-4-line-height: 40px;
-            --special-headings-display-4-font-style: normal;
-            --text-single-200-medium-font-family: "Metropolis", Helvetica;
-            --text-single-200-medium-font-weight: 500;
-            --text-single-200-medium-font-size: 18px;
-            --text-single-200-medium-letter-spacing: 0px;
-            --text-single-200-medium-line-height: 20px;
-            --text-single-200-medium-font-style: normal;
-            --headings-typography-size-6-font-family: "THICCCBOI", Helvetica;
-            --headings-typography-size-6-font-weight: 800;
-            --headings-typography-size-6-font-size: 16px;
-            --headings-typography-size-6-letter-spacing: 0px;
-            --headings-typography-size-6-line-height: 22px;
-            --headings-typography-size-6-font-style: normal;
-            --text-single-300-bold-font-family: "Metropolis", Helvetica;
-            --text-single-300-bold-font-weight: 700;
-            --text-single-300-bold-font-size: 20px;
-            --text-single-300-bold-letter-spacing: 0px;
-            --text-single-300-bold-line-height: 22px;
-            --text-single-300-bold-font-style: normal;
-            --text-single-200-regular-font-family: "Metropolis", Helvetica;
-            --text-single-200-regular-font-weight: 400;
-            --text-single-200-regular-font-size: 18px;
-            --text-single-200-regular-letter-spacing: 0px;
-            --text-single-200-regular-line-height: 20px;
-            --text-single-200-regular-font-style: normal;
-            --headings-typography-size-5-font-family: "Metropolis", Helvetica;
-            --headings-typography-size-5-font-weight: 700;
-            --headings-typography-size-5-font-size: 18px;
-            --headings-typography-size-5-letter-spacing: 0px;
-            --headings-typography-size-5-line-height: 24px;
-            --headings-typography-size-5-font-style: normal;
-            --rich-text-bold-font-family: "Metropolis", Helvetica;
-            --rich-text-bold-font-weight: 700;
-            --rich-text-bold-font-size: 18px;
-            --rich-text-bold-letter-spacing: 0px;
-            --rich-text-bold-line-height: 30px;
-            --rich-text-bold-font-style: normal;
-            --general-shadow-02: 0px 2px 12px 0px rgba(16, 16, 16, 0.08);
-            --general-shadow-01: 0px 2px 6px 0px rgba(16, 16, 16, 0.04);
-        }
-
-        * {
-            -webkit-font-smoothing: antialiased;
-            box-sizing: border-box;
-        }
-
-        html, body {
-            margin: 0px;
-            height: 100%;
-        }
-
-        button:focus-visible {
-            outline: 2px solid #4a90e2 !important;
-            outline: -webkit-focus-ring-color auto 5px !important;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .plan-single { position: relative; }
-
-        .frame { display: flex; flex-direction: column; gap: 40px; }
-
-        .group { position: relative; width: 700.34px; height: 144px; }
-
-        .frame-wrapper {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 40px;
-            position: relative;
-        }
-
-        .div {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 12px;
-            position: relative;
-            flex: 0 0 auto;
-        }
-
-        .text-wrapper {
-            position: relative;
-            width: fit-content;
-            margin-top: -1.00px;
-            font-family: var(--headings-typography-size-1-font-family);
-            font-weight: var(--headings-typography-size-1-font-weight);
-            color: var(--neutral-colors800);
-            font-size: var(--headings-typography-size-1-font-size);
-            letter-spacing: var(--headings-typography-size-1-letter-spacing);
-            line-height: var(--headings-typography-size-1-line-height);
-            white-space: nowrap;
-            font-style: var(--headings-typography-size-1-font-style);
-        }
-
-        .p {
-            position: relative;
-            width: 700.34px;
-            font-family: var(--paragraph-default-font-family);
-            font-weight: var(--paragraph-default-font-weight);
-            color: var(--neutral-colors700);
-            font-size: var(--paragraph-default-font-size);
-            letter-spacing: var(--paragraph-default-letter-spacing);
-            line-height: var(--paragraph-default-line-height);
-            font-style: var(--paragraph-default-font-style);
-        }
-
-        .frame-2 {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 48px;
-            position: relative;
-            flex: 0 0 auto;
-        }
-
-        .div-2 {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 32px;
-            position: relative;
-            flex: 0 0 auto;
-        }
-
-        .div-3 {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 24px;
-            position: relative;
-            flex: 0 0 auto;
-        }
-
-        .what-s-included-in {
-            position: relative;
-            width: 701.35px;
-            margin-top: -1.00px;
-            font-family: var(--headings-typography-size-2-font-family);
-            font-weight: var(--headings-typography-size-2-font-weight);
-            color: var(--neutral-colors800);
-            font-size: var(--headings-typography-size-2-font-size);
-            letter-spacing: var(--headings-typography-size-2-letter-spacing);
-            line-height: var(--headings-typography-size-2-line-height);
-            font-style: var(--headings-typography-size-2-font-style);
-        }
-
-        .lorem-ipsum-dolor {
-            position: relative;
-            width: 701.35px;
-            font-family: "Metropolis-Regular", Helvetica;
-            font-weight: 400;
-            color: transparent;
-            font-size: 18px;
-            letter-spacing: 0;
-            line-height: 30px;
-        }
-
-        .span {
-            color: #3f3f3f;
-            font-family: var(--paragraph-default-font-family);
-            font-style: var(--paragraph-default-font-style);
-            font-weight: var(--paragraph-default-font-weight);
-            letter-spacing: var(--paragraph-default-letter-spacing);
-            line-height: var(--paragraph-default-line-height);
-            font-size: var(--paragraph-default-font-size);
-        }
-
-        .text-wrapper-2 {
-            color: #121212;
-            font-family: var(--paragraph-default-font-family);
-            font-style: var(--paragraph-default-font-style);
-            font-weight: var(--paragraph-default-font-weight);
-            letter-spacing: var(--paragraph-default-letter-spacing);
-            line-height: var(--paragraph-default-line-height);
-            font-size: var(--paragraph-default-font-size);
-        }
-
-        .text-wrapper-3 {
-            font-family: var(--rich-text-bold-font-family);
-            font-weight: var(--rich-text-bold-font-weight);
-            color: #ff5634;
-            font-style: var(--rich-text-bold-font-style);
-            letter-spacing: var(--rich-text-bold-letter-spacing);
-            line-height: var(--rich-text-bold-line-height);
-            font-size: var(--rich-text-bold-font-size);
-        }
-
-        .div-4 {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 16px;
-            position: relative;
-            flex: 0 0 auto;
-        }
-
-        .text-wrapper-4 {
-            position: relative;
-            width: fit-content;
-            margin-top: -1.00px;
-            font-family: var(--headings-typography-size-3-font-family);
-            font-weight: var(--headings-typography-size-3-font-weight);
-            color: var(--neutral-colors800);
-            font-size: var(--headings-typography-size-3-font-size);
-            letter-spacing: var(--headings-typography-size-3-letter-spacing);
-            line-height: var(--headings-typography-size-3-line-height);
-            white-space: nowrap;
-            font-style: var(--headings-typography-size-3-font-style);
-        }
-
-        .vitae-congue-eu {
-            position: relative;
-            width: 700.34px;
-            font-family: var(--paragraph-default-font-family);
-            font-weight: var(--paragraph-default-font-weight);
-            color: transparent;
-            font-size: var(--paragraph-default-font-size);
-            letter-spacing: var(--paragraph-default-letter-spacing);
-            line-height: var(--paragraph-default-line-height);
-            font-style: var(--paragraph-default-font-style);
-        }
-
-        .group-2 {
-            position: absolute;
-            width: 1440px;
-            height: 118px;
-            top: 0;
-            left: 0;
-            background-color: #ffffff;
-            box-shadow: 0px 3px 12px #1212120f;
-        }
-
-        .navbar {
-            position: absolute;
-            width: 494px;
-            height: 18px;
-            top: 50px;
-            left: 417px;
-        }
-
-        .text-wrapper-5 {
-            position: absolute;
-            top: 0;
-            font-family: var(--text-single-100-medium-font-family);
-            font-weight: var(--text-single-100-medium-font-weight);
-            color: #121212;
-            font-size: var(--text-single-100-medium-font-size);
-            letter-spacing: var(--text-single-100-medium-letter-spacing);
-            line-height: var(--text-single-100-medium-line-height);
-            white-space: nowrap;
-            font-style: var(--text-single-100-medium-font-style);
-        }
-
-        .text-wrapper-5:nth-child(1) { left: 0; }
-        .group-3 .text-wrapper-5 { left: 0; position: relative; }
-
-        .text-wrapper-6 {
-            left: 183px;
-            position: absolute;
-            top: 0;
-            font-family: var(--text-single-100-medium-font-family);
-            font-weight: var(--text-single-100-medium-font-weight);
-            color: #121212;
-            font-size: var(--text-single-100-medium-font-size);
-            letter-spacing: var(--text-single-100-medium-letter-spacing);
-            line-height: var(--text-single-100-medium-line-height);
-            white-space: nowrap;
-            font-style: var(--text-single-100-medium-font-style);
-        }
-
-        .text-wrapper-7 {
-            position: absolute;
-            top: 0;
-            left: 262px;
-            font-family: var(--text-single-100-medium-font-family);
-            font-weight: var(--text-single-100-medium-font-weight);
-            color: #121212;
-            font-size: var(--text-single-100-medium-font-size);
-            letter-spacing: var(--text-single-100-medium-letter-spacing);
-            line-height: var(--text-single-100-medium-line-height);
-            white-space: nowrap;
-            font-style: var(--text-single-100-medium-font-style);
-        }
-
-        .group-3 {
-            position: absolute;
-            width: 87px;
-            height: 18px;
-            top: 0;
-            left: 72px;
-        }
-
-        .line-rounded-chevron {
-            position: absolute;
-            width: 11px;
-            height: 11px;
-            top: 4px;
-            left: 74px;
-        }
-
-        .text-wrapper-8 {
-            left: 361px;
-            position: absolute;
-            top: 0;
-            font-family: var(--text-single-100-medium-font-family);
-            font-weight: var(--text-single-100-medium-font-weight);
-            color: #121212;
-            font-size: var(--text-single-100-medium-font-size);
-            letter-spacing: var(--text-single-100-medium-letter-spacing);
-            line-height: var(--text-single-100-medium-line-height);
-            white-space: nowrap;
-            font-style: var(--text-single-100-medium-font-style);
-        }
-
-        .text-wrapper-9 {
-            position: absolute;
-            top: 0;
-            left: 423px;
-            font-family: var(--text-single-100-medium-font-family);
-            font-weight: var(--text-single-100-medium-font-weight);
-            color: #121212;
-            font-size: var(--text-single-100-medium-font-size);
-            letter-spacing: var(--text-single-100-medium-letter-spacing);
-            line-height: var(--text-single-100-medium-line-height);
-            white-space: nowrap;
-            font-style: var(--text-single-100-medium-font-style);
-        }
-
-        .frame-3 {
-            display: inline-flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 18px;
-            position: absolute;
-            top: 32px;
-            left: 1036px;
-        }
-
-        .secondary-button {
-            all: unset;
-            box-sizing: border-box;
-            display: inline-flex;
-            align-items: flex-start;
-            position: relative;
-            flex: 0 0 auto;
-        }
-
-        .master-secondary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-            padding: 18px 24px;
-            position: relative;
-            flex: 0 0 auto;
-            background-color: #ffffff;
-            border-radius: 12px;
-            border: 1px solid #ececec;
-            box-shadow: var(--general-shadow-01);
-        }
-
-        .button-text {
-            all: unset;
-            box-sizing: border-box;
-            position: relative;
-            width: fit-content;
-            margin-top: -1.00px;
-            font-family: var(--text-single-100-medium-font-family);
-            font-weight: var(--text-single-100-medium-font-weight);
-            color: #121212;
-            font-size: var(--text-single-100-medium-font-size);
-            text-align: center;
-            letter-spacing: var(--text-single-100-medium-letter-spacing);
-            line-height: var(--text-single-100-medium-line-height);
-            white-space: nowrap;
-            font-style: var(--text-single-100-medium-font-style);
-        }
-
-        .primary-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            flex: 0 0 auto;
-        }
-
-        .master-primary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-            padding: 18px 24px;
-            position: relative;
-            flex: 0 0 auto;
-            background-color: #ff5634;
-            border-radius: 12px;
-        }
-
-        .button-text-2 {
-            font-size: var(--text-single-100-bold-font-size);
-            line-height: var(--text-single-100-bold-line-height);
-            position: relative;
-            width: fit-content;
-            margin-top: -1.00px;
-            font-family: var(--text-single-100-bold-font-family);
-            font-weight: var(--text-single-100-bold-font-weight);
-            color: #ffffff;
-            text-align: center;
-            letter-spacing: var(--text-single-100-bold-letter-spacing);
-            white-space: nowrap;
-            font-style: var(--text-single-100-bold-font-style);
-        }
-
-        .logo-orange-black {
-            top: 35px;
-            left: 109px;
-            position: absolute;
-            width: 209px;
-            height: 48px;
-            object-fit: cover;
-        }
-
-        .flagpack-gb-ukm-wrapper {
-            position: absolute;
-            width: 32px;
-            height: 24px;
-            top: 49px;
-            left: 980px;
-        }
-
-        .flagpack-gb-ukm {
-            height: 24px;
-            border-radius: 2px;
-            background-image: url(./img/clip-path-group.png);
-            background-size: 100% 100%;
-        }
-
-        .overlap-group-wrapper {
-            position: absolute;
-            width: 390px;
-            height: 889px;
-            top: 229px;
-            left: 940px;
-            background-color: var(--neutral-colors100);
-            border-radius: 24px;
-            border: 1px solid var(--neutral-colors300);
-            box-shadow: var(--general-shadow-02);
-        }
-
-        .overlap-group {
-            position: relative;
-            width: 327px;
-            height: 756px;
-            top: 83px;
-            left: 30px;
-        }
-
-        .pricing-card {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 48px;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .element {
-            display: inline-flex;
-            align-items: center;
-            gap: 16px;
-            position: relative;
-            flex: 0 0 auto;
-        }
-
-        .square-paper-plane {
-            position: relative;
-            width: 72px;
-            height: 72px;
-        }
-
-        .element-px {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            flex: 0 0 auto;
-        }
-
-        .subtitle {
-            position: relative;
-            width: fit-content;
-            margin-top: -1.00px;
-            font-family: var(--text-single-200-bold-font-family);
-            font-weight: var(--text-single-200-bold-font-weight);
-            color: var(--neutral-colors600);
-            font-size: var(--text-single-200-bold-font-size);
-            text-align: center;
-            letter-spacing: var(--text-single-200-bold-letter-spacing);
-            line-height: var(--text-single-200-bold-line-height);
-            white-space: nowrap;
-            font-style: var(--text-single-200-bold-font-style);
-        }
-
-        .price {
-            position: relative;
-            width: fit-content;
-            font-family: var(--special-headings-display-4-font-family);
-            font-weight: var(--special-headings-display-4-font-weight);
-            color: var(--neutral-colors800);
-            font-size: var(--special-headings-display-4-font-size);
-            letter-spacing: var(--special-headings-display-4-letter-spacing);
-            line-height: var(--special-headings-display-4-line-height);
-            white-space: nowrap;
-            font-style: var(--special-headings-display-4-font-style);
-        }
-
-        .pricing-paragraph {
-            position: relative;
-            width: 326.67px;
-            font-family: var(--paragraph-default-font-family);
-            font-weight: var(--paragraph-default-font-weight);
-            color: var(--neutral-colors600);
-            font-size: var(--paragraph-default-font-size);
-            letter-spacing: var(--paragraph-default-letter-spacing);
-            line-height: var(--paragraph-default-line-height);
-            font-style: var(--paragraph-default-font-style);
-        }
-
-        .master-primary-wrapper {
-            all: unset;
-            box-sizing: border-box;
-            display: flex;
-            width: 327px;
-            align-items: flex-start;
-            position: relative;
-            flex: 0 0 auto;
-        }
-
-        .master-primary-2 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            padding: 26px 38px;
-            position: relative;
-            flex: 1;
-            flex-grow: 1;
-            background-color: #ff5634;
-            border-radius: 16px;
-        }
-
-        .button {
-            all: unset;
-            box-sizing: border-box;
-            font-size: var(--text-single-200-bold-font-size);
-            line-height: var(--text-single-200-bold-line-height);
-            position: relative;
-            width: fit-content;
-            margin-top: -1.00px;
-            font-family: var(--text-single-200-bold-font-family);
-            font-weight: var(--text-single-200-bold-font-weight);
-            color: var(--neutral-colors100);
-            text-align: center;
-            letter-spacing: var(--text-single-200-bold-letter-spacing);
-            white-space: nowrap;
-            font-style: var(--text-single-200-bold-font-style);
-        }
-
-        .text {
-            position: relative;
-            width: fit-content;
-            margin-top: -1.00px;
-            font-family: var(--text-single-200-bold-font-family);
-            font-weight: var(--text-single-200-bold-font-weight);
-            color: var(--neutral-colors800);
-            font-size: var(--text-single-200-bold-font-size);
-            letter-spacing: var(--text-single-200-bold-letter-spacing);
-            line-height: var(--text-single-200-bold-line-height);
-            white-space: nowrap;
-            font-style: var(--text-single-200-bold-font-style);
-        }
-
-        .div-wrapper {
-            display: inline-flex;
-            align-items: flex-start;
-            position: relative;
-            flex: 0 0 auto;
-        }
-
-        .list-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 14px;
-            position: relative;
-            flex: 0 0 auto;
-        }
-
-        .line-rounded-check {
-            position: relative;
-            width: 26px;
-            height: 26px;
-        }
-
-        .text-2 {
-            position: relative;
-            width: fit-content;
-            font-family: var(--text-single-200-medium-font-family);
-            font-weight: var(--text-single-200-medium-font-weight);
-            color: var(--neutral-colors800);
-            font-size: var(--text-single-200-medium-font-size);
-            letter-spacing: var(--text-single-200-medium-letter-spacing);
-            line-height: var(--text-single-200-medium-line-height);
-            white-space: nowrap;
-            font-style: var(--text-single-200-medium-font-style);
-        }
-
-        .img {
-            position: absolute;
-            width: 66px;
-            height: 51px;
-            top: 11px;
-            left: 4px;
-        }
-
-        .group-4 {
-            position: absolute;
-            width: 1442px;
-            height: 919px;
-            top: 1327px;
-            left: 0;
-        }
-
-        .overlap {
-            position: absolute;
-            width: 1440px;
-            height: 919px;
-            top: 0;
-            left: 0;
-            background-color: #ffffff;
-        }
-
-        .copyright-delivery-x {
-            position: absolute;
-            width: 692px;
-            top: 862px;
-            left: 433px;
-            font-family: "Metropolis-Regular", Helvetica;
-            font-weight: 400;
-            color: transparent;
-            font-size: 18px;
-            letter-spacing: 0;
-            line-height: 30px;
-            white-space: nowrap;
-        }
-
-        .text-wrapper-10 {
-            font-family: "DM Sans-Regular", Helvetica;
-            color: #3f3f3f;
-        }
-
-        .text-wrapper-11 {
-            color: #ff5634;
-            font-family: var(--paragraph-default-font-family);
-            font-style: var(--paragraph-default-font-style);
-            font-weight: var(--paragraph-default-font-weight);
-            letter-spacing: var(--paragraph-default-letter-spacing);
-            line-height: var(--paragraph-default-line-height);
-            font-size: var(--paragraph-default-font-size);
-        }
-
-        .line {
-            top: 317px;
-            position: absolute;
-            width: 1220px;
-            height: 1px;
-            left: 110px;
-            object-fit: cover;
-        }
-
-        .line-2 {
-            top: 829px;
-            position: absolute;
-            width: 1220px;
-            height: 1px;
-            left: 110px;
-            object-fit: cover;
-        }
-
-        .group-5 {
-            position: absolute;
-            width: 452px;
-            height: 57px;
-            top: 161px;
-            left: 110px;
-        }
-
-        .text-wrapper-12 {
-            position: absolute;
-            width: 450px;
-            top: 0;
-            left: 0;
-            font-family: var(--paragraph-default-font-family);
-            font-weight: var(--paragraph-default-font-weight);
-            color: #3f3f3f;
-            font-size: var(--paragraph-default-font-size);
-            letter-spacing: var(--paragraph-default-letter-spacing);
-            line-height: var(--paragraph-default-line-height);
-            font-style: var(--paragraph-default-font-style);
-        }
-
-        .download-buttons {
-            position: absolute;
-            width: 517px;
-            height: 66px;
-            top: 126px;
-            left: 810px;
-        }
-
-        .group-wrapper {
-            position: absolute;
-            width: 226px;
-            height: 65px;
-            top: 0;
-            left: 0;
-            background-color: #ff5634;
-            border-radius: 14px;
-        }
-
-        .group-6 {
-            position: relative;
-            width: 174px;
-            height: 25px;
-            top: 20px;
-            left: 32px;
-        }
-
-        .vector {
-            position: absolute;
-            width: 20px;
-            height: 24px;
-            top: 0;
-            left: 0;
-        }
-
-        .text-wrapper-13 {
-            position: absolute;
-            top: 3px;
-            left: 32px;
-            font-family: "Metropolis-ExtraBold", Helvetica;
-            font-weight: 800;
-            color: #ffffff;
-            font-size: 16px;
-            letter-spacing: 0;
-            line-height: 22px;
-            white-space: nowrap;
-        }
-
-        .group-7 {
-            position: absolute;
-            width: 265px;
-            height: 65px;
-            top: 0;
-            left: 252px;
-            background-color: #ff5634;
-            border-radius: 14px;
-        }
-
-        .group-8 {
-            position: relative;
-            width: 204px;
-            height: 22px;
-            top: 23px;
-            left: 32px;
-        }
-
-        .text-wrapper-14 {
-            position: absolute;
-            top: 0;
-            left: 38px;
-            font-family: var(--headings-typography-size-6-font-family);
-            font-weight: var(--headings-typography-size-6-font-weight);
-            color: #ffffff;
-            font-size: var(--headings-typography-size-6-font-size);
-            letter-spacing: var(--headings-typography-size-6-letter-spacing);
-            line-height: var(--headings-typography-size-6-line-height);
-            white-space: nowrap;
-            font-style: var(--headings-typography-size-6-font-style);
-        }
-
-        .vector-2 {
-            position: absolute;
-            width: 29px;
-            height: 17px;
-            top: 2px;
-            left: 0;
-        }
-
-        .footer-column {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 40px;
-            position: absolute;
-            top: 438px;
-            left: 110px;
-        }
-
-        .footer-title {
-            position: relative;
-            width: fit-content;
-            margin-top: -1.00px;
-            font-family: var(--text-single-300-bold-font-family);
-            font-weight: var(--text-single-300-bold-font-weight);
-            color: #121212;
-            font-size: var(--text-single-300-bold-font-size);
-            letter-spacing: var(--text-single-300-bold-letter-spacing);
-            line-height: var(--text-single-300-bold-line-height);
-            white-space: nowrap;
-            font-style: var(--text-single-300-bold-font-style);
-        }
-
-        .frame-4 {
-            display: inline-flex;
-            align-items: flex-start;
-            gap: 45px;
-            position: relative;
-            flex: 0 0 auto;
-        }
-
-        .footer-links {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 18px;
-            position: relative;
-            flex: 0 0 auto;
-        }
-
-        .master-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            position: relative;
-            flex: 0 0 auto;
-        }
-
-        .link-item {
-            position: relative;
-            width: fit-content;
-            margin-top: -1.00px;
-            font-family: var(--text-single-200-regular-font-family);
-            font-weight: var(--text-single-200-regular-font-weight);
-            color: #3f3f3f;
-            font-size: var(--text-single-200-regular-font-size);
-            text-align: center;
-            letter-spacing: var(--text-single-200-regular-letter-spacing);
-            line-height: var(--text-single-200-regular-line-height);
-            white-space: nowrap;
-            font-style: var(--text-single-200-regular-font-style);
-        }
-
-        .footer-column-2 {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 40px;
-            position: absolute;
-            top: 438px;
-            left: 497px;
-        }
-
-        .footer-links-wrapper {
-            display: inline-flex;
-            align-items: flex-start;
-            gap: 40px;
-            position: relative;
-            flex: 0 0 auto;
-        }
-
-        .group-9 {
-            position: absolute;
-            width: 504px;
-            height: 234px;
-            top: 438px;
-            left: 830px;
-        }
-
-        .footer-title-2 {
-            position: absolute;
-            top: 0;
-            left: 3px;
-            font-family: var(--text-single-300-bold-font-family);
-            font-weight: var(--text-single-300-bold-font-weight);
-            color: #121212;
-            font-size: var(--text-single-300-bold-font-size);
-            letter-spacing: var(--text-single-300-bold-letter-spacing);
-            line-height: var(--text-single-300-bold-line-height);
-            white-space: nowrap;
-            font-style: var(--text-single-300-bold-font-style);
-        }
-
-        .group-10 {
-            position: absolute;
-            width: 502px;
-            height: 172px;
-            top: 62px;
-            left: 0;
-        }
-
-        .group-11 {
-            position: absolute;
-            width: 258px;
-            height: 78px;
-            top: 0;
-            left: 0;
-        }
-
-        .div-wrapper-2 {
-            position: absolute;
-            width: 78px;
-            height: 78px;
-            top: 0;
-            left: 0;
-        }
-
-        .bridge {
-            height: 78px;
-            background-color: #f1f1f1;
-            border-radius: 24.37px;
-            overflow: hidden;
-        }
-
-        .group-12 {
-            position: relative;
-            width: 45px;
-            height: 38px;
-            top: 20px;
-            left: 16px;
-            background-image: url(./img/group-42151.png);
-            background-size: 100% 100%;
-        }
-
-        .heading {
-            position: absolute;
-            top: 27px;
-            left: 96px;
-            font-family: var(--headings-typography-size-5-font-family);
-            font-weight: var(--headings-typography-size-5-font-weight);
-            color: #121212;
-            font-size: var(--headings-typography-size-5-font-size);
-            letter-spacing: var(--headings-typography-size-5-letter-spacing);
-            line-height: var(--headings-typography-size-5-line-height);
-            white-space: nowrap;
-            font-style: var(--headings-typography-size-5-font-style);
-        }
-
-        .group-13 {
-            position: absolute;
-            width: 219px;
-            height: 78px;
-            top: 0;
-            left: 285px;
-        }
-
-        .statue-of-liberty {
-            position: relative;
-            height: 78px;
-            background-color: #f1f1f1;
-            border-radius: 24.37px;
-            overflow: hidden;
-        }
-
-        .group-14 {
-            position: absolute;
-            width: 51px;
-            height: 52px;
-            top: 13px;
-            left: 13px;
-        }
-
-        .group-15 {
-            position: absolute;
-            width: 488px;
-            height: 81px;
-            top: 91px;
-            left: 0;
-        }
-
-        .beach {
-            position: relative;
-            height: 78px;
-            background-color: #f1f1f1;
-            border-radius: 24.38px;
-            overflow: hidden;
-        }
-
-        .group-16 {
-            position: absolute;
-            width: 49px;
-            height: 45px;
-            top: 16px;
-            left: 15px;
-        }
-
-        .group-17 {
-            position: absolute;
-            width: 203px;
-            height: 78px;
-            top: 3px;
-            left: 285px;
-        }
-
-        .heading-h {
-            position: absolute;
-            top: 32px;
-            left: 96px;
-            font-family: var(--headings-typography-size-5-font-family);
-            font-weight: var(--headings-typography-size-5-font-weight);
-            color: #121212;
-            font-size: var(--headings-typography-size-5-font-size);
-            letter-spacing: var(--headings-typography-size-5-letter-spacing);
-            line-height: var(--headings-typography-size-5-line-height);
-            white-space: nowrap;
-            font-style: var(--headings-typography-size-5-font-style);
-        }
-
-        .cn-tower {
-            position: absolute;
-            width: 78px;
-            height: 78px;
-            top: 0;
-            left: 0;
-            background-color: #f1f1f1;
-            border-radius: 24.37px;
-            overflow: hidden;
-        }
-
-        .group-18 {
-            position: absolute;
-            width: 46px;
-            height: 70px;
-            top: 8px;
-            left: 16px;
-        }
-
-        .logo-orange-black-2 {
-            top: 78px;
-            left: 110px;
-            position: absolute;
-            width: 209px;
-            height: 48px;
-            object-fit: cover;
-        }
-
-        .link {
-            display: inline-flex;
-            align-items: flex-start;
-            position: absolute;
-            top: 729px;
-            left: 497px;
-        }
-
-        .link-item-2 {
-            position: relative;
-            width: fit-content;
-            margin-top: -1.00px;
-            font-family: "Metropolis-SemiBold", Helvetica;
-            font-weight: 600;
-            color: #ff5634;
-            font-size: 18px;
-            text-align: center;
-            letter-spacing: 0;
-            line-height: 20px;
-            text-decoration: underline;
-            white-space: nowrap;
-        }
-
-        .line-3 {
-            position: absolute;
-            width: 1440px;
-            height: 1px;
-            top: -1px;
-            left: 0;
-            object-fit: cover;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orderific</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.cdnfonts.com/css/metropolis-2" rel="stylesheet">
+    <style> h1 , h2, h3 ,h4, h6, p {
+        font-family: 'Metropolis';
+    } </style>
 </head>
-<body>
-    <div class="plan-single">
-        <div class="frame">
-            <div class="group">
-                <div class="frame-wrapper">
-                    <div class="div">
-                        <div class="text-wrapper">Free Plan</div>
-                        <p class="p">Feugiat elit imperdiet enim pellentesque nibh bibendum lacinia pulvinar justo cursus ultricies adipiscing risus porta scelerisque at ipsum.</p>
+
+<body class="font-['Metropolis']">
+    <header class="flex overflow-hidden flex-col bg-white">
+        
+        <nav
+            class="flex flex-col justify-center items-center md:px-16 px-12 md:py-8 py-4 w-full md:text-base text-xs leading-none bg-white shadow-[0px_3px_12px_rgba(18,18,18,0.06)] max-md:px-5 max-md:max-w-full">
+            <div
+                class="flex flex-col lg:flex-row gap-5 justify-center items-center w-full max-w-[1221px] max-md:max-w-full">
+                <img src="https://tail-in-wind-web.vercel.app/tail_005/assets/Logo-Orange-Black-2%201.png" alt="Company Logo"
+                    class="object-contain shrink-0 self-stretch my-auto max-w-full aspect-[4.35] lg:w-[209px] w-[159px] mx-auto" />
+
+               
+                <nav
+                    class="hidden md:flex lg:gap-7 gap-5 self-stretch my-auto font-medium text-neutral-900 max-md:max-w-full mx-auto">
+                    <a href="#">Home</a>
+                    <a href="#" class="flex items-center gap-0.5">Features
+                        <img src="file11.png" alt="dropdownn" class="ml-2">
+                    </a>
+
+                    <a href="#">Pricing</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact</a>
+                </nav>
+                <div class="flex gap-6 self-stretch text-center justify-center items-center mx-auto">
+                    <img src="https://tail-in-wind-web.vercel.app/tail_005/assets/Group%201000004284.png" alt="User flag"
+                        class="object-contain shrink-0 my-auto w-8 rounded-sm aspect-[1.33]" />
+                    <div class="flex flex-auto gap-5 items-center">
+                        <a href="#"
+                            class="flex items-start self-stretch my-auto font-medium whitespace-nowrap text-neutral-900">
+                           <span class="gap-1 self-stretch md:px-6 px-4 md:py-5 py-3 bg-white rounded-xl border border-gray-200 border-solid shadow-sm max-md:px-5 flex items-start bg-white border border-[#EDEDED] rounded-[12px] px-[38px] py-[18px] font-['Metropolis'] text-[16px] font-bold leading-[18px] text-[#121212] shadow-[0px_2px_12px_0px_rgba(16,16,16,0.08)]">
+    Login
+</span>
+                        </a>
+                        <a href="#" class="flex justify-center items-center self-stretch my-auto font-bold text-white">
+                            <span
+                                class="gap-1 self-stretch md:px-6 px-4 md:py-5 py-3  my-auto bg-[#FF5634] rounded-xl max-md:px-5">
+                                START FOR FREE
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="frame-2">
-                <div class="div-2">
-                    <div class="div-3">
-                        <p class="what-s-included-in">What's included in the plan?</p>
-                        <p class="lorem-ipsum-dolor">
-                            <span class="span">Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna</span>
-                            <span class="text-wrapper-2"> </span>
-                            <span class="text-wrapper-3">adipiscing praesent</span>
-                            <span class="text-wrapper-2"> </span>
-                            <span class="span">velit viverra sit semper lorem eu cursus vel hendrerit elementum morbi curabitur etiam nibh justo lorem aliquet donec sed sit mi dignissim at ante massa mattis.</span>
+            <div class="md:hidden text-2xl font-bold font-Metropolis cursor-pointer absolute top-4 right-4">
+                ≡
+              </div>
+        </nav>
+
+        <main class="self-center  w-full  max-md:max-w-full mx-auto lg:mt-30 md:mt-20 mt-5 lg:px-[110px] md:px-10 px-5">
+            <div class="flex lg:gap-20 md:gap-10 gap-5 max-md:flex-col py-2 lg:w-[1220px] w-full  mx-auto">
+                <section class="w-[2/3] max-md:ml-0 max-md:w-full p-2 lg:w-[700px] w-full mx-auto">
+                    <div class="max-md:mt-10 max-md:max-w-full">
+                        <div class="max-w-full w-[2/3]">
+                            <h1 class="lg:text-6xl md:text-5xl text-4xl font-bold leading-none text-neutral-900 ">
+                                Free Plan
+                            </h1>
+                            <p class="mt-3 text-lg leading-8 text-neutral-700 max-md:max-w-full">
+                                Feugiat elit imperdiet enim pellentesque nibh bibendum lacinia
+                                pulvinar justo cursus ultricies adipiscing risus porta scelerisque
+                                at ipsum.
+                            </p>
+                        </div>
+
+                        <div class="mt-12 max-w-full w-[2/3] max-md:mt-10">
+                            <h2
+                                class="lg:text-5xl md:text-4xl text-3xl font-bold leading-none text-neutral-900 max-md:max-w-full">
+                                What's included in the plan?
+                            </h2>
+                            <p class="mt-6 text-lg leading-8 text-stone-500 max-md:max-w-full">
+                                <span class="text-[#3F3F3F]">Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    lobortis arcu enim urna</span>
+                                <span class="font-bold text-[#FF5634]">adipiscing praesent</span>
+                                <span class="text-[#3F3F3F]">velit viverra sit semper lorem eu cursus vel hendrerit
+                                    elementum morbi curabitur etiam nibh justo lorem aliquet donec
+                                    sed sit mi dignissim at ante massa mattis.</span>
+                            </p>
+
+                            <h3 class="mt-12 text-2xl font-bold leading-none text-neutral-900 max-md:max-w-full">
+                                Is this the right plan for my restaurant?
+                            </h3>
+                            <p class="mt-4 text-lg leading-8 text-neutral-700 max-md:max-w-full">
+                                Vitae congue eu consequat ac felis placerat
+                                <span class="text-[#121212]">vestibulum lectus</span>
+                                mauris ultrices cursus sit amet dictum sit amet justo donec enim
+                                diam
+                                <span class="text-[#3F3F3F]">porttitor lacus luctus accumsan</span>
+                                tortor posuere praesent tristique magna sit amet purus gravida
+                                quis blandit turpis.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <aside class="ml-5 w-[1/3] max-md:ml-0 max-md:w-full">
+                    <div
+                        class="grow px-8 md:pt-20 pt-10 pb-12 lg:w-[390px] md:w-[310px] w-full bg-white rounded-3xl border border-solid shadow-sm border-[#EDEDED] max-md:px-5 max-md:mt-10">
+                        <div class="flex flex-col">
+                            <div class="w-full max-w-[327px]">
+                                <div class="flex flex-col w-full">
+                                    <div class="flex gap-4 items-center self-start font-bold whitespace-nowrap">
+                                        <div class="flex shrink-0 items-center self-stretch my-auto h-[72px] w-[72px]">
+                                            <img class="h-[52px] w-[66px]" src="https://tail-in-wind-web.vercel.app/tail_005/assets/Group%2042114.png" alt="cycle">
+                                        </div>
+                                        <div class="flex flex-col self-stretch my-auto">
+                                            <p class="self-start text-lg leading-none text-center text-stone-500">
+                                                FREE
+                                            </p>
+                                            <p class="text-3xl leading-none text-neutral-900">$0/mo</p>
+                                        </div>
+                                    </div>
+                                    <p class="mt-4 text-lg leading-8 text-stone-500">
+                                        Lorem ipsum dolor sit amet dolor sitiol conse ctetur
+                                        adipiscing elit.
+                                    </p>
+                                </div>
+
+                                <a href="#"
+                                    class="flex items-start mt-8 w-full text-lg font-bold leading-none text-center text-white">
+                                    <span
+                                        class="flex-1 shrink gap-1.5 self-stretch md:px-10 px-6 md:py-7 py-3 w-full bg-[#FF5634] rounded-2xl basis-0 min-w-60 max-md:px-5">
+                                        Get started
+                                    </span>
+                                </a>
+                            </div>
+
+                            <div
+                                class="flex flex-col self-start mt-12 text-[18px] font-medium leading-[20px] text-neutral-900 max-md:mt-10">
+                                <h4 class="font-bold">What´s included:</h4>
+                                <ul class="flex flex-col items-start mt-6">
+                                    <li class="flex gap-3.5 items-center min-w-60 mb-4">
+                                        <img src="https://tail-in-wind-web.vercel.app/tail_005/assets/Check.png" alt="Check Icon"
+                                            class="object-contain shrink-0 self-stretch my-auto aspect-square w-[26px]" />
+                                        <span>Single Location (30 tables limit)</span>
+                                    </li>
+                                    <li class="flex gap-3.5 items-center mb-4">
+                                        <img src="https://tail-in-wind-web.vercel.app/tail_005/assets/Check.png" alt="Check Icon"
+                                            class="object-contain shrink-0 self-stretch my-auto aspect-square w-[26px]" />
+                                        <span>Mobile Order & Pay</span>
+                                    </li>
+                                    <li class="flex gap-3.5 items-center mb-4">
+                                        <img src="https://tail-in-wind-web.vercel.app/tail_005/assets/Check.png" alt="Check Icon"
+                                            class="object-contain shrink-0 self-stretch my-auto aspect-square w-[26px]" />
+                                        <span>Split the Bill</span>
+                                    </li>
+                                    <li class="flex gap-3.5 items-center mb-4">
+                                        <img src="https://tail-in-wind-web.vercel.app/tail_005/assets/Check.png" alt="Check Icon"
+                                            class="object-contain shrink-0 self-stretch my-auto aspect-square w-[26px]" />
+                                        <span>Delivery & Pickup</span>
+                                    </li>
+                                    <li class="flex gap-3.5 items-center mb-4">
+                                        <img src="https://tail-in-wind-web.vercel.app/tail_005/assets/Check.png" alt="Check Icon"
+                                            class="object-contain shrink-0 self-stretch my-auto aspect-square w-[26px]" />
+                                        <span>Directory</span>
+                                    </li>
+                                    <li class="flex gap-3.5 items-center mb-4">
+                                        <img src="https://tail-in-wind-web.vercel.app/tail_005/assets/Check.png" alt="Check Icon"
+                                            class="object-contain shrink-0 self-stretch my-auto aspect-square w-[26px]" />
+                                        <span>Limited Customisable</span>
+                                    </li>
+                                    <li class="flex gap-3.5 items-center mb-4">
+                                        <img src="https://tail-in-wind-web.vercel.app/tail_005/assets/Check.png" alt="Check Icon"
+                                            class="object-contain shrink-0 self-stretch my-auto aspect-square w-[26px]" />
+                                        <span>Website Builder Basic</span>
+                                    </li>
+                                    <li class="flex gap-3.5 items-center mb-4">
+                                        <img src="https://tail-in-wind-web.vercel.app/tail_005/assets/Check.png" alt="Check Icon"
+                                            class="object-contain shrink-0 self-stretch my-auto aspect-square w-[26px]" />
+                                        <span>Kitchen Printer Integration</span>
+                                    </li>
+                                    <li class="flex gap-3.5 items-center mb-4">
+                                        <img src="https://tail-in-wind-web.vercel.app/tail_005/assets/Check.png" alt="Check Icon"
+                                            class="object-contain shrink-0 self-stretch my-auto aspect-square w-[26px]" />
+                                        <span>Delivery & Pickup</span>
+                                    </li>
+                                    <li class="flex gap-3.5 items-center">
+                                        <img src="https://tail-in-wind-web.vercel.app/tail_005/assets/Check.png" alt="Check Icon"
+                                            class="object-contain shrink-0 self-stretch my-auto aspect-square w-[26px]" />
+                                        <span>Gratuities (Tips)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+
+        <hr class="mt-48 w-full border border-solid border-[rgba(202,202,202,1)] min-h-px max-md:mt-10 max-md:max-w-full" />
+
+        <footer
+            class="flex mx-auto items-center  px-2 md:pt-20 pt-10 pb-10  bg-white max-md:px-5 max-w-full  lg:max-w-[1220px]">
+            <div class="flex flex-col max-w-full  lg:max-w-[1220px]">
+                <div
+                    class="flex lg:flex-row flex-col lg:gap-20 md:gap-10 gap-5 items-center pl-2 justify-between w-full  max-md:max-w-full">
+                    <!-- Left Section: Image and Lorem Ipsum -->
+                    <div class="flex flex-col items-left text-left justify-start  lg:w-1/2 max-md:max-w-full">
+                        <img src="https://tail-in-wind-web.vercel.app/tail_005/assets/Logo-Orange-Black-2%202.png" alt="Section Image"
+                            class="object-contain max-w-full aspect-[4.35] w-[209px] mb-8" />
+                        <p class="text-[18px] leading-[30px] text-neutral-700 text-left max-sm:mt-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut.
                         </p>
                     </div>
-                </div>
-                <div class="div-4">
-                    <p class="text-wrapper-4">Is this the right plan for my restaurant?</p>
-                    <p class="vitae-congue-eu">
-                        <span class="span">Vitae congue eu consequat ac felis placerat </span>
-                        <span class="text-wrapper-2">vestibulum lectus</span>
-                        <span class="span"> mauris ultrices cursus sit amet dictum sit amet justo donec enim diam porttitor lacus luctus accumsan tortor posuere praesent tristique magna sit amet purus gravida quis blandit turpis.</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="group-2">
-            <div class="navbar">
-                <div class="text-wrapper-5">Home</div>
-                <div class="text-wrapper-6">Pricing</div>
-                <div class="text-wrapper-7">About Us</div>
-                <div class="group-3">
-                    <div class="text-wrapper-5">Features</div>
-                    <img class="line-rounded-chevron" src="img/chevron-down.svg" />
-                </div>
-                <div class="text-wrapper-8">Blog</div>
-                <div class="text-wrapper-9">Contact</div>
-            </div>
-            <div class="frame-3">
-                <button class="secondary-button">
-                    <div class="master-secondary"><button class="button-text">Login</button></div>
-                </button>
-                <div class="primary-button">
-                    <div class="master-primary"><div class="button-text-2">START FOR FREE</div></div>
-                </div>
-            </div>
-            <img class="logo-orange-black" src="img/logo-orange-black-2-1.png" />
-            <div class="flagpack-gb-ukm-wrapper"><div class="flagpack-gb-ukm"></div></div>
-        </div>
-        <div class="overlap-group-wrapper">
-            <div class="overlap-group">
-                <div class="pricing-card">
-                    <div class="div-2">
-                        <div class="div-4">
-                            <div class="element">
-                                <div class="square-paper-plane"></div>
-                                <div class="element-px">
-                                    <div class="subtitle">FREE</div>
-                                    <div class="price">$0/mo</div>
-                                </div>
-                            </div>
-                            <p class="pricing-paragraph">Lorem ipsum dolor sit amet dolor sitiol conse ctetur adipiscing elit.</p>
-                        </div>
-                        <button class="master-primary-wrapper">
-                            <div class="master-primary-2"><button class="button">Get started</button></div>
-                        </button>
-                    </div>
-                    <div class="div-3">
-                        <div class="text">What´s included:</div>
-                        <div class="div-4">
-                            <div class="div-wrapper">
-                                <div class="list-item">
-                                    <img class="line-rounded-check" src="img/check-2.svg" />
-                                    <p class="text-2">Single Location (30 tables limit)</p>
-                                </div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="list-item">
-                                    <img class="line-rounded-check" src="img/check-2.svg" />
-                                    <div class="text-2">Mobile Order & Pay</div>
-                                </div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="list-item">
-                                    <img class="line-rounded-check" src="img/check-2.svg" />
-                                    <div class="text-2">Split the Bill</div>
-                                </div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="list-item">
-                                    <img class="line-rounded-check" src="img/check-2.svg" />
-                                    <div class="text-2">Delivery & Pickup</div>
-                                </div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="list-item">
-                                    <img class="line-rounded-check" src="img/check-2.svg" />
-                                    <div class="text-2">Directory</div>
-                                </div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="list-item">
-                                    <img class="line-rounded-check" src="img/check-2.svg" />
-                                    <div class="text-2">Limited Customisable</div>
-                                </div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="list-item">
-                                    <img class="line-rounded-check" src="img/check-2.svg" />
-                                    <div class="text-2">Website Builder Basic</div>
-                                </div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="list-item">
-                                    <img class="line-rounded-check" src="img/check-2.svg" />
-                                    <div class="text-2">Kitchen Printer Integration</div>
-                                </div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="list-item">
-                                    <img class="line-rounded-check" src="img/check-2.svg" />
-                                    <div class="text-2">Delivery & Pickup</div>
-                                </div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="list-item">
-                                    <img class="line-rounded-check" src="img/check.svg" />
-                                    <div class="text-2">Gratuities (Tips)</div>
-                                </div>
-                            </div>
+
+                    <!-- Right Section: Download Buttons -->
+                    <div
+                        class="flex flex-col items-center justify-center w-auto lg:w-1/2 max-md:w-full max-sm:mt-6 lg:mt-0 ">
+                        <div
+                            class="flex flex-col sm:flex-row md:gap-7 gap-4 md:text-base text-xs font-extrabold leading-none justify-center">
+                            <a href="#"
+                                class="flex gap-3 md:px-8 px-4 md:py-5 py-3 text-white bg-[#FF5634] rounded-2xl max-md:px-5 items-center">
+                                <img src="https://tail-in-wind-web.vercel.app/tail_005/assets/Vector.png" alt="iOS Icon"
+                                    class="object-contain shrink-0 w-5 aspect-[0.8]" />
+                                <span>Download for iOS</span>
+                            </a>
+                            <a href="#"
+                                class="flex gap-2 md:px-8 px-4 md:py-5 py-4 text-white bg-[#FF5634] rounded-2xl max-md:px-5 items-center">
+                                <img src="https://tail-in-wind-web.vercel.app/tail_005/assets/Vector%20(1).png" alt="Android Icon"
+                                    class="object-contain shrink-0 my-auto aspect-[1.88] w-[30px]" />
+                                <span>Download for Android</span>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <img class="img" src="img/group-42114.png" />
-            </div>
-        </div>
-        <div class="group-4">
-            <div class="overlap">
-                <p class="copyright-delivery-x">
-                    <span class="span">Copyright </span>
-                    <span class="text-wrapper-10">©</span>
-                    <span class="span"> Delivery X | Designed by </span>
-                    <span class="text-wrapper-11">BRIX Templates</span>
-                    <span class="span"> - Powered by </span>
-                    <span class="text-wrapper-11">Webflow</span>
+
+                <!-- Section Line-->
+                <hr
+                    class="shrink-0 mt-28 w-full max-w-[1220px] h-px border border-solid border-[rgba(202,202,202,1)] max-md:mt-10" />
+
+                <div class="mt-32 max-md:mt-10 max-md:max-w-[1220px]">
+                    <div class="flex  justify-between max-md:flex-col">
+                        <!-- Menu Navigation -->
+                        <nav class="max-md:w-full">
+                            <div class="max-md:mt-10">
+                                <h4 class="text-xl font-bold leading-none text-neutral-900 text-[#121212]">Menu</h4>
+                                <div class="flex lg:gap-10 gap-5 items-start mt-10 text-lg leading-none text-neutral-700">
+                                    <div class="flex flex-col items-start text-[#3F3F3F]">
+                                        <a href="#" class="mb-5">Home</a>
+                                        <a href="#" class="mb-5">About</a>
+                                        <a href="#" class="mb-5">Contact</a>
+                                        <a href="#" class="mb-5">Blog</a>
+                                        <a href="#">Blog posts</a>
+                                    </div>
+                                    <div class="flex flex-col items-start  text-[#3F3F3F]">
+                                        <a href="#" class="mb-5">Plans</a>
+                                        <a href="#" class="mb-5">Plan single</a>
+                                        <a href="#">Register</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+
+                        <!-- Utility Pages -->
+                        <nav class="max-md:w-full">
+                            <div class="flex flex-col max-md:mt-10">
+                                <h4 class="text-xl font-bold leading-none text-neutral-900">Utility pages</h4>
+                                <div class="flex gap-10 items-start mt-10 text-lg leading-none text-neutral-700">
+                                    <div class="flex flex-col items-start text-[#3F3F3F]">
+                                        <a href="#" class="mb-5">Start here</a>
+                                        <a href="#" class="mb-5">Styleguide</a>
+                                        <a href="#" class="mb-5">Password protected</a>
+                                        <a href="#" class="mb-5">404 Not found</a>
+                                        <a href="#" class="mb-5">Licenses</a>
+                                        <a href="#" class="mb-5">Changelog</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="text-lg font-semibold leading-none text-[#FF5634] underline mt-5">
+                                    Browse More Templates
+                                </a>
+                            </div>
+                        </nav>
+
+                        <!-- Available In Section -->
+                        <section class="max-md:w-full">
+                            <div
+                            class="flex flex-col md:text-lg text-sm font-bold leading-none text-neutral-900 max-md:mt-10">
+                            <h4 class="text-xl leading-none">Available in</h4>
+                            <div class="flex gap-5 mt-10">
+                                <img src="bridge.png" alt="San Francisco"
+                                    class="object-contain shrink-0 rounded-3xl aspect-square md:w-[78px] w-[39px]" />
+                                <span class="my-auto w-38">San Francisco, CA</span>
+                                <img src="Statue of Liberty.png" alt="New York"
+                                    class="object-contain shrink-0 rounded-3xl aspect-square md:w-[78px] w-[39px] " />
+                                <span class="my-auto w-38">New York, NY</span>
+                            </div>
+                            <div class="flex gap-5 mt-10">
+                                <img src="Beach.png" alt="Los Angeles"
+                                    class="object-contain shrink-0 rounded-3xl aspect-square md:w-[78px] w-[39px]" />
+                                <span class="my-auto w-36">Los Angeles, CA</span>
+                                <img src="tower.png" alt="Seattle"
+                                    class="object-contain ml-4 shrink-0 rounded-3xl aspect-square md:w-[78px] w-[39px]" />
+                                <span class="my-auto w-36">Seattle, WA</span>
+                            </div>
+                        </div>
+                        </section>
+                    </div>
+                </div>
+
+                
+                <hr class="shrink-0 mt-20 w-full h-px border border-solid border-stone-300 max-md:mt-10" />
+
+                
+                <p class=" text-[#3F3F3F] self-center mt-8 text-lg leading-loose text-neutral-700 max-md:max-w-full">
+                    Copyright © Delivery X | Designed by
+                    <a href="#" class="text-[#FF5634]">BRIX Templates</a>
+                    - Powered by
+                    <a href="#" class="text-[#FF5634]">Webflow</a>
                 </p>
-                <img class="line" src="img/line-133-2.svg" />
-                <img class="line-2" src="img/line-134.svg" />
-                <div class="group-5">
-                    <p class="text-wrapper-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
-                </div>
-                <div class="download-buttons">
-                    <div class="group-wrapper">
-                        <div class="group-6">
-                            <img class="vector" src="img/image.svg" />
-                            <div class="text-wrapper-13">Download for iOS</div>
-                        </div>
-                    </div>
-                    <div class="group-7">
-                        <div class="group-8">
-                            <div class="text-wrapper-14">Download for Android</div>
-                            <img class="vector-2" src="img/vector.svg" />
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <div class="footer-title">Menu</div>
-                    <div class="frame-4">
-                        <div class="footer-links">
-                            <div class="div-wrapper">
-                                <div class="master-link"><div class="link-item">Home</div></div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="master-link"><div class="link-item">About</div></div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="master-link"><div class="link-item">Contact</div></div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="master-link"><div class="link-item">Blog</div></div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="master-link"><div class="link-item">Blog posts</div></div>
-                            </div>
-                        </div>
-                        <div class="footer-links">
-                            <div class="div-wrapper">
-                                <div class="master-link"><div class="link-item">Plans</div></div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="master-link"><div class="link-item">Plan single</div></div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="master-link"><div class="link-item">Register</div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-column-2">
-                    <div class="footer-title">Utility pages</div>
-                    <div class="footer-links-wrapper">
-                        <div class="footer-links">
-                            <div class="div-wrapper">
-                                <div class="master-link"><div class="link-item">Start here</div></div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="master-link"><div class="link-item">Styleguide</div></div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="master-link"><div class="link-item">Password protected</div></div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="master-link"><div class="link-item">404 Not found</div></div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="master-link"><div class="link-item">Licenses</div></div>
-                            </div>
-                            <div class="div-wrapper">
-                                <div class="master-link"><div class="link-item">Changelog</div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="group-9">
-                    <div class="footer-title-2">Available in</div>
-                    <div class="group-10">
-                        <div class="group-11">
-                            <div class="div-wrapper-2">
-                                <div class="bridge"><div class="group-12"></div></div>
-                            </div>
-                            <div class="heading">San Francisco, CA</div>
-                        </div>
-                        <div class="group-13">
-                            <div class="div-wrapper-2">
-                                <div class="statue-of-liberty"><img class="group-14" src="img/group-42153.png" /></div>
-                            </div>
-                            <div class="heading">New York, NY</div>
-                        </div>
-                        <div class="group-15">
-                            <div class="div-wrapper-2">
-                                <div class="beach"><img class="group-16" src="img/group-42152.png" /></div>
-                            </div>
-                            <div class="heading">Los Angeles, CA</div>
-                            <div class="group-17">
-                                <div class="heading-h">Seattle, WA</div>
-                                <div class="cn-tower"><img class="group-18" src="img/group-42144.png" /></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img class="logo-orange-black-2" src="img/logo-orange-black-2-2.png" />
-                <div class="link">
-                    <div class="master-link"><div class="link-item-2">Browse More Templates</div></div>
-                </div>
             </div>
-            <img class="line-3" src="img/line-133.svg" />
-        </div>
-    </div>
+        </footer>
+    </header>
+
 </body>
+
 </html>
